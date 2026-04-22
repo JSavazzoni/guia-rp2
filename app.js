@@ -53,85 +53,47 @@ const DataAccess = {
                     },
                     { 
                         title: "🛡️ O Que é Defesa?", 
-                        items: [
-                            "Defesa é o momento mais importante da venda.",
-                            "Não é vender.",
-                            "É fazer o cliente parar e te ouvir."
-                        ],
-                        warning: "Se você não ganhou atenção, você já perdeu a venda."
+                        items: ["Defesa é criar conexão com o cliente pra ganhar atenção e iniciar a conversa."],
+                        warning: "Sem conexão → sem atenção → sem venda"
                     },
                     { 
                         title: "🎯 Objetivo da Defesa", 
-                        items: [
-                            "Interromper o foco do cliente", 
-                            "Fazer ele te dar atenção por alguns segundos", 
-                            "Abrir espaço pra conversa"
-                        ],
-                        warning: "Sem isso, nada acontece."
+                        items: ["Fazer o cliente parar", "Ganhar alguns segundos de atenção", "Iniciar uma conversa natural"],
+                        footer: "💡 Aqui começa a venda de verdade"
+                    },
+                    { 
+                        title: "✅ O Que FAZER", 
+                        items: ["Falar como pessoa, não como vendedor", "Usar perguntas pra entender o cliente", "Entrar na realidade dele (fac, dinheiro, evolução)", "Ser leve, direto e natural", "Criar curiosidade antes de vender"],
+                        footer: "💡 Primeiro conecta, depois vende"
                     },
                     { 
                         isError: true, 
-                        title: "❌ O Erro que Mata Vendas", 
-                        subtext: "Chegar vendendo direto (“quer vip?”, “quer comprar algo?”):",
-                        items: [
-                            "Isso é ignorado", 
-                            "Isso parece spam", 
-                            "Isso quebra o RP"
-                        ] 
+                        title: "❌ O Que NÃO Fazer", 
+                        items: ["Chegar vendendo direto (“quer vip?”)", "Parecer robô ou script decorado", "Interromper o cliente em momento errado", "Falar demais e não ouvir", "Ignorar o que o cliente respondeu", "Forçar venda sem entender a necessidade"],
+                        warning: "Isso quebra atenção na hora"
                     },
                     { 
-                        title: "🧠 Quebre o Padrão", 
-                        subtext: "Não chegue vendendo, chegue entendendo o cliente:", 
-                        items: [
-                            "“Tu já tá desenrolando bem na fac ou ainda tá travado?”", 
-                            "“Já tá conseguindo farmar bem aí ou tá difícil evoluir?”", 
-                            "“Tá conseguindo fazer dinheiro ou tá lento ainda?”", 
-                            "“Já tá com estrutura boa ou ainda tá no básico?”"
-                        ],
-                        footer: "💡 Objetivo: fazer ele responder e expor a realidade dele"
-                    },
-                    { 
-                        title: "👀 Crie Curiosidade", 
-                        subtext: "Não venda, instigue:", 
-                        items: [
-                            "“Tem uma parada aqui que pouca gente usa”", 
-                            "“Isso aqui muda totalmente teu desempenho na fac”", 
-                            "“Tem um jeito mais rápido de evoluir aqui”"
-                        ],
-                        footer: "💡 Curiosidade puxa atenção"
-                    },
-                    { 
-                        title: "⚡ Seja Rápido", 
-                        subtext: "Você tem poucos segundos:", 
-                        items: [
-                            "Fala simples", 
-                            "Fala direto", 
-                            "Sem enrolação"
-                        ],
-                        warning: "Se demorar, ele ignora"
-                    },
-                    { 
-                        title: "⏱️ Timing (Olheiro)", 
-                        subtext: "Antes de tudo, observe:", 
-                        items: [
-                            "Tá em missão? Não aborda", 
-                            "Tá conversando? Não entra", 
-                            "Tá sozinho? Melhor momento"
-                        ],
-                        footer: "💡 Vendedor bom não interrompe errado"
-                    },
-                    { 
-                        title: "💬 Frases Prontas", 
-                        subtext: "Alta Conversão:",
-                        items: [
-                            "“Rapidão, posso te fazer uma pergunta?”", 
-                            "“Tu já tá forte na fac ou ainda tá evoluindo?”", 
-                            "“Se eu te mostrar um jeito de evoluir mais rápido, tu olha?”", 
-                            "“10 segundos, se não fizer sentido eu saio”"
-                        ] 
+                        title: "💬 Como Entrar (Exemplos)", 
+                        items: ["“Tu já tá desenrolando bem na fac ou ainda tá travado?”", "“tá conseguindo farmar bem aí ou tá lento ainda?”", "“já tá forte ou ainda tá começando a crescer?”"],
+                        footer: "💡 Pergunta certa = cliente fala"
                     }
                 ],
-                videos: []
+                videoCategories: [
+                    {
+                        title: "Exemplo Errado",
+                        videos: [
+                            { label: "EXEMPLO ERRADO 01", url: "https://drive.google.com/file/d/1_wNaLwQWRViDm4-GBs-zs_8o2RaNVblm/preview", color: "#ef4444" },
+                            { label: "EXEMPLO ERRADO 02", url: "https://drive.google.com/file/d/1JSk9M-WcYazSJhD6Jz_KZWe2jlxmB9tw/preview", color: "#ef4444" }
+                        ]
+                    },
+                    {
+                        title: "Exemplo Certo",
+                        videos: [
+                            { label: "EXEMPLO CERTO 01", url: "", color: "#22c55e" },
+                            { label: "EXEMPLO CERTO 02", url: "", color: "#22c55e" }
+                        ]
+                    }
+                ]
             },
             'meio': {
                 id: 'meio',
@@ -140,28 +102,7 @@ const DataAccess = {
                 description: "Entender a necessidade do cliente ou fazer perguntas com intenções para criar a necessidade na cabeça dele.",
                 image: "gemini.jpg",
                 sections: [
-                    { 
-                        isQuote: true, 
-                        title: "⭐ A Regra de Ouro", 
-                        content: "“A necessidade não existe até que você a crie na mente do cliente.”" 
-                    },
-                    { 
-                        title: "🎯 Objetivo", 
-                        items: [
-                            "Entender a necessidade real do cliente",
-                            "Fazer perguntas com intenções específicas",
-                            "Criar a necessidade na cabeça do jogador"
-                        ] 
-                    },
-                    { 
-                        title: "💡 Solução Focada", 
-                        items: [
-                            "Ter a solução exata para a necessidade que foi criada",
-                            "Falar sobre os produtos de forma estratégica",
-                            "Destacar sempre os benefícios, não apenas as características"
-                        ],
-                        footer: "💡 O cliente não compra o item, ele compra o que o item faz por ele."
-                    }
+                    { isQuote: true, title: "⭐ A Regra de Ouro", content: "“A necessidade não existe até que você a crie na mente do cliente.”" }
                 ],
                 videos: []
             },
@@ -172,27 +113,7 @@ const DataAccess = {
                 description: "Ter a solução para a necessidade do cliente e fazer a negociação do produto gerando desejo e urgência.",
                 image: "gemini.jpg",
                 sections: [
-                    { 
-                        isQuote: true, 
-                        title: "⭐ A Regra de Ouro", 
-                        content: "“O desejo faz o cliente querer. A urgência faz o cliente agir agora.”" 
-                    },
-                    { 
-                        title: "🎯 Posicionamento de Solução", 
-                        items: [
-                            "Apresentar a solução definitiva para a dor do cliente",
-                            "Garantir que a solução encaixe perfeitamente no que foi discutido no Meio de Campo"
-                        ] 
-                    },
-                    { 
-                        title: "⚡ Geração de Desejo e Urgência", 
-                        items: [
-                            "Fazer a negociação destacando a exclusividade do produto",
-                            "Utilizar gatilhos mentais para criar o desejo de posse",
-                            "Gerar senso de urgência para fechamento rápido"
-                        ],
-                        warning: "Não demonstre desespero para vender, demonstre que a oportunidade é única."
-                    }
+                    { isQuote: true, title: "⭐ A Regra de Ouro", content: "“O desejo faz o cliente querer. A urgência faz o cliente agir agora.”" }
                 ],
                 videos: []
             },
@@ -203,27 +124,7 @@ const DataAccess = {
                 description: "Apresentar as formar de pagamentos, Cartão de crédito/Pix.",
                 image: "gemini.jpg",
                 sections: [
-                    { 
-                        isQuote: true, 
-                        title: "⭐ A Regra de Ouro", 
-                        content: "“A venda só termina quando a transação é concluída com clareza.”" 
-                    },
-                    { 
-                        title: "💳 Formas de Pagamento", 
-                        subtext: "Apresente as opções disponíveis de forma direta:", 
-                        items: [
-                            "Cartão de Crédito",
-                            "Pix (Transferência imediata)"
-                        ] 
-                    },
-                    { 
-                        title: "🎯 Finalização", 
-                        items: [
-                            "Garantir a concordância total do cliente com os valores e termos",
-                            "Finalizar a transação no sistema de forma rápida e segura"
-                        ],
-                        footer: "💡 Facilite ao máximo o processo de pagamento para não perder a venda no último segundo."
-                    }
+                    { isQuote: true, title: "⭐ A Regra de Ouro", content: "“A venda só termina quando a transação é concluída com clareza.”" }
                 ],
                 videos: []
             },
@@ -234,38 +135,7 @@ const DataAccess = {
                 description: "Ir até o cliente ver se os itens chegou corretamente, tunar os carros",
                 image: "gemini.jpg", 
                 sections: [
-                    { 
-                        isQuote: true, 
-                        title: "⭐ A Regra de Ouro", 
-                        content: "“Um cliente bem atendido e sem dúvidas é a sua melhor propaganda.” 🤝" 
-                    },
-                    { 
-                        title: "🤝 Tratar Bem", 
-                        subtext: "Como manter o relacionamento:", 
-                        items: [
-                            "Seja cordial e agradeça a preferência pela compra.",
-                            "Mostre que você se importa com a experiência dele na cidade.",
-                            "Deixe claro que você está à disposição para o que ele precisar."
-                        ] 
-                    },
-                    { 
-                        title: "❓ Tirar Todas as Dúvidas", 
-                        items: [
-                            "Pergunte ativamente se ele entendeu como funciona o que comprou.",
-                            "Explique as regras básicas para evitar punições (Anti-RP).",
-                            "Confirme se não restou nenhuma pergunta pendente."
-                        ],
-                        warning: "Deixar o cliente com dúvidas gera frustração e cancelamento."
-                    },
-                    { 
-                        title: "🗣️ Pedir Indicação", 
-                        items: [
-                            "Pergunte se ele tem amigos que também chegaram agora na cidade.",
-                            "Peça para ele indicar o seu serviço se alguém precisar.",
-                            "Ofereça uma vantagem (desconto/brinde) na próxima compra se ele trouxer alguém."
-                        ],
-                        footer: "💡 Indicação é a forma mais barata e fácil de conseguir novos clientes."
-                    }
+                    { isQuote: true, title: "⭐ A Regra de Ouro", content: "“Um cliente bem atendido e sem dúvidas é a sua melhor propaganda.” 🤝" }
                 ],
                 videos: []
             }
@@ -389,23 +259,39 @@ const Controller = {
                                 ${section.warning ? `<div class="warningBox">${section.warning}</div>` : ''}
                                 ${section.footer ? `<div class="hintBox">${section.footer}</div>` : ''}
                             </section>`;
-                        }).join('') : `<h2 style="color:var(--text-secondary); grid-column: 1/-1; text-align:center;">Conteúdo em desenvolvimento...</h2>`}
+                        }).join('') : ''}
                     </div>
 
-                    ${data.videos && data.videos.length > 0 ? `
-                    <section class="videoSection">
-                        <h1 class="sectionTitle">Adicional em Video 📺</h1>
-                        <div class="videosGrid">
-                            ${data.videos.map(video => `
-                                <div class="videoWrapper">
-                                    <h3 class="videoLabel" style="color:${video.color}; border: 1px solid ${video.color};">${video.label}</h3>
-                                    <div class="videoContainer">
-                                        <iframe src="${video.url}" allow="autoplay"></iframe>
+                    ${data.videoCategories ? data.videoCategories.map(cat => `
+                        <section class="videoSection">
+                            <h1 class="sectionTitle">${cat.title} 📺</h1>
+                            <div class="videosGrid">
+                                ${cat.videos.map(video => `
+                                    <div class="videoWrapper">
+                                        <h3 class="videoLabel" style="color:${video.color}; border: 1px solid ${video.color};">${video.label}</h3>
+                                        <div class="videoContainer">
+                                            <iframe src="${video.url}" allow="autoplay"></iframe>
+                                        </div>
                                     </div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </section>` : ''}
+                                `).join('')}
+                            </div>
+                        </section>
+                    `).join('') : ''}
+
+                    ${data.videos && data.videos.length > 0 ? `
+                        <section class="videoSection">
+                            <h1 class="sectionTitle">Adicional em Video 📺</h1>
+                            <div class="videosGrid">
+                                ${data.videos.map(video => `
+                                    <div class="videoWrapper">
+                                        <h3 class="videoLabel" style="color:${video.color}; border: 1px solid ${video.color};">${video.label}</h3>
+                                        <div class="videoContainer">
+                                            <iframe src="${video.url}" allow="autoplay"></iframe>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </section>` : ''}
                 </main>
             </div>
         `

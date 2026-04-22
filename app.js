@@ -89,8 +89,8 @@ const DataAccess = {
                     {
                         title: "Exemplo Certo",
                         videos: [
-                            { label: "EXEMPLO CERTO 01", url: "", color: "#22c55e" },
-                            { label: "EXEMPLO CERTO 02", url: "", color: "#22c55e" }
+                            { label: "EXEMPLO CERTO 01", url: "https://drive.google.com/file/d/1Aa0MMvkyzXFeUT-ww-5pNzYZei_D1Wt_/preview", color: "#22c55e" },
+                            { label: "EXEMPLO CERTO 02", url: "https://drive.google.com/file/d/1cxYETQv2DT2FHHBG8l9WX34cQVn46NCX/preview", color: "#22c55e" }
                         ]
                     }
                 ]

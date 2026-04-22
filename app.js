@@ -67,15 +67,15 @@ const DataAccess = {
                         footer: "💡 Primeiro conecta, depois vende"
                     },
                     { 
+                        title: "💬 Como Entrar (Exemplos)", 
+                        items: ["“Tu já tá desenrolando bem na fac ou ainda tá travado?”", "“tá conseguindo farmar bem aí ou tá lento ainda?”", "“já tá forte ou ainda tá começando a crescer?”"],
+                        footer: "💡 Pergunta certa = cliente fala"
+                    },
+                    { 
                         isError: true, 
                         title: "❌ O Que NÃO Fazer", 
                         items: ["Chegar vendendo direto (“quer vip?”)", "Parecer robô ou script decorado", "Interromper o cliente em momento errado", "Falar demais e não ouvir", "Ignorar o que o cliente respondeu", "Forçar venda sem entender a necessidade"],
                         warning: "Isso quebra atenção na hora"
-                    },
-                    { 
-                        title: "💬 Como Entrar (Exemplos)", 
-                        items: ["“Tu já tá desenrolando bem na fac ou ainda tá travado?”", "“tá conseguindo farmar bem aí ou tá lento ainda?”", "“já tá forte ou ainda tá começando a crescer?”"],
-                        footer: "💡 Pergunta certa = cliente fala"
                     }
                 ],
                 videoCategories: [

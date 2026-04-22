@@ -39,9 +39,8 @@ const DataAccess = {
                     { isQuote: true, title: "⭐ A Regra de Ouro", content: "“Se você não tem a atenção do cliente, você não tem venda.” 🚀" },
                     { title: "🛡️ O Que é Defesa?", items: ["Defesa é criar conexão com o cliente pra ganhar atenção e iniciar a conversa."], warning: "Sem conexão ➔ sem atenção ➔ sem venda." },
                     { title: "🎯 Objetivo da Defesa", items: ["Fazer o cliente parar.", "Ganhar alguns segundos de atenção.", "Iniciar uma conversa natural."], footer: "💡 Aqui começa a venda de verdade." },
-                    { title: "✅ O Que FAZER", items: ["Falar como pessoa, não como vendedor.", "Usar perguntas pra entender o cliente.", "Entrar na realidade dele (fac, dinheiro, evolução).", "Ser leve, direto e natural.", "Criar curiosidade antes de vender."], footer: "💡 Primeiro conecta, depois vende." },
-                    { title: "💬 Como Entrar (Exemplos)", items: ["“Tu já tá desenrolando bem na fac ou ainda tá travado?”", "“Tá conseguindo farmar bem aí ou tá lento ainda?”", "“Já tá forte ou ainda tá começando a crescer?”"], footer: "💡 Pergunta certa = cliente fala." },
-                    { isError: true, title: "❌ O Que NÃO Fazer", items: ["Chegar vendendo direto (“quer vip?”).", "Parecer robô ou script decorado.", "Interromper o cliente em momento errado.", "Falar demais e não ouvir.", "Ignorar o que o cliente respondeu.", "Forçar venda sem entender a necessidade."], warning: "Isso quebra atenção na hora." }
+                    { title: "✅ O Que FAZER", items: ["Falar como pessoa, não como vendedor.", "Usar perguntas pra entender o cliente.", "Criar curiosidade antes de vender."], footer: "💡 Primeiro conecta, depois vende." },
+                    { isError: true, title: "❌ O Que NÃO Fazer", items: ["Chegar vendendo direto (“quer vip?”).", "Parecer robô ou script decorado.", "Falar demais e não ouvir.", "Ignorar o que o cliente respondeu."] }
                 ],
                 videoCategories: [
                     { title: "Exemplos Certos", videos: [
@@ -57,16 +56,16 @@ const DataAccess = {
             'meio': {
                 id: 'meio',
                 title: "Meio de Campo",
-                description: "Terceiro passo, entender a necessidade do cliente através de perguntas chaves.",
+                description: "O meio de campo é a terceira etapa da venda: entender a necessidade do cliente através de perguntas chaves.",
                 image: "meio-campo.jpg",
                 sections: [
                     { isQuote: true, title: "⭐ Regra de Ouro — Meio de Campo", content: "“Quem conduz bem, vende fácil.”" },
-                    { title: "🎯 Objetivo Meio de Campo", items: ["Terceiro passo, entender a necessidade do cliente através de perguntas chaves.", "Conduzir o cliente.", "Entender o que oferecer pro cliente.", "Conectar com a realidade dele.", "Preparar para oferecer."] },
+                    { title: "🎯 Objetivo Meio de Campo", items: ["Conduzir o cliente.", "Entender o que oferecer pro cliente.", "Conectar com a realidade dele.", "Preparar para oferecer."] },
                     { title: "🔍 Indícios de Interesse", items: ["✅ Responde rápido.", "🗣️ Fala mais que você.", "❓ Faz perguntas.", "📈 Engaja na conversa."] },
                     { title: "🎯 Foco da Conversa", items: ["Gerar interesse.", "Passar confiança.", "Dar direção ao cliente.", "---", "Não deixar o cliente desviar do assunto principal.", "Não ficar apenas conversando sem intenção de venda.", "Sempre conecte a conversa com a solução da venda."], warning: "Se o cliente dispersar ou você perder o foco, a venda esfria." },
                     { title: "⚠️ Ponto Mais Importante", items: ["Identificar a abertura.", "Puxar a dor do cliente.", "Mostrar o caminho."], warning: "O maior erro do vendedor é não perceber quando já pode vender (o tempo certo)." },
                     { title: "📢 Sinais de Abertura (Ataque!)", items: ["Pergunta preço.", "Pede detalhes sobre o produto.", "Pergunta o que você vende.", "Pergunta se você é vendedor."], footer: "🔥 Identificou isso? Pare de enrolar e comece o ATAQUE." },
-                    { title: "🧠 Perguntas que Quebram o Padrão", items: ["“Tu já tá desenrolando bem na fac ou ainda tá travado?”", "“Já tá conseguindo farmar bem aí ou tá difícil evoluir?”", "“Já tá com estrutura boa ou ainda tá no básico?”"], footer: "💡 Objetivo: fazer ele expor a realidade dele." },
+                    { title: "🧠 Perguntas que Quebram o Padrão", items: ["“Tu já tá desenrolando bem na fac ou ainda tá travado?”", "“Já tá conseguindo farmar bem aí ou tá difícil evoluir?”", "“Já tá conseguindo fazer dinheiro ou tá lento ainda?”"], footer: "💡 Objetivo: fazer ele expor a realidade dele." },
                     { isError: true, title: "❌ Erros de Direcionamento", items: ["Perder o foco da conversa.", "Deixar o cliente mudar totalmente o assunto.", "Responder tudo sem puxar de volta pro objetivo.", "Ficar só “batendo papo” sem avançar.", "Não conectar a dor com a solução."] }
                 ],
                 videoCategories: [

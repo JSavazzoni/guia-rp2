@@ -3,7 +3,7 @@ const DataAccess = {
         { id: 'olheiro', title: '🕵️‍♂️ Olheiro', desc: 'Entender qual o melhor momento pra abordar o cliente.' },
         { id: 'defesa', title: '🛡️ Defesa', desc: 'Ter a atenção do cliente pra você.' },
         { id: 'meio', title: '⚽ Meio de Campo', desc: 'O meio de campo é a terceira etapa da venda: entender a necessidade do cliente através de perguntas chaves.' },
-        { id: 'ataque', title: '⚔️ Ataque', desc: 'Ter a solução para a necessidade do cliente e fazer a negociação do produto gerando desejo e urgência.' },
+        { id: 'ataque', title: '⚔️ Ataque', desc: 'O ataque é a quarta etapa da venda: é o momento de transformar a dor em solução, gerar desejo e criar urgência para fechar.' },
         { id: 'fechamento', title: '🤝 Fechamento', desc: 'Apresentar as formas de pagamento: Cartão de Crédito/Pix.' },
         { id: 'posvenda', title: '📦 Pós Venda', desc: 'Ir até o cliente ver se os itens chegaram corretamente, tunar os carros.' }
     ],
@@ -19,6 +19,7 @@ const DataAccess = {
                     { isQuote: true, title: "⭐ A Regra de Ouro", content: "“Quem tem visão enxerga a venda antes dela existir.”" },
                     { title: "🎯 Objetivo do Olheiro", items: ["🗣️ O cliente está disponível para conversar?", "🧠 Você vai conseguir a atenção dele?", "💰 Existe oportunidade de venda naquele momento?"] },
                     { title: "⏱️ Tempo de Observação", items: ["⏳ Mínimo: 2 minutos.", "⏰ Ideal: 3 a 5 minutos."], warning: "Abordar no momento errado você vai perder tempo." },
+                    { title: "🚶‍♂️ Comportamento do Cliente", items: ["🗺️ Está perdido?", "👣 Está andando sem rumo?", "🛠️ Está testando coisas?", "🧍‍♂️ Está parado?"], footer: "💡 Normalmente cliente em momento tranquilo tem chance de te dar atenção." },
                     { title: "✅ Sinais de Abertura", items: ["👤 Cliente sozinho.", "🧭 Cliente perdido / sem direção.", "👀 Cliente olhando ao redor.", "🛋️ Cliente parado.", "🗣️ Cliente em resenha."] },
                     { isError: true, title: "❌ Erros do Vendedor", items: ["🏃‍♂️💨 Abordar instantaneamente sem observar.", "🛑 Interromper o cliente quando ele não quer.", "👨‍👩‍👧‍👦 Tentar vender para cliente ou grupo fechado ou em ação."] }
                 ],
@@ -36,11 +37,11 @@ const DataAccess = {
                 image: "defesa.jpg",
                 sections: [
                     { isQuote: true, title: "⭐ A Regra de Ouro", content: "“Se você não tem a atenção do cliente, você não tem venda.” 🚀" },
-                    { title: "🛡️ O Que é Defesa?", items: ["Defesa é criar conexão com o cliente pra ganhar atenção e iniciar a conversa."], warning: "Sem conexão ➔ sem atenção ➔ sem venda." },
-                    { title: "🎯 Objetivo da Defesa", items: ["Fazer o cliente parar.", "Ganhar alguns segundos de atenção.", "Iniciar uma conversa natural."], footer: "💡 Aqui começa a venda de verdade." },
-                    { title: "✅ O Que FAZER", items: ["Falar como pessoa, não como vendedor.", "Usar perguntas pra entender o cliente.", "Entrar na realidade dele (fac, dinheiro, evolução).", "Ser leve, direto e natural.", "Criar curiosidade antes de vender."], footer: "💡 Primeiro conecta, depois vende." },
-                    { title: "💬 Como Entrar (Exemplos)", items: ["“Tu já tá desenrolando bem na fac ou ainda tá travado?”", "“Tá conseguindo farmar bem aí ou tá lento ainda?”", "“Já tá forte ou ainda tá começando a crescer?”"], footer: "💡 Pergunta certa = cliente fala." },
-                    { isError: true, title: "❌ O Que NÃO Fazer", items: ["Chegar vendendo direto (“quer vip?”).", "Parecer robô ou script decorado.", "Interromper o cliente em momento errado.", "Falar demais e não ouvir.", "Ignorar o que o cliente respondeu.", "Forçar venda sem entender a necessidade."], warning: "Isso quebra atenção na hora." }
+                    { title: "🛡️ O Que é Defesa?", items: ["🤝 Defesa é criar conexão com o cliente pra ganhar atenção e iniciar a conversa."], warning: "Sem conexão ➔ sem atenção ➔ sem venda." },
+                    { title: "🎯 Objetivo da Defesa", items: ["🛑 Fazer o cliente parar.", "⏳ Ganhar alguns segundos de atenção.", "🗣️ Iniciar uma conversa natural."], footer: "💡 Aqui começa a venda de verdade." },
+                    { title: "✅ O Que FAZER", items: ["👤 Falar como pessoa, não como vendedor.", "❓ Usar perguntas pra entender o cliente.", "🌍 Entrar na realidade dele (fac, dinheiro, evolução).", "🍃 Ser leve, direto e natural.", "🤔 Criar curiosidade antes de vender."], footer: "💡 Primeiro conecta, depois vende." },
+                    { title: "💬 Como Entrar (Exemplos)", items: ["🎓 “Tu já tá desenrolando bem na fac ou ainda tá travado?”", "💰 “Tá conseguindo farmar bem aí ou tá lento ainda?”", "💪 “Já tá forte ou ainda tá começando a crescer?”"], footer: "💡 Pergunta certa = cliente fala." },
+                    { isError: true, title: "❌ O Que NÃO Fazer", items: ["🏃‍♂️ Chegar vendendo direto (“quer vip?”).", "🤖 Parecer robô ou script decorado.", "🛑 Interromper o cliente em momento errado.", "🤐 Falar demais e não ouvir.", "🙈 Ignorar o que o cliente respondeu.", "🔨 Forçar venda sem entender a necessidade."], warning: "Isso quebra atenção na hora." }
                 ],
                 videoCategories: [
                     { title: "Exemplos Certos", videos: [
@@ -60,13 +61,13 @@ const DataAccess = {
                 image: "meio-campo.jpg",
                 sections: [
                     { isQuote: true, title: "⭐ Regra de Ouro — Meio de Campo", content: "“Quem conduz bem, vende fácil.”" },
-                    { title: "🎯 Objetivo Meio de Campo", items: ["Conduzir o cliente fazendo perguntas chaves.", "Entender o que oferecer pro cliente.", "Conectar com a realidade dele.", "Preparar para oferecer."] },
+                    { title: "🎯 Objetivo Meio de Campo", items: ["🗣️ Conduzir o cliente fazendo perguntas chaves.", "🧠 Entender o que oferecer pro cliente.", "🤝 Conectar com a realidade dele.", "📦 Preparar para oferecer."] },
                     { title: "🔍 Indícios de Interesse", items: ["✅ Responde rápido.", "🗣️ Fala mais que você.", "❓ Faz perguntas.", "📈 Engaja na conversa."] },
-                    { title: "🎯 Foco da Conversa", items: ["Gerar interesse.", "Passar confiança.", "Dar direção ao cliente.", "---", "Não deixar o cliente desviar do assunto principal.", "Não ficar apenas conversando sem intenção de venda.", "Sempre conecte a conversa com a solução da venda."], warning: "Se o cliente dispersar ou você perder o foco, a venda esfria." },
-                    { title: "⚠️ Ponto Mais Importante", items: ["Identificar a abertura.", "Puxar a dor do cliente.", "Mostrar o caminho."], warning: "O maior erro do vendedor é não perceber quando já pode vender (o tempo certo)." },
-                    { title: "📢 Sinais de Abertura (Ataque!)", items: ["Pergunta preço.", "Pede detalhes sobre o produto.", "Pergunta o que você vende.", "Pergunta se você é vendedor."], footer: "🔥 Identificou isso? Pare de enrolar e comece o ATAQUE." },
-                    { title: "🧠 Perguntas que Quebram o Padrão", items: ["“Tu já tá desenrolando bem na fac ou ainda tá travado?”", "“Já tá conseguindo farmar bem aí ou tá difícil evoluir?”", "“Já tá conseguindo fazer dinheiro ou tá lento ainda?”"], footer: "💡 Objetivo: fazer ele expor a realidade dele." },
-                    { isError: true, title: "❌ Erros de Direcionamento", items: ["Perder o foco da conversa.", "Deixar o cliente mudar totalmente o assunto.", "Responder tudo sem puxar de volta pro objetivo.", "Ficar só “batendo papo” sem avançar.", "Não conectar a dor com a solução."], footer: "💡 Dor = o problema, incômodo ou falta que o cliente sente. (evolução, reconhecimento, experiência). É o que faz ele pensar: “preciso resolver isso.”" }
+                    { title: "🎯 Foco da Conversa", items: ["🔥 Gerar interesse.", "🛡️ Passar confiança.", "🧭 Dar direção ao cliente.", "---", "🚫 Não deixar o cliente desviar do assunto principal.", "⏳ Não ficar apenas conversando sem intenção de venda.", "🔗 Sempre conecte a conversa com a solução da venda."], warning: "Se o cliente dispersar ou você perder o foco, a venda esfria." },
+                    { title: "⚠️ Ponto Mais Importante", items: ["👀 Identificar a abertura.", "🎣 Puxar a dor do cliente.", "🗺️ Mostrar o caminho."], warning: "O maior erro do vendedor é não perceber quando já pode vender (o tempo certo)." },
+                    { title: "📢 Sinais de Abertura (Ataque!)", items: ["💲 Pergunta preço.", "📦 Pede detalhes sobre o produto.", "🛒 Pergunta o que você vende.", "👤 Pergunta se você é vendedor."], footer: "🔥 Identificou isso? Pare de enrolar e comece o ATAQUE." },
+                    { title: "🧠 Perguntas que Quebram o Padrão", items: ["🎓 “Tu já tá desenrolando bem na fac ou ainda tá travado?”", "⛏️ “Já tá conseguindo farmar bem aí ou tá difícil evoluir?”", "💸 “Já tá conseguindo fazer dinheiro ou tá lento ainda?”"], footer: "💡 Objetivo: fazer ele expor a realidade dele." },
+                    { isError: true, title: "❌ Erros de Direcionamento", items: ["🌪️ Perder o foco da conversa.", "🔀 Deixar o cliente mudar totalmente o assunto.", "🗣️ Responder tudo sem puxar de volta pro objetivo.", "☕ Ficar só “batendo papo” sem avançar.", "🔌 Não conectar a dor com a solução."], footer: "💡 <strong>Dor</strong> = o problema, incômodo ou falta que o cliente sente. (evolução, reconhecimento, experiência). É o que faz ele pensar: “preciso resolver isso.”" }
                 ],
                 videoCategories: [
                     { title: "Exemplos na Prática", videos: [
@@ -77,13 +78,19 @@ const DataAccess = {
             },
             'ataque': {
                 id: 'ataque',
-                title: "Ataque",
-                description: "Ter a solução para a necessidade do cliente e fazer a negociação do produto gerando desejo e urgência.",
-                image: "gemini.jpg",
+                title: "Ataque na Venda",
+                description: "O ataque é a quarta etapa da venda: é o momento de transformar a dor em solução, gerar desejo e criar urgência para fechar.",
+                image: "ataque.jpg",
                 sections: [
-                    { isQuote: true, title: "⭐ A Regra de Ouro", content: "“O desejo faz o cliente querer. A urgência faz o cliente agir agora.”" },
-                    { title: "🎯 Posicionamento de Solução", items: ["Apresentar a solução definitiva para a dor do cliente.", "Garantir que a solução encaixe perfeitamente no que foi discutido no Meio de Campo."] },
-                    { title: "⚡ Geração de Desejo e Urgência", items: ["Fazer a negociação destacando a exclusividade do produto.", "Utilizar gatilhos mentais para criar o desejo de posse.", "Gerar senso de urgência para fechamento rápido."], warning: "Não demonstre desespero para vender, demonstre que a oportunidade é única." }
+                    { isQuote: true, title: "⭐ Regra de Ouro", content: "“Um bom ataque é aquele que não empurra produto, resolve o problema do cliente. Sem solução → sem venda.”" },
+                    { title: "🧠 Dor, Desejo e Urgência", items: ["⚖️ Venda não é só dor. Venda forte é equilíbrio entre: <strong>dor + desejo + urgência</strong>.", "🔥 <strong>Dor</strong> mostra o problema.", "✨ <strong>Desejo</strong> mostra o que ele quer.", "⚡ <strong>Urgência</strong> faz ele agir agora.", "---", "🛑 Sem urgência, não fecha.", "😴 Sem desejo, não engaja.", "🧊 Sem dor, não conecta."] },
+                    { title: "🔥 Dor (O Problema)", items: ["🤔 A dor não é inventar necessidade.", "🔍 É identificar ou despertar algo que já faz sentido pro cliente.", "🚫 Você não cria mentira. Você evidencia um incômodo, uma falta ou uma dificuldade.", "---", "🐢 Está evoluindo devagar.", "👻 Está sem destaque na cidade.", "🐌 Está ficando pra trás.", "💸 Está gastando mais do que deveria."] },
+                    { title: "✨ Desejo (O Resultado)", items: ["🏆 Aqui é onde você ganha o cliente. Não basta mostrar o problema — você precisa mostrar o benefício.", "💭 Você faz ele imaginar o nível que ele pode alcançar e a vantagem sobre outros players.", "---", "🚀 Evoluir mais rápido.", "👑 Ter mais presença e respeito.", "🥇 Ter vantagem sobre outros players.", "🏰 Entrar já estruturado."] },
+                    { title: "⚡ Urgência (O Gatilho)", items: ["⏳ Sem urgência, não tem fechamento. O cliente até quer… mas deixa pra depois.", "⏰ Você cria um motivo para ele agir agora (Condição limitada ou Oportunidade).", "---", "🏃‍♂️ “Essa condição é só agora.”", "📈 “Depois você vai pagar mais caro.”", "🏁 “Quem pega agora sai na frente.”"] },
+                    { title: "⚙️ Como Funciona na Prática", items: ["🔗 A venda acontece quando você conecta os 3.", "1️⃣ Faz ele sentir o problema (Dor).", "2️⃣ Mostra o que ele pode ganhar (Desejo).", "3️⃣ Dá um motivo para agir agora (Urgência)."] },
+                    { title: "💬 Exemplo Prático (Comercial)", items: ["🔥 <strong>Dor:</strong> “Do jeito que você está, vai demorar muito mais pra conseguir isso.”", "✨ <strong>Desejo:</strong> “Com esse item, você já entra com muito mais presença, facilidade e vantagem.”", "⚡ <strong>Urgência:</strong> “E essa condição é só agora, então vale aproveitar hoje.”"] },
+                    { title: "🚀 Exemplo Forte (Pronto para Uso)", items: ["🔥 <strong>Dor:</strong> “Do jeito que você está, você vai evoluir bem mais devagar.”", "✨ <strong>Desejo:</strong> “Com esse VIP, você já entra em outro nível dentro da cidade.”", "⚡ <strong>Urgência:</strong> “E pegando agora, você aproveita essa condição antes que acabe.”"] },
+                    { isError: true, title: "❌ Erros no Ataque", items: ["🎯 <strong>Focar demais na dor:</strong> Pode parecer pressão ou até manipulação se exagerar.", "🧩 <strong>Desejo genérico:</strong> “Vantagem”, “presença” sem contexto perde força — precisa ser mais específico pro cliente.", "⏱️ <strong>Urgência forçada:</strong> Se não for real, o cliente sente e perde confiança.", "🤖 <strong>Sequência robótica:</strong> Ficar sempre Dor → Desejo → Urgência igualzinho pode soar mecânico.", "👥 <strong>Não adaptar ao cliente:</strong> Usar o mesmo discurso pra todo mundo diminui conversão."] }
                 ]
             },
             'fechamento': {

@@ -39,8 +39,8 @@ const DataAccess = {
             description: 'Entenda o jogador, conecte o produto com o que ele valoriza: UTILIDADE E RECONHECIMENTO.',
             image: 'policial.jpg',
             sections: [
-                { isFull: true, title: '👁️‍🗨️ 1. Leitura do Cliente', items: ['<strong>🔫 Estilo PVP:</strong> Gosta de ação, combate e destaque. Busca status em confronto. Valoriza desempenho e vantagem.', '<strong>🎭 Estilo RP:</strong> Gosta de imersão e rotina. Foco em interação e história.', '---', '⚠️ Conecte o produto com a realidade da corporação dele.'] },
-                { title: '🎯 2. Abordagem Estratégica', items: ['<strong>⏳ 1. Engajamento:</strong> "Tá há quanto tempo na polícia? Tá curtindo a experiência aqui?"', '<strong>🔥 2. Estilo (PVP):</strong> "Você participa bastante de ação? Trocação com bandido?"', '<strong>🚔 3. Estilo (RP):</strong> "Ou você é mais de RP? Fica mais na DP, treinamento?"'] },
+                { isFull: true, title: '👁️‍🗨️ 1. Leitura do Cliente', items: ['<strong>🔫 Estilo PVP:</strong> Gosta de ação, combate e destaque. Busca status em confronto. Valoriza desempenho e vantagem.', '<strong>🎭 Estilo RP:</strong> Gosta de imersão e rotina. Foco em interação e história. Valoriza utilidade e experiência.'] },
+                { title: '🎯 2. Abordagem Estratégica', items: ['<strong>⏳ 1. Engajamento:</strong> "Tá há quanto tempo na polícia? Tá curtindo a experiência aqui?" ➔ <em style="color:#aaa">Tempo alto = maior chance de compra.</em>', '<strong>🔥 2. Estilo (PVP):</strong> "Você participa bastante de ação? Trocação com bandido?"', '<strong>🚔 3. Estilo (RP):</strong> "Ou você é mais de RP? Fica mais na DP, treinamento?"'] },
                 { title: '🧠 3. Gatilhos & Foco', items: ['“Mano, tendo VIP tu acaba ganhando muita moral... A galera sempre pede carro emprestado.”', '“Suas ações te deixam conhecido como gente boa, útil — e isso pesa MUITO para subir de cargo.”', '---', '🛍️ <strong>VENDENDO DE VERDADE:</strong>', '• 🛠️ Utilidade (ferramentas, economia de tempo).', '• 🎖️ Reconhecimento (status na corporação, autoridade).'] }
             ]
         },
@@ -51,8 +51,8 @@ const DataAccess = {
             description: 'Vender para um médico não é falar do produto. É ENTENDER, CONECTAR E GERAR VALOR REAL.',
             image: 'medico.jpg',
             sections: [
-                { title: '🧩 1. Entenda o Perfil', items: ['<strong>🏥 Decisor e Líder:</strong> Responsável por decisões importantes; Lidera equipes.', '<strong>💳 Poder de Compra:</strong> Investe quando vê valor e resultado; Não compra por impulso.'] },
-                { title: '🎯 2. Perguntas Inteligentes', items: ['<strong>🏢 1. Estrutura atual:</strong> "Hoje tua equipe tá mais organizada ou ainda tá meio na correria?"', '<strong>📈 2. Objetivos:</strong> "Tu quer crescer mais agora ou tá mais focado em focar focar manter?"', '<strong>🤕 3. Dores e Desafios:</strong> "O que mais tá te dando dor de cabeça hoje aí na clínica?"'] },
+                { title: '🧩 1. Entenda o Perfil', items: ['<strong>🏥 Decisor e Líder:</strong> Responsável por decisões importantes; Lidera equipes e influencia resultados.', '<strong>💳 Poder de Compra:</strong> Investe quando vê valor e resultado; Não compra por impulso.'] },
+                { title: '🎯 2. Perguntas Inteligentes', items: ['<strong>🏢 1. Estrutura atual:</strong> "Hoje tua equipe tá mais organizada ou ainda tá meio na correria?"', '<strong>📈 2. Objetivos:</strong> "Tu quer crescer mais agora ou tá mais focado em manter como tá?"', '<strong>🤕 3. Dores e Desafios:</strong> "O que mais tá te dando dor de cabeça hoje aí na clínica?"'] },
                 { title: '🧠 3. Foco Real (O que ele busca)', items: ['“Resultados extraordinários vêm de estrutura, pessoas e processos.”', '“Aqui dentro tu não precisa ser só mais um médico... Tu pode ser referência na cidade.”', '---', '👑 <strong>STATUS + IMAGEM:</strong> Mansão top, carros de luxo e estilo marcante.'] },
                 { isFull: true, title: '🛡️ 4. Lidando com Objeções', items: ['<strong>💸 "Está caro."</strong> ➔ "Entendo. Mas compara isso com o valor que isso vai gerar na tua vida e no teu nome."', '<strong>❓ "Será que isso vale a pena?"</strong> ➔ "Se tu tá se perguntando isso... É porque já viu valor. A diferença é até onde tu quer chegar."', '<strong>🤔 "Vou pensar."</strong> ➔ "Perfeito! Posso te mostrar alguns resultados rápidos que já podemos alcançar juntos?"'] }
             ]
@@ -64,7 +64,7 @@ const DataAccess = {
             description: 'Esse cliente já tem história. Ele não compra por precisar — ele compra para MARCAR O NOME DELE.',
             image: 'staff.jpg',
             sections: [
-                { title: '👁️‍🗨️ 1. Leitura do Cliente', items: ['<strong>🎖️ Experiente:</strong> 400+ horas de cidade; Já conhece o servidor e as mecânicas.', '<strong>🤝 Consolidado:</strong> Já tem amigos, rotina dentro da cidade.', '---', '⚠️ <strong>Observação:</strong> Se for Staff, RP não faz diferença para ele, então vender itens de destaque visual é melhor.'] },
+                { title: '👁️‍🗨️ 1. Leitura do Cliente', items: ['<strong>🎖️ Experiente:</strong> 400+ horas de cidade; Já conhece o servidor e as mecânicas.', '<strong>🤝 Consolidado:</strong> Já tem amigos, rotina dentro da cidade e inserido na comunidade.', '---', '⚠️ <strong>Observação:</strong> Se for Staff, RP não faz diferença para ele, então vender itens de destaque visual é melhor.'] },
                 { title: '🎯 2. Abordagem Estratégica', items: ['<strong>⏳ 1. Tempo:</strong> "E aí mano, tu já tá há mó cota aqui na cidade né?"', '<strong>🏢 2. Situação:</strong> "Já tem tua galera aí? Já tá estruturado?"', '<strong>📍 3. Posicionamento:</strong> "Mas a galera te reconhece fácil? Tipo, só de bater o olho já sabem que é você?"'] },
                 { title: '🧠 3. Gatilhos & Foco', items: ['“Mano, tu já tem muita história na cidade... O certo era tu já ter uma identidade forte aqui dentro.”', '“ID muito alto acaba passando despercebido... Ninguém grava.”', '---', '🛍️ <strong>O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</strong>', '• 🎭 Identidade e presença.', '• 🏆 Reconhecimento marcado na cidade.'] },
                 { isFull: true, title: '🛒 4. Recomendações de Produto', items: ['⚠️ <strong>Foco Total em Identidade:</strong> "Tu já fez tudo... Agora falta ser reconhecido."', '---', '<strong>🆔 ID Exclusivo (< 1000):</strong> Curto, marcante e respeitado.', '<strong>👕 Roupa Personalizada:</strong> Visual único e reconhecimento imediato.', '<strong>👑 VIP Lançamento:</strong> Benefícios gerais.', '<strong>🔫 Skin de Arma:</strong> Destaque visual.'] }
@@ -200,7 +200,7 @@ const Controller = {
             <div class="overlay"></div>
             <style>
                 .funnelStepTitle { font-size: 1.15rem !important; font-weight: 800; }
-                .funnelStepDesc { font-size: 0.9rem !important; line-height: 1.4; text-wrap: balance; }
+                .funnelStepDesc { font-size: 0.95rem !important; line-height: 1.4; text-wrap: balance; }
             </style>
             <div class="funnelContainer">
                 ${DataAccess.getCategories().map(cat => `
@@ -220,20 +220,26 @@ const Controller = {
                 <style>
                     .layoutContainer { max-width: 100% !important; padding: 0 !important; display: flex; }
                     .sidebarNavigation { width: 320px !important; flex-shrink: 0; }
-                    .mainWorkspace { padding: 2rem 12% !important; flex-grow: 1; max-width: calc(100vw - 320px); }
-                    .pageTitle { font-size: 1.7rem !important; }
-                    .pageDescription { font-size: 0.95rem !important; line-height: 1.5; }
-                    .infoCard h2 { font-size: 1.15rem !important; }
+                    .mainWorkspace { padding: 2rem 5% !important; flex-grow: 1; max-width: calc(100vw - 320px); }
+                    .pageTitle { font-size: 1.8rem !important; }
+                    .pageDescription { font-size: 1.05rem !important; line-height: 1.5; }
+                    .infoCard h2 { font-size: 1.25rem !important; }
                     .dataList { display: block; width: 100%; position: relative; }
-                    .dataList li { font-size: 0.86rem !important; line-height: 1.5; margin-bottom: 6px; white-space: nowrap; width: fit-content; position: relative; padding-right: 45px !important; }
-                    .infoCard { overflow-x: auto; scrollbar-width: thin; scrollbar-color: rgba(212,175,55,0.3) transparent; }
-                    .navItem { font-size: 1rem !important; white-space: nowrap; padding: 1rem 1.4rem !important; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); }
-                    .hintBox, .warningBox { font-size: 0.82rem !important; padding: 0.8rem !important; }
-                    .quoteText { font-size: 1rem !important; font-style: italic; }
-                    .videoLabel { font-size: 0.8rem !important; padding: 0.35rem !important; }
-                    .topHeadingFree { grid-column: 1 / -1; text-align: center; font-size: 1.45rem; color: var(--accent-gold); font-weight: 800; margin: 1.2rem 0 1rem 0; text-transform: uppercase; letter-spacing: 1px; }
+                    .dataList li { font-size: 0.9rem !important; line-height: 1.5; margin-bottom: 6px; white-space: nowrap; width: fit-content; position: relative; padding-right: 45px !important; }
+                    .infoCard { 
+                        overflow-x: auto; 
+                        scrollbar-width: thin; 
+                        scrollbar-color: rgba(212,175,55,0.3) transparent; 
+                        width: max-content; 
+                        min-width: 100%;
+                    }
+                    .navItem { font-size: 1.05rem !important; white-space: nowrap; padding: 1.1rem 1.4rem !important; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); }
+                    .hintBox, .warningBox { font-size: 0.88rem !important; padding: 0.85rem !important; }
+                    .quoteText { font-size: 1.05rem !important; font-style: italic; }
+                    .videoLabel { font-size: 0.85rem !important; padding: 0.35rem !important; }
+                    .topHeadingFree { grid-column: 1 / -1; text-align: center; font-size: 1.55rem; color: var(--accent-gold); font-weight: 800; margin: 1.2rem 0 1rem 0; text-transform: uppercase; letter-spacing: 1px; }
                     .listDivider { margin: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); list-style: none; width: 100%; }
-                    .centeredRecommendationCard { grid-column: 1 / -1 !important; justify-self: center !important; width: 100% !important; max-width: 500px !important; margin: 0 auto !important; }
+                    .centeredRecommendationCard { grid-column: 1 / -1 !important; justify-self: center !important; width: 100% !important; max-width: 600px !important; margin: 0 auto !important; }
                 </style>
                 <div class="layoutContainer">
                     <aside class="sidebarNavigation">
@@ -251,7 +257,7 @@ const Controller = {
                                         <div class="profileSubMenu" style="margin-left: 1rem; border-left: 1px solid rgba(212,175,55,0.3); margin-bottom: 10px;">
                                             ${Object.values(profiles).map(p => `
                                                 <div class="navItem ${BusinessLogic.state.currentProfileId === p.id ? 'navSubItemActive' : ''}" 
-                                                     style="font-size: 0.9rem !important; padding: 0.7rem 1.2rem !important; text-transform: none; border-bottom: none;" 
+                                                     style="font-size: 0.95rem !important; padding: 0.8rem 1.2rem !important; text-transform: none; border-bottom: none;" 
                                                      onclick="BusinessLogic.navigateToProfile('${p.id}')">👤 ${p.shortTitle}</div>
                                             `).join('')}
                                         </div>` : ''}
@@ -273,7 +279,7 @@ const Controller = {
                                     return `<div class="topHeadingFree">${s.title}</div>`;
                                 }
                                 if (s.isRecommendationHeader) {
-                                    return `<div class="cardSpanFull" style="margin-top: 1rem;"><h2 style="font-size: 1.3rem; color: var(--accent-gold); text-align: center; width: 100%;">${s.title}</h2></div>`;
+                                    return `<div class="cardSpanFull" style="margin-top: 1rem;"><h2 style="font-size: 1.4rem; color: var(--accent-gold); text-align: center; width: 100%;">${s.title}</h2></div>`;
                                 }
                                 return `
                                 <section class="infoCard ${s.isQuote || s.isError || s.isFull ? 'cardSpanFull' : ''} ${s.isQuote ? 'quoteCard' : ''} ${s.isError ? 'errorCard' : ''} ${s.isCenteredCard ? 'centeredRecommendationCard' : ''}">
@@ -290,7 +296,7 @@ const Controller = {
                         </div>
                         ${data.videoCategories ? data.videoCategories.map(cat => `
                             <section class="videoSection">
-                                <h1 class="sectionTitle" style="font-size: 1.25rem;">${cat.title}</h1>
+                                <h1 class="sectionTitle" style="font-size: 1.35rem;">${cat.title}</h1>
                                 <div class="videosGrid">${cat.videos.map(v => `<div class="videoWrapper"><h3 class="videoLabel" style="color:${v.color}; border: 1px solid ${v.color};">${v.label}</h3><div class="videoContainer"><iframe src="${v.url}" allow="autoplay"></iframe></div></div>`).join('')}</div>
                             </section>`).join('') : ''}
                     </main>

@@ -7,10 +7,11 @@ const DataAccess = {
             description: 'Você lidera pessoas. A gente te ajuda a fazer sua facção crescer, ficar forte e ser a mais respeitada da cidade!',
             image: 'dono de faccao.jpg',
             sections: [
-                { title: '👁️‍🗨️ 1. Leitura do Cliente', items: ['<strong>👑 Líder de Facção:</strong> Responsável por várias pessoas; Toma decisões estratégicas; Pensa no coletivo, não só nele.', '<strong>💳 Poder de Compra:</strong> Variável. Pode ter muito dinheiro ou pouco, mas tem muita ambição. Define totalmente o tipo de oferta.', '---', '⚠️ <strong>Observação:</strong> O líder não compra para ele — ele compra para a facção crescer.'] },
-                { title: '🎯 2. Abordagem Estratégica', items: ['<strong>🏗️ 1. Estrutura da Facção:</strong> "E aí mano, como que tá tua fac hoje?" ➔ <em>Objetivo: Entender nível atual.</em>', '<strong>🚀 2. Objetivo da Facção:</strong> "Quantos membros estão pegando ativos aí a noite? Tu quer crescer mais ainda ou tá suave como tá?" ➔ <em>Objetivo: Ativar ambição.</em>', '<strong>🚧 3. Dificuldades Atuais:</strong> "O que mais tá pegando hoje? Fac tá com muito farm aí? Tem bastante grana? Tá ganhando os eventos?" ➔ <em>Objetivo: Identificar dor.</em>'] },
-                { isFull: true, title: '🧠 3. Gatilho Mental & Foco', items: ['“Mano, facção grande não cresce só na bala... Tem que ter estrutura aqui para as pessoas quererem ficar.”', '“Quanto mais tu fortalece tua fac, mais gente cola, mais resultado vem.”', '“Fac forte é fac organizada e com incentivo pros membros.”', '---', '🛍️ <strong>O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</strong>', '• 📈 Crescimento da facção.', '• 💪 Poder e respeito.', '• 🔥 Motivação dos membros.', '---', '🏆 <strong>Ele não quer item — ele quer uma facção dominante.</strong>'] },
-                { isFull: true, title: '🛒 4. Recomendações (Foco na Facção)', items: ['<strong>🏰 Estrutura de Facção (Principal):</strong> VIP Facção Premium: Mais carros, Baú extra, Log de baú. (✔ Mais controle, ✔ Fac mais estruturada).', '<strong>💸 Melhorar Economia Interna:</strong> Farm vaquinha / pescaria: Gera dinheiro dentro da facção. (✔ Menos dependência da rua).', '<strong>⚙️ Farm Ativos:</strong> Produção de farm dentro do QG. Não precisa sair. (✔ Segurança, ✔ Eficiência, ✔ Mais produção).', '<strong>🎁 Incentivo para Membros (Muito Forte):</strong> Compra de VIPs para sorteio: VIP PVP, VIP Ouro. (✔ Incentiva membros, ✔ Aumenta engajamento).', '<strong>🎭 Identidade Visual:</strong> Uniforme / Nome da facção: Visual único. Personalização do QG: Telão, portão, outdoor.'] }
+                { isFull: true, title: '👁️‍🗨️ 1. Leitura do Cliente', items: ['<strong>👑 Líder de Facção:</strong> Responsável por várias pessoas; Toma decisões estratégicas; Pensa no coletivo, não só nele.', '<strong>💳 Poder de Compra:</strong> Variável. Pode ter muito dinheiro ou pouco, mas tem muita ambição. Define totalmente o tipo de oferta.', '---', '⚠️ <strong>Observação:</strong> O líder não compra para ele — ele compra para a facção crescer.'] },
+                { title: '🎯 2. Abordagem Estratégica', items: ['<strong>🏗️ 1. Estrutura da Facção:</strong> "E aí mano, como que tá tua fac hoje?" ➔ <em style="color:#aaa">Objetivo: Entender nível atual.</em>', '<strong>🚀 2. Objetivo da Facção:</strong> "Quantos membros estão pegando ativos aí a noite? Tu quer crescer mais ainda ou tá suave como tá?" ➔ <em style="color:#aaa">Objetivo: Ativar ambição.</em>', '<strong>🚧 3. Dificuldades Atuais:</strong> "O que mais tá pegando hoje? Fac tá com muito farm aí? Tem bastante grana? Tá ganhando os eventos?" ➔ <em style="color:#aaa">Objetivo: Identificar dor.</em>'] },
+                { title: '🧠 3. Gatilho Mental & Foco', items: ['“Mano, facção grande não cresce só na bala... Tem que ter estrutura aqui para as pessoas quererem ficar.”', '“Quanto mais tu fortalece tua fac, mais gente cola, mais resultado vem.”', '“Fac forte é fac organizada e com incentivo pros membros.”', '---', '🛍️ <strong>O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</strong>', '• Crescimento da facção.', '• Poder e respeito.', '• Motivação dos membros.', '---', '🏆 <strong>Ele não quer item — ele quer uma facção dominante.</strong>'] },
+                { isFull: true, title: '🛒 4. Recomendações (Foco na Facção)', items: ['<strong>🏰 Estrutura de Facção (Principal):</strong> VIP Facção Premium: Mais carros, baú extra, log de baú. (✔ Mais controle, ✔ Fac mais estruturada).', '<strong>💸 Melhorar Economia Interna:</strong> Farm vaquinha / pescaria: Gera dinheiro dentro da facção. (✔ Menos dependência da rua).', '<strong>⚙️ Farm Ativos:</strong> Produção de farm dentro do QG. Não precisa sair. (✔ Segurança, ✔ Eficiência, ✔ Mais produção).', '<strong>🎁 Incentivo para Membros (Muito Forte):</strong> Compra de VIPs para sorteio: VIP PVP, VIP Ouro. (✔ Incentiva membros, ✔ Aumenta engajamento).', '<strong>🎭 Identidade Visual:</strong> Uniforme / nome da facção: Visual único. Personalização do QG: Telão, portão, outdoor.'] },
+                { isError: true, title: '❌ Erros do Vendedor (Líder)', items: ['<strong>🚫 Falar só do item:</strong> 👉 É só descrever o que o produto tem, sem explicar para que serve de verdade.', '<strong>🚫 Ignorar a facção:</strong> 👉 É falar com o líder como se ele fosse sozinho, sem considerar os membros.', '<strong>🚫 Não investigar a situação:</strong> 👉 É não fazer perguntas para entender como a facção dele está hoje.', '<strong>🚫 Não ativar ambição:</strong> 👉 É não fazer ele querer crescer, evoluir ou dominar mais.', '<strong>🚫 Não gerar urgência:</strong> 👉 É não dar motivo para ele comprar agora.'] }
             ]
         },
         'novato': {
@@ -22,7 +23,7 @@ const DataAccess = {
             sections: [
                 { isQuote: true, title: '⭐ A Pergunta de Ouro', content: '“Tu prefere ir evoluindo na raça ou curte já dar uma acelerada no começo?” 🚀', footer: '💡 Perfeita para puxar venda sem tocar em dinheiro direto.' },
                 { title: '🧩 1. Leitura do Cliente', items: ['<strong>🆕 Iniciante:</strong> Pouco tempo de cidade; Ainda não tem muitos itens; Sem vínculo forte.', '<strong>💳 Poder de Compra:</strong> Crucial. Pode variar muito conforme a vida real do cliente.', '---', '⚠️ <strong>Observação:</strong> Esse cliente ainda não valoriza a cidade — você precisa criar esse valor nele.'] },
-                { title: '🎯 2. Abordagem Estratégica', items: ['<strong>🧊 1. Quebra de Gelo:</strong> "Qual teu nome mano?", "Como é que tu conheceu a cidade?" ➔ <em>Objetivo: Criar conexão.</em>', '<strong>🎮 2. Contexto:</strong> "Já jogava RP antes ou é tua primeira vez?" ➔ <em>Entender experiência.</em>', '<strong>💼 3. Forma de Ganho:</strong> Usa a pergunta de ouro ➔ <em>Entender poder de compra.</em>', '<strong>📍 4. Objetivo:</strong> "O que tu quer virar aqui na cidade?" ➔ <em>Identificar direção.</em>'] },
+                { title: '🎯 2. Abordagem Estratégica', items: ['<strong>🧊 1. Quebra de Gelo:</strong> "Qual teu nome mano?", "Como é que tu conheceu a cidade?" ➔ <em style="color:#aaa">Objetivo: Criar conexão.</em>', '<strong>🎮 2. Contexto:</strong> "Já jogava RP antes ou é tua primeira vez?" ➔ <em style="color:#aaa">Entender experiência.</em>', '<strong>💼 3. Forma de Ganho:</strong> Usa a pergunta de ouro ➔ <em style="color:#aaa">Entender poder de compra.</em>', '<strong>📍 4. Objetivo:</strong> "O que tu quer virar aqui na cidade?" ➔ <em style="color:#aaa">Identificar direção.</em>'] },
                 { isFull: true, title: '🧠 3. Gatilho Mental & Foco', items: ['“Mano, no começo da cidade quem começa já com vantagem cresce MUITO mais rápido...”', '“Se tu já entra estruturado, tu sai na frente de geral.”', '---', '🛍️ <strong>O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</strong>', '• 🚀 <strong>Evolução rápida:</strong> Progride mais, sai na frente.', '• ⚡ <strong>Vantagem inicial:</strong> Mais facilidade no começo.', '• 😌 <strong>Facilidade:</strong> Menos dor de cabeça, mais foco no jogo.', '---', '🏁 <strong>Ele não quer ficar perdido — quer começar forte!</strong>'] }
             ]
         },
@@ -33,8 +34,8 @@ const DataAccess = {
             description: 'Entenda o jogador, conecte o produto com o que ele valoriza: UTILIDADE E RECONHECIMENTO.',
             image: 'policial.jpg',
             sections: [
-                { isFull: true, title: '👁️‍🗨️ 1. Leitura do Cliente', items: ['<strong>🔫 Estilo PVP:</strong> Gosta de ação, combate e destaque. Busca status em confronto. Valoriza desempenho.', '<strong>🎭 Estilo RP:</strong> Gosta de imersão e rotina. Foco em interação e história. Valoriza utilidade.', '---', '⚠️ Conecte o produto com o que ele valoriza.'] },
-                { title: '🎯 2. Abordagem Estratégica', items: ['<strong>⏳ 1. Engajamento:</strong> "Tá há quanto tempo na polícia? Tá curtindo a experiência?" ➔ <em>Tempo alto = maior chance de compra.</em>', '<strong>🔥 2. Estilo (PVP):</strong> "Você participa bastante de ação? Trocação com bandido?" ➔ <em>Se sim -> produtos de combate.</em>', '<strong>🚔 3. Estilo (RP):</strong> "Ou você é mais de RP? Fica mais na DP, treinamento?" ➔ <em>Se sim -> produtos de utilidade.</em>'] },
+                { isFull: true, title: '👁️‍🗨️ 1. Leitura do Cliente', items: ['<strong>🔫 Estilo PVP:</strong> Gosta de ação, combate e destaque. Busca status em confronto. Valoriza desempenho e vantagem.', '<strong>🎭 Estilo RP:</strong> Gosta de imersão e rotina. Foco em interação e história. Valoriza utilidade e experiência.'] },
+                { title: '🎯 2. Abordagem Estratégica', items: ['<strong>⏳ 1. Engajamento:</strong> "Tá há quanto tempo na polícia? Tá curtindo a experiência aqui?" ➔ <em style="color:#aaa">Tempo alto = maior chance de compra.</em>', '<strong>🔥 2. Estilo (PVP):</strong> "Você participa bastante de ação? Trocação com bandido?" ➔ <em style="color:#aaa">Se sim -> produtos de combate.</em>', '<strong>🚔 3. Estilo (RP):</strong> "Ou você é mais de RP? Fica mais na DP, treinamento?" ➔ <em style="color:#aaa">Se sim -> produtos de utilidade.</em>'] },
                 { title: '🧠 3. Gatilhos & Foco', items: ['“Mano, tendo VIP tu acaba ganhando muita moral... A galera sempre pede carro emprestado.”', '“Isso te deixa conhecido como gente boa, útil — e isso pesa MUITO para subir de cargo.”', '---', '🛍️ <strong>VENDENDO DE VERDADE:</strong>', '• 🛠️ Utilidade (Ferramentas, economia de tempo).', '• 🎖️ Reconhecimento (Status na corporação, autoridade).'] }
             ]
         },
@@ -45,8 +46,8 @@ const DataAccess = {
             description: 'Vender para um médico não é falar do produto. É ENTENDER, CONECTAR E GERAR VALOR REAL.',
             image: 'medico.jpg',
             sections: [
-                { title: '🧩 1. Entenda o Perfil', items: ['<strong>🏥 Decisor e Líder:</strong> Responsável por decisões importantes; Influencia resultados.', '<strong>💳 Poder de Compra:</strong> Investe quando vê valor e resultado; Não compra por impulso.'] },
-                { title: '🎯 2. Perguntas Inteligentes', items: ['<strong>🏢 1. Estrutura atual:</strong> "Hoje tua equipe tá mais organizada ou ainda tá meio na correria?" ➔ <em>Objetivo: Entender cenário real.</em>', '<strong>📈 2. Objetivos:</strong> "Tu quer crescer mais agora ou tá mais focado em manter como tá?" ➔ <em>Objetivo: Identificar ambição.</em>', '<strong>🤕 3. Dores e Desafios:</strong> "O que mais tá te dando dor de cabeça hoje aí na clínica?" ➔ <em>Objetivo: Achar o problema principal.</em>'] },
+                { title: '🧩 1. Entenda o Perfil', items: ['<strong>🏥 Decisor e Líder:</strong> Responsável por decisões importantes; Lidera equipes e influencia resultados.', '<strong>💳 Poder de Compra:</strong> Investe quando vê valor e resultado; Não compra por impulso.'] },
+                { title: '🎯 2. Perguntas Inteligentes', items: ['<strong>🏢 1. Estrutura atual:</strong> "Hoje tua equipe tá mais organizada ou ainda tá meio na correria?" ➔ <em style="color:#aaa">Objetivo: Entender cenário real.</em>', '<strong>📈 2. Objetivos:</strong> "Tu quer crescer mais agora ou tá mais focado em manter como tá?" ➔ <em style="color:#aaa">Objetivo: Identificar ambição.</em>', '<strong>🤕 3. Dores e Desafios:</strong> "O que mais tá te dando dor de cabeça hoje aí na clínica?" ➔ <em style="color:#aaa">Objetivo: Achar o problema principal.</em>'] },
                 { title: '🧠 3. Foco Real (O que ele busca)', items: ['“Resultados extraordinários vêm de estrutura, pessoas e processos.”', '“Aqui dentro tu não precisa ser só mais um médico... Tu pode ser referência na cidade.”', '---', '🤝 <strong>COLETIVO:</strong> Farm de vaquinha / pesca (gera renda real).', '👑 <strong>STATUS + IMAGEM:</strong> Mansão top, carros de luxo e estilo marcante.'] },
                 { isFull: true, title: '🛡️ 4. Lidando com Objeções', items: ['<strong>💸 "Está caro."</strong> ➔ "Entendo. Mas compara isso com o valor que isso vai gerar na tua vida e no teu nome."', '<strong>❓ "Será que isso vale a pena?"</strong> ➔ "Se tu tá se perguntando isso... É porque já viu valor. A diferença é até onde tu quer chegar."', '<strong>🤔 "Vou pensar."</strong> ➔ "Perfeito! Posso te mostrar alguns resultados rápidos que já podemos alcançar juntos?"'] }
             ]
@@ -128,7 +129,7 @@ const DataAccess = {
                     { title: "🔥 Dor (O Problema)", items: ["🤔 A dor não é inventar necessidade.", "🔍 Identificar ou despertar algo que já faz sentido para o cliente.", "🚫 Você não cria mentira. Você evidencia um incômodo, uma falta ou uma dificuldade.", "---", "🐢 Está evoluindo devagar.", "👻 Está sem destaque na cidade.", "🐌 Está ficando para trás.", "💸 Está gastando mais do que deveria."] },
                     { title: "✨ Desejo (o que ele quer conquistar)", items: ["🏆 Aqui é onde você ganha o cliente. Não basta mostrar o problema — você precisa mostrar o benefício.", "💭 Você faz ele imaginar o nível que ele pode alcançar.", "---", "🚀 Evoluir mais rápido.", "👑 Ter mais presença e respeito.", "🥇 Ter vantagem sobre outros players.", "🏰 Entrar já estruturado."] },
                     { title: "⚡ Urgência (O Gatilho)", items: ["⏳ Sem urgência, não tem fechamento. O cliente até quer… mas deixa para depois.", "⏰ Você cria um motivo para ele agir agora (condição limitada ou oportunidade).", "---", "🏃‍♂️ “Essa condição é só agora.”", "📈 “Depois você vai pagar mais caro.”", "🏁 “Quem pega agora sai na frente.”"] },
-                    { isError: true, title: "❌ Erros no Ataque", items: ["🎯 <strong>Focar demais na dor:</strong> Pode parecer pressão exagerada.", "🧩 <strong>Desejo genérico:</strong> “Vantagem” e “presença” sem contexto perdem força.", "⏱️ <strong>Urgência forçada:</strong> Se não for real, o cliente sente e você perde a confiança.", "🤖 <strong>Sequência robótica:</strong> Ficar sempre no automático soa mecânico.", "👥 <strong>Não adaptar ao cliente:</strong> Usar o mesmo discurso para todo mundo diminui a sua conversão."] }
+                    { isError: true, title: "❌ Erros no Ataque", items: ["🎯 <strong>Focar demais na dor:</strong> Pode parecer pressão ou até manipulação se exagerar.", "🧩 <strong>Desejo genérico:</strong> “Vantagem” e “presença” sem contexto perdem força.", "⏱️ <strong>Urgência forçada:</strong> Se não for real, o cliente sente e você perde a confiança.", "🤖 <strong>Sequência robótica:</strong> Ficar sempre no automático soa mecânico.", "👥 <strong>Não adaptar ao cliente:</strong> Usar o mesmo discurso para todo mundo diminui a sua conversão."] }
                 ]
             },
             'fechamento': {
@@ -190,7 +191,17 @@ const Controller = {
     },
 
     templates: {
-        menu: () => `<div class="overlay"></div><div class="funnelContainer">${DataAccess.getCategories().map(cat => `<div class="funnelStep step${cat.id.charAt(0).toUpperCase() + cat.id.slice(1)}" onclick="BusinessLogic.navigateToCategory('${cat.id}')"><span class="funnelStepTitle">${cat.title}</span><span class="funnelStepDesc">${cat.desc}</span></div>`).join('')}</div>`,
+        menu: () => `
+            <div class="overlay"></div>
+            <div class="funnelContainer">
+                ${DataAccess.getCategories().map(cat => `
+                    <div class="funnelStep step${cat.id.charAt(0).toUpperCase() + cat.id.slice(1)}" onclick="BusinessLogic.navigateToCategory('${cat.id}')">
+                        <span class="funnelStepTitle">${cat.title}</span>
+                        <span class="funnelStepDesc">${cat.desc}</span>
+                    </div>
+                `).join('')}
+            </div>`,
+
         category: (baseData) => {
             const profiles = DataAccess.getProfiles();
             const data = BusinessLogic.state.currentProfileId ? profiles[BusinessLogic.state.currentProfileId] : baseData;
@@ -216,7 +227,8 @@ const Controller = {
                                                      style="font-size: 0.8rem; padding: 0.6rem 1rem; text-transform: none;" 
                                                      onclick="BusinessLogic.navigateToProfile('${p.id}')">👤 ${p.shortTitle}</div>
                                             `).join('')}
-                                        </div>` : ''}`;
+                                        </div>` : ''}
+                                `;
                             }).join('')}
                         </nav>
                     </aside>
@@ -242,8 +254,16 @@ const Controller = {
                         ${data.videoCategories ? data.videoCategories.map(cat => `
                             <section class="videoSection">
                                 <h1 class="sectionTitle">${cat.title}</h1>
-                                <div class="videosGrid">${cat.videos.map(v => `<div class="videoWrapper"><h3 class="videoLabel" style="color:${v.color}; border: 1px solid ${v.color};">${v.label}</h3><div class="videoContainer"><iframe src="${v.url}" allow="autoplay"></iframe></div></div>`).join('')}</div>
-                            </section>`).join('') : ''}
+                                <div class="videosGrid">
+                                    ${cat.videos.map(v => `
+                                        <div class="videoWrapper">
+                                            <h3 class="videoLabel" style="color:${v.color}; border: 1px solid ${v.color};">${v.label}</h3>
+                                            <div class="videoContainer"><iframe src="${v.url}" allow="autoplay"></iframe></div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </section>
+                        `).join('') : ''}
                     </main>
                 </div>
                 <style>

@@ -2,7 +2,7 @@ const DataAccess = {
     getCategories: () => [
         { id: 'olheiro', title: '🕵️‍♂️ Olheiro', desc: 'Entender qual o melhor momento pra abordar o cliente.' },
         { id: 'defesa', title: '🛡️ Defesa', desc: 'Ter a atenção do cliente pra você.' },
-        { id: 'meio', title: '⚽ Meio de Campo', desc: 'Terceiro passo, entender a necessidade do cliente através de perguntas chaves.' },
+        { id: 'meio', title: '⚽ Meio de Campo', desc: 'O meio de campo é a terceira etapa da venda: entender a necessidade do cliente através de perguntas chaves.' },
         { id: 'ataque', title: '⚔️ Ataque', desc: 'Ter a solução para a necessidade do cliente e fazer a negociação do produto gerando desejo e urgência.' },
         { id: 'fechamento', title: '🤝 Fechamento', desc: 'Apresentar as formas de pagamento: Cartão de Crédito/Pix.' },
         { id: 'posvenda', title: '📦 Pós Venda', desc: 'Ir até o cliente ver se os itens chegaram corretamente, tunar os carros.' }
@@ -19,14 +19,13 @@ const DataAccess = {
                     { isQuote: true, title: "⭐ A Regra de Ouro", content: "“Quem tem visão enxerga a venda antes dela existir.”" },
                     { title: "🎯 Objetivo do Olheiro", items: ["🗣️ O cliente está disponível para conversar?", "🧠 Você vai conseguir a atenção dele?", "💰 Existe oportunidade de venda naquele momento?"] },
                     { title: "⏱️ Tempo de Observação", items: ["⏳ Mínimo: 2 minutos.", "⏰ Ideal: 3 a 5 minutos."], warning: "Abordar no momento errado você vai perder tempo." },
-                    { title: "🚶‍♂️ Comportamento do Cliente", items: ["🗺️ Está perdido?", "👣 Está andando sem rumo?", "🛠️ Está testando coisas?", "🧍‍♂️ Está parado?"], footer: "💡 Normalmente cliente em momento tranquilo tem chance de te dar atenção." },
                     { title: "✅ Sinais de Abertura", items: ["👤 Cliente sozinho.", "🧭 Cliente perdido / sem direção.", "👀 Cliente olhando ao redor.", "🛋️ Cliente parado.", "🗣️ Cliente em resenha."] },
                     { isError: true, title: "❌ Erros do Vendedor", items: ["🏃‍♂️💨 Abordar instantaneamente sem observar.", "🛑 Interromper o cliente quando ele não quer.", "👨‍👩‍👧‍👦 Tentar vender para cliente ou grupo fechado ou em ação."] }
                 ],
                 videoCategories: [
                     { title: "Adicional em Vídeo", videos: [
-                        { label: "EXEMPLO DE NÃO ATENDER", url: "https://drive.google.com/file/d/1lLK7Rl9aun4TBVSjbVVRYapQO4VOIZfc/preview", color: "#ef4444" },
-                        { label: "EXEMPLO DE COMO ATENDER", url: "https://drive.google.com/file/d/1nmAOR_S0mm8jWb5VchfBfp2Fo33kiRaq/preview", color: "#22c55e" }
+                        { label: "EXEMPLO DE COMO ATENDER", url: "https://drive.google.com/file/d/1nmAOR_S0mm8jWb5VchfBfp2Fo33kiRaq/preview", color: "#22c55e" },
+                        { label: "EXEMPLO DE NÃO ATENDER", url: "https://drive.google.com/file/d/1lLK7Rl9aun4TBVSjbVVRYapQO4VOIZfc/preview", color: "#ef4444" }
                     ]}
                 ]
             },
@@ -39,14 +38,14 @@ const DataAccess = {
                     { isQuote: true, title: "⭐ A Regra de Ouro", content: "“Se você não tem a atenção do cliente, você não tem venda.” 🚀" },
                     { title: "🛡️ O Que é Defesa?", items: ["Defesa é criar conexão com o cliente pra ganhar atenção e iniciar a conversa."], warning: "Sem conexão ➔ sem atenção ➔ sem venda." },
                     { title: "🎯 Objetivo da Defesa", items: ["Fazer o cliente parar.", "Ganhar alguns segundos de atenção.", "Iniciar uma conversa natural."], footer: "💡 Aqui começa a venda de verdade." },
-                    { title: "✅ O Que FAZER", items: ["Falar como pessoa, não como vendedor.", "Usar perguntas pra entender o cliente.", "Criar curiosidade antes de vender."], footer: "💡 Primeiro conecta, depois vende." },
+                    { title: "✅ O Que FAZER", items: ["Falar como pessoa, não como vendedor.", "Usar perguntas pra entender o cliente.", "Entrar na realidade dele (fac, dinheiro, evolução).", "Ser leve, direto e natural.", "Criar curiosidade antes de vender."], footer: "💡 Primeiro conecta, depois vende." },
                     { title: "💬 Como Entrar (Exemplos)", items: ["“Tu já tá desenrolando bem na fac ou ainda tá travado?”", "“Tá conseguindo farmar bem aí ou tá lento ainda?”", "“Já tá forte ou ainda tá começando a crescer?”"], footer: "💡 Pergunta certa = cliente fala." },
                     { isError: true, title: "❌ O Que NÃO Fazer", items: ["Chegar vendendo direto (“quer vip?”).", "Parecer robô ou script decorado.", "Interromper o cliente em momento errado.", "Falar demais e não ouvir.", "Ignorar o que o cliente respondeu.", "Forçar venda sem entender a necessidade."], warning: "Isso quebra atenção na hora." }
                 ],
                 videoCategories: [
                     { title: "Exemplos Certos", videos: [
-                        { label: "EXEMPLO CERTO 01", url: "https://drive.google.com/file/d/1hUcdndUJgfJ-48VH3aJGXK4U5tQqujUk/preview", color: "#22c55e" },
-                        { label: "EXEMPLO CERTO 02", url: "https://drive.google.com/file/d/1cxYETQv2DT2FHHBG8l9WX34cQVn46NCX/preview", color: "#22c55e" }
+                        { label: "EXEMPLO CERTO 01", url: "https://drive.google.com/file/d/16DNLlk8XN2rmbYNOw5TqA2keAOmd4gT1/preview", color: "#22c55e" },
+                        { label: "EXEMPLO CERTO 02", url: "https://drive.google.com/file/d/1d41ADDiFX5ECsdtdTFsVyTsc25E8FAzC/preview", color: "#22c55e" }
                     ]},
                     { title: "Exemplos Errados", videos: [
                         { label: "EXEMPLO ERRADO 01", url: "https://drive.google.com/file/d/1_wNaLwQWRViDm4-GBs-zs_8o2RaNVblm/preview", color: "#ef4444" },
@@ -70,8 +69,9 @@ const DataAccess = {
                     { isError: true, title: "❌ Erros de Direcionamento", items: ["Perder o foco da conversa.", "Deixar o cliente mudar totalmente o assunto.", "Responder tudo sem puxar de volta pro objetivo.", "Ficar só “batendo papo” sem avançar.", "Não conectar a dor com a solução."], footer: "💡 Dor = o problema, incômodo ou falta que o cliente sente. (evolução, reconhecimento, experiência). É o que faz ele pensar: “preciso resolver isso.”" }
                 ],
                 videoCategories: [
-                    { title: "Exemplos Errados", videos: [
-                        { label: "EXEMPLO ERRADO 01", url: "https://drive.google.com/file/d/1eW3zORlLH6M20KGBbKCQ1BSR1QWh5a10/preview", color: "#ef4444" }
+                    { title: "Exemplos na Prática", videos: [
+                        { label: "EXEMPLO CERTO", url: "https://drive.google.com/file/d/1XkFB2k2B9SfmVVZMYzBXF3dotWcL8xeo/preview", color: "#22c55e" },
+                        { label: "EXEMPLO ERRADO", url: "https://drive.google.com/file/d/1eW3zORlLH6M20KGBbKCQ1BSR1QWh5a10/preview", color: "#ef4444" }
                     ]}
                 ]
             },

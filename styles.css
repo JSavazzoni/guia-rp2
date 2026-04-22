@@ -1,13 +1,13 @@
 :root {
     --bg-main: #000000;
-    --bg-sidebar: #050505;
-    --bg-card: #0a0a0a;
-    --bg-card-hover: #121212;
-    --border-color: #1f1f1f;
+    --bg-sidebar: rgba(5, 5, 5, 0.95);
+    --bg-card: rgba(15, 15, 15, 0.9);
+    --border-color: rgba(255, 255, 255, 0.1);
     --text-primary: #ffffff;
-    --text-secondary: #a1a1aa;
+    --text-secondary: #cccccc;
     --accent-red: #ef4444;
     --accent-green: #22c55e;
+    --accent-gold: #d4af37;
 }
 
 * {
@@ -17,6 +17,10 @@
 }
 
 body {
+    background-image: url('image_1e6304.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     background-color: var(--bg-main);
     color: var(--text-primary);
     font-family: 'Inter', sans-serif;
@@ -24,7 +28,82 @@ body {
     overflow-x: hidden;
 }
 
-/* Layout e Sidebar */
+.overlay {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: -1;
+}
+
+.funnelContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 3rem 2rem;
+    gap: 12px;
+    position: relative;
+}
+
+.funnelStep {
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: linear-gradient(180deg, rgba(30, 30, 30, 0.9) 0%, rgba(10, 10, 10, 0.9) 100%);
+    border: 2px solid var(--accent-gold);
+    min-height: 85px;
+    padding: 1rem 3rem;
+    clip-path: polygon(3% 0%, 97% 0%, 100% 100%, 0% 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+}
+
+.funnelStep:hover {
+    background: var(--accent-gold);
+    transform: scale(1.05);
+    border-color: #ffffff;
+}
+
+.funnelStepTitle {
+    font-weight: 900;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.funnelStepDesc {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: center;
+    max-width: 85%;
+    line-height: 1.3;
+}
+
+.funnelStep:hover .funnelStepTitle {
+    color: #000000;
+}
+
+.funnelStep:hover .funnelStepDesc {
+    color: #222222;
+}
+
+.stepOlheiro { width: 850px; }
+.stepDefesa { width: 750px; }
+.stepMeio { width: 650px; }
+.stepAtaque { width: 550px; }
+.stepFechamento { width: 450px; }
+.stepPosVenda { width: 350px; clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%); }
+
 .layoutContainer {
     display: flex;
     min-height: 100vh;
@@ -33,43 +112,54 @@ body {
 .sidebarNavigation {
     width: 280px;
     background-color: var(--bg-sidebar);
-    border-right: 1px solid var(--border-color);
+    border-right: 1px solid var(--accent-gold);
     display: flex;
     flex-direction: column;
     padding: 2.5rem 0;
     position: fixed;
     height: 100vh;
-    z-index: 100;
+    backdrop-filter: blur(10px);
 }
 
-.sidebarHeader {
-    padding: 0 2rem;
-    margin-bottom: 3rem;
+.backButton {
+    margin: 0 2rem 2rem 2rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--accent-gold);
+    color: var(--text-primary);
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
 }
+
+.backButton:hover {
+    background: var(--accent-gold);
+    color: #000000;
+}
+
+.sidebarHeader { padding: 0 2rem; margin-bottom: 3rem; }
 
 .brandLogo {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
+    color: var(--accent-gold);
 }
 
-.navigationMenu {
-    display: flex;
-    flex-direction: column;
-    padding: 0 1rem;
-}
+.navigationMenu { padding: 0 1rem; }
 
 .navigationItem {
     padding: 1rem 1.5rem;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 0.95rem;
-    color: #ffffff;
+    color: #000000;
     text-transform: uppercase;
-    background: linear-gradient(90deg, #111111 0%, #000000 100%);
-    border-left: 4px solid #ffffff;
+    background: var(--accent-gold);
     border-radius: 4px;
-    cursor: default;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .developerSignature {
@@ -77,10 +167,9 @@ body {
     padding: 0 2rem;
     font-size: 0.75rem;
     font-weight: 800;
-    color: #333;
+    color: #888888;
 }
 
-/* Espaço Principal */
 .mainWorkspace {
     flex: 1;
     margin-left: 280px;
@@ -88,7 +177,6 @@ body {
     max-width: 1400px;
 }
 
-/* Cabeçalho com Imagem e Texto Centralizado */
 .headerContainer {
     display: flex;
     justify-content: space-between;
@@ -97,49 +185,44 @@ body {
     margin-bottom: 5rem;
 }
 
-.headerTextContent {
-    flex: 1;
-}
+.headerTextContent { flex: 1; text-align: left; }
 
 .pageTitle {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
     font-weight: 900;
     text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    text-align: left;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
 }
 
 .pageDescription {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     color: var(--text-secondary);
     max-width: 900px;
-    line-height: 1.4;
-    text-align: center; /* Mensagem centralizada como pedido */
-    margin: 0 auto;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
 }
 
 .headerImageContainer {
     width: 450px;
     height: 300px;
-    background-color: #111111;
-    border: 1px solid #333;
+    background-color: #000000;
+    border: 2px solid var(--accent-gold);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.8);
     flex-shrink: 0;
 }
 
-.headerImageContainer img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.headerImageContainer img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Grid de Cards */
 .contentGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .infoCard {
@@ -149,13 +232,15 @@ body {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
 }
 
 .cardSpanFull { grid-column: 1 / -1; }
 
 .infoCard h2 {
-    font-size: 1.3rem;
-    font-weight: 800;
+    font-size: 1.4rem;
+    font-weight: 900;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
     display: flex;
@@ -163,19 +248,22 @@ body {
     gap: 12px;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--border-color);
+    color: var(--accent-gold);
 }
 
 .quoteCard {
-    background: linear-gradient(135deg, #0f0f0f 0%, #050505 100%);
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(5, 5, 5, 0.95) 100%);
     text-align: center;
     align-items: center;
+    border: 1px solid var(--accent-gold);
 }
 
 .quoteText {
     font-size: 2.2rem;
     font-weight: 900;
     font-style: italic;
-    color: #fff;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
 .dataList { list-style: none; }
@@ -186,32 +274,49 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    color: #e4e4e7;
+    font-weight: 500;
+    color: #f1f1f1;
+}
+
+.listSubtitle {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
 .hintBox {
     margin-top: auto;
     padding: 1.5rem;
-    background-color: #111111;
+    background-color: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
-    font-weight: 600;
-    border-left: 4px solid #ffffff;
-    color: #fff;
+    font-weight: 700;
+    border-left: 4px solid var(--accent-gold);
+    color: #ffffff;
 }
 
 .warningBox {
-    background-color: #1a0a0a;
-    border: 1px solid rgba(239, 68, 68, 0.2);
+    background-color: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.4);
     padding: 1.5rem;
     border-radius: 12px;
     color: var(--accent-red);
-    font-weight: 800;
+    font-weight: 900;
     text-transform: uppercase;
     text-align: center;
     margin-top: 1.5rem;
 }
 
-/* Secção de Vídeos corrigida */
+.errorCard {
+    border-color: rgba(239, 68, 68, 0.5);
+    background-color: rgba(30, 5, 5, 0.9);
+}
+
+.errorCard h2 {
+    color: var(--accent-red);
+    border-bottom-color: rgba(239, 68, 68, 0.2);
+}
+
 .videoSection {
     margin-top: 6rem;
     padding-top: 4rem;
@@ -219,56 +324,65 @@ body {
 }
 
 .sectionTitle {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 900;
     text-align: center;
     margin-bottom: 4rem;
     text-transform: uppercase;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
 }
 
 .videosGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 4rem;
 }
 
-.videoWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
+.videoWrapper { display: flex; flex-direction: column; gap: 1.5rem; }
 
 .videoLabel {
-    font-size: 1.2rem;
-    font-weight: 800;
+    font-size: 1.4rem;
+    font-weight: 900;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 0.05em;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    border-radius: 8px;
 }
 
-/* Técnica para preenchimento total do iframe */
 .videoContainer {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    background-color: #000;
+    height: 0;
+    padding-bottom: 56.25%;
+    background-color: #000000;
     border-radius: 16px;
-    border: 1px solid #333;
+    border: 2px solid var(--border-color);
     overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.8);
 }
 
-.videoContainer iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
+.videoContainer iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+.fallbackMessage {
+    color: var(--text-primary);
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 2rem;
+    background: rgba(0,0,0,0.8);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--accent-gold);
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 @media (max-width: 1200px) {
-    .headerContainer { flex-direction: column; text-align: center; }
+    .funnelStep { width: 90% !important; }
+    .headerContainer { flex-direction: column; }
     .videosGrid { grid-template-columns: 1fr; }
     .mainWorkspace { margin-left: 0; padding: 2rem; }
     .sidebarNavigation { display: none; }

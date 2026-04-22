@@ -88,8 +88,8 @@ const DataAccess = {
                     { title: "✨ Desejo (O Resultado)", items: ["🏆 Aqui é onde você ganha o cliente. Não basta mostrar o problema — você precisa mostrar o benefício.", "💭 Você faz ele imaginar o nível que ele pode alcançar e a vantagem sobre outros players.", "---", "🚀 Evoluir mais rápido.", "👑 Ter mais presença e respeito.", "🥇 Ter vantagem sobre outros players.", "🏰 Entrar já estruturado."] },
                     { title: "⚡ Urgência (O Gatilho)", items: ["⏳ Sem urgência, não tem fechamento. O cliente até quer… mas deixa pra depois.", "⏰ Você cria um motivo para ele agir agora (condição limitada ou oportunidade).", "---", "🏃‍♂️ “Essa condição é só agora.”", "📈 “Depois você vai pagar mais caro.”", "🏁 “Quem pega agora sai na frente.”"] },
                     { title: "⚙️ Como Funciona na Prática", items: ["🔗 A venda acontece quando você conecta os três pilares:", "1️⃣ Faz ele sentir o problema (Dor).", "2️⃣ Mostra o que ele pode ganhar (Desejo).", "3️⃣ Dá um motivo para agir agora (Urgência)."] },
-                    { title: "💬 Exemplo Prático (Comercial)", items: ["🔥 <strong>Dor:</strong> “Do jeito que você está, vai demorar muito mais pra conseguir isso.”", "✨ <strong>Desejo:</strong> “Com esse item, você já entra com muito mais presença, facilidade e vantagem.”", "⚡ <strong>Urgência:</strong> “E essa condição é só agora, então vale aproveitar hoje.”"] },
-                    { title: "🚀 Exemplo Forte (Pronto para Uso)", items: ["🔥 <strong>Dor:</strong> “Do jeito que você está, você vai evoluir bem mais devagar.”", "✨ <strong>Desejo:</strong> “Com esse VIP, você já entra em outro nível dentro da cidade.”", "⚡ <strong>Urgência:</strong> “E pegando agora, você aproveita essa condição antes que acabe.”"] },
+                    { title: "💬 Exemplo Prático (SG)", items: ["🔥 <strong>Dor:</strong> “do jeito que tu tá, tu vai demorar muito ainda pra evoluir”", "✨ <strong>Desejo:</strong> “tem um jeito bem mais rápido de tu crescer aqui dentro”", "⚡ <strong>Urgência:</strong> “se for fazer, é agora… depois fica mais difícil”"] },
+                    { isFull: true, title: "🚀 Exemplo Forte (Pronto para Uso)", items: ["🔥 <strong>Dor:</strong> “Do jeito que você está, você vai evoluir bem mais devagar.”", "✨ <strong>Desejo:</strong> “Com esse VIP, você já entra em outro nível dentro da cidade.”", "⚡ <strong>Urgência:</strong> “E pegando agora, você aproveita essa condição antes que acabe.”"] },
                     { isError: true, title: "❌ Erros no Ataque", items: ["🎯 <strong>Focar demais na dor:</strong> Pode parecer pressão ou até manipulação se exagerar.", "🧩 <strong>Desejo genérico:</strong> “Vantagem” e “presença” sem contexto perdem força — precisa ser mais específico para o cliente.", "⏱️ <strong>Urgência forçada:</strong> Se não for real, o cliente sente e você perde a confiança.", "🤖 <strong>Sequência robótica:</strong> Ficar sempre no automático (Dor → Desejo → Urgência) pode soar muito mecânico.", "👥 <strong>Não adaptar ao cliente:</strong> Usar o mesmo discurso para todo mundo diminui a sua conversão."] }
                 ]
             },
@@ -172,7 +172,7 @@ const Controller = {
                     </header>
                     <div class="contentGrid">
                         ${data.sections.map(s => `
-                            <section class="infoCard ${s.isQuote || s.isError ? 'cardSpanFull' : ''} ${s.isQuote ? 'quoteCard' : ''} ${s.isError ? 'errorCard' : ''}">
+                            <section class="infoCard ${s.isQuote || s.isError || s.isFull ? 'cardSpanFull' : ''} ${s.isQuote ? 'quoteCard' : ''} ${s.isError ? 'errorCard' : ''}">
                                 <h2>${s.title}</h2>
                                 ${s.content ? `<p class="quoteText">${s.content}</p>` : ''}
                                 ${s.subtext ? `<p style="margin-bottom: 1rem; color: #ccc; font-style: italic;">${s.subtext}</p>` : ''}

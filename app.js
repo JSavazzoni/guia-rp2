@@ -17,7 +17,7 @@ const DataAccess = {
                     '“Quanto mais tu fortalece tua fac, mais gente cola, mais resultado vem.”', 
                     '“Fac forte é fac organizada e com incentivo pros membros.”', 
                     '---', 
-                    '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: var(--accent-gold); font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>', 
+                    '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: #fff; font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>', 
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>📈 Crescimento real da facção.</span></div>', 
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>💪 Poder, respeito e influência.</span></div>', 
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>🔥 Motivação e retenção dos membros.</span></div>'
@@ -75,27 +75,17 @@ const DataAccess = {
                     '“Mano, no começo da cidade quem começa já com vantagem cresce MUITO mais rápido...”', 
                     '“Se tu já entra estruturado, tu sai na frente de geral.”', 
                     '---', 
-                    '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: var(--accent-gold); font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>', 
+                    '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: #fff; font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>', 
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>🚀 Evolução rápida.</span></div>', 
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>⚡ Vantagem inicial.</span></div>', 
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>😌 Facilidade (menos dor de cabeça).</span></div>'
                 ]},
                 { isFull: true, isRecommendationHeader: true, title: '🛒 Recomendações de Produtos', items: [] },
-                { title: '🥇 VIP OURO', items: [
-                    '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Foco principal de evolução.</span></div>'
-                ]},
-                { title: '🚀 VIP LANÇAMENTO', items: [
-                    '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Exclusividade e benefícios.</span></div>'
-                ]},
-                { title: '🚗 VEÍCULOS START', items: [
-                    '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Perfeito para a entrada.</span></div>'
-                ]},
-                { title: '🎟️ SANTAPASS', items: [
-                    '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Recompensas e itens únicos.</span></div>'
-                ]},
-                { isCenteredCard: true, title: '🎵 SANTAFY', items: [
-                    '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Garante uma experiência melhor na cidade.</span></div>'
-                ]},
+                { title: '🥇 VIP OURO', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Foco principal de evolução.</span></div>']},
+                { title: '🚀 VIP LANÇAMENTO', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Exclusividade e benefícios.</span></div>']},
+                { title: '🚗 VEÍCULOS START', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Perfeito para a entrada.</span></div>']},
+                { title: '🎟️ SANTAPASS', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Recompensas e itens únicos.</span></div>']},
+                { isCenteredCard: true, title: '🎵 SANTAFY', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Garante uma experiência melhor na cidade.</span></div>']},
                 { isError: true, title: '❌ ERROS DO VENDEDOR (CLIENTE INICIANTE)', items: [
                     '<div class="aligned-list-item"><strong>🚫</strong> <span>Não entender que ele é iniciante.</span></div>', 
                     '<div class="aligned-list-item"><strong>🚫</strong> <span>Não criar conexão.</span></div>', 
@@ -123,7 +113,7 @@ const DataAccess = {
                     '“Mano, tendo VIP tu acaba ganhando muita moral... A galera sempre pede carro emprestado.”', 
                     '“Suas ações te deixam conhecido como gente boa, útil — e isso pesa MUITO para subir de cargo.”', 
                     '---', 
-                    '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: var(--accent-gold); font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>', 
+                    '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: #fff; font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>', 
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>🛠️ Utilidade (ferramentas, economia de tempo).</span></div>', 
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>🎖️ Reconhecimento (status na corporação, autoridade).</span></div>'
                 ]},
@@ -166,24 +156,16 @@ const DataAccess = {
                     '“Resultados extraordinários vêm de estrutura, pessoas e processos.”', 
                     '“Aqui dentro tu não precisa ser só mais um médico... Tu pode ser referência na cidade.”', 
                     '---', 
-                    '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: var(--accent-gold); font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>',
+                    '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: #fff; font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>',
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>⚡ Praticidade (menos tempo perdido, mais eficiência no dia a dia)</span></div>',
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>🛋️ Conforto (descanso, qualidade de vida após plantão)</span></div>',
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>🏆 Reconhecimento (status como médico referência na cidade)</span></div>'
                 ]},
                 { isFull: true, isRecommendationHeader: true, title: '🛒 Recomendações de Produtos', items: [] },
-                { title: '🏡 MANSÃO', items: [
-                    '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Status máximo e espaço para a equipe.</span></div>'
-                ]},
-                { title: '👑 VIP LANÇAMENTO', items: [
-                    '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Benefícios gerais e respeito na cidade.</span></div>'
-                ]},
-                { title: '🏠 VOUCHER DE CASA', items: [
-                    '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Conforto, exclusividade e utilidade.</span></div>'
-                ]},
-                { title: '🎟️ SANTAPASS', items: [
-                    '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Recompensas e itens únicos.</span></div>'
-                ]},
+                { title: '🏡 MANSÃO', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Status máximo e espaço para a equipe.</span></div>']},
+                { title: '👑 VIP LANÇAMENTO', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Benefícios gerais e respeito na cidade.</span></div>']},
+                { title: '🏠 VOUCHER DE CASA', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Conforto, exclusividade e utilidade.</span></div>']},
+                { title: '🎟️ SANTAPASS', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Recompensas e itens únicos.</span></div>']},
                 { isError: true, title: '❌ ERROS DO VENDEDOR (CLIENTE MÉDICO)', items: [
                     '<div class="aligned-list-item"><strong>🚫</strong> <span>Não respeitar o tempo dele (médicos são ocupados).</span></div>', 
                     '<div class="aligned-list-item"><strong>🚫</strong> <span>Ignorar as dores da equipe ou da clínica.</span></div>', 
@@ -210,23 +192,15 @@ const DataAccess = {
                     '“Mano, tu já tem muita história na cidade... O certo era tu já ter uma identidade forte aqui dentro.”', 
                     '“ID muito alto acaba passando despercebido... Ninguém grava.”', 
                     '---', 
-                    '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: var(--accent-gold); font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>', 
+                    '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: #fff; font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>', 
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>🎭 Identidade e presença.</span></div>', 
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>🏆 Reconhecimento marcado na cidade.</span></div>'
                 ]},
                 { isFull: true, isRecommendationHeader: true, title: '🛒 Recomendações de Produtos', items: [] },
-                { title: '🆔 ID EXCLUSIVO (< 1000)', items: [
-                    '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Curto, marcante e respeitado por todos.</span></div>'
-                ]},
-                { title: '👕 ROUPA PERSONALIZADA', items: [
-                    '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Visual único e reconhecimento imediato.</span></div>'
-                ]},
-                { title: '👑 VIP LANÇAMENTO', items: [
-                    '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Todos os benefícios exclusivos de ponta.</span></div>'
-                ]},
-                { title: '🔫 SKIN DE ARMA', items: [
-                    '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Destaque visual em qualquer ação.</span></div>'
-                ]},
+                { title: '🆔 ID EXCLUSIVO (< 1000)', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Curto, marcante e respeitado por todos.</span></div>']},
+                { title: '👕 ROUPA PERSONALIZADA', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Visual único e reconhecimento imediato.</span></div>']},
+                { title: '👑 VIP LANÇAMENTO', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Todos os benefícios exclusivos de ponta.</span></div>']},
+                { title: '🔫 SKIN DE ARMA', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Destaque visual em qualquer ação.</span></div>']},
                 { isError: true, title: '❌ ERROS DO VENDEDOR (CLIENTE STAFF)', items: [
                     '<div class="aligned-list-item"><strong>🚫</strong> <span>Não respeitar a história dele no servidor.</span></div>', 
                     '<div class="aligned-list-item"><strong>🚫</strong> <span>Oferecer pacotes básicos para quem já é experiente.</span></div>', 
@@ -240,12 +214,12 @@ const DataAccess = {
     }),
 
     getCategories: () => [
-        { id: 'olheiro', title: '🕵️‍♂️ Olheiro', desc: 'Olheiro é a primeira etapa da venda. Antes de abordar o player, observe-o para entender o melhor momento.' },
-        { id: 'defesa', title: '🛡️ Defesa', desc: 'A defesa é a segunda etapa da venda: quando você ganha a atenção do cliente e abre a conversa.' },
-        { id: 'meio', title: '⚽ Meio de Campo', desc: 'O meio de campo é a terceira etapa da venda: entender a necessidade do cliente através de perguntas-chave.' },
-        { id: 'ataque', title: '⚔️ Ataque', desc: 'O ataque é a quarta etapa da venda: é o momento de transformar a dor em solução, gerar desejo e criar urgência para fechar.' },
-        { id: 'fechamento', title: '🤝 Fechamento', desc: 'Apresentar as formas de pagamento e finalizar a venda com técnicas de conversão.' },
-        { id: 'posvenda', title: '📦 Pós Venda', desc: 'Ir até o cliente ver se os itens chegaram corretamente e realizar serviços de tunagem.' }
+        { id: 'olheiro', title: '🕵️‍♂️ Olheiro', desc: 'Observe o player e entenda o melhor momento.' },
+        { id: 'defesa', title: '🛡️ Defesa', desc: 'Ganhe a atenção do cliente e inicie a conversa.' },
+        { id: 'meio', title: '⚽ Meio de Campo', desc: 'Entenda a necessidade através de perguntas-chave.' },
+        { id: 'ataque', title: '⚔️ Ataque', desc: 'Transforme a dor em solução e crie urgência.' },
+        { id: 'fechamento', title: '🤝 Fechamento', desc: 'Ancoragem de preço e decisão final.' },
+        { id: 'posvenda', title: '📦 Pós Venda', desc: 'Pós venda bem feito transforma cliente em recorrência e indicação.' }
     ],
 
     getCategoryContent: (categoryId) => {
@@ -256,7 +230,7 @@ const DataAccess = {
                     { isSectionTitle: true, title: "COMO ABORDAR (OLHEIRO)" },
                     { title: "🎯 Objetivo do Olheiro", items: ['<div class="aligned-list-item"><strong>🗣️</strong> <span>O cliente está disponível para conversar?</span></div>', '<div class="aligned-list-item"><strong>🧠</strong> <span>Você vai conseguir a atenção dele?</span></div>', '<div class="aligned-list-item"><strong>💰</strong> <span>Existe oportunidade de venda naquele momento?</span></div>'] },
                     { title: "⏱️ Tempo de Observação", items: ["⏳ Mínimo: 2 minutos.", "⏰ Ideal: 3 a 5 minutos."], warning: "Abordar no momento errado fará você perder tempo." },
-                    { title: "🚶‍♂️ Comportamento", items: ['<div class="aligned-list-item"><strong>🗺️</strong> <span>Está perdido?</span></div>', '<div class="aligned-list-item"><strong>👣</strong> <span>Está andando sem rumo?</span></div>', '<div class="aligned-list-item"><strong>🛠️</strong> <span>Está testando mecânicas?</span></div>', '<div class="aligned-list-item"><strong>🧍‍♂️</strong> <span>Está parado?</span></div>', '<div class="aligned-list-item"><strong>🗣️</strong> <span>Cliente em resenha.</span></div>'], footer: "💡 Normalmente, clientes em momento tranquilo têm mais chance de dar atenção." },
+                    { title: "🚶‍♂️ Comportamento do Cliente", items: ['<div class="aligned-list-item"><strong>🗺️</strong> <span>Está perdido?</span></div>', '<div class="aligned-list-item"><strong>👣</strong> <span>Está andando sem rumo?</span></div>', '<div class="aligned-list-item"><strong>🛠️</strong> <span>Está testando mecânicas?</span></div>', '<div class="aligned-list-item"><strong>🧍‍♂️</strong> <span>Está parado?</span></div>'], footer: "💡 Normalmente, clientes em momento tranquilo têm mais chance de dar atenção." },
                     { title: "✅ Sinais de Abertura", items: ['<div class="aligned-list-item"><strong>👤</strong> <span>Cliente sozinho.</span></div>', '<div class="aligned-list-item"><strong>🧭</strong> <span>Cliente perdido / sem direção.</span></div>', '<div class="aligned-list-item"><strong>👀</strong> <span>Cliente olhando ao redor.</span></div>', '<div class="aligned-list-item"><strong>🛋️</strong> <span>Cliente parado.</span></div>', '<div class="aligned-list-item"><strong>🗣️</strong> <span>Cliente em resenha.</span></div>'] },
                     { isError: true, title: "❌ ERROS DO VENDEDOR (CLIENTE OLHEIRO)", items: ['<div class="aligned-list-item"><strong>🚫</strong> <span>Abordar instantaneamente sem observar.</span></div>', '<div class="aligned-list-item"><strong>🚫</strong> <span>Interromper o cliente quando ele não quer.</span></div>', '<div class="aligned-list-item"><strong>👨‍👩‍👧‍👦</strong> <span>Tentar vender para cliente ou grupo fechado em ação.</span></div>'] }
                 ],
@@ -287,7 +261,7 @@ const DataAccess = {
                     { title: "📢 Sinais de Abertura (Ataque!)", items: ['<div class="aligned-list-item"><strong>💲</strong> <span>Pergunta o preço.</span></div>', '<div class="aligned-list-item"><strong>📦</strong> <span>Pede detalhes sobre o produto.</span></div>', '<div class="aligned-list-item"><strong>🛒</strong> <span>Pergunta o que você vende.</span></div>', '<div class="aligned-list-item"><strong>👤</strong> <span>Pergunta se você é vendedor.</span></div>'], footer: "🔥 Identificou isso? Pare de enrolar e comece o ATAQUE." },
                     { title: "⚠️ Ponto Mais Importante", items: ['<div class="aligned-list-item"><strong>👀</strong> <span>Identificar a abertura.</span></div>', '<div class="aligned-list-item"><strong>🎣</strong> <span>Encontrar a dor do cliente.</span></div>', '<div class="aligned-list-item"><strong>🗺️</strong> <span>Mostrar o caminho, falando de algum produto.</span></div>'], warning: "O maior erro do vendedor é não perceber quando já pode vender (o tempo certo)." },
                     { title: "🧠 Perguntas que Quebram o Padrão", items: ['<div class="aligned-list-item"><strong>🎓</strong> <span>“Tu já tá desenrolando bem na fac ou ainda tá travado?”</span></div>', '<div class="aligned-list-item"><strong>⛏️</strong> <span>“Já tá conseguindo farmar bem aí ou tá difícil evoluir?”</span></div>', '<div class="aligned-list-item"><strong>💸</strong> <span>“Já tá conseguindo fazer dinheiro ou tá lento ainda?”</span></div>'] },
-                    { isError: true, title: "❌ ERROS DO VENDEDOR (CLIENTE MEIO)", items: ['<div class="aligned-list-item"><strong>🌪️</strong> <span>Perder o foco da conversa.</span></div>', '<div class="aligned-list-item"><strong>🔀</strong> <span>Deixar o cliente mudar totalmente o assunto.</span></div>', '<div class="aligned-list-item"><strong>🗣️</strong> <span>Responder tudo sem puxar de volta para o objetivo.</span></div>', '<div class="aligned-list-item"><strong>🔌</strong> <span>Não conectar a dor com a solução.</span></div>'], footer: "💡 <strong>Dor</strong> = O motivo emocional ou prático que faz o cliente querer comprar." }
+                    { isError: true, title: "❌ ERROS DO VENDEDOR (CLIENTE MEIO)", items: ['<div class="aligned-list-item"><strong>🌪️</strong> <span>Perder o foco da conversa.</span></div>', '<div class="aligned-list-item"><strong>🔀</strong> <span>Deixar o cliente mudar totalmente o assunto.</span></div>', '<div class="aligned-list-item"><strong>🗣️</strong> <span>Responder tudo sem puxar de volta para o objetivo.</span></div>', '<div class="aligned-list-item"><strong>☕</strong> <span>Ficar só “batendo papo” sem avançar.</span></div>', '<div class="aligned-list-item"><strong>🔌</strong> <span>Não conectar a dor con a solução.</span></div>'], footer: "💡 <strong>Dor</strong> = O motivo emocional ou prático que faz o cliente querer comprar." }
                 ],
                 videoCategories: [{ title: "Exemplos na Prática", videos: [{ label: "EXEMPLO CERTO", url: "https://drive.google.com/file/d/1XkFB2k2B9SfmVVZMYzBXF3dotWcL8xeo/preview", color: "#22c55e" }, { label: "EXEMPLO ERRADO", url: "https://drive.google.com/file/d/1eW3zORlLH6M20KGBbKCQ1BSR1QWh5a10/preview", color: "#ef4444" }]}]
             },
@@ -295,7 +269,7 @@ const DataAccess = {
                 id: 'ataque', title: "Ataque na Venda", description: "Transforme a dor em solução e crie urgência para fechar.", image: "ataque.jpg",
                 sections: [
                     { isSectionTitle: true, title: "COMO ABORDAR (ATAQUE)" },
-                    { title: "🧠 Conceito: Dor, Desejo e Urgência", items: ["⚖️ Venda forte é o equilíbrio entre:", "<div style='text-align: left; font-weight: 800; color: var(--accent-gold); margin: 5px 0;'>🎯 Dor + Desejo + Urgência</div>", "---", '<div class="aligned-list-item"><strong>🧊</strong> <span>Sem dor ➔ Não conecta.</span></div>', '<div class="aligned-list-item"><strong>😴</strong> <span>Sem desejo ➔ Não engaja.</span></div>', '<div class="aligned-list-item"><strong>🛑</strong> <span>Sem urgência ➔ Não fecha.</span></div>'] },
+                    { title: "🧠 Conceito: Dor, Desejo e Urgência", items: ["⚖️ Venda forte é o equilíbrio entre:", "<div style='text-align: left; font-weight: 800; color: #fff; margin: 5px 0;'>🎯 Dor + Desejo + Urgência</div>", "---", '<div class="aligned-list-item"><strong>🧊</strong> <span>Sem dor ➔ Não conecta.</span></div>', '<div class="aligned-list-item"><strong>😴</strong> <span>Sem desejo ➔ Não engaja.</span></div>', '<div class="aligned-list-item"><strong>🛑</strong> <span>Sem urgência ➔ Não fecha.</span></div>'] },
                     { title: "⚙️ Como Funciona na Prática", items: ['🔗 A venda acontece quando você conecta os três pilares:', '<div class="aligned-list-item"><strong>1️⃣</strong> <span>Faz ele sentir o problema (Dor).</span></div>', '<div class="aligned-list-item"><strong>2️⃣</strong> <span>Mostra o que ele pode ganhar (Desejo).</span></div>', '<div class="aligned-list-item"><strong>3️⃣</strong> <span>Dá um motivo para agir agora (Urgência).</span></div>']},
                     { title: "🚀 Exemplo Forte", items: ['<div class="aligned-list-item"><strong>🔥 Dor:</strong> <span>“Do jeito que você está, vai evoluir bem mais devagar.”</span></div>', '<div class="aligned-list-item"><strong>✨ Desejo:</strong> <span>“Com esse VIP, você entra em outro nível na cidade.”</span></div>', '<div class="aligned-list-item"><strong>⚡ Urgência:</strong> <span>“Pegando agora, você aproveita essa condição antes que acabe.”</span></div>']},
                     { title: "🔥 Dor (O Problema)", items: ["🤔 A dor não é inventar necessidade.", "🔍 Identificar ou despertar algo que já faz sentido para o cliente.", "🚫 Você não cria mentira. Você evidencia um incômodo, uma falta ou uma dificuldade.", "---", "🐢 Está evoluindo devagar.", "👻 Está sem destaque na cidade.", "🐌 Está ficando para trás.", "💸 Está gastando mais do que deveria."] },
@@ -305,32 +279,27 @@ const DataAccess = {
                 ]
             },
             'fechamento': {
-                id: 'fechamento', title: "Fechamento", description: "Fechamento de Venda — Padrão SG: Ancoragem, quebra de objeção, urgência e conversão matadora.", image: "gemini.jpg",
+                id: 'fechamento', title: "Fechamento", description: "Fechamento de Venda — Padrão SG: Ancoragem, quebra de objeção, urgência e conversão matadora.", image: "fechamento.jpg",
                 sections: [
                     { isSectionTitle: true, title: "💰 FECHAMENTO DE VENDA — FORTE" },
                     { title: "🧠 Estrutura Mental do Fechamento", items: [
                         '<div class="aligned-list-item"><strong>👉</strong> <span>Primeiro você <strong>reforça valor</strong></span></div>',
                         '<div class="aligned-list-item"><strong>👉</strong> <span>Depois <strong>ancora preço</strong></span></div>',
                         '<div class="aligned-list-item"><strong>👉</strong> <span>Depois <strong>quebra objeção</strong> com pagamento</span></div>',
-                        '<div class="aligned-list-item"><strong>👉</strong> <span>Finaliza com <strong>urgência</strong></span></div>'
-                    ]},
-                    { title: '🔥 Modelo Pronto (Dor e Desejo)', items: [
-                        '“Então, olha só… do jeito que você tá hoje, você vai acabar gastando muito mais tempo e dinheiro pra chegar nesse nível.” <br><div style="color:#aaa; font-size:0.9rem; margin-top: 4px;">👉 (DOR leve + lógica)</div>',
+                        '<div class="aligned-list-item"><strong>👉</strong> <span>Finaliza com <strong>urgência</strong></span></div>',
                         '---',
-                        '“Esse pacote aqui já te entrega tudo pronto — estrutura, vantagem e presença na cidade.” <br><div style="color:#aaa; font-size:0.9rem; margin-top: 4px;">👉 (DESEJO)</div>'
+                        '<div style="color: #fff; font-weight: 800;">💡 Dica: Ancoragem = fazer o cliente sentir que o produto vale muito, antes de ver o preço!</div>'
                     ]},
                     { title: '💸 Ancoragem', items: [
                         '“Se você fosse pegar tudo separado, passaria fácil de R$XXX…”',
                         '“Mas nesse formato aqui, você já resolve tudo de uma vez e economiza.”',
                         '---',
-                        '<div style="color: var(--accent-gold); font-weight: 800;">👉 Aqui você cria percepção de vantagem</div>'
+                        '<div style="color: #fff; font-weight: 800;">👉 Aqui você cria percepção de vantagem</div>'
                     ]},
                     { title: '💳 Quebra de Objeção (Pagamento)', items: [
-                        '“E o melhor, nem precisa pesar agora…”',
+                        '“E o melhor, nem precisa <strong>pensar</strong> agora…”',
                         '“Você pode fazer no <strong>Pix</strong>, ou dividir no <strong>cartão de crédito</strong>.”',
-                        '“Se for internacional, dá pra pagar tranquilo pelo <strong>Revolut</strong> ou <strong>Wise</strong> também.”',
-                        '---',
-                        '<div style="color: var(--accent-gold); font-weight: 800;">👉 Aqui você tira a barreira mental</div>'
+                        '“Se for internacional, dá pra pagar tranquilo pelo <strong>Revolut</strong> ou <strong>Wise</strong> também.”'
                     ]},
                     { title: '⏰ Urgência (Fechamento Final)', items: [
                         '“E sendo bem direto contigo, essa condição que eu te passei é só agora.”',
@@ -345,28 +314,77 @@ const DataAccess = {
                         '“Quem pega isso agora já sai na frente, quem deixa pra depois sempre paga mais.”',
                         '“Quer fazer no Pix ou prefere parcelar no cartão?”',
                         '---',
-                        '<div style="color: var(--accent-gold); font-weight: 800;">👉 Aqui você já força decisão</div>'
+                        '<div style="color: #fff; font-weight: 800;">💡 Dica: Nunca fale obrigado após uma venda, fale parabéns!</div>'
                     ]},
-                    { title: '🧠 Gatilhos que você usou', items: [
-                        '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span><strong>Ancoragem</strong> → “separado sairia mais caro”</span></div>',
-                        '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span><strong>Quebra de objeção</strong> → múltiplos pagamentos</span></div>',
-                        '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span><strong>Urgência</strong> → “só agora”</span></div>',
-                        '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span><strong>Direcionamento</strong> → pergunta final fechada</span></div>'
-                    ]},
-                    { isError: true, title: '🔑 DICA DE OURO (NÍVEL PRO)', items: [
-                        '<div class="aligned-list-item"><strong>❌ ERRO:</strong> <span>“Se quiser me chama…”</span></div>',
-                        '<div class="aligned-list-item"><strong style="color:#22c55e;">✅ CERTO:</strong> <span style="color:#fff;">“Prefere Pix ou cartão?”</span></div>',
+                    { isError: true, title: '❌ ERROS DO VENDEDOR (CLIENTE FECHAMENTO)', items: [
+                        '<div class="aligned-list-item"><strong>🚫</strong> <span>Ficar explicando demais.</span></div>',
+                        '<div class="aligned-list-item"><strong>🚫</strong> <span>Não pedir o pagamento.</span></div>',
+                        '<div class="aligned-list-item"><strong>🚫</strong> <span>Não criar urgência.</span></div>',
+                        '<div class="aligned-list-item"><strong>🚫</strong> <span>Esperar o cliente decidir sozinho.</span></div>',
                         '---',
-                        '<div style="color: var(--accent-gold); font-weight: 800;">👉 Sempre termina com pergunta de decisão, nunca aberta.</div>'
+                        '<div style="color: #fff; font-weight: 800;">👉 Sempre termina com pergunta de decisão, nunca aberta.</div>'
                     ]}
                 ]
             },
             'posvenda': {
-                id: 'posvenda', title: "Pós Venda", description: "Verifique se tudo chegou e fidelize o cliente.", image: "gemini.jpg",
+                id: 'posvenda', title: "Pós Venda", description: "Pós venda bem feito transforma cliente em recorrência e indicação.", image: "pos_venda.jpg",
                 sections: [
-                    { isSectionTitle: true, title: "COMO ABORDAR (PÓS VENDA)" },
-                    { title: "📦 Verificação", items: ["Ir até o cliente ver se os itens chegaram corretamente.", "Confirmar se ele sabe usar o que comprou."], warning: "Não abandone o cliente após o pagamento." },
-                    { title: "🛠️ Tunagem e Extras", items: ["Realizar serviços de tunagem nos carros.", "Acompanhar o cliente nos primeiros passos após a compra."] }
+                    { isSectionTitle: true, title: "🧠 PÓS-VENDA — PADRÃO SG" },
+                    { title: "1. CONFIRMAÇÃO (SEGURANÇA)", items: [
+                        '📌 Garanta que ele sinta que fez uma boa decisão',
+                        '✔️ “Já deixei tudo certo pra você.”',
+                        '✔️ “Você já pode usar agora tranquilo.”',
+                        '✔️ “Qualquer coisa me chama que te ajudo.”',
+                        '---',
+                        '➡️ Remove arrependimento | ➡️ Aumenta confiança | ➡️ Evita chargeback'
+                    ]},
+                    { title: "2. VALORIZAÇÃO (STATUS)", items: [
+                        '📌 Faça ele sentir que subiu de nível',
+                        '✔️ “Agora você já tá na frente de muita gente.”',
+                        '✔️ “Pouca gente entra já assim estruturado.”',
+                        '✔️ “Você fez uma escolha inteligente.”',
+                        '---',
+                        '➡️ Reforça decisão | ➡️ Cria orgulho | ➡️ Aumenta apego'
+                    ]},
+                    { title: "3. ATIVAÇÃO (USO)", items: [
+                        '📌 Ensine ele a usar o que comprou',
+                        '✔️ “Já usou o [benefício]?”',
+                        '✔️ “Se fizer isso aqui, você aproveita melhor ainda.”',
+                        '✔️ “Posso te mostrar como tirar mais vantagem.”',
+                        '---',
+                        '➡️ Valor percebido sobe | ➡️ Diminui desistência | ➡️ Aumenta satisfação'
+                    ]},
+                    { title: "4. ABERTURA (RELACIONAMENTO)", items: [
+                        '📌 Deixe porta aberta pra continuidade',
+                        '✔️ “Qualquer dúvida me chama.”',
+                        '✔️ “Se quiser evoluir mais depois, te mostro opções.”',
+                        '✔️ “Sempre solto coisa nova, te aviso.”',
+                        '---',
+                        '➡️ Cria vínculo | ➡️ Mantém contato ativo | ➡️ Prepara próxima venda'
+                    ]},
+                    { title: "5. RECOMPRA / UPSELL", items: [
+                        '📌 Plante a próxima venda sem forçar',
+                        '✔️ “Depois você pode evoluir ainda mais com…”',
+                        '✔️ “Tem um upgrade que encaixa muito com isso que você pegou.”',
+                        '✔️ “Quando quiser subir mais, já sei o que te indicar.”',
+                        '---',
+                        '➡️ Natural | ➡️ Sem pressão | ➡️ Direcionado'
+                    ]},
+                    { title: "6. INDICAÇÃO (ESCALA)", items: [
+                        '📌 Transforme cliente em vendedor',
+                        '✔️ “Se tiver algum amigo que quer começar bem, me chama.”',
+                        '✔️ “Quem entra assim já sai na frente, igual você.”',
+                        '✔️ “Se indicar alguém, depois te dou uma moral.”',
+                        '---',
+                        '➡️ Novos clientes | ➡️ Baixo custo | ➡️ Alta conversão'
+                    ]},
+                    { isError: true, title: "❌ ERROS NO PÓS-VENDA", items: [
+                        '❌ Sumir depois da venda',
+                        '❌ Não ensinar a usar',
+                        '❌ Não reforçar decisão',
+                        '❌ Não abrir espaço pra próxima venda',
+                        '❌ Não pedir indicação'
+                    ]}
                 ]
             }
         };
@@ -376,7 +394,13 @@ const DataAccess = {
 
 const BusinessLogic = {
     state: { currentView: 'menu', currentCategoryId: null, currentProfileId: null, isMeioExpanded: false },
-    navigateToMenu: () => { BusinessLogic.state.currentView = 'menu'; BusinessLogic.state.isMeioExpanded = false; Controller.render(); },
+    navigateToMenu: () => { 
+        BusinessLogic.state.currentView = 'menu'; 
+        BusinessLogic.state.isMeioExpanded = false; 
+        BusinessLogic.state.currentProfileId = null;
+        BusinessLogic.state.currentCategoryId = null;
+        Controller.render(); 
+    },
     toggleMeio: (e) => {
         e.stopPropagation();
         BusinessLogic.state.isMeioExpanded = !BusinessLogic.state.isMeioExpanded;
@@ -406,8 +430,10 @@ const Controller = {
         const root = document.getElementById('applicationRoot');
         if (BusinessLogic.state.currentView === 'menu') root.innerHTML = Controller.templates.menu();
         else {
-            const baseData = DataAccess.getCategoryContent(BusinessLogic.state.currentCategoryId);
-            root.innerHTML = baseData ? Controller.templates.category(baseData) : Controller.templates.fallback();
+            const profiles = DataAccess.getProfiles();
+            const categoryData = DataAccess.getCategoryContent(BusinessLogic.state.currentCategoryId);
+            const data = BusinessLogic.state.currentProfileId ? profiles[BusinessLogic.state.currentProfileId] : categoryData;
+            root.innerHTML = Controller.templates.category(data);
         }
     },
 
@@ -415,6 +441,10 @@ const Controller = {
         menu: () => `
             <div class="overlay"></div>
             <style>
+                body { overflow: hidden; }
+                .funnelContainer { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 2vh 0; gap: 8px; }
+                .funnelStep { flex: 1; max-height: 15vh; cursor: pointer; transition: 0.3s; }
+                .funnelStep:hover { transform: scale(1.01); filter: brightness(1.2); }
                 .funnelStepTitle { font-size: 1.15rem !important; }
                 .funnelStepDesc { font-size: 0.95rem !important; line-height: 1.45; }
             </style>
@@ -427,47 +457,46 @@ const Controller = {
                 `).join('')}
             </div>`,
 
-        category: (baseData) => {
+        category: (data) => {
             const profiles = DataAccess.getProfiles();
-            const data = BusinessLogic.state.currentProfileId ? profiles[BusinessLogic.state.currentProfileId] : baseData;
-
             return `
                 <div class="overlay"></div>
                 <style>
-                    .layoutContainer { max-width: 100% !important; padding: 0 !important; display: flex; height: 100vh; overflow: hidden; }
-                    .sidebarNavigation { width: 280px !important; flex-shrink: 0; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid rgba(255,255,255,0.05); background: #000; overflow-y: auto; }
+                    .layoutContainer { max-width: 100% !important; display: flex; height: 100vh; overflow: hidden; }
+                    .sidebarNavigation { width: 280px !important; flex-shrink: 0; display: flex; flex-direction: column; border-right: 1px solid rgba(255,255,255,0.05); background: #000; overflow-y: auto; }
                     .mainWorkspace { padding: 2rem 5% !important; flex-grow: 1; max-width: calc(100vw - 280px); overflow-y: auto; text-align: left; }
                     
                     .headerContainer { display: flex; align-items: center; justify-content: space-between; gap: 2.5rem; margin-bottom: 3rem; }
                     .headerTextContent { text-align: left; flex: 1; }
-                    .pageTitle { font-size: 2rem !important; margin-bottom: 0.6rem; text-align: left; font-weight: 800; }
+                    .pageTitle { font-size: 2rem !important; margin-bottom: 0.6rem; text-align: left; font-weight: 800; color: #fff; }
                     .pageDescription { font-size: 1.05rem !important; line-height: 1.5; text-align: left; color: #ccc; }
                     
                     .headerImageContainer { flex-shrink: 0; border: 1px solid var(--accent-gold); padding: 6px; border-radius: 12px; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; }
                     .headerImageContainer img { max-width: 320px; height: auto; border-radius: 8px; display: block; }
 
                     .contentGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8rem; width: 100%; align-items: stretch; }
-                    .cardSpanFull { grid-column: 1 / -1; }
+                    .infoCard { background: #111; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); padding: 1.5rem; }
+                    .infoCard h2 { font-size: 1.3rem !important; color: #fff; margin-bottom: 1rem; font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; }
                     
-                    .infoCard { width: 100%; box-sizing: border-box; text-align: left; overflow: visible; background: #111; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); padding: 1.5rem; }
-                    .infoCard h2 { font-size: 1.3rem !important; text-align: left; margin-bottom: 1rem; color: var(--accent-gold); font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; }
+                    .cardSpanFull { grid-column: 1 / -1; }
+                    .topHeadingFree { grid-column: 1 / -1; text-align: center; font-size: 1.5rem; color: #fff; font-weight: 900; margin: 2rem 0; text-transform: uppercase; letter-spacing: 1px; }
                     
                     .dataList { display: block; width: 100%; list-style: none; padding: 0; }
-                    .dataList li { font-size: 1rem !important; line-height: 1.6; margin-bottom: 10px; text-align: left; }
-                    .dataList li:last-child { margin-bottom: 0; }
+                    .dataList div { font-size: 1rem !important; line-height: 1.6; text-align: left; }
 
                     .aligned-list-item { display: flex; align-items: flex-start; gap: 12px; width: 100%; margin-bottom: 8px; font-size: 1.05rem; }
                     .aligned-list-item strong { flex-shrink: 0; color: var(--accent-gold); }
                     .aligned-list-item span { flex-grow: 1; text-align: left; }
 
-                    .navItem { font-size: 1.05rem !important; white-space: nowrap; padding: 1.1rem 1.4rem !important; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: all 0.3s; }
+                    .navItem { font-size: 1.05rem !important; white-space: nowrap; padding: 1.1rem 1.4rem !important; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: all 0.3s; color: #888; }
                     .navItem:hover { background: rgba(212,175,55,0.05); color: #fff; }
                     .navItemActive { color: var(--accent-gold) !important; background: rgba(212,175,55,0.1) !important; border-left: 4px solid var(--accent-gold); }
+                    .navSubItemActive { color: var(--accent-gold) !important; background: rgba(212,175,55,0.1) !important; font-weight: 900 !important; border-left: 4px solid var(--accent-gold); }
 
-                    .topHeadingFree { grid-column: 1 / -1; text-align: center; font-size: 1.5rem; color: var(--accent-gold); font-weight: 900; margin: 2rem 0; text-transform: uppercase; letter-spacing: 1px; }
-                    
-                    .centeredRecommendationCard { grid-column: 1 / -1 !important; justify-self: center !important; width: 100% !important; max-width: 600px !important; }
-                    .listDivider { margin: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; list-style: none; }
+                    .listDivider { margin: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; }
+                    .sectionTitle { text-align: center; color: #fff; text-transform: uppercase; margin-bottom: 2rem; font-weight: 900; }
+                    .comicContainer { margin-top: 2rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+                    .comicContainer img { width: 100%; height: auto; display: block; }
                 </style>
                 <div class="layoutContainer">
                     <aside class="sidebarNavigation">
@@ -476,17 +505,17 @@ const Controller = {
                             <nav class="navigationMenu">
                                 ${DataAccess.getCategories().map(cat => {
                                     const isMeio = cat.id === 'meio';
-                                    const isCatActive = BusinessLogic.state.currentCategoryId === cat.id;
+                                    const isActive = BusinessLogic.state.currentCategoryId === cat.id;
                                     const isProfileSelected = BusinessLogic.state.currentProfileId !== null;
                                     return `
-                                        <div class="navItem ${isCatActive && !isProfileSelected ? 'navItemActive' : ''}" onclick="${isMeio ? 'BusinessLogic.toggleMeio(event)' : `BusinessLogic.navigateToCategory('${cat.id}')`}">
+                                        <div class="navItem ${isActive && !isProfileSelected ? 'navItemActive' : ''}" onclick="${isMeio ? 'BusinessLogic.toggleMeio(event)' : `BusinessLogic.navigateToCategory('${cat.id}')`}">
                                             ${cat.title} ${isMeio ? (BusinessLogic.state.isMeioExpanded ? '▾' : '▸') : ''}
                                         </div>
                                         ${isMeio && BusinessLogic.state.isMeioExpanded ? `
-                                            <div class="profileSubMenu" style="margin-left: 1rem; border-left: 1px solid rgba(212,175,55,0.3); margin-bottom: 10px; background: #080808;">
+                                            <div class="profileSubMenu" style="background: #080808;">
                                                 ${Object.values(profiles).map(p => `
                                                     <div class="navItem ${BusinessLogic.state.currentProfileId === p.id ? 'navSubItemActive' : ''}" 
-                                                         style="font-size: 0.95rem !important; padding: 0.8rem 1.2rem !important; text-transform: none; border-bottom: none;" 
+                                                         style="font-size: 0.95rem !important; border-bottom: none; padding-left: 2.5rem !important;" 
                                                          onclick="BusinessLogic.navigateToProfile('${p.id}')">👤 ${p.shortTitle}</div>
                                                 `).join('')}
                                             </div>` : ''}
@@ -506,26 +535,23 @@ const Controller = {
                         <div class="contentGrid">
                             ${data.sections.map(s => {
                                 if (s.isSectionTitle) return `<div class="topHeadingFree">${s.title}</div>`;
-                                if (s.isRecommendationHeader) return `<div class="cardSpanFull" style="margin-top: 1rem;"><h2 style="font-size: 1.4rem; color: var(--accent-gold); text-align: left; width: 100%; font-weight: 800;">${s.title}</h2></div>`;
+                                if (s.isRecommendationHeader) return `<div class="cardSpanFull" style="margin-top: 1rem;"><h2 style="font-size: 1.4rem; color: #fff; text-align: left; width: 100%; font-weight: 800;">${s.title}</h2></div>`;
                                 
                                 if (s.isComic) {
                                     return `
-                                        <div class="cardSpanFull" style="margin-top: 2rem; border: 2px solid var(--accent-gold); border-radius: 12px; overflow: hidden; background: #000;">
-                                            <div style="background: var(--accent-gold); color: #000; padding: 10px; text-align: center; font-weight: 900; text-transform: uppercase;">${s.title}</div>
-                                            <img src="${s.image}" style="width: 100%; height: auto; display: block;" alt="Comic Strategy">
+                                        <div class="cardSpanFull comicContainer">
+                                            <img src="${s.image}" alt="Comic Strategy">
                                         </div>
                                     `;
                                 }
 
-                                let extraClass = "";
-                                if (s.isCenteredCard) extraClass = "centeredRecommendationCard";
-                                else if (s.isError || s.isFull) extraClass = "cardSpanFull";
+                                let extraClass = s.isFull || s.isError ? "cardSpanFull" : "";
 
                                 return `
                                 <section class="infoCard ${extraClass} ${s.isError ? 'errorCard' : ''}">
                                     <h2>${s.title}</h2>
                                     <div class="dataList">
-                                        ${s.items ? s.items.map(i => i === '---' ? `<div style="border-bottom:1px solid rgba(255,255,255,0.1); margin:15px 0;"></div>` : `<div class="aligned-list-item">${i}</div>`).join('') : ''}
+                                        ${s.items ? s.items.map(i => i === '---' ? `<div class="listDivider"></div>` : `<div class="aligned-list-item">${i}</div>`).join('') : ''}
                                     </div>
                                     ${s.warning ? `<div class="warningBox" style="margin-top:10px; color:#ff4444; font-size:0.9rem;">⚠️ ${s.warning}</div>` : ''}
                                     ${s.footer ? `<div class="hintBox" style="margin-top:15px; padding:10px; background:rgba(212,175,55,0.1); border-radius:6px; font-size:0.95rem;">${s.footer}</div>` : ''}
@@ -533,15 +559,18 @@ const Controller = {
                                 `;
                             }).join('')}
                         </div>
-                        ${data.videoCategories ? data.videoCategories.map(vcat => `
-                            <section style="margin-top: 3rem;">
-                                <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 1.5rem;">${vcat.title}</h2>
+                        ${data.videoCategories ? data.videoCategories.map(cat => `
+                            <section class="videoSection" style="margin-top: 4rem;">
+                                <h1 class="sectionTitle">${cat.title}</h1>
                                 <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
-                                    ${vcat.videos.map(v => `<div style="background:#111; padding:1rem; border-radius:12px; border:1px solid rgba(255,255,255,0.05);"><h3 style="color:${v.color}; font-size:0.9rem; margin-bottom:10px;">${v.label}</h3><div style="position:relative; padding-bottom:56.25%; height:0; border-radius:8px; overflow:hidden;"><iframe src="${v.url}" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="autoplay"></iframe></div></div>`).join('')}
+                                    ${cat.videos.map(v => `<div style="background:#111; padding:1rem; border-radius:12px; border:1px solid rgba(255,255,255,0.05);"><h3 style="color:${v.color}; font-size:0.9rem; margin-bottom:10px; font-weight:800; text-align:center;">${v.label}</h3><div style="position:relative; padding-bottom:56.25%; height:0; border-radius:8px; overflow:hidden;"><iframe src="${v.url}" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="autoplay"></iframe></div></div>`).join('')}
                                 </div>
                             </section>`).join('') : ''}
                     </main>
-                </div>`;
+                </div>
+                <style>
+                    .profileSubMenu .navItem:hover { background: rgba(255,255,255,0.05); }
+                </style>`;
         },
         fallback: () => `<div class="overlay"></div><div style="padding:5rem; text-align:center;"><h1>Conteúdo em construção...</h1><button class="backButton" onclick="BusinessLogic.navigateToMenu()">Voltar ao Funil</button></div>`
     }

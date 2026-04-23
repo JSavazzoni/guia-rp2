@@ -214,12 +214,12 @@ const DataAccess = {
     }),
 
     getCategories: () => [
-        { id: 'olheiro', title: '🕵️‍♂️ Olheiro', desc: 'Observe o player e entenda o melhor momento.' },
-        { id: 'defesa', title: '🛡️ Defesa', desc: 'Ganhe a atenção do cliente e inicie a conversa.' },
-        { id: 'meio', title: '⚽ Meio de Campo', desc: 'Entenda a necessidade através de perguntas-chave.' },
-        { id: 'ataque', title: '⚔️ Ataque', desc: 'Transforme a dor em solução e crie urgência.' },
-        { id: 'fechamento', title: '🤝 Fechamento', desc: 'Ancoragem de preço e decisão final.' },
-        { id: 'posvenda', title: '📦 Pós Venda', desc: 'Pós venda bem feito transforma cliente em recorrência e indicação.' }
+        { id: 'olheiro', title: '🕵️‍♂️ Olheiro', desc: 'Olheiro é a primeira etapa da venda. Antes de abordar o player, observe-o para entender o melhor momento.' },
+        { id: 'defesa', title: '🛡️ Defesa', desc: 'A defesa é a segunda etapa da venda: quando você ganha a atenção do cliente e abre a conversa.' },
+        { id: 'meio', title: '⚽ Meio de Campo', desc: 'O meio de campo é a terceira etapa da venda: entender a necessidade do cliente através de perguntas-chave.' },
+        { id: 'ataque', title: '⚔️ Ataque', desc: 'O ataque é a quarta etapa da venda: é o momento de transformar a dor em solução, gerar desejo e criar urgência para fechar.' },
+        { id: 'fechamento', title: '🤝 Fechamento', desc: 'Fechamento conduz valor, quebra dúvida e transforma interesse em decisão.' },
+        { id: 'posvenda', title: '📦 Pós Venda', desc: 'Ir até o cliente ver se os itens chegaram corretamente e realizar serviços de tunagem.' }
     ],
 
     getCategoryContent: (categoryId) => {
@@ -252,10 +252,10 @@ const DataAccess = {
                 ]
             },
             'meio': {
-                id: 'meio', title: "Meio de Campo", description: "Entender a necessidade do cliente através de perguntas-chave.", image: "meio-campo.jpg",
+                id: 'meio', title: "Meio de Campo", description: "Entender a necessidade do cliente através de perguntas chaves.", image: "meio-campo.jpg",
                 sections: [
                     { isSectionTitle: true, title: "COMO ABORDAR (MEIO DE CAMPO)" },
-                    { title: "🎯 Objetivo Meio de Campo", items: ['<div class="aligned-list-item"><strong>🗣️</strong> <span>Conduzir o cliente fazendo perguntas-chave.</span></div>', '<div class="aligned-list-item"><strong>🧠</strong> <span>Entender o que oferecer para o cliente.</span></div>', '<div class="aligned-list-item"><strong>🤝</strong> <span>Conectar com a realidade dele.</span></div>', '<div class="aligned-list-item"><strong>📦</strong> <span>Preparar para oferecer.</span></div>'] },
+                    { title: "🎯 Objetivo Meio de Campo", items: ['<div class="aligned-list-item"><strong>🗣️</strong> <span>Conduzir o cliente fazendo perguntas chaves.</span></div>', '<div class="aligned-list-item"><strong>🧠</strong> <span>Entender o que oferecer para o cliente.</span></div>', '<div class="aligned-list-item"><strong>🤝</strong> <span>Conectar com a realidade dele.</span></div>', '<div class="aligned-list-item"><strong>📦</strong> <span>Preparar para oferecer.</span></div>'] },
                     { title: "🔍 Indícios de Interesse", items: ['<div class="aligned-list-item"><strong>✅</strong> <span>Responde rápido.</span></div>', '<div class="aligned-list-item"><strong>🗣️</strong> <span>Fala mais que você.</span></div>', '<div class="aligned-list-item"><strong>❓</strong> <span>Faz perguntas.</span></div>', '<div class="aligned-list-item"><strong>📈</strong> <span>Engaja na conversa.</span></div>'] },
                     { title: "🎯 Foco da Conversa", items: ['<div class="aligned-list-item"><strong>🔥</strong> <span>Gerar interesse.</span></div>', '<div class="aligned-list-item"><strong>🛡️</strong> <span>Passar confiança.</span></div>', '<div class="aligned-list-item"><strong>🧭</strong> <span>Dar direção ao cliente.</span></div>', '---', '<div class="aligned-list-item"><strong>🚫</strong> <span>Não deixar o cliente desviar do assunto principal.</span></div>', '<div class="aligned-list-item"><strong>⏳</strong> <span>Não ficar apenas conversando sem intenção de venda.</span></div>', '<div class="aligned-list-item"><strong>🔗</strong> <span>Sempre conecte a conversa com a solução da venda.</span></div>'], warning: "Se o cliente dispersar ou você perder o foco, a venda esfria." },
                     { title: "📢 Sinais de Abertura (Ataque!)", items: ['<div class="aligned-list-item"><strong>💲</strong> <span>Pergunta o preço.</span></div>', '<div class="aligned-list-item"><strong>📦</strong> <span>Pede detalhes sobre o produto.</span></div>', '<div class="aligned-list-item"><strong>🛒</strong> <span>Pergunta o que você vende.</span></div>', '<div class="aligned-list-item"><strong>👤</strong> <span>Pergunta se você é vendedor.</span></div>'], footer: "🔥 Identificou isso? Pare de enrolar e comece o ATAQUE." },
@@ -279,7 +279,7 @@ const DataAccess = {
                 ]
             },
             'fechamento': {
-                id: 'fechamento', title: "Fechamento", description: "Fechamento de Venda — Padrão SG: Ancoragem, quebra de objeção, urgência e conversão matadora.", image: "fechamento.jpg",
+                id: 'fechamento', title: "Fechamento", description: "Fechamento conduz valor, quebra dúvida e transforma interesse em decisão.", image: "fechamento.jpg",
                 sections: [
                     { isSectionTitle: true, title: "💰 FECHAMENTO DE VENDA — FORTE" },
                     { title: "🧠 Estrutura Mental do Fechamento", items: [
@@ -305,7 +305,7 @@ const DataAccess = {
                         '“E sendo bem direto contigo, essa condição que eu te passei é só agora.”',
                         '“Se deixar pra depois, você provavelmente vai pagar mais caro ou perder esse pacote.”'
                     ]},
-                    { title: '🎯 Fechamento Direto (Matador)', items: [
+                    { isFull: true, title: '🎯 Fechamento Direto (Matador)', items: [
                         '“Se fizer sentido pra você, já posso te mandar o Pix ou o link do cartão agora e deixar isso tudo ativo pra você hoje mesmo.”'
                     ]},
                     { isFull: true, title: '⚔️ Versão Mais Agressiva', items: [
@@ -430,8 +430,8 @@ const Controller = {
         const root = document.getElementById('applicationRoot');
         if (BusinessLogic.state.currentView === 'menu') root.innerHTML = Controller.templates.menu();
         else {
-            const profiles = DataAccess.getProfiles();
             const categoryData = DataAccess.getCategoryContent(BusinessLogic.state.currentCategoryId);
+            const profiles = DataAccess.getProfiles();
             const data = BusinessLogic.state.currentProfileId ? profiles[BusinessLogic.state.currentProfileId] : categoryData;
             root.innerHTML = Controller.templates.category(data);
         }
@@ -512,10 +512,10 @@ const Controller = {
                                             ${cat.title} ${isMeio ? (BusinessLogic.state.isMeioExpanded ? '▾' : '▸') : ''}
                                         </div>
                                         ${isMeio && BusinessLogic.state.isMeioExpanded ? `
-                                            <div class="profileSubMenu" style="background: #080808;">
+                                            <div style="background: #080808;">
                                                 ${Object.values(profiles).map(p => `
                                                     <div class="navItem ${BusinessLogic.state.currentProfileId === p.id ? 'navSubItemActive' : ''}" 
-                                                         style="font-size: 0.95rem !important; border-bottom: none; padding-left: 2.5rem !important;" 
+                                                         style="padding-left: 2.5rem !important; border-bottom: none;" 
                                                          onclick="BusinessLogic.navigateToProfile('${p.id}')">👤 ${p.shortTitle}</div>
                                                 `).join('')}
                                             </div>` : ''}
@@ -561,16 +561,13 @@ const Controller = {
                         </div>
                         ${data.videoCategories ? data.videoCategories.map(cat => `
                             <section class="videoSection" style="margin-top: 4rem;">
-                                <h1 class="sectionTitle">${cat.title}</h1>
+                                <h1 class="sectionTitle" style="font-size: 1.5rem; font-weight: 900; text-align: center; margin-bottom: 2rem; color: #fff; text-transform: uppercase;">${cat.title}</h1>
                                 <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
                                     ${cat.videos.map(v => `<div style="background:#111; padding:1rem; border-radius:12px; border:1px solid rgba(255,255,255,0.05);"><h3 style="color:${v.color}; font-size:0.9rem; margin-bottom:10px; font-weight:800; text-align:center;">${v.label}</h3><div style="position:relative; padding-bottom:56.25%; height:0; border-radius:8px; overflow:hidden;"><iframe src="${v.url}" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="autoplay"></iframe></div></div>`).join('')}
                                 </div>
                             </section>`).join('') : ''}
                     </main>
-                </div>
-                <style>
-                    .profileSubMenu .navItem:hover { background: rgba(255,255,255,0.05); }
-                </style>`;
+                </div>`;
         },
         fallback: () => `<div class="overlay"></div><div style="padding:5rem; text-align:center;"><h1>Conteúdo em construção...</h1><button class="backButton" onclick="BusinessLogic.navigateToMenu()">Voltar ao Funil</button></div>`
     }

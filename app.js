@@ -50,13 +50,14 @@ const DataAccess = {
                     '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Reconhecimento imediato na cidade.</span></div>', 
                     '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Respeito visual perante rivais.</span></div>'
                 ]},
-                { isError: true, title: '❌ ERROS DO VENDEDOR (LÍDER)', items: [
+                { isError: true, title: '❌ ERROS DO VENDEDOR (CLIENTE LÍDER)', items: [
                     '<div class="aligned-list-item"><strong>🚫 Falar só do item:</strong> <span>É só descrever o que o produto tem, sem explicar para que serve de verdade.</span></div>', 
                     '<div class="aligned-list-item"><strong>🚫 Ignorar a facção:</strong> <span>É falar com o líder como se ele fosse sozinho, sem considerar os membros.</span></div>', 
                     '<div class="aligned-list-item"><strong>🚫 Não investigar a situação:</strong> <span>É não fazer perguntas para entender como a facção dele está hoje.</span></div>', 
                     '<div class="aligned-list-item"><strong>🚫 Não ativar ambição:</strong> <span>É não fazer ele querer crescer, evoluir ou dominar mais.</span></div>', 
                     '<div class="aligned-list-item"><strong>🚫 Não gerar urgência:</strong> <span>É não dar motivo para ele comprar agora.</span></div>'
-                ]}
+                ]},
+                { isComic: true, title: '⚽ ESTRATÉGIA DE ABORDAGEM: CERTO vs ERRADO', image: 'quadrinho_lider.jpg' }
             ]
         },
         'novato': {
@@ -67,19 +68,12 @@ const DataAccess = {
             image: 'novato.jpg',
             sections: [
                 { isQuote: true, title: '⭐ Regra de Ouro — Novato', content: '“Tu prefere ir evoluindo na raça ou curte já dar uma acelerada no começo?” 🚀', footer: '💡 Perfeita para puxar venda sem tocar em dinheiro direto.' },
-                { title: '🧩 1. Leitura do Cliente', items: [
-                    '<div class="aligned-list-item"><strong>🆕 Iniciante:</strong> <span>Pouco tempo de cidade; Ainda não tem muitos itens; Sem vínculo forte.</span></div>', 
-                    '<div class="aligned-list-item"><strong>💳 Poder de Compra:</strong> <span>Crucial. Pode variar muito conforme a vida real do cliente.</span></div>', 
-                    '---', 
-                    '<div style="text-align: left;">⚠️ <strong>Observação:</strong> Esse cliente ainda não valoriza a cidade — você precisa criar esse valor nele.</div>'
-                ]},
-                { title: '🎯 2. Abordagem Estratégica', items: [
-                    '<div class="aligned-list-item"><strong>🧊 1. Quebra de Gelo:</strong> <span>"Qual teu nome mano?", "Como é que tu conheceu a cidade?" ➔ <em style="color:#aaa">Objetivo: Criar conexão real.</em></span></div>', 
-                    '<div class="aligned-list-item"><strong>🎮 2. Contexto:</strong> <span>"Já jogava RP antes ou é tua primeira vez?"</span></div>', 
-                    '<div class="aligned-list-item"><strong>💼 3. Forma de Ganho:</strong> <span>"Tu prefere ir evoluindo na raça ou curte já dar uma acelerada?" ➔ <em style="color:#aaa">Entender o perfil de compra.</em></span></div>', 
-                    '<div class="aligned-list-item"><strong>📍 4. Objetivo:</strong> <span>"O que tu quer virar aqui na cidade?"</span></div>'
-                ]},
-                { isFull: true, title: '🧠 3. Gatilho Mental & Foco', items: [
+                { isFull: true, title: '🎯 Abordagem Estratégica & Foco', items: [
+                    '<div class="aligned-list-item"><strong>🧊 Quebra de Gelo:</strong> <span>"Qual teu nome mano?", "Como é que tu conheceu a cidade?" ➔ <em style="color:#aaa">Objetivo: Criar conexão real.</em></span></div>', 
+                    '<div class="aligned-list-item"><strong>🎮 Contexto:</strong> <span>"Já jogava RP antes ou é tua primeira vez?"</span></div>', 
+                    '<div class="aligned-list-item"><strong>💼 Forma de Ganho:</strong> <span>"Tu prefere ir evoluindo na raça ou curte já dar uma acelerada?" ➔ <em style="color:#aaa">Entender o perfil de compra.</em></span></div>', 
+                    '<div class="aligned-list-item"><strong>📍 Objetivo:</strong> <span>"O que tu quer virar aqui na cidade?"</span></div>',
+                    '---',
                     '“Mano, no começo da cidade quem começa já com vantagem cresce MUITO mais rápido...”', 
                     '“Se tu já entra estruturado, tu sai na frente de geral.”', 
                     '---', 
@@ -89,6 +83,14 @@ const DataAccess = {
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>😌 Facilidade (menos dor de cabeça).</span></div>', 
                     '---', 
                     '<div style="text-align: left;">🏁 <strong>Ele não quer ficar perdido — quer começar forte!</strong></div>'
+                ]},
+                { isError: true, title: '❌ ERROS DO VENDEDOR (CLIENTE INICIANTE)', items: [
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Não entender que ele é iniciante.</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Não criar conexão.</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Não investigar o nível dele.</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Não ativar dor (tá perdido/lento).</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Falar só de item.</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Não direcionar o próximo passo.</span></div>'
                 ]}
             ]
         },
@@ -99,22 +101,25 @@ const DataAccess = {
             description: 'Entenda o jogador, conecte o produto com o que ele valoriza: UTILIDADE E RECONHECIMENTO.',
             image: 'policial.jpg',
             sections: [
-                { isFull: true, title: '👁️‍🗨️ 1. Leitura do Cliente', items: [
-                    '<div class="aligned-list-item"><strong>🔫 Estilo PVP:</strong> <span>Gosta de ação, combate e destaque. Busca status em confronto. Valoriza desempenho e vantagem.</span></div>', 
-                    '<div class="aligned-list-item"><strong>🎭 Estilo RP:</strong> <span>Gosta de imersão e rotina. Foco em interação e história. Valoriza utilidade e experiência.</span></div>'
-                ]},
-                { title: '🎯 2. Abordagem Estratégica', items: [
-                    '<div class="aligned-list-item"><strong>⏳ 1. Engajamento:</strong> <span>"Tá há quanto tempo na polícia? Tá curtindo a experiência aqui?"</span></div>', 
-                    '<div class="aligned-list-item"><strong>🔥 2. Estilo (PVP):</strong> <span>"Você participa bastante de ação? Trocação com bandido?"</span></div>', 
-                    '<div class="aligned-list-item"><strong>🚔 3. Estilo (RP):</strong> <span>"Ou você é mais de RP? Fica mais na DP, treinamento?"</span></div>'
-                ]},
-                { title: '🧠 3. Gatilhos & Foco', items: [
+                { isQuote: true, title: '⭐ Regra de Ouro — Policial', content: '“Tendo VIP tu ganha moral... A galera sempre pede carro emprestado e isso pesa para subir de cargo.” 👮‍♂️' },
+                { isFull: true, title: '🎯 Abordagem Estratégica & Foco', items: [
+                    '<div class="aligned-list-item"><strong>⏳ Engajamento:</strong> <span>"Tá há quanto tempo na polícia? Tá curtindo a experiência aqui?"</span></div>', 
+                    '<div class="aligned-list-item"><strong>🔥 Estilo (PVP):</strong> <span>"Você participa bastante de ação? Trocação com bandido?"</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚔 Estilo (RP):</strong> <span>"Ou você é mais de RP? Fica mais na DP, treinamento?"</span></div>',
+                    '---',
                     '“Mano, tendo VIP tu acaba ganhando muita moral... A galera sempre pede carro emprestado.”', 
                     '“Suas ações te deixam conhecido como gente boa, útil — e isso pesa MUITO para subir de cargo.”', 
                     '---', 
                     '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: var(--accent-gold); font-weight: 800; text-align: left;">🛍️ VENDENDO DE VERDADE:</span>', 
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>🛠️ Utilidade (ferramentas, economia de tempo).</span></div>', 
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>🎖️ Reconhecimento (status na corporação, autoridade).</span></div>'
+                ]},
+                { isError: true, title: '❌ ERROS DO VENDEDOR (CLIENTE POLICIAL)', items: [
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Não entender se ele é focado em PVP ou RP.</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Ignorar o tempo de corporação e o cargo dele.</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Não oferecer utilidade para a rotina dele.</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Não ativar o gatilho de status perante os colegas.</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Focar só em preço e não em moral/destaque.</span></div>'
                 ]}
             ]
         },
@@ -125,25 +130,28 @@ const DataAccess = {
             description: 'Vender para um médico não é falar do produto. É ENTENDER, CONECTAR E GERAR VALOR REAL.',
             image: 'medico.jpg',
             sections: [
-                { title: '🧩 1. Entenda o Perfil', items: [
-                    '<div class="aligned-list-item"><strong>🏥 Decisor e Líder:</strong> <span>Responsável por decisões importantes; Lidera equipes.</span></div>', 
-                    '<div class="aligned-list-item"><strong>💳 Poder de Compra:</strong> <span>Investe quando vê valor e resultado; Não compra por impulso.</span></div>'
-                ]},
-                { title: '🎯 2. Perguntas Inteligentes', items: [
-                    '<div class="aligned-list-item"><strong>🏢 1. Estrutura atual:</strong> <span>"Hoje tua equipe tá mais organizada ou ainda tá meio na correria?"</span></div>', 
-                    '<div class="aligned-list-item"><strong>📈 2. Objetivos:</strong> <span>"Tu quer crescer mais agora ou tá mais focado em manter?"</span></div>', 
-                    '<div class="aligned-list-item"><strong>🤕 3. Dores e Desafios:</strong> <span>"O que mais tá te dando dor de cabeça hoje aí na clínica?"</span></div>'
-                ]},
-                { title: '🧠 3. Foco Real (O que ele busca)', items: [
+                { isQuote: true, title: '⭐ Regra de Ouro — Médico', content: '“Resultados extraordinários vêm de estrutura. Aqui tu não é só mais um médico, tu é referência.” 🏥' },
+                { isFull: true, title: '🎯 Perguntas Inteligentes & Foco', items: [
+                    '<div class="aligned-list-item"><strong>🏢 Estrutura atual:</strong> <span>"Hoje tua equipe tá mais organizada ou ainda tá meio na correria?"</span></div>', 
+                    '<div class="aligned-list-item"><strong>📈 Objetivos:</strong> <span>"Tu quer crescer mais agora ou tá mais focado em manter?"</span></div>', 
+                    '<div class="aligned-list-item"><strong>🤕 Dores e Desafios:</strong> <span>"O que mais tá te dando dor de cabeça hoje aí na clínica?"</span></div>',
+                    '---',
                     '“Resultados extraordinários vêm de estrutura, pessoas e processos.”', 
                     '“Aqui dentro tu não precisa ser só mais um médico... Tu pode ser referência na cidade.”', 
                     '---', 
-                    '👑 <strong>STATUS + IMAGEM:</strong> Mansão top, carros de luxo e estilo marcante.'
+                    '<div style="text-align: left;">👑 <strong>STATUS + IMAGEM:</strong> Mansão top, carros de luxo e estilo marcante.</div>'
                 ]},
-                { isFull: true, title: '🛡️ 4. Lidando com Objeções', items: [
+                { isFull: true, title: '🛡️ Lidando com Objeções', items: [
                     '<div class="aligned-list-item"><strong>💸 "Está caro."</strong> <span>➔ "Entendo. Mas compara isso com o valor que isso vai gerar na tua vida e no teu nome."</span></div>', 
                     '<div class="aligned-list-item"><strong>❓ "Será que isso vale a pena?"</strong> <span>➔ "Se tu tá se perguntando isso... É porque já viu valor. A diferença é até onde tu quer chegar."</span></div>', 
                     '<div class="aligned-list-item"><strong>🤔 "Vou pensar."</strong> <span>➔ "Perfeito! Posso te mostrar alguns resultados rápidos que já podemos alcançar juntos?"</span></div>'
+                ]},
+                { isError: true, title: '❌ ERROS DO VENDEDOR (CLIENTE MÉDICO)', items: [
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Não respeitar o tempo dele (médicos são ocupados).</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Ignorar as dores da equipe ou da clínica.</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Não oferecer itens de alto padrão (mansão/luxo).</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Não lidar profissionalmente com objeções de valor.</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Tratar como novato e não como um decisor.</span></div>'
                 ]}
             ]
         },
@@ -154,18 +162,12 @@ const DataAccess = {
             description: 'Esse cliente já tem história. Ele não compra por precisar — ele compra para MARCAR O NOME DELE.',
             image: 'staff.jpg',
             sections: [
-                { title: '👁️‍🗨️ 1. Leitura do Cliente', items: [
-                    '<div class="aligned-list-item"><strong>🎖️ Experiente:</strong> <span>400+ horas de cidade; Já conhece o servidor e as mecânicas.</span></div>', 
-                    '<div class="aligned-list-item"><strong>🤝 Consolidado:</strong> <span>Já tem amigos, rotina dentro da cidade.</span></div>', 
-                    '---', 
-                    '⚠️ <strong>Observação:</strong> Se for Staff, RP não faz diferença para ele, então vender itens de destaque visual é melhor.'
-                ]},
-                { title: '🎯 2. Abordagem Estratégica', items: [
-                    '<div class="aligned-list-item"><strong>⏳ 1. Tempo:</strong> <span>"E aí mano, tu já tá há mó cota aqui na cidade né?"</span></div>', 
-                    '<div class="aligned-list-item"><strong>🏢 2. Situação:</strong> <span>"Já tem tua galera aí? Já tá estruturado?"</span></div>', 
-                    '<div class="aligned-list-item"><strong>📍 3. Posicionamento:</strong> <span>"Mas a galera te reconhece fácil? Tipo, só de bater o olho já sabem que é você?"</span></div>'
-                ]},
-                { title: '🧠 3. Gatilhos & Foco', items: [
+                { isQuote: true, title: '⭐ Regra de Ouro — Staff', content: '“Mano, tu já tem história na cidade. O certo era já ter uma identidade forte, ID baixo ninguém esquece.” 🆔' },
+                { isFull: true, title: '🎯 Abordagem Estratégica & Foco', items: [
+                    '<div class="aligned-list-item"><strong>⏳ Tempo:</strong> <span>"E aí mano, tu já tá há mó cota aqui na cidade né?"</span></div>', 
+                    '<div class="aligned-list-item"><strong>🏢 Situação:</strong> <span>"Já tem tua galera aí? Já tá estruturado?"</span></div>', 
+                    '<div class="aligned-list-item"><strong>📍 Posicionamento:</strong> <span>"Mas a galera te reconhece fácil? Tipo, só de bater o olho já sabem que é você?"</span></div>',
+                    '---',
                     '“Mano, tu já tem muita história na cidade... O certo era tu já ter uma identidade forte aqui dentro.”', 
                     '“ID muito alto acaba passando despercebido... Ninguém grava.”', 
                     '---', 
@@ -173,13 +175,20 @@ const DataAccess = {
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>🎭 Identidade e presença.</span></div>', 
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>🏆 Reconhecimento marcado na cidade.</span></div>'
                 ]},
-                { isFull: true, title: '🛒 4. Recomendações de Produto', items: [
+                { isFull: true, title: '🛒 Recomendações de Produtos', items: [
                     '⚠️ <strong>Foco Total em Identidade:</strong> "Tu já fez tudo... Agora falta ser reconhecido."', 
                     '---', 
                     '<div class="aligned-list-item"><strong>🆔 ID Exclusivo (< 1000):</strong> <span>Curto, marcante e respeitado.</span></div>', 
                     '<div class="aligned-list-item"><strong>👕 Roupa Personalizada:</strong> <span>Visual único e reconhecimento imediato.</span></div>', 
                     '<div class="aligned-list-item"><strong>👑 VIP Lançamento:</strong> <span>Benefícios gerais.</span></div>', 
                     '<div class="aligned-list-item"><strong>🔫 Skin de Arma:</strong> <span>Destaque visual.</span></div>'
+                ]},
+                { isError: true, title: '❌ ERROS DO VENDEDOR (CLIENTE STAFF)', items: [
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Não respeitar a história dele no servidor.</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Oferecer pacotes básicos para quem já é experiente.</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Ignorar o desejo de exclusividade e identidade visual.</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Focar em farm/inicial para quem já tem tudo.</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Não valorizar o peso do ID dele na cidade.</span></div>'
                 ]}
             ]
         }
@@ -306,7 +315,7 @@ const DataAccess = {
                         '<div class="aligned-list-item"><strong>🔀</strong> <span>Deixar o cliente mudar totalmente o assunto.</span></div>', 
                         '<div class="aligned-list-item"><strong>🗣️</strong> <span>Responder tudo sem puxar de volta para o objetivo.</span></div>', 
                         '<div class="aligned-list-item"><strong>☕</strong> <span>Ficar só “batendo papo” sem avançar.</span></div>', 
-                        '<div class="aligned-list-item"><strong>🔌</strong> <span>Não conectar a dor com a solução.</span></div>'
+                        '<div class="aligned-list-item"><strong>🔌</strong> <span>Não conectar a dor con a solução.</span></div>'
                     ], footer: "💡 <strong>Dor</strong> = O motivo emocional ou prático que faz o cliente querer comprar.<br>💡 <strong>Gerar dor</strong> = Fazer ele perceber que precisa daquilo ou que vale muito a pena ter aquilo." }
                 ],
                 videoCategories: [{ title: "Exemplos na Prática", videos: [{ label: "EXEMPLO CERTO", url: "https://drive.google.com/file/d/1XkFB2k2B9SfmVVZMYzBXF3dotWcL8xeo/preview", color: "#22c55e" }, { label: "EXEMPLO ERRADO", url: "https://drive.google.com/file/d/1eW3zORlLH6M20KGBbKCQ1BSR1QWh5a10/preview", color: "#ef4444" }]}]
@@ -436,26 +445,24 @@ const Controller = {
                     .pageTitle { font-size: 2rem !important; margin-bottom: 0.6rem; text-align: left; font-weight: 800; }
                     .pageDescription { font-size: 1.05rem !important; line-height: 1.5; text-align: left; color: #ccc; }
                     
-                    /* QUADRADO DO TAMANHO DA IMAGEM */
                     .headerImageContainer { flex-shrink: 0; border: 1px solid var(--accent-gold); padding: 6px; border-radius: 12px; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; }
                     .headerImageContainer img { max-width: 320px; height: auto; border-radius: 8px; display: block; }
 
-                    .contentGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; width: 100%; }
+                    .contentGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8rem; width: 100%; }
                     .cardSpanFull { grid-column: 1 / -1; }
                     
                     .infoCard { width: 100%; box-sizing: border-box; text-align: left; overflow: visible; background: #111; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); padding: 1.5rem; }
-                    .infoCard h2 { font-size: 1.3rem !important; text-align: left; margin-bottom: 1rem; color: var(--accent-gold); font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; }
+                    .infoCard h2 { font-size: 1.35rem !important; text-align: left; margin-bottom: 1rem; color: var(--accent-gold); font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; }
                     
                     .dataList { display: block; width: 100%; list-style: none; padding: 0; }
-                    .dataList li { font-size: 1rem !important; line-height: 1.6; margin-bottom: 10px; text-align: left; white-space: normal; }
+                    .dataList li { font-size: 1.05rem !important; line-height: 1.6; margin-bottom: 10px; text-align: left; white-space: normal; }
 
-                    .aligned-list-item { display: flex; align-items: flex-start; gap: 12px; width: 100%; margin-bottom: 8px; }
+                    .aligned-list-item { display: flex; align-items: flex-start; gap: 12px; width: 100%; margin-bottom: 8px; font-size: 1.05rem; }
                     .aligned-list-item strong { flex-shrink: 0; color: var(--accent-gold); }
                     .aligned-list-item span { flex-grow: 1; text-align: left; }
 
-                    .quoteCard { text-align: center !important; border: 1px solid rgba(212, 175, 55, 0.3) !important; background: rgba(212, 175, 55, 0.05) !important; padding: 2rem !important; }
-                    .quoteCard h2 { text-align: center !important; border: none; padding: 0; }
-                    .quoteText { font-size: 1.2rem !important; font-style: italic; display: block; text-align: center !important; width: 100%; margin-top: 10px; }
+                    .quoteCard { text-align: center !important; border: 1px solid rgba(212, 175, 55, 0.3) !important; background: rgba(212, 175, 55, 0.05) !important; padding: 2.2rem !important; display: flex; align-items: center; justify-content: center; }
+                    .quoteText { font-size: 1.55rem !important; font-weight: 600; font-style: italic; display: block; text-align: center !important; width: 100%; margin: 0; line-height: 1.6; color: var(--accent-gold); }
                     
                     .navItem { font-size: 1.05rem !important; white-space: nowrap; padding: 1.1rem 1.4rem !important; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); }
                     .topHeadingFree { grid-column: 1 / -1; text-align: center; font-size: 1.5rem; color: var(--accent-gold); font-weight: 900; margin: 2rem 0; text-transform: uppercase; letter-spacing: 1px; }
@@ -464,7 +471,6 @@ const Controller = {
                     .liderRecCard { grid-column: span 1 !important; }
                     .listDivider { margin: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; }
 
-                    /* RODAPÉ DESENVOLVIDO MELHORADO */
                     .sidebarFooter { padding: 1.8rem 1rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); background: linear-gradient(to bottom, transparent, rgba(212,175,55,0.03)); margin-top: auto; }
                     .sidebarFooter span { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
                     .sidebarFooter strong { color: var(--accent-gold); font-size: 1.15rem; display: block; margin-top: 6px; font-weight: 900; text-shadow: 0 0 10px rgba(212,175,55,0.2); }
@@ -512,6 +518,15 @@ const Controller = {
                                 if (s.isSectionTitle) return `<div class="topHeadingFree">${s.title}</div>`;
                                 if (s.isRecommendationHeader) return `<div class="cardSpanFull" style="margin-top: 1rem;"><h2 style="font-size: 1.4rem; color: var(--accent-gold); text-align: left; width: 100%; font-weight: 800;">${s.title}</h2></div>`;
                                 
+                                if (s.isComic) {
+                                    return `
+                                        <div class="cardSpanFull" style="margin-top: 2rem; border: 2px solid var(--accent-gold); border-radius: 12px; overflow: hidden; background: #000;">
+                                            <div style="background: var(--accent-gold); color: #000; padding: 10px; text-align: center; font-weight: 900; text-transform: uppercase; letter-spacing: 1px;">${s.title}</div>
+                                            <img src="${s.image}" style="width: 100%; height: auto; display: block;" alt="Comic Strategy">
+                                        </div>
+                                    `;
+                                }
+
                                 let extraClass = "";
                                 if (s.isCenteredCard) extraClass = "centeredRecommendationCard";
                                 else if (!s.isFull && !s.isQuote && !s.isError && BusinessLogic.state.currentProfileId === 'lider') extraClass = "liderRecCard";
@@ -519,11 +534,13 @@ const Controller = {
 
                                 return `
                                 <section class="infoCard ${extraClass} ${s.isQuote ? 'quoteCard' : ''} ${s.isError ? 'errorCard' : ''}">
-                                    <h2>${s.title}</h2>
+                                    ${!s.isQuote ? `<h2>${s.title}</h2>` : ''}
                                     ${s.content ? `<p class="quoteText">${s.content}</p>` : ''}
+                                    ${!s.isQuote ? `
                                     <ul class="dataList">
                                         ${s.items ? s.items.map(i => i === '---' ? `<li class="listDivider"></li>` : `<li>${i}</li>`).join('') : ''}
                                     </ul>
+                                    ` : ''}
                                     ${s.warning ? `<div class="warningBox">${s.warning}</div>` : ''}
                                     ${s.footer ? `<div class="hintBox">${s.footer}</div>` : ''}
                                 </section>

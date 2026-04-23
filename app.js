@@ -85,7 +85,7 @@ const DataAccess = {
                 { title: '🚀 VIP LANÇAMENTO', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Exclusividade e benefícios.</span></div>']},
                 { title: '🚗 VEÍCULOS START', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Perfeito para a entrada.</span></div>']},
                 { title: '🎟️ SANTAPASS', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Recompensas e itens únicos.</span></div>']},
-                { isFull: true, title: '🎵 SANTAFY', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Garante uma experiência melhor na cidade.</span></div>']},
+                { isFull: true, title: '🎵 SANTAFY', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Garante uma experiência sonora melhor na cidade.</span></div>']},
                 { isError: true, title: '❌ ERROS DO VENDEDOR (CLIENTE INICIANTE)', items: [
                     '<div class="aligned-list-item"><strong>🚫</strong> <span>Não entender que ele é iniciante.</span></div>', 
                     '<div class="aligned-list-item"><strong>🚫</strong> <span>Não criar conexão.</span></div>', 
@@ -225,7 +225,7 @@ const DataAccess = {
     getCategoryContent: (categoryId) => {
         const database = {
             'olheiro': {
-                id: 'olheiro', title: "Olheiro", description: "Observe the player, veja o que está fazendo, o assunto e se é o momento certo.", image: "gemini.jpg",
+                id: 'olheiro', title: "Olheiro", description: "Observe o player, veja o que está fazendo, o assunto e se é o momento certo.", image: "gemini.jpg",
                 sections: [
                     { isSectionTitle: true, title: "COMO ABORDAR (OLHEIRO)" },
                     { title: "🎯 Objetivo do Olheiro", items: ['<div class="aligned-list-item"><strong>🗣️</strong> <span>O cliente está disponível para conversar?</span></div>', '<div class="aligned-list-item"><strong>🧠</strong> <span>Você vai conseguir a atenção dele?</span></div>', '<div class="aligned-list-item"><strong>💰</strong> <span>Existe oportunidade de venda naquele momento?</span></div>'] },
@@ -259,7 +259,7 @@ const DataAccess = {
                     { title: "🔍 Indícios de Interesse", items: ['<div class="aligned-list-item"><strong>✅</strong> <span>Responde rápido.</span></div>', '<div class="aligned-list-item"><strong>🗣️</strong> <span>Fala mais que você.</span></div>', '<div class="aligned-list-item"><strong>❓</strong> <span>Faz perguntas.</span></div>', '<div class="aligned-list-item"><strong>📈</strong> <span>Engaja na conversa.</span></div>'] },
                     { title: "🎯 Foco da Conversa", items: ['<div class="aligned-list-item"><strong>🔥</strong> <span>Gerar interesse.</span></div>', '<div class="aligned-list-item"><strong>🛡️</strong> <span>Passar confiança.</span></div>', '<div class="aligned-list-item"><strong>🧭</strong> <span>Dar direção ao cliente.</span></div>', '---', '<div class="aligned-list-item"><strong>🚫</strong> <span>Não deixar o cliente desviar do assunto principal.</span></div>', '<div class="aligned-list-item"><strong>⏳</strong> <span>Não ficar apenas conversando sem intenção de venda.</span></div>', '<div class="aligned-list-item"><strong>🔗</strong> <span>Sempre conecte a conversa com a solução da venda.</span></div>'], warning: "Se o cliente dispersar ou você perder o foco, a venda esfria." },
                     { title: "📢 Sinais de Abertura (Ataque!)", items: ['<div class="aligned-list-item"><strong>💲</strong> <span>Pergunta o preço.</span></div>', '<div class="aligned-list-item"><strong>📦</strong> <span>Pede detalhes sobre o produto.</span></div>', '<div class="aligned-list-item"><strong>🛒</strong> <span>Pergunta o que você vende.</span></div>', '<div class="aligned-list-item"><strong>👤</strong> <span>Pergunta se você é vendedor.</span></div>'], footer: "🔥 Identificou isso? Pare de enrolar e comece o ATAQUE." },
-                    { title: "⚠️ Ponto Mais Importante", items: ['<div class="aligned-list-item"><strong>👀</strong> <span>Identificar a abertura.</span></div>', '<div class="aligned-list-item"><strong>🎣</strong> <span>Encontrar a dor do cliente.</span></div>', '<div class="aligned-list-item"><strong>🗺️</strong> <span>Mostrar o caminho.</span></div>'], warning: "O maior erro do vendedor é não perceber quando já pode vender (o tempo certo)." },
+                    { title: "⚠️ Ponto Mais Importante", items: ['<div class="aligned-list-item"><strong>👀</strong> <span>Identificar a abertura.</span></div>', '<div class="aligned-list-item"><strong>🎣</strong> <span>Encontrar a dor do cliente.</span></div>', '<div class="aligned-list-item"><strong>🗺️</strong> <span>Mostrar o caminho, falando de algum produto.</span></div>'], warning: "O maior erro do vendedor é não perceber quando já pode vender (o tempo certo)." },
                     { title: "🧠 Perguntas que Quebram o Padrão", items: ['<div class="aligned-list-item"><strong>🎓</strong> <span>“Tu já tá desenrolando bem na fac ou ainda tá travado?”</span></div>', '<div class="aligned-list-item"><strong>⛏️</strong> <span>“Já tá conseguindo farmar bem aí ou tá difícil evoluir?”</span></div>', '<div class="aligned-list-item"><strong>💸</strong> <span>“Já tá conseguindo fazer dinheiro ou tá lento ainda?”</span></div>'] },
                     { isError: true, title: "❌ ERROS DO VENDEDOR (CLIENTE MEIO)", items: ['<div class="aligned-list-item"><strong>🌪️</strong> <span>Perder o foco da conversa.</span></div>', '<div class="aligned-list-item"><strong>🔀</strong> <span>Deixar o cliente mudar totalmente o assunto.</span></div>', '<div class="aligned-list-item"><strong>🗣️</strong> <span>Responder tudo sem puxar de volta para o objetivo.</span></div>', '<div class="aligned-list-item"><strong>☕</strong> <span>Ficar só “batendo papo” sem avançar.</span></div>', '<div class="aligned-list-item"><strong>🔌</strong> <span>Não conectar a dor con a solução.</span></div>'], footer: "💡 <strong>Dor</strong> = O motivo emocional ou prático que faz o cliente querer comprar." }
                 ],
@@ -281,109 +281,109 @@ const DataAccess = {
             'fechamento': {
                 id: 'fechamento', title: "Fechamento", description: "Fechamento conduz valor, quebra dúvida e transforma interesse em decisão.", image: "fechamento.jpg",
                 sections: [
-                    { isSectionTitle: true, title: "💰 FECHAMENTO DE VENDA — FORTE" },
-                    { title: "🧠 Estrutura Mental do Fechamento", items: [
-                        '<div class="aligned-list-item"><strong>👉</strong> <span>Primeiro você <strong>reforça valor</strong></span></div>',
-                        '<div class="aligned-list-item"><strong>👉</strong> <span>Depois <strong>ancora preço</strong></span></div>',
-                        '<div class="aligned-list-item"><strong>👉</strong> <span>Depois <strong>quebra objeção</strong> com pagamento</span></div>',
-                        '<div class="aligned-list-item"><strong>👉</strong> <span>Finaliza com <strong>urgência</strong></span></div>',
+                    { isSectionTitle: true, title: "💰 ESTRATÉGIA DE FECHAMENTO — PADRÃO SG" },
+                    { title: "🧠 ESTRUTURA MENTAL DO FECHAMENTO", items: [
+                        '<div class="aligned-list-item"><strong>💎</strong> <span>Primeiro você <strong>reforça o valor</strong></span></div>',
+                        '<div class="aligned-list-item"><strong>💸</strong> <span>Depois <strong>ancora preço</strong></span></div>',
+                        '<div class="aligned-list-item"><strong>🛡️</strong> <span>Depois <strong>quebra objeção</strong> com pagamento</span></div>',
+                        '<div class="aligned-list-item"><strong>⚡</strong> <span>Finaliza com <strong>urgência imediata</strong></span></div>',
                         '---',
                         '<div style="color: #fff; font-weight: 800;">💡 Dica: Ancoragem = fazer o cliente sentir que o produto vale muito, antes de ver o preço!</div>'
                     ]},
-                    { title: '💸 Ancoragem', items: [
+                    { title: '💸 ANCORAGEM DE VALOR', items: [
                         '“Se você fosse pegar tudo separado, passaria fácil de R$XXX…”',
                         '“Mas nesse formato aqui, você já resolve tudo de uma vez e economiza.”',
                         '---',
-                        '<div style="color: #fff; font-weight: 800;">👉 Aqui você cria percepção de vantagem</div>'
+                        '<div style="color: #fff; font-weight: 800;">📈 Aqui você cria percepção de vantagem real</div>'
                     ]},
-                    { title: '💳 Quebra de Objeção (Pagamento)', items: [
+                    { title: '💳 PAGAMENTO & OBJEÇÃO', items: [
                         '“E o melhor, nem precisa <strong>pensar</strong> agora…”',
                         '“Você pode fazer no <strong>Pix</strong>, ou dividir no <strong>cartão de crédito</strong>.”',
-                        '“Se for internacional, dá pra pagar tranquilo pelo <strong>Revolut</strong> ou <strong>Wise</strong> também.”'
+                        '“Se for internacional, aceitamos <strong>Revolut</strong> ou <strong>Wise</strong> também.”'
                     ]},
-                    { title: '⏰ Urgência (Fechamento Final)', items: [
+                    { title: '⏰ GATILHO DE URGÊNCIA', items: [
                         '“E sendo bem direto contigo, essa condição que eu te passei é só agora.”',
                         '“Se deixar pra depois, você provavelmente vai pagar mais caro ou perder esse pacote.”'
                     ]},
-                    { isFull: true, title: '🎯 Fechamento Direto (Matador)', items: [
+                    { isFull: true, title: '🎯 FECHAMENTO DIRETO (MATADOR)', items: [
                         '“Se fizer sentido pra você, já posso te mandar o Pix ou o link do cartão agora e deixar isso tudo ativo pra você hoje mesmo.”'
                     ]},
-                    { isFull: true, title: '⚔️ Versão Mais Agressiva', items: [
-                        '<div style="color:#ccc; font-size:0.95rem; margin-bottom: 12px;">(Usar quando o cliente já quer)</div>',
+                    { isFull: true, title: '⚔️ VERSÃO MAIS AGRESSIVA', items: [
+                        '<div style="color:#ccc; font-size:0.95rem; margin-bottom: 12px;">(Usar quando o cliente já demonstrou interesse real)</div>',
                         '“Sendo sincero contigo — isso aqui não é gasto, é você evitar gastar depois.”',
                         '“Quem pega isso agora já sai na frente, quem deixa pra depois sempre paga mais.”',
                         '“Quer fazer no Pix ou prefere parcelar no cartão?”',
                         '---',
-                        '<div style="color: #fff; font-weight: 800;">💡 Dica: Nunca fale obrigado após uma venda, fale parabéns!</div>'
+                        '<div style="color: #fff; font-weight: 800;">🏆 💡 Dica: Nunca fale obrigado após uma venda, fale parabéns!</div>'
                     ]},
                     { isError: true, title: '❌ ERROS DO VENDEDOR (CLIENTE FECHAMENTO)', items: [
-                        '<div class="aligned-list-item"><strong>🚫</strong> <span>Ficar explicando demais.</span></div>',
-                        '<div class="aligned-list-item"><strong>🚫</strong> <span>Não pedir o pagamento.</span></div>',
-                        '<div class="aligned-list-item"><strong>🚫</strong> <span>Não criar urgência.</span></div>',
+                        '<div class="aligned-list-item"><strong>🚫</strong> <span>Ficar explicando detalhes técnicos de novo.</span></div>',
+                        '<div class="aligned-list-item"><strong>🚫</strong> <span>Não pedir o pagamento de forma direta.</span></div>',
+                        '<div class="aligned-list-item"><strong>🚫</strong> <span>Não criar senso de oportunidade única.</span></div>',
                         '<div class="aligned-list-item"><strong>🚫</strong> <span>Esperar o cliente decidir sozinho.</span></div>',
                         '---',
-                        '<div style="color: #fff; font-weight: 800;">👉 Sempre termina com pergunta de decisão, nunca aberta.</div>'
+                        '<div style="color: #fff; font-weight: 800;">🤝 Sempre termina com pergunta de decisão, nunca aberta.</div>'
                     ]}
                 ]
             },
             'posvenda': {
                 id: 'posvenda', title: "Pós Venda", description: "Pós venda bem feito transforma cliente em recorrência e indicação.", image: "pos_venda.jpg",
                 sections: [
-                    { isSectionTitle: true, title: "🧠 PÓS-VENDA — PADRÃO SG" },
-                    { title: "CONFIRMAÇÃO (SEGURANÇA)", items: [
+                    { isSectionTitle: true, title: "🧠 ESTRATÉGIA DE PÓS-VENDA — PADRÃO SG" },
+                    { title: "🛡️ CONFIRMAÇÃO (SEGURANÇA)", items: [
                         '📌 Garanta que ele sinta que fez uma boa decisão',
                         '✔️ “Já deixei tudo certo pra você.”',
                         '✔️ “Você já pode usar agora tranquilo.”',
                         '✔️ “Qualquer coisa me chama que te ajudo.”',
                         '---',
-                        '➡️ Remove arrependimento | ➡️ Aumenta confiança | ➡️ Evita chargeback'
+                        '➡️ Remove arrependimento | 🔒 Aumenta confiança | 🛡️ Evita chargeback'
                     ]},
-                    { title: "VALORIZAÇÃO (STATUS)", items: [
+                    { title: "💎 VALORIZAÇÃO (STATUS)", items: [
                         '📌 Faça ele sentir que subiu de nível',
                         '✔️ “Agora você já tá na frente de muita gente.”',
-                        '✔️ “Pouca gente entra já assim estruturado.”',
-                        '✔️ “Você fez uma escolha inteligente.”',
+                        '✔️ “Pouca gente entra já estruturado assim.”',
+                        '✔️ “Você fez uma escolha inteligente, parabéns.”',
                         '---',
-                        '➡️ Reforça decisão | ➡️ Cria orgulho | ➡️ Aumenta apego'
+                        '🥇 Reforça decisão | 👑 Cria orgulho | 💎 Aumenta apego'
                     ]},
-                    { title: "ATIVAÇÃO (USO)", items: [
+                    { title: "🚀 ATIVAÇÃO (USO REAL)", items: [
                         '📌 Ensine ele a usar o que comprou',
                         '✔️ “Já usou o [benefício]?”',
                         '✔️ “Se fizer isso aqui, você aproveita melhor ainda.”',
                         '✔️ “Posso te mostrar como tirar mais vantagem.”',
                         '---',
-                        '➡️ Valor percebido sobe | ➡️ Diminui desistência | ➡️ Aumenta satisfação'
+                        '📈 Valor percebido sobe | ⚙️ Diminui desistência | 🚀 Aumenta satisfação'
                     ]},
-                    { title: "ABERTURA (RELACIONAMENTO)", items: [
+                    { title: "🤝 ABERTURA (CONEXÃO)", items: [
                         '📌 Deixe porta aberta pra continuidade',
                         '✔️ “Qualquer dúvida me chama.”',
                         '✔️ “Se quiser evoluir mais depois, te mostro opções.”',
-                        '✔️ “Sempre solto coisa nova, te aviso.”',
+                        '✔️ “Sempre solto coisa nova exclusiva, te aviso.”',
                         '---',
-                        '➡️ Cria vínculo | ➡️ Mantém contato ativo | ➡️ Prepara próxima venda'
+                        '💬 Cria vínculo | 🤝 Mantém contato ativo | 📞 Prepara próxima venda'
                     ]},
-                    { title: "RECOMPRA / UPSELL", items: [
+                    { title: "💸 RECOMPRA / UPSELL", items: [
                         '📌 Plante a próxima venda sem forçar',
                         '✔️ “Depois você pode evoluir ainda mais com…”',
                         '✔️ “Tem um upgrade que encaixa muito com isso que você pegou.”',
                         '✔️ “Quando quiser subir mais, já sei o que te indicar.”',
                         '---',
-                        '➡️ Natural | ➡️ Sem pressão | ➡️ Direcionado'
+                        '🔄 Naturalidade | 💸 Sem pressão | 📈 Direcionamento'
                     ]},
-                    { title: "INDICAÇÃO (ESCALA)", items: [
+                    { title: "📢 INDICAÇÃO (ESCALA)", items: [
                         '📌 Transforme cliente em vendedor',
                         '✔️ “Se tiver algum amigo que quer começar bem, me chama.”',
                         '✔️ “Quem entra assim já sai na frente, igual você.”',
                         '✔️ “Se indicar alguém, depois te dou uma moral.”',
                         '---',
-                        '➡️ Novos clientes | ➡️ Baixo custo | ➡️ Alta conversão'
+                        '✨ Novos clientes | 👥 Baixo custo | 📢 Alta conversão'
                     ]},
                     { isError: true, title: "❌ ERROS NO PÓS-VENDA", items: [
-                        '❌ Sumir depois da venda',
-                        '❌ Não ensinar a usar',
-                        '❌ Não reforçar decisão',
-                        '❌ Não abrir espaço pra próxima venda',
-                        '❌ Não pedir indicação'
+                        '❌ Sumir depois da venda.',
+                        '❌ Não ensinar a usar o produto.',
+                        '❌ Não reforçar a decisão inteligente do cliente.',
+                        '❌ Não abrir espaço pra próxima venda.',
+                        '❌ Esquecer de pedir indicação.'
                     ]}
                 ]
             }

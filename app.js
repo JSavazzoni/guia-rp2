@@ -10,7 +10,7 @@ const DataAccess = {
                 { isSectionTitle: true, title: 'COMO ABORDAR (LÍDER DE FACÇÃO)' },
                 { isFull: true, title: '🎯 Abordagem Estratégica & Foco', items: [
                     '“E aí mano, como que tá tua fac hoje?”', 
-                    '“Quantos membros estão pegando ativos aí à noite? Tu quer crescer mais ainda ou tá suave como tá?”', 
+                    '“Quantos membros estão pegando ativos aí à noite? Tu quer pegar um pacote onde sua facção vai se tornar a melhor, ou prefere ir pegando aos poucos os farms e vips?”', 
                     '“O que mais tá pegando hoje? Fac tá com muito farm aí? Tem bastante grana? Tá ganhando os eventos?”',
                     '---',
                     '“Mano, facção grande não cresce só na bala... Tem que ter estrutura aqui para as pessoas quererem ficar.”', 
@@ -44,7 +44,7 @@ const DataAccess = {
                     '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Aumenta o engajamento dos membros.</span></div>'
                 ]},
                 { isFull: true, title: '🎭 Identidade Visual', items: [
-                    '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Personalização: Uniforme e nome da fac.</span></div>', 
+                    '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Personalização: Uniforme e nome da facção.</span></div>', 
                     '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Reconhecimento imediato na cidade.</span></div>', 
                     '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Respeito visual perante rivais.</span></div>'
                 ]},
@@ -89,7 +89,7 @@ const DataAccess = {
                 { isError: true, title: '❌ ERROS DO VENDEDOR (CLIENTE INICIANTE)', items: [
                     '<div class="aligned-list-item"><strong>🚫</strong> <span>Não entender que ele é iniciante.</span></div>', 
                     '<div class="aligned-list-item"><strong>🚫</strong> <span>Não criar conexão.</span></div>', 
-                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Não investigar le nível dele.</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Não investigar o nível dele.</span></div>', 
                     '<div class="aligned-list-item"><strong>🚫</strong> <span>Não ativar dor (tá perdido/lento).</span></div>', 
                     '<div class="aligned-list-item"><strong>🚫</strong> <span>Falar só de item.</span></div>', 
                     '<div class="aligned-list-item"><strong>🚫</strong> <span>Não direcionar o próximo passo.</span></div>'
@@ -150,7 +150,7 @@ const DataAccess = {
                 { isSectionTitle: true, title: 'COMO ABORDAR (MÉDICO)' },
                 { isFull: true, title: '🎯 Abordagem Estratégica & Foco', items: [
                     '“Hoje tua equipe tá mais organizada ou ainda tá meio na correria?”', 
-                    '“Tu quer crescer mais agora ou tá mais focado em manter?”', 
+                    '“Você quer se tornar referência rápido com vips, mansões e carros ou ir conquistando seu espaço aos poucos, pegando só um desses itens agora?”', 
                     '“O que mais tá te dando dor de cabeça hoje aí na clínica?”',
                     '---',
                     '“Resultados extraordinários vêm de estrutura, pessoas e processos.”', 
@@ -225,7 +225,7 @@ const DataAccess = {
     getCategoryContent: (categoryId) => {
         const database = {
             'olheiro': {
-                id: 'olheiro', title: "Olheiro", description: "Observe o player, veja o que está fazendo, o assunto e se é o momento certo.", image: "gemini.jpg",
+                id: 'olheiro', title: "Olheiro", description: "Observe the player, veja o que está fazendo, o assunto e se é o momento certo.", image: "gemini.jpg",
                 sections: [
                     { isSectionTitle: true, title: "COMO ABORDAR (OLHEIRO)" },
                     { title: "🎯 Objetivo do Olheiro", items: ['<div class="aligned-list-item"><strong>🗣️</strong> <span>O cliente está disponível para conversar?</span></div>', '<div class="aligned-list-item"><strong>🧠</strong> <span>Você vai conseguir a atenção dele?</span></div>', '<div class="aligned-list-item"><strong>💰</strong> <span>Existe oportunidade de venda naquele momento?</span></div>'] },
@@ -258,8 +258,8 @@ const DataAccess = {
                     { title: "🎯 Objetivo Meio de Campo", items: ['<div class="aligned-list-item"><strong>🗣️</strong> <span>Conduzir o cliente fazendo perguntas-chave.</span></div>', '<div class="aligned-list-item"><strong>🧠</strong> <span>Entender o que oferecer para o cliente.</span></div>', '<div class="aligned-list-item"><strong>🤝</strong> <span>Conectar com a realidade dele.</span></div>', '<div class="aligned-list-item"><strong>📦</strong> <span>Preparar para oferecer.</span></div>'] },
                     { title: "🔍 Indícios de Interesse", items: ['<div class="aligned-list-item"><strong>✅</strong> <span>Responde rápido.</span></div>', '<div class="aligned-list-item"><strong>🗣️</strong> <span>Fala mais que você.</span></div>', '<div class="aligned-list-item"><strong>❓</strong> <span>Faz perguntas.</span></div>', '<div class="aligned-list-item"><strong>📈</strong> <span>Engaja na conversa.</span></div>'] },
                     { title: "🎯 Foco da Conversa", items: ['<div class="aligned-list-item"><strong>🔥</strong> <span>Gerar interesse.</span></div>', '<div class="aligned-list-item"><strong>🛡️</strong> <span>Passar confiança.</span></div>', '<div class="aligned-list-item"><strong>🧭</strong> <span>Dar direção ao cliente.</span></div>', '---', '<div class="aligned-list-item"><strong>🚫</strong> <span>Não deixar o cliente desviar do assunto principal.</span></div>', '<div class="aligned-list-item"><strong>⏳</strong> <span>Não ficar apenas conversando sem intenção de venda.</span></div>', '<div class="aligned-list-item"><strong>🔗</strong> <span>Sempre conecte a conversa com a solução da venda.</span></div>'], warning: "Se o cliente dispersar ou você perder o foco, a venda esfria." },
-                    { title: "📢 Sinais de Abertura (Ataque!)", items: ['<div class="aligned-list-item"><strong>💲</strong> <span>Pergunta o preço.</span></div>', '<div class="aligned-list-item"><strong>📦</strong> <span>Pede detalhes sobre le produto.</span></div>', '<div class="aligned-list-item"><strong>🛒</strong> <span>Pergunta o que você vende.</span></div>', '<div class="aligned-list-item"><strong>👤</strong> <span>Pergunta se você é vendedor.</span></div>'], footer: "🔥 Identificou isso? Pare de enrolar e comece o ATAQUE." },
-                    { title: "⚠️ Ponto Mais Importante", items: ['<div class="aligned-list-item"><strong>👀</strong> <span>Identificar a abertura.</span></div>', '<div class="aligned-list-item"><strong>🎣</strong> <span>Encontrar a dor do cliente.</span></div>', '<div class="aligned-list-item"><strong>🗺️</strong> <span>Mostrar o caminho, falando de algum produto.</span></div>'], warning: "O maior erro do vendedor é não perceber quando já pode vender (o tempo certo)." },
+                    { title: "📢 Sinais de Abertura (Ataque!)", items: ['<div class="aligned-list-item"><strong>💲</strong> <span>Pergunta o preço.</span></div>', '<div class="aligned-list-item"><strong>📦</strong> <span>Pede detalhes sobre o produto.</span></div>', '<div class="aligned-list-item"><strong>🛒</strong> <span>Pergunta o que você vende.</span></div>', '<div class="aligned-list-item"><strong>👤</strong> <span>Pergunta se você é vendedor.</span></div>'], footer: "🔥 Identificou isso? Pare de enrolar e comece o ATAQUE." },
+                    { title: "⚠️ Ponto Mais Importante", items: ['<div class="aligned-list-item"><strong>👀</strong> <span>Identificar a abertura.</span></div>', '<div class="aligned-list-item"><strong>🎣</strong> <span>Encontrar a dor do cliente.</span></div>', '<div class="aligned-list-item"><strong>🗺️</strong> <span>Mostrar o caminho.</span></div>'], warning: "O maior erro do vendedor é não perceber quando já pode vender (o tempo certo)." },
                     { title: "🧠 Perguntas que Quebram o Padrão", items: ['<div class="aligned-list-item"><strong>🎓</strong> <span>“Tu já tá desenrolando bem na fac ou ainda tá travado?”</span></div>', '<div class="aligned-list-item"><strong>⛏️</strong> <span>“Já tá conseguindo farmar bem aí ou tá difícil evoluir?”</span></div>', '<div class="aligned-list-item"><strong>💸</strong> <span>“Já tá conseguindo fazer dinheiro ou tá lento ainda?”</span></div>'] },
                     { isError: true, title: "❌ ERROS DO VENDEDOR (CLIENTE MEIO)", items: ['<div class="aligned-list-item"><strong>🌪️</strong> <span>Perder o foco da conversa.</span></div>', '<div class="aligned-list-item"><strong>🔀</strong> <span>Deixar o cliente mudar totalmente o assunto.</span></div>', '<div class="aligned-list-item"><strong>🗣️</strong> <span>Responder tudo sem puxar de volta para o objetivo.</span></div>', '<div class="aligned-list-item"><strong>☕</strong> <span>Ficar só “batendo papo” sem avançar.</span></div>', '<div class="aligned-list-item"><strong>🔌</strong> <span>Não conectar a dor con a solução.</span></div>'], footer: "💡 <strong>Dor</strong> = O motivo emocional ou prático que faz o cliente querer comprar." }
                 ],
@@ -318,7 +318,7 @@ const DataAccess = {
                     ]},
                     { isError: true, title: '❌ ERROS DO VENDEDOR (CLIENTE FECHAMENTO)', items: [
                         '<div class="aligned-list-item"><strong>🚫</strong> <span>Ficar explicando demais.</span></div>',
-                        '<div class="aligned-list-item"><strong>🚫</strong> <span>Não pedir le pagamento.</span></div>',
+                        '<div class="aligned-list-item"><strong>🚫</strong> <span>Não pedir o pagamento.</span></div>',
                         '<div class="aligned-list-item"><strong>🚫</strong> <span>Não criar urgência.</span></div>',
                         '<div class="aligned-list-item"><strong>🚫</strong> <span>Esperar o cliente decidir sozinho.</span></div>',
                         '---',
@@ -484,7 +484,7 @@ const Controller = {
                     .topHeadingFree { grid-column: 1 / -1; text-align: center; font-size: 1.5rem; color: #fff; font-weight: 900; margin: 2rem 0; text-transform: uppercase; letter-spacing: 1px; }
                     
                     .dataList { display: block; width: 100%; list-style: none; padding: 0; }
-                    .dataList div { font-size: 1rem !important; line-height: 1.6; text-align: left; }
+                    .dataList div { font-size: 1rem !important; line-height: 1.6; text-align: left; color: #eee; margin-bottom: 6px; }
 
                     .aligned-list-item { display: flex; align-items: flex-start; gap: 12px; width: 100%; margin-bottom: 8px; font-size: 1.05rem; }
                     .aligned-list-item strong { flex-shrink: 0; color: var(--accent-gold); }
@@ -513,7 +513,7 @@ const Controller = {
                                             ${cat.title} ${isMeio ? (BusinessLogic.state.isMeioExpanded ? '▾' : '▸') : ''}
                                         </div>
                                         ${isMeio && BusinessLogic.state.isMeioExpanded ? `
-                                            <div class="profileSubMenu" style="background: #080808;">
+                                            <div style="background: #080808;">
                                                 ${Object.values(profiles).map(p => `
                                                     <div class="navItem ${BusinessLogic.state.currentProfileId === p.id ? 'navSubItemActive' : ''}" 
                                                          style="padding-left: 2.5rem !important; border-bottom: none;" 
@@ -554,8 +554,8 @@ const Controller = {
                                     <div class="dataList">
                                         ${s.items ? s.items.map(i => i === '---' ? `<div class="listDivider"></div>` : `<div class="aligned-list-item">${i}</div>`).join('') : ''}
                                     </div>
-                                    ${s.footer ? `<div class="hintBox" style="margin-top:15px; padding:10px; background:rgba(212,175,55,0.1); border-radius:6px; font-size:0.95rem;">${s.footer}</div>` : ''}
                                     ${s.warning ? `<div class="warningBox" style="margin-top:10px; color:#ff4444; font-size:0.9rem;">⚠️ ${s.warning}</div>` : ''}
+                                    ${s.footer ? `<div class="hintBox" style="margin-top:15px; padding:10px; background:rgba(212,175,55,0.1); border-radius:6px; font-size:0.95rem;">${s.footer}</div>` : ''}
                                 </section>
                                 `;
                             }).join('')}

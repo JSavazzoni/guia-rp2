@@ -1,18 +1,16 @@
 const ApiClient = {
     async request(endpoint, options = {}) {
-        const userStorage = JSON.parse(localStorage.getItem('user'));
-        const token = userStorage?.token;
+        const user = JSON.parse(localStorage.getItem('user'));
+        const token = user?.token;
 
         const headers = {
             'Content-Type': 'application/json',
-            ...(token && { 'Authorization': `Bearer ${token}` }), // Envia o token para o servidor
+            ...(token && { 'Authorization': `Bearer ${token}` }),
             ...options.headers
         };
 
         try {
             const response = await fetch(endpoint, { ...options, headers });
-            
-            // Se o token estiver expirado ou inválido, desloga
             if (response.status === 401 || response.status === 403) {
                 if (!endpoint.includes('/auth')) {
                     localStorage.removeItem('user');
@@ -21,12 +19,12 @@ const ApiClient = {
             }
             return await response.json();
         } catch (error) {
-            return { success: false, message: 'Erro de conexão.' };
+            return { success: false };
         }
     },
 
-    async get(endpoint) { return this.request(endpoint, { method: 'GET' }); },
-    async post(endpoint, data) { return this.request(endpoint, { method: 'POST', body: JSON.stringify(data) }); },
-    async put(endpoint, data) { return this.request(endpoint, { method: 'PUT', body: JSON.stringify(data) }); },
-    async delete(endpoint, data) { return this.request(endpoint, { method: 'DELETE', body: JSON.stringify(data) }); }
+    async get(url) { return this.request(url, { method: 'GET' }); },
+    async post(url, data) { return this.request(url, { method: 'POST', body: JSON.stringify(data) }); },
+    async put(url, data) { return this.request(url, { method: 'PUT', body: JSON.stringify(data) }); },
+    async delete(url, data) { return this.request(url, { method: 'DELETE', body: JSON.stringify(data) }); }
 };

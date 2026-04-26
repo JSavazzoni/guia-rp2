@@ -78,6 +78,7 @@ const DataAccess = {
                     '<strong style="color: #22c55e; display: block; margin-top: 12px; margin-bottom: 4px;">✨ GERAR DESEJO:</strong>',
                     '<div class="aligned-list-item"><strong>🚀</strong> <span>“Mano, no começo da cidade quem começa já com vantagem cresce MUITO mais rápido...”</span></div>', 
                     '<div class="aligned-list-item"><strong>🏁</strong> <span>“Se tu já entra estruturado, tu sai na frente de geral. 🏆”</span></div>', 
+                    '<div class="aligned-list-item"><strong>🌟</strong> <span>“Imagina você sendo um ponto de referência e respeitado na cidade. 🌟”</span></div>', 
                     '---', 
                     '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: #fff; font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>', 
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>🚀 Evolução rápida.</span></div>', 
@@ -276,7 +277,11 @@ const DataAccess = {
                     },
                     { isSectionTitle: true, title: "COMO ABORDAR (DEFESA)" },
                     { title: "🛡️ O Que é Defesa?", items: [
-                        '<div class="aligned-list-item"><strong>🤝</strong> <span>Defesa é criar conexão com o cliente para ganhar atenção e iniciar a conversa.</span></div>'
+                        '<div class="aligned-list-item"><strong>🤝</strong> <span>Defesa é criar conexão com o cliente para ganhar atenção e iniciar a conversa.</span></div>',
+                        '---',
+                        '<div class="aligned-list-item"><strong>👉</strong> <span>É o primeiro contato.</span></div>',
+                        '---',
+                        '<div class="aligned-list-item"><strong>👉</strong> <span>É onde você conquista o direito de continuar falando.</span></div>'
                     ], warning: "Sem conexão ➔ Sem atenção ➔ Sem venda. 🛑" },
                     { title: "🎯 Objetivo da Defesa", items: [
                         '<div class="aligned-list-item"><strong>🛑</strong> <span>Fazer o cliente parar através de alguma ação ou fala.</span></div>', 
@@ -302,7 +307,7 @@ const DataAccess = {
                         '<div class="aligned-list-item"><strong>❓</strong> <span>“Qual teu nome?”</span></div>', 
                         '---',
                         '<div class="aligned-list-item"><strong>👀</strong> <span>“Vi você agora… curti teu estilo.”</span></div>'
-                    ] },
+                    ], footer: "<strong>💡 Dica:</strong> Pergunta certa = Cliente fala.<br><br><strong>💡 Dica:</strong> É importante a sua apresentação com nome, gera confiança. 🤝" },
                     { isError: true, title: "❌ ERROS DO VENDEDOR (CLIENTE DEFESA)", items: ['<div class="aligned-list-item"><strong>🏃‍♂️</strong> <span>Chegar vendendo direto (“Quer VIP?”).</span></div>', '<div class="aligned-list-item"><strong>🤖</strong> <span>Parecer robô ou script decorado.</span></div>', '<div class="aligned-list-item"><strong>🛑</strong> <span>Interromper o cliente em um momento errado.</span></div>', '<div class="aligned-list-item"><strong>🤐</strong> <span>Falar demais e não ouvir.</span></div>', '<div class="aligned-list-item"><strong>🙈</strong> <span>Ignorar o que o cliente respondeu.</span></div>', '<div class="aligned-list-item"><strong>🔨</strong> <span>Forçar a venda sem entender a necessidade.</span></div>'], warning: "Isso quebra a atenção na hora. 💥" }
                 ],
                 videoCategories: [
@@ -405,6 +410,11 @@ const DataAccess = {
                         '<div class="aligned-list-item"><strong>•</strong> <span>Produto é limitado/exclusivo. 💎</span></div>',
                         '<div class="aligned-list-item"><strong>•</strong> <span>Promoção real. 📉</span></div>',
                         '<div class="aligned-list-item"><strong>•</strong> <span>Tem vantagem temporária clara. ⏳</span></div>'
+                    ]},
+                    { title: '💳 PAGAMENTO & OBJEÇÃO', items: [
+                        '<div class="aligned-list-item"><strong>💸</strong> <span>“Você pode fazer via Pix ou no cartão de crédito, da forma que for mais confortável para você.”</span></div>',
+                        '---',
+                        '<div class="aligned-list-item"><strong>🌍</strong> <span>“Se estiver fora, também trabalhamos com Revolut, então isso não é um problema.”</span></div>'
                     ]},
                     { isFull: true, title: '🎯 FECHAMENTO DIRETO (MATADOR)', items: [
                         '<div class="aligned-list-item"><strong>👉</strong> <span>O ponto aqui não é como você paga — é o nível que você decide entrar na cidade. 🏙️</span></div>',
@@ -615,7 +625,7 @@ const Controller = {
 
                     .preparationGrid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem; background: #111; padding: 2.5rem; border: 2px solid rgba(255,255,255,0.1); box-shadow: 0 15px 35px rgba(0,0,0,0.7); margin-top: 1.5rem; margin-bottom: 2.5rem; grid-column: 1 / -1; align-items: center; border-radius: 12px; }
                     .prepPhoto { display: flex; justify-content: center; align-items: center; }
-                    .prepPhoto img { max-width: 480px; width: 100%; border-radius: 8px; border: 2px solid rgba(255,255,255,0.15); display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+                    .prepPhoto img { max-width: 480px; width: 100%; border-radius: 8px; border: 3px solid #fde047; display: block; box-shadow: 0 0 25px rgba(253, 224, 71, 0.6); }
 
                     .contentGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8rem; width: 100%; align-items: stretch; }
                     .cardSpanFull { grid-column: 1 / -1; }

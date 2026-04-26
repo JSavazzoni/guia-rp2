@@ -7,12 +7,13 @@ const UI = {
             return;
         }
 
+        // TRAVA DE SEGURANÇA REAL: Se o status não for aprovado, ninguém vê o menu.
         if (App.state.currentUser.status !== 'approved') {
             root.innerHTML = `
                 <div style="height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#000; color:#fff; text-align:center; font-family:Inter,sans-serif; background-image: url('AssetStore/image_1e6304.jpg'); background-size:cover; background-position:center;">
                     <div style="background:rgba(0,0,0,0.85); padding:3rem; border-radius:24px; border:1px solid #d4af37; backdrop-filter: blur(10px);">
-                        <h1 style="color:#d4af37; margin-bottom:1rem; font-size:2rem; font-weight:900;">ACESSO EM ANÁLISE ⏳</h1>
-                        <p style="color:#ccc; max-width:400px; line-height:1.6; font-weight:600;">Olá <strong>${App.state.currentUser.name}</strong>, seu cadastro foi recebido.<br>Aguarde a aprovação do administrador para acessar o sistema.</p>
+                        <h1 style="color:#d4af37; margin-bottom:1rem; font-size:2rem; font-weight:900;">ACESSO PENDENTE ⏳</h1>
+                        <p style="color:#ccc; max-width:400px; line-height:1.6; font-weight:600;">Olá <strong>${App.state.currentUser.name}</strong>, sua conta está em análise. <br> O administrador precisa aprovar seu perfil antes de você acessar as estratégias.</p>
                         <button onclick="App.logout()" style="margin-top:2rem; background:#d4af37; border:none; color:#000; padding:14px 30px; border-radius:12px; cursor:pointer; font-weight:900; text-transform:uppercase;">SAIR DO SISTEMA</button>
                     </div>
                 </div>`;
@@ -26,7 +27,7 @@ const UI = {
         } else {
             const data = this.getActiveData();
             if (!data) {
-                root.innerHTML = '<div style="color:#d4af37; padding:100px; text-align:center; font-size:1.5rem; font-weight:900;">CARREGANDO DADOS...</div>';
+                root.innerHTML = '<div style="color:#d4af37; padding:100px; text-align:center; font-size:1.5rem; font-weight:900;">CARREGANDO ESTRATÉGIAS...</div>';
                 return;
             }
             root.innerHTML = this.templates.category(data);
@@ -41,144 +42,301 @@ const UI = {
     },
 
     templates: {
-        background: () => `
+        auth: () => `
             <style>
+                body { margin: 0; font-family: 'Inter', sans-serif; background-color: #000; overflow: hidden; }
                 .bgContainer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-image: url('AssetStore/image_1e6304.jpg'); background-size: cover; background-position: center; z-index: 1; opacity: 0.35; }
-                .overlayContainer { 
-                    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; 
-                    background: radial-gradient(circle at center, rgba(10,10,10,0.6) 0%, rgba(0,0,0,0.9) 100%); 
-                    backdrop-filter: blur(4px); z-index: 2; 
-                    pointer-events: none; /* PERMITE O CLIQUE ATRAVÉS DO DESFOQUE */
-                }
+                .overlayContainer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: radial-gradient(circle at center, rgba(10,10,10,0.6) 0%, rgba(0,0,0,0.9) 100%); backdrop-filter: blur(4px); z-index: 2; pointer-events: none; }
+                .authWrapper { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; z-index: 10; padding: 20px; }
+                .authBox { background: rgba(15, 15, 15, 0.7); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(212, 175, 55, 0.2); border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 3.5rem; border-radius: 24px; width: 100%; max-width: 440px; text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.9); }
+                .authHeader h1 { color: #d4af37; margin: 0 0 5px 0; font-weight: 900; font-size: 2.2rem; letter-spacing: 3px; text-transform: uppercase; text-shadow: 0 0 15px rgba(212,175,55,0.3); }
+                .authHeader p { color: #aaa; margin: 0 0 2.5rem 0; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 5px; }
+                .authInputGroup { text-align: left; margin-bottom: 1.2rem; }
+                .authLabel { display: block; color: #888; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; padding-left: 5px; }
+                .authInput { width: 100%; padding: 16px; background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 12px; font-size: 0.95rem; outline: none; font-weight: 600; transition: 0.3s; }
+                .authInput:focus { border-color: #d4af37; background: rgba(0,0,0,0.8); box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15); }
+                .authBtn { width: 100%; padding: 18px; background: linear-gradient(135deg, #d4af37 0%, #b5952f 100%); border: none; color: #000; font-weight: 900; border-radius: 12px; cursor: pointer; font-size: 1.05rem; letter-spacing: 1px; text-transform: uppercase; transition: 0.3s; margin-top: 1rem; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+                .authBtn:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(212, 175, 55, 0.4); }
+                .authBtnRegister { background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); color: #000; box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3); }
+                .authBtnRegister:hover { box-shadow: 0 15px 25px rgba(34, 197, 94, 0.4); }
+                .authLink { margin-top: 2rem; font-size: 0.95rem; color: #aaa; cursor: pointer; transition: 0.3s; display: inline-block; font-weight: 600; }
+                .authLink:hover { color: #fff; }
+                .authLink strong { color: #d4af37; font-weight: 800; }
+                .authAlert { display: none; padding: 14px; border-radius: 12px; font-size: 0.9rem; font-weight: 800; margin-bottom: 1.5rem; text-align: center; }
             </style>
             <div class="bgContainer"></div>
             <div class="overlayContainer"></div>
-        `,
-
-        auth: () => `
-            ${UI.templates.background()}
-            <style>
-                body { margin: 0; font-family: 'Inter', sans-serif; background-color: #000; overflow: hidden; }
-                .authWrapper { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; z-index: 10; padding: 20px; }
-                .authBox { background: rgba(15, 15, 15, 0.7); backdrop-filter: blur(25px); border: 1px solid rgba(212, 175, 55, 0.2); padding: 3.5rem; border-radius: 24px; width: 100%; max-width: 440px; text-align: center; }
-                .authHeader h1 { color: #d4af37; font-weight: 900; font-size: 2.2rem; text-transform: uppercase; margin: 0; }
-                .authInput { width: 100%; padding: 16px; background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 12px; margin-bottom: 1rem; }
-                .authBtn { width: 100%; padding: 18px; background: #d4af37; border: none; color: #000; font-weight: 900; border-radius: 12px; cursor: pointer; text-transform: uppercase; }
-            </style>
             <div class="authWrapper">
                 <div class="authBox">
-                    <div class="authHeader"><h1>SALES GUIA</h1><p style="color:#aaa;">Santa Group</p></div>
-                    <div id="authMessage" style="display:none; margin-bottom:1rem; padding:10px; border-radius:8px;"></div>
-                    <form onsubmit="window.handleAuthSubmit(event, 'login')" id="loginForm">
-                        <input type="email" id="loginEmail" class="authInput" placeholder="E-mail" required>
-                        <input type="password" id="loginPassword" class="authInput" placeholder="Senha" required>
+                    <div class="authHeader">
+                        <h1>SALES GUIA</h1>
+                        <p>Santa Group</p>
+                    </div>
+                    <div id="authMessage" class="authAlert"></div>
+                    <form id="loginForm" onsubmit="window.handleAuthSubmit(event, 'login')">
+                        <div class="authInputGroup">
+                            <label class="authLabel">E-mail corporativo</label>
+                            <input type="email" id="loginEmail" class="authInput" required>
+                        </div>
+                        <div class="authInputGroup">
+                            <label class="authLabel">Senha de acesso</label>
+                            <input type="password" id="loginPassword" class="authInput" required>
+                        </div>
                         <button type="submit" class="authBtn">Acessar Sistema</button>
-                        <p style="color:#aaa; cursor:pointer; margin-top:1rem;" onclick="window.toggleAuthView('register')">Solicitar acesso</p>
+                        <span class="authLink" onclick="window.toggleAuthView('register')">Não possui acesso? <strong>Solicitar agora</strong></span>
                     </form>
-                    <form onsubmit="window.handleAuthSubmit(event, 'register')" id="registerForm" style="display:none;">
-                        <input type="text" id="regName" class="authInput" placeholder="Nome Completo" required>
-                        <input type="email" id="regEmail" class="authInput" placeholder="E-mail" required>
-                        <input type="password" id="regPassword" class="authInput" placeholder="Sua Senha" required>
-                        <button type="submit" class="authBtn" style="background:#22c55e;">Registrar</button>
-                        <p style="color:#aaa; cursor:pointer; margin-top:1rem;" onclick="window.toggleAuthView('login')">Voltar ao Login</p>
+                    <form id="registerForm" onsubmit="window.handleAuthSubmit(event, 'register')" style="display:none;">
+                        <div class="authInputGroup">
+                            <label class="authLabel">Nome Completo</label>
+                            <input type="text" id="regName" class="authInput" required>
+                        </div>
+                        <div class="authInputGroup">
+                            <label class="authLabel">E-mail corporativo</label>
+                            <input type="email" id="regEmail" class="authInput" required>
+                        </div>
+                        <div class="authInputGroup">
+                            <label class="authLabel">Criar Senha</label>
+                            <input type="password" id="regPassword" class="authInput" required>
+                        </div>
+                        <button type="submit" class="authBtn authBtnRegister">Solicitar Registro</button>
+                        <span class="authLink" onclick="window.toggleAuthView('login')">Já possui conta? <strong>Fazer login</strong></span>
                     </form>
+                </div>
+            </div>`,
+
+        admin: () => `
+            <style>
+                body { margin: 0; background-color: #000; color: #fff; font-family: 'Inter', sans-serif; overflow-y: auto; }
+                .bgContainer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-image: url('AssetStore/image_1e6304.jpg'); background-size: cover; background-position: center; z-index: 1; opacity: 0.35; }
+                .overlayContainer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); backdrop-filter: blur(4px); z-index: 2; pointer-events: none; }
+                .adminTopbar { position: fixed; top: 0; left: 0; right: 0; height: 80px; background: rgba(10,10,10,0.9); border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; z-index: 100; box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+                .adminBrand { font-weight: 900; color: #d4af37; font-size: 1.4rem; letter-spacing: 2px; }
+                .adminBackBtn { background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.15); padding: 10px 20px; border-radius: 8px; font-weight: 800; cursor: pointer; transition: 0.3s; font-size: 0.85rem; letter-spacing: 1px; }
+                .adminBackBtn:hover { background: rgba(212,175,55,0.1); border-color: #d4af37; color: #d4af37; }
+                .adminLayout { padding: 140px 4rem 4rem; max-width: 1400px; margin: 0 auto; position: relative; z-index: 10; }
+                .adminHeader { margin-bottom: 3rem; }
+                .adminHeader h1 { margin: 0 0 10px 0; font-size: 2.8rem; font-weight: 900; letter-spacing: -1px; }
+                .adminHeader p { margin: 0; color: #aaa; font-size: 1.1rem; }
+                .userCard { background: rgba(15,15,15,0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-left: 4px solid #333; padding: 25px 30px; border-radius: 16px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; transition: 0.3s; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+                .userCard:hover { transform: translateY(-3px); border-left-color: #d4af37; background: rgba(25,25,25,0.9); box-shadow: 0 15px 35px rgba(0,0,0,0.7); }
+                .userInfoCol h3 { color: #fff; font-size: 1.3rem; font-weight: 900; margin: 0 0 8px 0; text-transform: uppercase; }
+                .userInfoCol span { color: #aaa; font-size: 0.95rem; font-weight: 600; }
+                .adminControls { display: flex; gap: 15px; align-items: center; }
+                .selectPill { appearance: none; background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.15); color: #fff; padding: 12px 18px; border-radius: 10px; font-size: 0.9rem; font-weight: 700; cursor: pointer; outline: none; transition: 0.3s; min-width: 150px; }
+                .selectPill:hover, .selectPill:focus { border-color: #d4af37; background: rgba(0,0,0,0.9); }
+                .statusPending { color: #eab308; border-color: rgba(234, 179, 8, 0.4); background: rgba(234, 179, 8, 0.1); }
+                .statusApproved { color: #22c55e; border-color: rgba(34, 197, 94, 0.4); background: rgba(34, 197, 94, 0.1); }
+                .statusRejected { color: #ef4444; border-color: rgba(239, 68, 68, 0.4); background: rgba(239, 68, 68, 0.1); }
+                .delBtn { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); padding: 12px 20px; border-radius: 10px; font-weight: 800; cursor: pointer; transition: 0.3s; font-size: 0.9rem; text-transform: uppercase; }
+                .delBtn:hover { background: #ef4444; color: #fff; box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4); }
+            </style>
+            <div class="bgContainer"></div>
+            <div class="overlayContainer"></div>
+            <div class="adminTopbar">
+                <div class="adminBrand">PAINEL DE GESTÃO</div>
+                <button onclick="App.navigateToMenu()" class="adminBackBtn">VOLTAR AO SISTEMA</button>
+            </div>
+            <div class="adminLayout">
+                <div class="adminHeader">
+                    <h1>Controle de Acessos</h1>
+                    <p>Aprove, gerencie cargos ou revogue permissões dos membros da equipe.</p>
+                </div>
+                <div>
+                    ${App.state.adminUsers.length === 0 ? '<div style="text-align:center; padding:4rem; color:#888; font-size:1.2rem; font-weight:700;">Nenhum usuário cadastrado.</div>' : ''}
+                    ${App.state.adminUsers.map(u => {
+                        const statusClass = u.status === 'pending' ? 'statusPending' : (u.status === 'approved' ? 'statusApproved' : 'statusRejected');
+                        return `
+                        <div class="userCard">
+                            <div class="userInfoCol">
+                                <h3>${u.name}</h3>
+                                <span>✉️ ${u.email}</span>
+                            </div>
+                            <div class="adminControls">
+                                <select onchange="window.updateUserRole('${u.email}', this.value, '${u.status}')" class="selectPill">
+                                    <option value="vendedor" ${u.role === 'vendedor' ? 'selected' : ''}>👤 Vendedor</option>
+                                    <option value="admin" ${u.role === 'admin' ? 'selected' : ''}>👑 Administrador</option>
+                                </select>
+                                <select onchange="window.updateUserRole('${u.email}', '${u.role}', this.value)" class="selectPill ${statusClass}">
+                                    <option value="pending" ${u.status === 'pending' ? 'selected' : ''}>⏳ Pendente</option>
+                                    <option value="approved" ${u.status === 'approved' ? 'selected' : ''}>✅ Aprovado</option>
+                                    <option value="rejected" ${u.status === 'rejected' ? 'selected' : ''}>🚫 Bloqueado</option>
+                                </select>
+                                <button onclick="window.deleteUser('${u.email}')" class="delBtn">Excluir</button>
+                            </div>
+                        </div>`}).join('')}
                 </div>
             </div>`,
 
         menu: () => `
-            ${UI.templates.background()}
             <style>
-                .menuTopbar { position: fixed; top: 0; left: 0; right: 0; height: 80px; background: rgba(10,10,10,0.9); border-bottom: 1px solid #d4af37; display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; z-index: 100; }
-                .funnelWrapper { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding-top: 100px; gap: 14px; position: relative; z-index: 10;}
-                .funnelCard { width: 100%; max-width: 800px; background: rgba(15,15,15,0.8); border: 1px solid #d4af37; border-radius: 12px; padding: 1.5rem; cursor: pointer; transition: 0.3s; text-align: center; }
-                .funnelCard:hover { background: #d4af37; transform: scale(1.02); }
-                .funnelCard:hover h3, .funnelCard:hover p { color: #000; }
-                .btnIcon { background: rgba(255,255,255,0.1); border: 1px solid #d4af37; color:#fff; padding: 10px; border-radius: 8px; cursor: pointer; }
+                body { margin: 0; background-color: #000; font-family: 'Inter', sans-serif; overflow-y: auto; }
+                .bgContainer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-image: url('AssetStore/image_1e6304.jpg'); background-size: cover; background-position: center; z-index: 1; opacity: 0.35; }
+                .overlayContainer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); backdrop-filter: blur(4px); z-index: 2; pointer-events: none; }
+                .menuTopbar { position: fixed; top: 0; left: 0; right: 0; height: 80px; background: rgba(10,10,10,0.9); border-bottom: 1px solid rgba(212,175,55,0.3); display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; z-index: 100; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+                .menuBrand { font-weight: 900; color: #d4af37; font-size: 1.4rem; letter-spacing: 2px; }
+                .menuControls { display: flex; align-items: center; gap: 25px; }
+                .roleTag { background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.4); color: #d4af37; padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
+                .btnLogout { background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.4); color: #ef4444; padding: 8px 20px; border-radius: 8px; font-weight: 900; cursor: pointer; transition: 0.3s; font-size: 0.85rem; letter-spacing: 1px;}
+                .btnLogout:hover { background: #ef4444; color: #fff; box-shadow: 0 5px 15px rgba(239,68,68,0.4); }
+                .funnelWrapper { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 120px 20px 60px; gap: 14px; position: relative; z-index: 10;}
+                .funnelCard { width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: rgba(15,15,15,0.8); backdrop-filter: blur(10px); border: 1px solid rgba(212,175,55,0.4); border-radius: 12px; min-height: 100px; padding: 1.5rem; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 15px 35px rgba(0,0,0,0.6); }
+                .funnelCard:hover { background: #d4af37; transform: scale(1.03); border-color: #fff; box-shadow: 0 20px 40px rgba(212, 175, 55, 0.5); }
+                .funnelCard h3 { margin: 0; font-size: 1.3rem; font-weight: 900; text-transform: uppercase; color: #fff; transition: 0.3s; }
+                .funnelCard p { margin: 0; font-size: 0.95rem; color: #aaa; text-align: center; font-weight: 600; transition: 0.3s; }
+                .funnelCard:hover h3 { color: #000; }
+                .funnelCard:hover p { color: #222; }
+                .f-1 { max-width: 900px; } .f-2 { max-width: 800px; } .f-3 { max-width: 700px; } .f-4 { max-width: 600px; } .f-5 { max-width: 500px; } .f-6 { max-width: 400px; }
             </style>
+            <div class="bgContainer"></div><div class="overlayContainer"></div>
             <div class="menuTopbar">
-                <div style="color:#d4af37; font-weight:900; font-size:1.4rem;">SALES GUIA</div>
-                <div style="display:flex; gap:15px; align-items:center;">
-                    ${App.state.currentUser.role === 'admin' ? `<button onclick="App.navigateToAdmin()" class="btnIcon">⚙️</button>` : ''}
-                    <button onclick="App.logout()" style="background:#ef4444; border:none; color:#fff; padding:10px 20px; border-radius:8px; font-weight:900; cursor:pointer;">SAIR</button>
+                <div class="menuBrand">SALES GUIA - SANTA GROUP</div>
+                <div class="menuControls">
+                    ${App.state.currentUser.role === 'admin' ? `<button onclick="App.navigateToAdmin()" style="background:none; border:1px solid #d4af37; color:#fff; padding:8px; border-radius:8px; cursor:pointer;">⚙️</button>` : ''}
+                    <span class="roleTag">${App.state.currentUser.role}</span>
+                    <button onclick="App.logout()" class="btnLogout">SAIR</button>
                 </div>
             </div>
             <div class="funnelWrapper">
-                ${['olheiro', 'defesa', 'meio', 'ataque', 'fechamento', 'posvenda'].map(id => `
-                    <div class="funnelCard" onclick="App.navigateToCategory('${id}')">
-                        <h3 style="color:#fff; margin:0; text-transform:uppercase;">${id}</h3>
+                ${[{id: 'olheiro', title: '🕵️‍♂️ Olheiro', desc: 'Observe o player e entenda o melhor momento.', cls: 'f-1'},
+                   {id: 'defesa', title: '🛡️ Defesa', desc: 'Ganhe a atenção do cliente e inicie a conversa.', cls: 'f-2'},
+                   {id: 'meio', title: '⚽ Meio de Campo', desc: 'Entenda a necessidade através de perguntas-chave.', cls: 'f-3'},
+                   {id: 'ataque', title: '⚔️ Ataque', desc: 'Transforme a dor em solução e crie urgência.', cls: 'f-4'},
+                   {id: 'fechamento', title: '🤝 Fechamento', desc: 'Transforma interesse em decisão.', cls: 'f-5'},
+                   {id: 'posvenda', title: '📦 Pós Venda', desc: 'Fidelização e recorrência do cliente.', cls: 'f-6'}].map(cat => `
+                    <div class="funnelCard ${cat.cls}" onclick="App.navigateToCategory('${cat.id}')">
+                        <h3>${cat.title}</h3>
+                        <p>${cat.desc}</p>
                     </div>`).join('')}
             </div>`,
 
-        category: (data) => `
-            ${UI.templates.background()}
-            <style>
-                .sidebar { width: 340px; position: fixed; top: 0; left: 0; height: 100vh; background: rgba(10,10,10,0.95); z-index: 50; display: flex; flex-direction: column; box-shadow: 5px 0 20px rgba(0,0,0,0.5); }
-                .workspace { margin-left: 340px; padding: 4rem; position: relative; z-index: 10; }
-                .navItem { padding: 1.2rem; margin: 0 1rem 5px; color: #888; cursor: pointer; font-weight: 800; border-radius: 8px; transition: 0.2s; }
-                .navItem:hover { background: rgba(255,255,255,0.05); color:#fff; }
-                .navItem.active { background: rgba(212,175,55,0.15); color: #d4af37; border-left: 4px solid #d4af37; }
-                .headerImgBox { width: 420px; height: 240px; border: 2px solid #d4af37; border-radius: 12px; overflow: hidden; }
-                .headerImgBox img { width: 100%; height: 100%; object-fit: cover; }
-            </style>
-            <div class="sidebar">
-                <button onclick="App.navigateToMenu()" style="margin:2rem 1rem; padding:1rem; background:rgba(212,175,55,0.1); border:1px solid #d4af37; color:#d4af37; font-weight:900; border-radius:8px; cursor:pointer;">⬅ MENU INICIAL</button>
-                <nav>
-                    ${['olheiro', 'defesa', 'meio', 'ataque', 'fechamento', 'posvenda'].map(id => `
-                        <div class="navItem ${App.state.currentCategoryId === id ? 'active' : ''}" onclick="${id === 'meio' ? 'App.toggleMeio(event)' : `App.navigateToCategory('${id}')`}">
-                            ${id.toUpperCase()}
-                        </div>
-                        ${id === 'meio' && App.state.isMeioExpanded ? `
-                            <div style="margin-left: 1rem;">
-                                ${Object.values(App.state.content.profiles).map(p => `
-                                    <div onclick="App.navigateToProfile('${p.id}')" style="padding:10px 20px; color:${App.state.currentProfileId === p.id ? '#fff' : '#666'}; cursor:pointer; font-weight:600;">
-                                        • ${p.shortTitle}
-                                    </div>
-                                `).join('')}
-                            </div>` : ''}
-                    `).join('')}
-                </nav>
-            </div>
-            <main class="workspace">
-                <header style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4rem;">
-                    <div><h1 style="font-size:3rem; margin:0;">${data.title}</h1><p style="color:#aaa;">${data.description}</p></div>
-                    <div class="headerImgBox"><img src="${data.image}"></div>
-                </header>
-                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:2rem;">
-                    ${data.sections.map(s => UI.renderSection(s)).join('')}
-                </div>
-            </main>`
+        category: (data) => {
+            if (!data) return '<div style="color:#fff; padding:100px; text-align:center; font-family:Inter,sans-serif;">Carregando dados...</div>';
+            const profiles = App.state.content.profiles;
+            const sidebarCategories = [{ id: 'olheiro', label: '🕵️‍♂️ OLHEIRO' }, { id: 'defesa', label: '🛡️ DEFESA' }, { id: 'meio', label: '⚽ MEIO DE CAMPO' }, { id: 'ataque', label: '⚔️ ATAQUE' }, { id: 'fechamento', label: '🤝 FECHAMENTO' }, { id: 'posvenda', label: '📦 PÓS VENDA' }];
+
+            return `
+                <style>
+                    body { margin: 0; padding: 0; background-color: #000; font-family: 'Inter', sans-serif; color: #fff; overflow-x: hidden; overflow-y: auto; }
+                    * { box-sizing: border-box; scrollbar-width: thin; scrollbar-color: rgba(212, 175, 55, 0.3) transparent; }
+                    .bgContainer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-image: url('AssetStore/image_1e6304.jpg'); background-size: cover; background-position: center; z-index: 1; opacity: 0.35; }
+                    .overlayContainer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); backdrop-filter: blur(4px); z-index: 2; pointer-events: none; }
+                    .sidebar { width: 340px; position: fixed; top: 0; left: 0; height: 100vh; background: rgba(10,10,10,0.9); z-index: 50; display: flex; flex-direction: column; box-shadow: 5px 0 25px rgba(0,0,0,0.6); }
+                    .workspace { margin-left: 340px; padding: 4rem 5rem 6rem; min-height: 100vh; max-width: 1500px; position: relative; z-index: 10; }
+                    .backBtnSide { margin: 2rem 1.5rem; padding: 1.2rem; background: rgba(212, 175, 55, 0.15); border: 1px solid rgba(212, 175, 55, 0.4); color: #d4af37; font-weight: 900; font-size: 0.9rem; border-radius: 12px; cursor: pointer; transition: 0.3s; letter-spacing: 1px; }
+                    .backBtnSide:hover { background: #d4af37; color: #000; }
+                    .navItem { padding: 1.2rem 1.5rem; font-weight: 800; font-size: 1.05rem; color: #888; cursor: pointer; transition: 0.2s; display: flex; justify-content: space-between; border-radius: 8px; margin: 0 1rem 8px; }
+                    .navItem:hover { background: rgba(255,255,255,0.05); color: #fff; }
+                    .navItem.active { background: rgba(212, 175, 55, 0.15); color: #d4af37; border-left: 4px solid #d4af37; }
+                    .contentHeader { display: flex; align-items: center; justify-content: space-between; gap: 4rem; margin-bottom: 4rem; }
+                    .headerTexts h1 { font-size: 3.2rem; font-weight: 900; margin: 0 0 1rem 0; text-transform: uppercase; color: #fff; line-height: 1.1; letter-spacing: -1px; }
+                    .headerTexts p { font-size: 1.1rem; color: #ccc; margin: 0; line-height: 1.6; max-width: 800px; }
+                    .headerImgBox { width: 420px; height: 240px; flex-shrink: 0; border: 2px solid rgba(212, 175, 55, 0.5); border-radius: 12px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.8); background: #000; }
+                    .headerImgBox img { width: 100%; height: 100%; object-fit: cover; display: block; }
+                    .gridLayout { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+                    .fullWidth { grid-column: 1 / -1; }
+                    .infoCard { background: rgba(15,15,15,0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08); border-top: 1px solid rgba(212, 175, 55, 0.3); border-radius: 20px; padding: 2.5rem; display: flex; flex-direction: column; box-shadow: 0 15px 35px rgba(0,0,0,0.6); }
+                    .infoCard h2 { font-size: 1.35rem; color: #d4af37; font-weight: 900; margin: 0 0 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem; text-transform: uppercase; }
+                    .infoCard.error { border-top-color: #ef4444; }
+                    .infoCard.error h2 { color: #ef4444; }
+                    .itemRow { display: flex; align-items: flex-start; gap: 14px; font-size: 1.05rem; color: #ddd; margin-bottom: 16px; line-height: 1.5; }
+                    .itemRow strong { color: #fff; }
+                    .dividerLine { height: 1px; background: rgba(255,255,255,0.08); margin: 20px 0; width: 100%; }
+                    .hintBox { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2); padding: 1.2rem 1.5rem; margin-top: auto; border-radius: 12px; color: #fff; font-weight: 600; font-size: 0.95rem; box-shadow: inset 4px 0 0 #22c55e; }
+                    .warningBox { background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.3); padding: 1.2rem; margin-top: 1.5rem; border-radius: 12px; color: #ef4444; font-weight: 800; text-align: center; }
+                    .sectionTitleDivider { grid-column: 1/-1; text-align: center; color: #fff; font-size: 1.8rem; font-weight: 900; margin: 3rem 0 1rem; text-transform: uppercase; letter-spacing: 3px; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 1.5rem; }
+                    .prepCard { grid-column: 1/-1; display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; background: rgba(15,15,15,0.8); backdrop-filter: blur(10px); padding: 4rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); border-left: 4px solid #d4af37; align-items: center; box-shadow: 0 20px 50px rgba(0,0,0,0.7); margin-bottom: 2rem;}
+                    .prepImg { width: 100%; max-width: 480px; border: 4px solid #d4af37; border-radius: 16px; box-shadow: 0 0 40px rgba(212, 175, 55, 0.3); display: block; margin: 0 auto; object-fit: contain; }
+                    .comicFrame { grid-column: 1/-1; border-radius: 20px; border: 2px solid rgba(212,175,55,0.4); overflow: hidden; margin-top: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.7); }
+                    .comicFrame img { width: 100%; display: block; object-fit: contain; }
+                </style>
+                <div class="bgContainer"></div><div class="overlayContainer"></div>
+                <aside class="sidebar">
+                    <button class="backBtnSide" onclick="App.navigateToMenu()">⬅ MENU INICIAL</button>
+                    <nav>
+                        ${sidebarCategories.map(cat => {
+                            const isMeio = cat.id === 'meio';
+                            const isActive = App.state.currentCategoryId === cat.id;
+                            return `
+                                <div class="navItem ${isActive && !App.state.currentProfileId ? 'active' : ''}" onclick="${isMeio ? 'App.toggleMeio(event)' : `App.navigateToCategory('${cat.id}')`}">
+                                    <span>${cat.label}</span>
+                                    ${isMeio ? `<span>${App.state.isMeioExpanded ? '▾' : '▸'}</span>` : ''}
+                                </div>
+                                ${isMeio && App.state.isMeioExpanded ? `
+                                    <div style="background:transparent; padding-bottom:10px; margin-top:-5px;">
+                                        ${Object.values(profiles).map(p => `
+                                            <div onclick="App.navigateToProfile('${p.id}')" style="padding:0.8rem 1.5rem 0.8rem 3rem; font-size:0.9rem; font-weight:600; color:${App.state.currentProfileId === p.id ? '#fff' : '#777'}; cursor:pointer; border-radius:6px; margin:0 1rem 2px; ${App.state.currentProfileId === p.id ? 'background:rgba(255,255,255,0.1);' : ''}">
+                                                ${p.shortTitle}
+                                            </div>`).join('')}
+                                    </div>` : ''}`;
+                        }).join('')}
+                    </nav>
+                </aside>
+                <main class="workspace">
+                    <header class="contentHeader">
+                        <div class="headerTexts"><h1>${data.title}</h1><p>${data.description}</p></div>
+                        <div class="headerImgBox"><img src="${data.image}"></div>
+                    </header>
+                    <div class="gridLayout">${data.sections.map(s => UI.renderSection(s)).join('')}</div>
+                    ${data.videoCategories ? data.videoCategories.map(cat => `
+                        <div style="margin-top: 6rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 4rem;">
+                            <h2 style="text-align:center; font-size:2rem; font-weight:900; color:#fff; text-transform:uppercase; margin-bottom:3rem; letter-spacing: 2px;">${cat.title}</h2>
+                            <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 3rem;">
+                                ${cat.videos.map(v => `
+                                    <div style="background:rgba(15,15,15,0.8); border:1px solid rgba(255,255,255,0.08); padding:1.5rem; border-radius:20px;">
+                                        <h3 style="color:${v.color}; font-size:1.1rem; font-weight:900; text-align:center; margin: 0 0 1.5rem 0; text-transform:uppercase; letter-spacing:1px;">${v.label}</h3>
+                                        <div style="position:relative; padding-bottom:56.25%; border-radius:12px; overflow:hidden; border:2px solid rgba(255,255,255,0.1);">
+                                            <iframe src="${v.url}" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="autoplay"></iframe>
+                                        </div>
+                                    </div>`).join('')}
+                            </div>
+                        </div>`).join('') : ''}
+                </main>`;
+        }
     },
 
     renderSection(s) {
-        if (s.isSectionTitle) return `<div style="grid-column: 1/-1; color:#d4af37; font-size:1.8rem; font-weight:900; border-bottom:1px solid #d4af37; padding:10px 0; margin-top:2rem;">${s.title}</div>`;
+        if (s.isSectionTitle) return `<div class="sectionTitleDivider">${s.title}</div>`;
+        if (s.isRecommendationHeader) return `<div class="fullWidth"><h2 style="font-size:1.8rem; color:#fff; font-weight:900; margin-top:2rem; letter-spacing:1px;">${s.title}</h2></div>`;
+        if (s.isPreparation) return `
+            <div class="prepCard">
+                <div>
+                    <h2 style="color:#d4af37; font-size:1.8rem; font-weight:900; margin:0 0 2rem 0; text-transform:uppercase; letter-spacing:1px;">${s.title}</h2>
+                    <p style="font-size:1.1rem; color:#eee; margin-bottom:2rem;"><strong style="color:#d4af37; display:block; font-size:0.85rem; margin-bottom:6px; letter-spacing:2px; text-transform:uppercase;">🎯 OBJETIVO PRINCIPAL</strong> ${s.goal}</p>
+                    <div style="margin-bottom:2rem;">
+                        <strong style="color:#d4af37; display:block; font-size:0.85rem; margin-bottom:12px; letter-spacing:2px; text-transform:uppercase;">🚀 PLANO DE AÇÃO</strong>
+                        ${s.actions.map(a => `<div class="itemRow" style="margin-bottom:10px;"><strong>•</strong> <span>${a}</span></div>`).join('')}
+                    </div>
+                    <p style="font-size:1.1rem; color:#eee; margin:0;"><strong style="color:#d4af37; display:block; font-size:0.85rem; margin-bottom:6px; letter-spacing:2px; text-transform:uppercase;">🏆 RESULTADO ESPERADO</strong> ${s.result}</p>
+                </div>
+                <div><img src="${s.image}" class="prepImg"></div>
+            </div>`;
+        if (s.isComic) return `<div class="comicFrame"><img src="${s.image}"></div>`;
+        const wrapperClass = s.isFull || s.isError ? "fullWidth infoCard" : "infoCard";
+        const errClass = s.isError ? "error" : "";
         return `
-            <div style="background:rgba(15,15,15,0.8); padding:2rem; border-radius:16px; border:1px solid rgba(255,255,255,0.1);">
-                <h3 style="color:#d4af37; margin: 0 0 1rem 0;">${s.title}</h3>
-                <div style="color:#eee;">${s.items ? s.items.map(i => `<div style="margin-bottom:8px;">${i}</div>`).join('') : ''}</div>
+            <div class="${wrapperClass} ${errClass}">
+                <h2>${s.title}</h2>
+                <div style="flex-grow:1; display:flex; flex-direction:column;">
+                    ${s.items ? s.items.map(i => i === '---' ? '<div class="dividerLine"></div>' : (i.trim().startsWith('<') ? i : `<div class="itemRow"><strong>•</strong> <span>${i}</span></div>`)).join('') : ''}
+                </div>
+                ${s.footer ? `<div style="margin-top:2rem;"><div class="hintBox">${s.footer}</div></div>` : ''}
+                ${s.warning ? `<div class="warningBox">⚠️ ${s.warning}</div>` : ''}
             </div>`;
     }
 };
 
-// Funções globais obrigatórias
-window.toggleAuthView = (view) => {
-    document.getElementById('loginForm').style.display = view === 'login' ? 'block' : 'none';
-    document.getElementById('registerForm').style.display = view === 'register' ? 'block' : 'none';
-};
-
 window.handleAuthSubmit = async (e, action) => {
     e.preventDefault();
-    const btn = e.target.querySelector('button');
-    btn.innerText = 'PROCESSANDO...';
-    
     if (action === 'login') {
         const res = await App.login(document.getElementById('loginEmail').value, document.getElementById('loginPassword').value);
         if (!res.success) alert(res.message);
     } else {
         const res = await App.register(document.getElementById('regName').value, document.getElementById('regEmail').value, document.getElementById('regPassword').value);
-        if (res.success) { alert('Solicitação enviada!'); window.toggleAuthView('login'); }
+        if (res.success) alert('Solicitação enviada! Aguarde aprovação.');
     }
-    btn.innerText = action === 'login' ? 'Acessar Sistema' : 'Registrar';
 };
 
-window.updateUserRole = (email, role, status) => App.updateAdminUser(email, role, status);
-window.deleteUser = (email) => { if(confirm('Excluir usuário?')) App.deleteAdminUser(email); };
+window.toggleAuthView = (view) => {
+    document.getElementById('loginForm').style.display = view === 'login' ? 'block' : 'none';
+    document.getElementById('registerForm').style.display = view === 'register' ? 'block' : 'none';
+};

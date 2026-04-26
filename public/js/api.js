@@ -1,14 +1,11 @@
 const ApiClient = {
     async request(endpoint, options = {}) {
         const user = JSON.parse(localStorage.getItem('user'));
-        const token = user?.token;
-
         const headers = {
             'Content-Type': 'application/json',
-            ...(token && { 'Authorization': `Bearer ${token}` }),
+            ...(user?.token && { 'Authorization': `Bearer ${user.token}` }),
             ...options.headers
         };
-
         try {
             const response = await fetch(endpoint, { ...options, headers });
             if (response.status === 401 || response.status === 403) {
@@ -18,11 +15,8 @@ const ApiClient = {
                 }
             }
             return await response.json();
-        } catch (error) {
-            return { success: false };
-        }
+        } catch (error) { return { success: false }; }
     },
-
     async get(url) { return this.request(url, { method: 'GET' }); },
     async post(url, data) { return this.request(url, { method: 'POST', body: JSON.stringify(data) }); },
     async put(url, data) { return this.request(url, { method: 'PUT', body: JSON.stringify(data) }); },

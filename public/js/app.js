@@ -45,29 +45,6 @@ const App = {
         }
     },
 
-    async loadAdminUsers() {
-        const response = await ApiClient.get('/api/users');
-        if (response && response.success) {
-            this.state.adminUsers = response.data;
-            UI.render();
-        }
-    },
-
-    async updateAdminUser(email, role, status) {
-        await ApiClient.put('/api/users', { email, role, status });
-        await this.loadAdminUsers();
-    },
-
-    async deleteAdminUser(email) {
-        await ApiClient.delete('/api/users', { email });
-        await this.loadAdminUsers();
-    },
-
-    logout() {
-        localStorage.removeItem('user');
-        window.location.reload();
-    },
-
     navigateToMenu() {
         this.state.currentView = 'menu';
         this.state.currentCategoryId = null;
@@ -75,15 +52,11 @@ const App = {
         UI.render();
     },
 
-    navigateToAdmin() {
-        this.state.currentView = 'admin';
-        this.loadAdminUsers();
-    },
-
     navigateToCategory(id) {
         this.state.currentView = 'category';
         this.state.currentCategoryId = id;
         this.state.currentProfileId = null;
+        this.state.isMeioExpanded = (id === 'meio');
         window.scrollTo(0, 0);
         UI.render();
     },
@@ -100,5 +73,10 @@ const App = {
         if(e) e.stopPropagation();
         this.state.isMeioExpanded = !this.state.isMeioExpanded;
         UI.render();
+    },
+
+    logout() {
+        localStorage.removeItem('user');
+        window.location.reload();
     }
 };

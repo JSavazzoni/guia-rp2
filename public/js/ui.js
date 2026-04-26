@@ -24,60 +24,112 @@ const UI = {
 
     templates: {
         auth: () => `
-            <div style="height:100vh; display:flex; align-items:center; justify-content:center; background: radial-gradient(circle at center, rgba(30,30,30,0.4) 0%, #000 100%);">
-                <div style="background:rgba(15,15,15,0.95); backdrop-filter:blur(20px); padding:4rem; border-radius:24px; border:1px solid #d4af37; width:450px; text-align:center; box-shadow: 0 0 60px rgba(0,0,0,0.8);">
-                    <h1 style="color:#d4af37; margin-bottom:0.5rem; font-weight:900; font-size:2.2rem; letter-spacing:2px; text-transform:uppercase;">SALES GUIA</h1>
-                    <p style="color:#888; margin-bottom:2rem; font-weight:600; font-size:0.9rem; text-transform:uppercase; letter-spacing:4px;">Santa Group</p>
+            <style>
+                .auth-wrapper { height: 100vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, rgba(20,20,20,1) 0%, #000 100%); font-family: 'Inter', sans-serif; }
+                .auth-box { background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(20px); padding: 3.5rem; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.3); width: 420px; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(212, 175, 55, 0.05); transition: all 0.4s ease; }
+                .auth-title { color: #d4af37; margin-bottom: 0.2rem; font-weight: 900; font-size: 2.2rem; letter-spacing: 2px; text-transform: uppercase; }
+                .auth-subtitle { color: #666; margin-bottom: 2.5rem; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; }
+                .auth-input { width: 100%; padding: 16px 18px; margin-bottom: 15px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 12px; font-size: 0.95rem; outline: none; font-weight: 500; transition: 0.3s; }
+                .auth-input:focus { border-color: #d4af37; box-shadow: 0 0 15px rgba(212, 175, 55, 0.1); background: rgba(0,0,0,0.6); }
+                .auth-btn { width: 100%; padding: 18px; background: #d4af37; border: none; color: #000; font-weight: 900; border-radius: 12px; cursor: pointer; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; transition: 0.3s; margin-top: 10px; }
+                .auth-btn:hover { background: #fde047; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3); }
+                .auth-btn.register-btn { background: #22c55e; }
+                .auth-btn.register-btn:hover { background: #4ade80; box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3); }
+                .auth-switch { margin-top: 1.5rem; font-size: 0.85rem; color: #888; cursor: pointer; transition: 0.3s; font-weight: 500; }
+                .auth-switch:hover { color: #fff; }
+                .auth-msg { display: none; margin-bottom: 1.5rem; font-weight: 700; font-size: 0.85rem; padding: 12px; border-radius: 8px; }
+            </style>
+            <div class="auth-wrapper">
+                <div class="auth-box">
+                    <h1 class="auth-title">SALES GUIA</h1>
+                    <p class="auth-subtitle">Santa Group</p>
                     
                     <div id="authForms">
-                        <p id="authMessage" style="display:none; margin-bottom:1.5rem; font-weight:900; font-size:0.85rem; padding:10px; border-radius:8px;"></p>
+                        <p id="authMessage" class="auth-msg"></p>
                         
                         <form id="loginForm" onsubmit="window.handleAuthSubmit(event, 'login')">
-                            <input type="email" id="loginEmail" placeholder="E-MAIL" required style="width:100%; padding:16px; margin-bottom:15px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff; border-radius:12px; outline:none; font-weight:600;">
-                            <input type="password" id="loginPassword" placeholder="SENHA" required style="width:100%; padding:16px; margin-bottom:30px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff; border-radius:12px; outline:none; font-weight:600;">
-                            <button type="submit" style="width:100%; padding:18px; background:#d4af37; border:none; color:#000; font-weight:900; border-radius:12px; cursor:pointer; font-size:1.1rem; transition:0.3s; box-shadow: 0 4px 15px rgba(212,175,55,0.3);">ENTRAR</button>
-                            <p style="margin-top:20px; font-size:0.85rem; color:#888; cursor:pointer;" onclick="window.toggleAuthView('register')">Não possui acesso? Solicitar cadastro.</p>
+                            <input type="email" id="loginEmail" class="auth-input" placeholder="E-mail de Acesso" required>
+                            <input type="password" id="loginPassword" class="auth-input" placeholder="Senha" required>
+                            <button type="submit" class="auth-btn">Entrar no Sistema</button>
+                            <p class="auth-switch" onclick="window.toggleAuthView('register')">Não possui acesso? <strong>Solicitar cadastro</strong></p>
                         </form>
 
                         <form id="registerForm" onsubmit="window.handleAuthSubmit(event, 'register')" style="display:none;">
-                            <input type="text" id="regName" placeholder="NOME COMPLETO" required style="width:100%; padding:16px; margin-bottom:15px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff; border-radius:12px; outline:none; font-weight:600;">
-                            <input type="email" id="regEmail" placeholder="E-MAIL" required style="width:100%; padding:16px; margin-bottom:15px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff; border-radius:12px; outline:none; font-weight:600;">
-                            <input type="password" id="regPassword" placeholder="SENHA" required style="width:100%; padding:16px; margin-bottom:30px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff; border-radius:12px; outline:none; font-weight:600;">
-                            <button type="submit" style="width:100%; padding:18px; background:#22c55e; border:none; color:#000; font-weight:900; border-radius:12px; cursor:pointer; font-size:1.1rem; transition:0.3s;">SOLICITAR ACESSO</button>
-                            <p style="margin-top:20px; font-size:0.85rem; color:#888; cursor:pointer;" onclick="window.toggleAuthView('login')">Já possui conta? Fazer login.</p>
+                            <input type="text" id="regName" class="auth-input" placeholder="Nome Completo" required>
+                            <input type="email" id="regEmail" class="auth-input" placeholder="E-mail corporativo" required>
+                            <input type="password" id="regPassword" class="auth-input" placeholder="Crie uma Senha" required>
+                            <button type="submit" class="auth-btn register-btn">Solicitar Acesso</button>
+                            <p class="auth-switch" onclick="window.toggleAuthView('login')">Já possui conta? <strong>Fazer login</strong></p>
                         </form>
                     </div>
                 </div>
             </div>`,
 
         admin: () => `
-            <div style="padding: 100px 5% 2rem; min-height: 100vh; background: #000;">
-                <div class="top-bar" style="position:fixed; top:0; left:0; width:100%; padding:1.2rem 2.5rem; display:flex; justify-content:space-between; background:rgba(0,0,0,0.9); z-index:100; border-bottom:1px solid #d4af37;">
-                    <div style="font-weight:900; color:#d4af37; letter-spacing:1px; font-size:1.2rem;">PAINEL ADMIN - SANTA GROUP</div>
-                    <button onclick="App.navigateToMenu()" style="background:#d4af37; border:none; color:#000; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:900;">VOLTAR AO SISTEMA</button>
+            <style>
+                .admin-container { padding: 100px 5% 4rem; min-height: 100vh; background: #050505; }
+                .admin-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1.5rem; }
+                .admin-title { color: #fff; font-size: 2.5rem; font-weight: 900; margin: 0; }
+                .user-card { background: #111; border: 1px solid rgba(255,255,255,0.05); padding: 20px 25px; border-radius: 16px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; transition: 0.3s; }
+                .user-card:hover { border-color: rgba(212, 175, 55, 0.3); background: #151515; }
+                .user-info h3 { color: #fff; margin: 0 0 5px 0; font-size: 1.2rem; font-weight: 800; display:flex; align-items:center; gap:10px;}
+                .user-info p { color: #888; margin: 0; font-size: 0.9rem; }
+                .badge { padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
+                .badge-admin { background: rgba(212, 175, 55, 0.2); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.3); }
+                .badge-vendedor { background: rgba(255, 255, 255, 0.1); color: #ccc; border: 1px solid rgba(255, 255, 255, 0.2); }
+                .admin-controls { display: flex; gap: 12px; align-items: center; }
+                .admin-select { padding: 10px 15px; background: #000; color: #fff; border: 1px solid #333; border-radius: 8px; outline: none; font-weight: 600; cursor: pointer; transition: 0.3s; }
+                .admin-select:focus { border-color: #d4af37; }
+                .btn-delete { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 800; transition: 0.3s; }
+                .btn-delete:hover { background: #ef4444; color: #fff; }
+                
+                /* Cores dinâmicas para o select de status */
+                .status-pending { border-color: #eab308 !important; color: #eab308 !important; }
+                .status-approved { border-color: #22c55e !important; color: #22c55e !important; }
+                .status-rejected { border-color: #ef4444 !important; color: #ef4444 !important; }
+            </style>
+            
+            <div class="top-bar" style="position:fixed; top:0; left:0; width:100%; padding:1.2rem 2.5rem; display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.85); backdrop-filter:blur(10px); z-index:100; border-bottom:1px solid #d4af37;">
+                <div style="font-weight:900; color:#d4af37; letter-spacing:1px; font-size:1.2rem;">SALES GUIA - ADMIN</div>
+                <button onclick="App.navigateToMenu()" style="background:#d4af37; border:none; color:#000; padding:10px 20px; border-radius:8px; cursor:pointer; font-weight:900; transition:0.3s;">⬅ VOLTAR AO SISTEMA</button>
+            </div>
+
+            <div class="admin-container">
+                <div class="admin-header">
+                    <div>
+                        <h1 class="admin-title">Gestão de Equipe</h1>
+                        <p style="color:#888; margin-top:5px;">Aprove, gerencie cargos ou remova o acesso dos usuários do Santa Group.</p>
+                    </div>
                 </div>
-                <h1 style="color: #fff; margin-bottom: 2rem;">Gerenciamento de Usuários</h1>
-                <div style="display: flex; flex-direction: column; gap: 15px;">
-                    ${App.state.adminUsers.map(u => `
-                        <div style="background: #111; border: 1px solid #333; padding: 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
-                            <div>
-                                <h3 style="color: #d4af37; margin: 0 0 5px 0;">${u.name}</h3>
-                                <p style="color: #aaa; margin: 0;">${u.email}</p>
+
+                <div>
+                    ${App.state.adminUsers.length === 0 ? '<p style="color:#666; text-align:center; padding: 2rem;">Nenhum usuário encontrado.</p>' : ''}
+                    ${App.state.adminUsers.map(u => {
+                        const statusColor = u.status === 'pending' ? 'status-pending' : (u.status === 'approved' ? 'status-approved' : 'status-rejected');
+                        const roleBadge = u.role === 'admin' ? 'badge-admin' : 'badge-vendedor';
+                        
+                        return `
+                        <div class="user-card">
+                            <div class="user-info">
+                                <h3>${u.name} <span class="badge ${roleBadge}">${u.role}</span></h3>
+                                <p>${u.email} • Cadastro: ${new Date(u.createdAt).toLocaleDateString('pt-BR')}</p>
                             </div>
-                            <div style="display: flex; gap: 15px; align-items: center;">
-                                <select onchange="window.updateUserRole('${u.email}', this.value, '${u.status}')" style="padding: 8px; background: #222; color: #fff; border: 1px solid #444; border-radius: 6px; outline:none;">
+                            <div class="admin-controls">
+                                <select onchange="window.updateUserRole('${u.email}', this.value, '${u.status}')" class="admin-select">
                                     <option value="vendedor" ${u.role === 'vendedor' ? 'selected' : ''}>Vendedor</option>
                                     <option value="admin" ${u.role === 'admin' ? 'selected' : ''}>Admin</option>
                                 </select>
-                                <select onchange="window.updateUserRole('${u.email}', '${u.role}', this.value)" style="padding: 8px; background: #222; color: #fff; border: 1px solid #444; border-radius: 6px; outline:none;">
-                                    <option value="pending" ${u.status === 'pending' ? 'selected' : ''}>Pendente</option>
-                                    <option value="approved" ${u.status === 'approved' ? 'selected' : ''}>Aprovado</option>
-                                    <option value="rejected" ${u.status === 'rejected' ? 'selected' : ''}>Reprovado</option>
+                                
+                                <select onchange="window.updateUserRole('${u.email}', '${u.role}', this.value)" class="admin-select ${statusColor}">
+                                    <option value="pending" ${u.status === 'pending' ? 'selected' : ''}>⏳ Pendente</option>
+                                    <option value="approved" ${u.status === 'approved' ? 'selected' : ''}>✅ Aprovado</option>
+                                    <option value="rejected" ${u.status === 'rejected' ? 'selected' : ''}>🚫 Reprovado</option>
                                 </select>
-                                <button onclick="window.deleteUser('${u.email}')" style="background: #ef4444; color: #fff; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight:bold;">Excluir</button>
+                                
+                                <button onclick="window.deleteUser('${u.email}')" class="btn-delete">Excluir</button>
                             </div>
                         </div>
-                    `).join('')}
+                    `}).join('')}
                 </div>
             </div>`,
 
@@ -86,7 +138,7 @@ const UI = {
             <div style="position:fixed; top:0; width:100%; padding:1.2rem 2.5rem; display:flex; justify-content:space-between; background:rgba(0,0,0,0.85); backdrop-filter:blur(10px); z-index:100; border-bottom:1px solid #d4af37;">
                 <div style="font-weight:900; color:#d4af37; letter-spacing:1px; font-size:1.2rem;">SALES GUIA - SANTA GROUP</div>
                 <div style="display:flex; align-items:center; gap:20px;">
-                    ${App.state.currentUser.role === 'admin' ? `<span onclick="App.navigateToAdmin()" style="cursor:pointer; font-size:1.5rem;" title="Painel Admin">⚙️</span>` : ''}
+                    ${App.state.currentUser.role === 'admin' ? `<span onclick="App.navigateToAdmin()" style="cursor:pointer; font-size:1.5rem; transition:0.3s;" title="Painel Admin">⚙️</span>` : ''}
                     <span style="font-size:0.75rem; background:#d4af37; color:#000; padding:4px 12px; border-radius:6px; font-weight:900; text-transform:uppercase;">${App.state.currentUser.role}</span>
                     <button onclick="App.logout()" style="background:none; border:1px solid #ef4444; color:#ef4444; padding:5px 15px; border-radius:6px; cursor:pointer; font-weight:900; font-size:0.8rem; transition:0.3s;">SAIR</button>
                 </div>
@@ -132,7 +184,6 @@ const UI = {
 
                     .layoutContainer { max-width: 100% !important; display: flex; height: 100vh; overflow: hidden; }
                     
-                    /* Borda branca removida e tamanho da barra aumentado para 340px */
                     .sidebarNavigation { width: 340px !important; flex-shrink: 0; display: flex; flex-direction: column; border-right: none; background: rgba(0,0,0,0.85); overflow-y: auto; }
                     .sidebarNavigation::-webkit-scrollbar { display: none; }
                     .mainWorkspace { padding: 2rem 5% !important; flex-grow: 1; max-width: calc(100vw - 340px); overflow-y: auto; text-align: left; }
@@ -141,8 +192,8 @@ const UI = {
                     .pageTitle { font-size: 2rem !important; margin-bottom: 0.6rem; text-align: left; font-weight: 800; color: #fff; }
                     .pageDescription { font-size: 1.05rem !important; line-height: 1.5; text-align: left; color: #ccc; }
                     
-                    .headerImageContainer { width: 300px; height: 300px; border-radius: 16px; border: 2px solid #d4af37; overflow: hidden; display: flex; justify-content: center; align-items: center; background: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.8); flex-shrink: 0; }
-                    .headerImageContainer img { width: 100%; height: 100%; object-fit: cover; display: block; }
+                    .headerImageContainer { flex-shrink: 0; border: 1px solid rgba(255,255,255,0.2); padding: 6px; border-radius: 12px; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; }
+                    .headerImageContainer img { max-width: 320px; height: auto; border-radius: 8px; border: 2px solid rgba(255, 255, 255, 0.15); display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
 
                     .contentGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8rem; width: 100%; align-items: stretch; }
                     .cardSpanFull { grid-column: 1 / -1; }
@@ -158,11 +209,15 @@ const UI = {
                     .navItem:hover { background: rgba(255,255,255,0.05); color: #fff; }
                     .navItemActive { color: #fff !important; background: rgba(255,255,255,0.1) !important; border-left: 4px solid #fff; }
                     .navSubItemActive { color: #fff !important; background: rgba(255,255,255,0.1) !important; font-weight: 900 !important; border-left: 4px solid #fff; }
+
+                    .listDivider { border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; margin: 0; }
+                    .comicContainer { margin-top: 2rem; border-radius: 12px; overflow: hidden; border: 2px solid rgba(255,255,255,0.15); }
+                    .comicContainer img { width: 100%; height: auto; display: block; }
                 </style>
                 <div class="layoutContainer">
                     <aside class="sidebarNavigation">
-                        <button class="backButton" onclick="App.navigateToMenu()" style="margin: 1.5rem 1rem; padding: 1rem; background: rgba(0,0,0,0.5); border: 1px solid #d4af37; color: #fff; font-weight: 800; border-radius: 8px; cursor: pointer; transition: 0.3s;">⬅ MENU INICIAL</button>
-                        <nav class="navigationMenu">
+                        <button onclick="App.navigateToMenu()" style="margin: 1.5rem 1rem; padding: 1rem; background: rgba(0,0,0,0.5); border: 1px solid #d4af37; color: #fff; font-weight: 800; border-radius: 8px; cursor: pointer; transition: 0.3s;">⬅ MENU INICIAL</button>
+                        <nav style="display: flex; flex-direction: column;">
                             ${sidebarCategories.map(cat => {
                                 const isMeio = cat.id === 'meio';
                                 const isActive = App.state.currentCategoryId === cat.id;
@@ -242,8 +297,8 @@ const UI = {
                 <div class="dataList" style="display:flex; flex-direction:column; gap:14px; flex-grow:1;">
                     ${s.items ? s.items.map(i => i === '---' ? '<div class="listDivider" style="border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; margin: 0;"></div>' : (i.trim().startsWith('<') ? i : `<div class="aligned-list-item">${i}</div>`)).join('') : ''}
                 </div>
-                ${s.footer ? `<div class="hintBox" style="margin-top:1.5rem; padding:14px 18px; background:linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.05)); border-left:4px solid #22c55e; border-radius:0 8px 8px 0; color:#fff; font-weight:500;">${s.footer}</div>` : ''}
-                ${s.warning ? `<div class="warningBox" style="margin-top:10px; color:#fff; font-size:0.9rem; background:rgba(239,68,68,0.1); border:1px solid #ef4444; padding:10px; border-radius:8px;">⚠️ ${s.warning}</div>` : ''}
+                ${s.footer ? `<div style="margin-top:1.5rem; padding:14px 18px; background:linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.05)); border-left:4px solid #22c55e; border-radius:0 8px 8px 0; color:#fff; font-weight:500;">${s.footer}</div>` : ''}
+                ${s.warning ? `<div style="margin-top:10px; color:#fff; font-size:0.9rem; background:rgba(239,68,68,0.1); border:1px solid #ef4444; padding:10px; border-radius:8px;">⚠️ ${s.warning}</div>` : ''}
             </section>`;
     }
 };
@@ -279,6 +334,7 @@ window.handleAuthSubmit = async function(e, action) {
                 msg.innerText = result.message;
                 msg.style.color = '#ef4444';
                 msg.style.background = 'rgba(239,68,68,0.1)';
+                msg.style.border = '1px solid rgba(239,68,68,0.3)';
                 msg.style.display = 'block';
             }
         } else {
@@ -290,13 +346,15 @@ window.handleAuthSubmit = async function(e, action) {
                 msg.innerText = result.message;
                 msg.style.color = '#22c55e';
                 msg.style.background = 'rgba(34,197,94,0.1)';
+                msg.style.border = '1px solid rgba(34,197,94,0.3)';
                 msg.style.display = 'block';
                 e.target.reset();
-                setTimeout(() => window.toggleAuthView('login'), 3000);
+                setTimeout(() => window.toggleAuthView('login'), 3500);
             } else {
                 msg.innerText = result.message;
                 msg.style.color = '#ef4444';
                 msg.style.background = 'rgba(239,68,68,0.1)';
+                msg.style.border = '1px solid rgba(239,68,68,0.3)';
                 msg.style.display = 'block';
             }
         }
@@ -313,7 +371,7 @@ window.updateUserRole = function(email, role, status) {
 };
 
 window.deleteUser = function(email) {
-    if (confirm(`Tem certeza que deseja excluir ${email}?`)) {
+    if (confirm(`Tem certeza que deseja excluir permanentemente o acesso de ${email}?`)) {
         App.deleteAdminUser(email);
     }
 };

@@ -175,7 +175,7 @@ const DataAccess = {
                 { title: '🏠 VOUCHER DE CASA', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Conforto, exclusividade e utilidade. 🔑</span></div>']},
                 { title: '🎟️ SANTAPASS', items: ['<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Recompensas e itens únicos. 🎁</span></div>']},
                 { isError: true, title: '❌ ERROS DO VENDEDOR (CLIENTE MÉDICO)', items: [
-                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Não respeitar o tempo dele (médicos são ocupados). ⏰</span></div>', 
+                    '<div class="aligned-list-item"><strong>🚫</strong> <span>Não respeitar o tempo de observação (médicos são ocupados). ⏰</span></div>', 
                     '<div class="aligned-list-item"><strong>🚫</strong> <span>Ignorar as dores da equipe ou da clínica. 🏥</span></div>', 
                     '<div class="aligned-list-item"><strong>🚫</strong> <span>Não oferecer itens de alto padrão (mansão/luxo). 💎</span></div>', 
                     '<div class="aligned-list-item"><strong>🚫</strong> <span>Não lidar profissionalmente com objeções de valor. 💵</span></div>', 
@@ -306,8 +306,12 @@ const DataAccess = {
                         '---',
                         '<div class="aligned-list-item"><strong>❓</strong> <span>“Qual teu nome?”</span></div>', 
                         '---',
-                        '<div class="aligned-list-item"><strong>👀</strong> <span>“Vi você agora… curti teu estilo.”</span></div>'
-                    ], footer: "<strong>💡 Dica:</strong> Pergunta certa = Cliente fala.<br><br><strong>💡 Dica:</strong> É importante a sua apresentação com nome, gera confiança. 🤝" },
+                        '<div class="aligned-list-item"><strong>👀</strong> <span>“Vi você agora… curti teu estilo.”</span></div>', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>🏎️</strong> <span>“Esse carro é muito foda hein!”</span></div>', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>🏙️</strong> <span>“O que você gosta de fazer na city?”</span></div>'
+                    ], footer: "<strong>💡 Dica:</strong> É importante a sua apresentação com nome, gera confiança. 🤝" },
                     { isError: true, title: "❌ ERROS DO VENDEDOR (CLIENTE DEFESA)", items: ['<div class="aligned-list-item"><strong>🏃‍♂️</strong> <span>Chegar vendendo direto (“Quer VIP?”).</span></div>', '<div class="aligned-list-item"><strong>🤖</strong> <span>Parecer robô ou script decorado.</span></div>', '<div class="aligned-list-item"><strong>🛑</strong> <span>Interromper o cliente em um momento errado.</span></div>', '<div class="aligned-list-item"><strong>🤐</strong> <span>Falar demais e não ouvir.</span></div>', '<div class="aligned-list-item"><strong>🙈</strong> <span>Ignorar o que o cliente respondeu.</span></div>', '<div class="aligned-list-item"><strong>🔨</strong> <span>Forçar a venda sem entender a necessidade.</span></div>'], warning: "Isso quebra a atenção na hora. 💥" }
                 ],
                 videoCategories: [
@@ -411,11 +415,6 @@ const DataAccess = {
                         '<div class="aligned-list-item"><strong>•</strong> <span>Promoção real. 📉</span></div>',
                         '<div class="aligned-list-item"><strong>•</strong> <span>Tem vantagem temporária clara. ⏳</span></div>'
                     ]},
-                    { title: '💳 PAGAMENTO & OBJEÇÃO', items: [
-                        '<div class="aligned-list-item"><strong>💸</strong> <span>“Você pode fazer via Pix ou no cartão de crédito, da forma que for mais confortável para você.”</span></div>',
-                        '---',
-                        '<div class="aligned-list-item"><strong>🌍</strong> <span>“Se estiver fora, também trabalhamos com Revolut, então isso não é um problema.”</span></div>'
-                    ]},
                     { isFull: true, title: '🎯 FECHAMENTO DIRETO (MATADOR)', items: [
                         '<div class="aligned-list-item"><strong>👉</strong> <span>O ponto aqui não é como você paga — é o nível que você decide entrar na cidade. 🏙️</span></div>',
                         '---',
@@ -479,7 +478,7 @@ const DataAccess = {
                         '<div class="aligned-list-item"><strong>📈</strong> <span>Valor percebido sobe | ⚙️ Diminui desistência | 🚀 Aumenta satisfação</span></div>'
                     ]},
                     { title: "🤝 ABERTURA (CONEXÃO)", items: [
-                        '<div class="aligned-list-item"><strong>📌</strong> <span>Deixe a porta aberta para continuidade. 🚪</span></div>',
+                        '<div class="aligned-list-item"><strong>📌</strong> <span>Deixe a porta aberta para continuidade. Door 🚪</span></div>',
                         '---',
                         '<div class="aligned-list-item"><strong>✔️</strong> <span>“Qualquer dúvida real, me chama.”</span></div>',
                         '---',
@@ -604,7 +603,8 @@ const Controller = {
             return `
                 <div class="overlay"></div>
                 <style>
-                    html, body { margin: 0; padding: 0; overflow: hidden; height: 100vh; background: #000; }
+                    /* Fundo preto removido daqui para não cobrir a imagem global */
+                    html, body { margin: 0; padding: 0; overflow: hidden; height: 100vh; }
                     * { box-sizing: border-box; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.05) transparent; }
                     ::-webkit-scrollbar { width: 6px; height: 6px; }
                     ::-webkit-scrollbar-track { background: transparent; }
@@ -612,7 +612,7 @@ const Controller = {
                     ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.1); }
 
                     .layoutContainer { max-width: 100% !important; display: flex; height: 100vh; overflow: hidden; }
-                    .sidebarNavigation { width: 280px !important; flex-shrink: 0; display: flex; flex-direction: column; border-right: 1px solid rgba(255,255,255,0.05); background: #000; overflow-y: auto; }
+                    .sidebarNavigation { width: 280px !important; flex-shrink: 0; display: flex; flex-direction: column; border-right: 1px solid rgba(255,255,255,0.05); background: rgba(0,0,0,0.85); overflow-y: auto; }
                     .sidebarNavigation::-webkit-scrollbar { display: none; }
                     .mainWorkspace { padding: 2rem 5% !important; flex-grow: 1; max-width: calc(100vw - 280px); overflow-y: auto; text-align: left; }
                     
@@ -624,8 +624,8 @@ const Controller = {
                     .headerImageContainer img { max-width: 320px; height: auto; border-radius: 8px; border: 2px solid rgba(255, 255, 255, 0.15); display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
 
                     .preparationGrid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem; background: #111; padding: 2.5rem; border: 2px solid rgba(255,255,255,0.1); box-shadow: 0 15px 35px rgba(0,0,0,0.7); margin-top: 1.5rem; margin-bottom: 2.5rem; grid-column: 1 / -1; align-items: center; border-radius: 12px; }
-                    .prepPhoto { display: flex; justify-content: center; align-items: center; }
-                    .prepPhoto img { max-width: 480px; width: 100%; border-radius: 8px; border: 3px solid #fde047; display: block; box-shadow: 0 0 25px rgba(253, 224, 71, 0.6); }
+                    .prepPhoto { display: flex; justify-content: center; align-items: center; position: relative; padding: 0; }
+                    .prepPhoto img { max-width: 480px; width: 100%; border-radius: 8px; border: 3px solid #fde047; display: block; box-shadow: 0 0 25px rgba(253, 224, 71, 0.6); position: relative; z-index: 1; }
 
                     .contentGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8rem; width: 100%; align-items: stretch; }
                     .cardSpanFull { grid-column: 1 / -1; }
@@ -679,7 +679,7 @@ const Controller = {
                                             ${cat.title} ${isMeio ? (BusinessLogic.state.isMeioExpanded ? '▾' : '▸') : ''}
                                         </div>
                                         ${isMeio && BusinessLogic.state.isMeioExpanded ? `
-                                            <div class="profileSubMenu" style="background: #080808;">
+                                            <div class="profileSubMenu" style="background: rgba(0,0,0,0.5);">
                                                 ${Object.values(profiles).map(p => `
                                                     <div class="navItem ${BusinessLogic.state.currentProfileId === p.id ? 'navSubItemActive' : ''}" 
                                                          style="padding-left: 2.5rem !important; border-bottom: none;" 

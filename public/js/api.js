@@ -1,12 +1,13 @@
 const ApiClient = {
     async get(endpoint) {
         try {
-            const response = await fetch(endpoint);
-            if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+            // Adicionamos 'cache: no-store' para que os dados do banco sempre venham novos
+            const response = await fetch(endpoint, { cache: 'no-store' }); 
+            if (!response.ok) throw new Error(`Erro: ${response.status}`);
             return await response.json();
         } catch (error) {
             console.error("GET Error:", error);
-            return { success: false, message: error.message };
+            return { success: false };
         }
     },
 

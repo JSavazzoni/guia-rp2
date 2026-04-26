@@ -1,15 +1,15 @@
-// public/js/api.js
 const ApiClient = {
     async get(endpoint) {
         try {
             const response = await fetch(endpoint);
-            if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
+            if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
             return await response.json();
         } catch (error) {
-            console.error("Erro GET:", error);
+            console.error("GET Error:", error);
             return { success: false, message: error.message };
         }
     },
+
     async post(endpoint, data) {
         try {
             const response = await fetch(endpoint, {
@@ -17,21 +17,18 @@ const ApiClient = {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             });
-            
-            // Tenta ler o JSON. Se a Vercel retornar um erro de servidor (HTML), isso cai no catch
-            const text = await response.text(); 
+            const text = await response.text();
             try {
                 return JSON.parse(text);
             } catch (e) {
-                console.error("Resposta do servidor não foi um JSON:", text);
-                return { success: false, message: "Erro 500: Verifique o log da Vercel." };
+                return { success: false, message: "Erro na resposta do servidor (Não é JSON válido)." };
             }
-            
         } catch (error) {
-            console.error("Erro POST:", error);
-            return { success: false, message: "Falha de conexão com a API." };
+            console.error("POST Error:", error);
+            return { success: false, message: "Falha de conexão com o Banco de Dados." };
         }
     },
+
     async put(endpoint, data) {
         try {
             const response = await fetch(endpoint, {
@@ -44,6 +41,7 @@ const ApiClient = {
             return { success: false };
         }
     },
+
     async delete(endpoint, data) {
         try {
             const response = await fetch(endpoint, {

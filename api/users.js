@@ -7,12 +7,14 @@ module.exports = async (req, res) => {
         const usersCollection = db.collection("users");
 
         if (req.method === 'GET') {
+            // Retorna todos os usuários (exceto a senha)
             const users = await usersCollection.find({}, { projection: { password: 0 } }).toArray();
             return res.status(200).json({ success: true, data: users });
         }
 
         if (req.method === 'PUT') {
             const { email, role, status } = req.body;
+            // Atualiza cargo e status
             await usersCollection.updateOne({ email }, { $set: { role, status } });
             return res.status(200).json({ success: true });
         }
@@ -25,6 +27,7 @@ module.exports = async (req, res) => {
 
         return res.status(405).end();
     } catch (error) {
-        return res.status(500).json({ success: false, message: 'Server error.' });
+        console.error(error);
+        return res.status(500).json({ success: false, message: 'Erro interno do servidor.' });
     }
 };

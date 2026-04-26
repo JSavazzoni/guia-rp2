@@ -82,8 +82,6 @@ const UI = {
                 .admin-select:focus { border-color: #d4af37; }
                 .btn-delete { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 800; transition: 0.3s; }
                 .btn-delete:hover { background: #ef4444; color: #fff; }
-                
-                /* Cores dinâmicas para o select de status */
                 .status-pending { border-color: #eab308 !important; color: #eab308 !important; }
                 .status-approved { border-color: #22c55e !important; color: #22c55e !important; }
                 .status-rejected { border-color: #ef4444 !important; color: #ef4444 !important; }
@@ -184,16 +182,18 @@ const UI = {
 
                     .layoutContainer { max-width: 100% !important; display: flex; height: 100vh; overflow: hidden; }
                     
+                    /* Sidebar 340px e sem linha branca */
                     .sidebarNavigation { width: 340px !important; flex-shrink: 0; display: flex; flex-direction: column; border-right: none; background: rgba(0,0,0,0.85); overflow-y: auto; }
                     .sidebarNavigation::-webkit-scrollbar { display: none; }
                     .mainWorkspace { padding: 2rem 5% !important; flex-grow: 1; max-width: calc(100vw - 340px); overflow-y: auto; text-align: left; }
                     
                     .headerContainer { display: flex; align-items: center; justify-content: space-between; gap: 2.5rem; margin-bottom: 3rem; }
-                    .pageTitle { font-size: 2rem !important; margin-bottom: 0.6rem; text-align: left; font-weight: 800; color: #fff; }
+                    .pageTitle { font-size: 2.2rem !important; margin-bottom: 0.6rem; text-align: left; font-weight: 900; color: #fff; text-transform: uppercase;}
                     .pageDescription { font-size: 1.05rem !important; line-height: 1.5; text-align: left; color: #ccc; }
                     
-                    .headerImageContainer { flex-shrink: 0; border: 1px solid rgba(255,255,255,0.2); padding: 6px; border-radius: 12px; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; }
-                    .headerImageContainer img { max-width: 320px; height: auto; border-radius: 8px; border: 2px solid rgba(255, 255, 255, 0.15); display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+                    /* Caixas de imagens ajustadas e proporcionais */
+                    .headerImageContainer { width: 350px; height: 230px; border-radius: 12px; border: 2px solid #d4af37; overflow: hidden; display: flex; justify-content: center; align-items: center; background: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.8); flex-shrink: 0; }
+                    .headerImageContainer img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
                     .contentGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8rem; width: 100%; align-items: stretch; }
                     .cardSpanFull { grid-column: 1 / -1; }
@@ -207,17 +207,13 @@ const UI = {
 
                     .navItem { font-size: 1.15rem !important; white-space: nowrap; padding: 1.2rem 1.6rem !important; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: all 0.3s; color: #888; }
                     .navItem:hover { background: rgba(255,255,255,0.05); color: #fff; }
-                    .navItemActive { color: #fff !important; background: rgba(255,255,255,0.1) !important; border-left: 4px solid #fff; }
-                    .navSubItemActive { color: #fff !important; background: rgba(255,255,255,0.1) !important; font-weight: 900 !important; border-left: 4px solid #fff; }
-
-                    .listDivider { border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; margin: 0; }
-                    .comicContainer { margin-top: 2rem; border-radius: 12px; overflow: hidden; border: 2px solid rgba(255,255,255,0.15); }
-                    .comicContainer img { width: 100%; height: auto; display: block; }
+                    .navItemActive { color: #d4af37 !important; background: rgba(212, 175, 55, 0.1) !important; border-left: 4px solid #d4af37; }
+                    .navSubItemActive { color: #fff !important; font-weight: 900 !important; }
                 </style>
                 <div class="layoutContainer">
                     <aside class="sidebarNavigation">
-                        <button onclick="App.navigateToMenu()" style="margin: 1.5rem 1rem; padding: 1rem; background: rgba(0,0,0,0.5); border: 1px solid #d4af37; color: #fff; font-weight: 800; border-radius: 8px; cursor: pointer; transition: 0.3s;">⬅ MENU INICIAL</button>
-                        <nav style="display: flex; flex-direction: column;">
+                        <button class="backButton" onclick="App.navigateToMenu()" style="margin: 1.5rem 1rem; padding: 1rem; background: rgba(0,0,0,0.5); border: 1px solid #d4af37; color: #fff; font-weight: 800; border-radius: 8px; cursor: pointer; transition: 0.3s;">⬅ MENU INICIAL</button>
+                        <nav class="navigationMenu">
                             ${sidebarCategories.map(cat => {
                                 const isMeio = cat.id === 'meio';
                                 const isActive = App.state.currentCategoryId === cat.id;
@@ -281,24 +277,26 @@ const UI = {
                     </div>
                     <p><strong style="color:#fff; display:block; margin-bottom:5px;">🏆 RESULTADO ESPERADO:</strong> <span style="color:#eee;">${s.result}</span></p>
                 </div>
-                <div class="prepPhoto" style="display:flex; justify-content:center; align-items:center; position:relative; padding:0;">
-                    <img src="${s.image}" style="max-width:480px; width:100%; border-radius:8px; border: 3px solid #fde047; box-shadow: 0 0 25px rgba(253, 224, 71, 0.6); position:relative; z-index:1;">
+                <div style="display:flex; justify-content:center; align-items:center;">
+                    <div style="width: 100%; max-width: 400px; border-radius: 12px; border: 3px solid #fde047; box-shadow: 0 0 25px rgba(253, 224, 71, 0.4); overflow: hidden;">
+                        <img src="${s.image}" style="width: 100%; height: auto; display: block;">
+                    </div>
                 </div>
             </div>`;
 
-        if (s.isComic) return `<div class="cardSpanFull comicContainer" style="margin-top:2rem; border-radius:12px; overflow:hidden; border:2px solid rgba(255,255,255,0.15);"><img src="${s.image}" style="width:100%; height:auto; display:block;"></div>`;
+        if (s.isComic) return `<div class="cardSpanFull" style="margin-top:2rem; border-radius:12px; overflow:hidden; border:2px solid rgba(255,255,255,0.15);"><img src="${s.image}" style="width:100%; height:auto; display:block;"></div>`;
 
-        const extraClass = (s.isFull || s.isError) ? "cardSpanFull" : "";
+        const extraClass = (s.isFull || s.isError) ? "grid-column: 1/-1;" : "";
         const borderColor = s.isError ? "border-color: #ef4444;" : "border-color: rgba(255,255,255,0.05);";
         
         return `
-            <section class="infoCard ${extraClass} ${s.isError ? 'errorCard' : ''}" style="background:#111; border-radius:12px; border:1px solid; ${borderColor} padding:1.5rem; display:flex; flex-direction:column;">
+            <section style="${extraClass} background:#111; border-radius:12px; border:1px solid; ${borderColor} padding:1.5rem; display:flex; flex-direction:column;">
                 <h2 style="font-size: 1.3rem; color: #fff; margin-bottom: 1rem; font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">${s.title}</h2>
                 <div class="dataList" style="display:flex; flex-direction:column; gap:14px; flex-grow:1;">
-                    ${s.items ? s.items.map(i => i === '---' ? '<div class="listDivider" style="border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; margin: 0;"></div>' : (i.trim().startsWith('<') ? i : `<div class="aligned-list-item">${i}</div>`)).join('') : ''}
+                    ${s.items ? s.items.map(i => i === '---' ? '<div style="border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; margin: 0;"></div>' : (i.trim().startsWith('<') ? i : `<div class="aligned-list-item">${i}</div>`)).join('') : ''}
                 </div>
                 ${s.footer ? `<div style="margin-top:1.5rem; padding:14px 18px; background:linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.05)); border-left:4px solid #22c55e; border-radius:0 8px 8px 0; color:#fff; font-weight:500;">${s.footer}</div>` : ''}
-                ${s.warning ? `<div style="margin-top:10px; color:#fff; font-size:0.9rem; background:rgba(239,68,68,0.1); border:1px solid #ef4444; padding:10px; border-radius:8px;">⚠️ ${s.warning}</div>` : ''}
+                ${s.warning ? `<div style="margin-top:10px; color:#fff; font-size:0.9rem; background:rgba(239,68,68,0.1); border:1px solid #ef4444; padding:10px; border-radius:8px; font-weight:900;">⚠️ ${s.warning}</div>` : ''}
             </section>`;
     }
 };
@@ -371,7 +369,7 @@ window.updateUserRole = function(email, role, status) {
 };
 
 window.deleteUser = function(email) {
-    if (confirm(`Tem certeza que deseja excluir permanentemente o acesso de ${email}?`)) {
+    if (confirm(`Excluir permanentemente o acesso de ${email}?`)) {
         App.deleteAdminUser(email);
     }
 };

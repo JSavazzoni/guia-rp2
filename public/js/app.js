@@ -43,6 +43,8 @@ const App = {
         const response = await ApiClient.get('/api/content');
         if (response && response.success) {
             this.state.content = response.data;
+        } else {
+            console.error("Falha ao carregar conteúdo da API.");
         }
     },
 
@@ -56,7 +58,7 @@ const App = {
 
     async updateAdminUser(email, role, status) {
         await ApiClient.put('/api/users', { email, role, status });
-        await this.loadAdminUsers();
+        await this.loadAdminUsers(); // Atualiza a tabela
     },
 
     async deleteAdminUser(email) {

@@ -19,15 +19,16 @@ const App = {
     async login(email, password) {
         const response = await ApiClient.post('/api/auth', { action: 'login', email, password });
         if (response.success) {
+            // Salva o usuário e o token
             const userWithToken = { ...response.user, token: response.token };
             this.state.currentUser = userWithToken;
             localStorage.setItem('user', JSON.stringify(userWithToken));
             
             if (userWithToken.status === 'approved') {
                 await this.loadContent();
-                this.navigateToMenu();
+                this.navigateToMenu(); // MUDA PARA A TELA DE MENU
             } else {
-                UI.render();
+                UI.render(); // Mostrará a tela de "Acesso em Análise"
             }
             return { success: true };
         }
@@ -83,7 +84,7 @@ const App = {
     },
 
     toggleMeio(e) {
-        e.stopPropagation();
+        if(e) e.stopPropagation();
         this.state.isMeioExpanded = !this.state.isMeioExpanded;
         this.state.currentView = 'category';
         this.state.currentCategoryId = 'meio';
@@ -107,5 +108,49 @@ const App = {
         this.state.isMeioExpanded = true;
         window.scrollTo(0, 0);
         UI.render();
+    }
+};
+
+// FUNÇÃO GLOBAL PARA TRATAR O BOTÃO ENTRAR
+window.handleAuthSubmit = async (event, action) => {
+    event.preventDefault(); // IMPORTANTE: Impede o "?" na URL e o recarregamento
+    
+    const messageElement = document.getElementById('authMessage');
+    if(messageElement) messageElement.style.display = 'none';
+
+    if (action === 'login') {
+        const email = document.getElementById('loginEmail').value;
+        const pass = document.getElementById('loginPassword').value;
+        const res = await App.login(email, pass);
+        if (!res.success && messageElement) {
+            messageElement.style.display = 'block';
+            messageElement.style.backgroundColor = 'rgba(239, 68, 68, 0.2)';
+            messageElement.style.color = '#ef4444';
+            messageElement.textContent = res.message;
+        }
+    } else {
+        const name = document.getElementById('regName').value;
+        const email = document.getElementById('regEmail').value;
+        const pass = document.getElementById('regPassword').value;
+        const res = await App.register(name, email, pass);
+        if (res.success) {
+            alert('Solicitação enviada! Aguarde aprovação.');
+            window.toggleAuthView('login');
+        } else if (messageElement) {
+            messageElement.style.display = 'block';
+            messageElement.textContent = res.message;
+        }
+    }
+};
+
+window.toggleAuthView = (view) => {
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    if (view === 'login') {
+        loginForm.style.display = 'block';
+        registerForm.style.display = 'none';
+    } else {
+        loginForm.style.display = 'none';
+        registerForm.style.display = 'block';
     }
 };

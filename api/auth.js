@@ -1,17 +1,25 @@
 module.exports = async (req, res) => {
-    if (req.method !== 'POST') return res.status(405).send();
+    // Permite apenas requisições POST
+    if (req.method !== 'POST') {
+        return res.status(405).json({ success: false, message: 'Método não permitido' });
+    }
+
     const { email, password } = req.body;
 
-    // LOGIN TESTE - Pode mudar depois
     if (password === '123') {
-        return res.json({
+        let role = 'vendedor';
+        let name = 'Vendedor Alpha';
+
+        if (email.toLowerCase().includes('admin')) {
+            role = 'admin';
+            name = 'Administrador';
+        }
+
+        return res.status(200).json({
             success: true,
-            user: {
-                name: email.split('@')[0].toUpperCase(),
-                role: email.includes('admin') ? 'admin' : 'vendedor'
-            }
+            user: { name, role, email }
         });
     }
 
-    res.status(401).json({ success: false, message: 'Senha incorreta!' });
+    return res.status(401).json({ success: false, message: 'Senha incorreta ou acesso negado!' });
 };

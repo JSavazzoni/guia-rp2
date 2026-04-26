@@ -4,7 +4,8 @@ const ApiClient = {
             const response = await fetch(endpoint);
             return await response.json();
         } catch (error) {
-            console.error("Fetch Error:", error);
+            console.error("Erro na comunicação GET:", error);
+            return { success: false };
         }
     },
 
@@ -17,7 +18,8 @@ const ApiClient = {
             });
             return await response.json();
         } catch (error) {
-            console.error("Post Error:", error);
+            console.error("Erro na comunicação POST:", error);
+            return { success: false, message: "Erro de conexão com o servidor." };
         }
     }
 };

@@ -24,7 +24,7 @@ const App = {
             this.navigateToMenu();
             return { success: true };
         }
-        return { success: false, message: response.message };
+        return { success: false, message: response.message || "Erro no Login" };
     },
 
     logout() {
@@ -35,7 +35,11 @@ const App = {
 
     async loadContent() {
         const response = await ApiClient.get('/api/content');
-        this.state.content = response.data;
+        if (response && response.success) {
+            this.state.content = response.data;
+        } else {
+            console.error("Falha ao carregar conteúdo da API");
+        }
     },
 
     navigateToMenu() {

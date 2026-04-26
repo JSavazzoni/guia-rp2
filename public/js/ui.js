@@ -25,140 +25,191 @@ const UI = {
     templates: {
         auth: () => `
             <style>
-                .auth-wrapper { height: 100vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, rgba(20,20,20,1) 0%, #000 100%); font-family: 'Inter', sans-serif; }
-                .auth-box { background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(20px); padding: 3.5rem; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.3); width: 420px; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(212, 175, 55, 0.05); transition: all 0.4s ease; }
-                .auth-title { color: #d4af37; margin-bottom: 0.2rem; font-weight: 900; font-size: 2.2rem; letter-spacing: 2px; text-transform: uppercase; }
-                .auth-subtitle { color: #666; margin-bottom: 2.5rem; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; }
-                .auth-input { width: 100%; padding: 16px 18px; margin-bottom: 15px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 12px; font-size: 0.95rem; outline: none; font-weight: 500; transition: 0.3s; }
-                .auth-input:focus { border-color: #d4af37; box-shadow: 0 0 15px rgba(212, 175, 55, 0.1); background: rgba(0,0,0,0.6); }
-                .auth-btn { width: 100%; padding: 18px; background: #d4af37; border: none; color: #000; font-weight: 900; border-radius: 12px; cursor: pointer; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; transition: 0.3s; margin-top: 10px; }
-                .auth-btn:hover { background: #fde047; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3); }
-                .auth-btn.register-btn { background: #22c55e; }
-                .auth-btn.register-btn:hover { background: #4ade80; box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3); }
-                .auth-switch { margin-top: 1.5rem; font-size: 0.85rem; color: #888; cursor: pointer; transition: 0.3s; font-weight: 500; }
-                .auth-switch:hover { color: #fff; }
-                .auth-msg { display: none; margin-bottom: 1.5rem; font-weight: 700; font-size: 0.85rem; padding: 12px; border-radius: 8px; }
+                body { margin: 0; padding: 0; background: #000; font-family: 'Inter', sans-serif; overflow: hidden; }
+                .auth-wrapper { height: 100vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.15) 0%, transparent 40%), radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.1) 0%, transparent 40%), #030303; }
+                .auth-box { background: #0a0a0a; border: 1px solid rgba(255,255,255,0.05); border-top: 2px solid #d4af37; padding: 3.5rem; border-radius: 16px; width: 100%; max-width: 440px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
+                .auth-header h1 { color: #d4af37; margin: 0 0 5px 0; font-weight: 900; font-size: 2rem; letter-spacing: 2px; text-transform: uppercase; }
+                .auth-header p { color: #666; margin: 0 0 2.5rem 0; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; }
+                .auth-input-group { text-align: left; margin-bottom: 1.2rem; }
+                .auth-label { display: block; color: #888; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; margin-left: 4px; }
+                .auth-input { width: 100%; padding: 14px 16px; background: #111; border: 1px solid #222; color: #fff; border-radius: 8px; font-size: 1rem; outline: none; font-weight: 500; transition: all 0.3s ease; }
+                .auth-input:focus { border-color: #d4af37; background: #151515; box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1); }
+                .auth-btn { width: 100%; padding: 16px; background: #d4af37; border: none; color: #000; font-weight: 900; border-radius: 8px; cursor: pointer; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; transition: 0.3s; margin-top: 1rem; }
+                .auth-btn:hover { background: #fde047; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2); }
+                .auth-btn.register { background: #22c55e; color: #000; }
+                .auth-btn.register:hover { background: #4ade80; box-shadow: 0 8px 20px rgba(34, 197, 94, 0.2); }
+                .auth-link { margin-top: 1.5rem; font-size: 0.9rem; color: #888; cursor: pointer; transition: 0.3s; display: inline-block; }
+                .auth-link:hover { color: #fff; }
+                .auth-alert { display: none; padding: 12px; border-radius: 8px; font-size: 0.9rem; font-weight: 700; margin-bottom: 1.5rem; text-align: left; }
             </style>
             <div class="auth-wrapper">
                 <div class="auth-box">
-                    <h1 class="auth-title">SALES GUIA</h1>
-                    <p class="auth-subtitle">Santa Group</p>
-                    
-                    <div id="authForms">
-                        <p id="authMessage" class="auth-msg"></p>
-                        
-                        <form id="loginForm" onsubmit="window.handleAuthSubmit(event, 'login')">
-                            <input type="email" id="loginEmail" class="auth-input" placeholder="E-mail de Acesso" required>
-                            <input type="password" id="loginPassword" class="auth-input" placeholder="Senha" required>
-                            <button type="submit" class="auth-btn">Entrar no Sistema</button>
-                            <p class="auth-switch" onclick="window.toggleAuthView('register')">Não possui acesso? <strong>Solicitar cadastro</strong></p>
-                        </form>
-
-                        <form id="registerForm" onsubmit="window.handleAuthSubmit(event, 'register')" style="display:none;">
-                            <input type="text" id="regName" class="auth-input" placeholder="Nome Completo" required>
-                            <input type="email" id="regEmail" class="auth-input" placeholder="E-mail corporativo" required>
-                            <input type="password" id="regPassword" class="auth-input" placeholder="Crie uma Senha" required>
-                            <button type="submit" class="auth-btn register-btn">Solicitar Acesso</button>
-                            <p class="auth-switch" onclick="window.toggleAuthView('login')">Já possui conta? <strong>Fazer login</strong></p>
-                        </form>
+                    <div class="auth-header">
+                        <h1>SALES GUIA</h1>
+                        <p>Santa Group</p>
                     </div>
+                    <div id="authMessage" class="auth-alert"></div>
+                    
+                    <form id="loginForm" onsubmit="window.handleAuthSubmit(event, 'login')">
+                        <div class="auth-input-group">
+                            <label class="auth-label">E-mail corporativo</label>
+                            <input type="email" id="loginEmail" class="auth-input" placeholder="exemplo@santagroup.com" required>
+                        </div>
+                        <div class="auth-input-group">
+                            <label class="auth-label">Senha de acesso</label>
+                            <input type="password" id="loginPassword" class="auth-input" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="auth-btn">Acessar Sistema</button>
+                        <span class="auth-link" onclick="window.toggleAuthView('register')">Não possui acesso? <strong>Solicitar agora</strong></span>
+                    </form>
+
+                    <form id="registerForm" onsubmit="window.handleAuthSubmit(event, 'register')" style="display:none;">
+                        <div class="auth-input-group">
+                            <label class="auth-label">Nome Completo</label>
+                            <input type="text" id="regName" class="auth-input" placeholder="Seu nome" required>
+                        </div>
+                        <div class="auth-input-group">
+                            <label class="auth-label">E-mail corporativo</label>
+                            <input type="email" id="regEmail" class="auth-input" placeholder="exemplo@santagroup.com" required>
+                        </div>
+                        <div class="auth-input-group">
+                            <label class="auth-label">Criar Senha</label>
+                            <input type="password" id="regPassword" class="auth-input" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="auth-btn register">Solicitar Registro</button>
+                        <span class="auth-link" onclick="window.toggleAuthView('login')">Já possui conta? <strong>Fazer login</strong></span>
+                    </form>
                 </div>
             </div>`,
 
         admin: () => `
             <style>
-                .admin-container { padding: 100px 5% 4rem; min-height: 100vh; background: #050505; }
-                .admin-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1.5rem; }
-                .admin-title { color: #fff; font-size: 2.5rem; font-weight: 900; margin: 0; }
-                .user-card { background: #111; border: 1px solid rgba(255,255,255,0.05); padding: 20px 25px; border-radius: 16px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; transition: 0.3s; }
-                .user-card:hover { border-color: rgba(212, 175, 55, 0.3); background: #151515; }
-                .user-info h3 { color: #fff; margin: 0 0 5px 0; font-size: 1.2rem; font-weight: 800; display:flex; align-items:center; gap:10px;}
-                .user-info p { color: #888; margin: 0; font-size: 0.9rem; }
-                .badge { padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
-                .badge-admin { background: rgba(212, 175, 55, 0.2); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.3); }
-                .badge-vendedor { background: rgba(255, 255, 255, 0.1); color: #ccc; border: 1px solid rgba(255, 255, 255, 0.2); }
-                .admin-controls { display: flex; gap: 12px; align-items: center; }
-                .admin-select { padding: 10px 15px; background: #000; color: #fff; border: 1px solid #333; border-radius: 8px; outline: none; font-weight: 600; cursor: pointer; transition: 0.3s; }
-                .admin-select:focus { border-color: #d4af37; }
-                .btn-delete { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 800; transition: 0.3s; }
-                .btn-delete:hover { background: #ef4444; color: #fff; }
-                .status-pending { border-color: #eab308 !important; color: #eab308 !important; }
-                .status-approved { border-color: #22c55e !important; color: #22c55e !important; }
-                .status-rejected { border-color: #ef4444 !important; color: #ef4444 !important; }
+                body { margin: 0; background: #050505; color: #fff; font-family: 'Inter', sans-serif; overflow-y: auto; }
+                .admin-topbar { position: fixed; top: 0; left: 0; right: 0; height: 70px; background: rgba(10,10,10,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid #222; display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; z-index: 100; }
+                .admin-brand { font-weight: 900; color: #d4af37; font-size: 1.2rem; letter-spacing: 1px; }
+                .admin-back-btn { background: #111; color: #fff; border: 1px solid #333; padding: 8px 16px; border-radius: 6px; font-weight: 700; cursor: pointer; transition: 0.2s; }
+                .admin-back-btn:hover { background: #222; border-color: #d4af37; }
+                .admin-layout { padding: 120px 3rem 4rem; max-width: 1400px; margin: 0 auto; }
+                .admin-header { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #222; }
+                .admin-header h1 { margin: 0 0 8px 0; font-size: 2.2rem; font-weight: 900; }
+                .admin-header p { margin: 0; color: #888; font-size: 1rem; }
+                
+                .user-table-wrapper { background: #0a0a0a; border: 1px solid #222; border-radius: 12px; overflow: hidden; }
+                .user-grid-header { display: grid; grid-template-columns: 2fr 1.5fr 1.5fr 1fr; background: #111; padding: 1rem 1.5rem; border-bottom: 1px solid #222; font-size: 0.8rem; font-weight: 800; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+                .user-grid-row { display: grid; grid-template-columns: 2fr 1.5fr 1.5fr 1fr; padding: 1.2rem 1.5rem; border-bottom: 1px solid #1a1a1a; align-items: center; transition: 0.2s; }
+                .user-grid-row:hover { background: #111; }
+                .user-grid-row:last-child { border-bottom: none; }
+                
+                .user-info-col strong { display: block; font-size: 1.05rem; color: #fff; margin-bottom: 4px; }
+                .user-info-col span { color: #666; font-size: 0.85rem; }
+                
+                .select-pill { appearance: none; background: #111; border: 1px solid #333; color: #fff; padding: 8px 12px; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; outline: none; width: 140px; transition: 0.2s; }
+                .select-pill:hover, .select-pill:focus { border-color: #d4af37; }
+                
+                .status-pending { color: #eab308; border-color: rgba(234, 179, 8, 0.3); background: rgba(234, 179, 8, 0.05); }
+                .status-approved { color: #22c55e; border-color: rgba(34, 197, 94, 0.3); background: rgba(34, 197, 94, 0.05); }
+                .status-rejected { color: #ef4444; border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05); }
+                
+                .del-btn { background: transparent; color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); padding: 8px 16px; border-radius: 6px; font-weight: 700; cursor: pointer; transition: 0.2s; }
+                .del-btn:hover { background: rgba(239, 68, 68, 0.1); border-color: #ef4444; }
+                
+                .empty-state { text-align: center; padding: 4rem; color: #666; font-size: 1.1rem; }
             </style>
             
-            <div class="top-bar" style="position:fixed; top:0; left:0; width:100%; padding:1.2rem 2.5rem; display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.85); backdrop-filter:blur(10px); z-index:100; border-bottom:1px solid #d4af37;">
-                <div style="font-weight:900; color:#d4af37; letter-spacing:1px; font-size:1.2rem;">SALES GUIA - ADMIN</div>
-                <button onclick="App.navigateToMenu()" style="background:#d4af37; border:none; color:#000; padding:10px 20px; border-radius:8px; cursor:pointer; font-weight:900; transition:0.3s;">⬅ VOLTAR AO SISTEMA</button>
+            <div class="admin-topbar">
+                <div class="admin-brand">PAINEL ADMIN</div>
+                <button onclick="App.navigateToMenu()" class="admin-back-btn">VOLTAR AO GUIA</button>
             </div>
 
-            <div class="admin-container">
+            <div class="admin-layout">
                 <div class="admin-header">
-                    <div>
-                        <h1 class="admin-title">Gestão de Equipe</h1>
-                        <p style="color:#888; margin-top:5px;">Aprove, gerencie cargos ou remova o acesso dos usuários do Santa Group.</p>
-                    </div>
+                    <h1>Gestão de Equipe</h1>
+                    <p>Gerencie os acessos, cargos e permissões dos usuários do sistema.</p>
                 </div>
 
-                <div>
-                    ${App.state.adminUsers.length === 0 ? '<p style="color:#666; text-align:center; padding: 2rem;">Nenhum usuário encontrado.</p>' : ''}
-                    ${App.state.adminUsers.map(u => {
-                        const statusColor = u.status === 'pending' ? 'status-pending' : (u.status === 'approved' ? 'status-approved' : 'status-rejected');
-                        const roleBadge = u.role === 'admin' ? 'badge-admin' : 'badge-vendedor';
-                        
-                        return `
-                        <div class="user-card">
-                            <div class="user-info">
-                                <h3>${u.name} <span class="badge ${roleBadge}">${u.role}</span></h3>
-                                <p>${u.email} • Cadastro: ${new Date(u.createdAt).toLocaleDateString('pt-BR')}</p>
-                            </div>
-                            <div class="admin-controls">
-                                <select onchange="window.updateUserRole('${u.email}', this.value, '${u.status}')" class="admin-select">
-                                    <option value="vendedor" ${u.role === 'vendedor' ? 'selected' : ''}>Vendedor</option>
-                                    <option value="admin" ${u.role === 'admin' ? 'selected' : ''}>Admin</option>
-                                </select>
-                                
-                                <select onchange="window.updateUserRole('${u.email}', '${u.role}', this.value)" class="admin-select ${statusColor}">
-                                    <option value="pending" ${u.status === 'pending' ? 'selected' : ''}>⏳ Pendente</option>
-                                    <option value="approved" ${u.status === 'approved' ? 'selected' : ''}>✅ Aprovado</option>
-                                    <option value="rejected" ${u.status === 'rejected' ? 'selected' : ''}>🚫 Reprovado</option>
-                                </select>
-                                
-                                <button onclick="window.deleteUser('${u.email}')" class="btn-delete">Excluir</button>
-                            </div>
+                <div class="user-table-wrapper">
+                    ${App.state.adminUsers.length === 0 ? '<div class="empty-state">Nenhum usuário cadastrado no sistema.</div>' : `
+                        <div class="user-grid-header">
+                            <div>Usuário</div>
+                            <div>Cargo</div>
+                            <div>Status do Acesso</div>
+                            <div>Ações</div>
                         </div>
-                    `}).join('')}
+                        ${App.state.adminUsers.map(u => {
+                            const statusClass = u.status === 'pending' ? 'status-pending' : (u.status === 'approved' ? 'status-approved' : 'status-rejected');
+                            return `
+                            <div class="user-grid-row">
+                                <div class="user-info-col">
+                                    <strong>${u.name}</strong>
+                                    <span>${u.email}</span>
+                                </div>
+                                <div>
+                                    <select onchange="window.updateUserRole('${u.email}', this.value, '${u.status}')" class="select-pill">
+                                        <option value="vendedor" ${u.role === 'vendedor' ? 'selected' : ''}>Vendedor</option>
+                                        <option value="admin" ${u.role === 'admin' ? 'selected' : ''}>Administrador</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <select onchange="window.updateUserRole('${u.email}', '${u.role}', this.value)" class="select-pill ${statusClass}">
+                                        <option value="pending" ${u.status === 'pending' ? 'selected' : ''}>⏳ Pendente</option>
+                                        <option value="approved" ${u.status === 'approved' ? 'selected' : ''}>✅ Aprovado</option>
+                                        <option value="rejected" ${u.status === 'rejected' ? 'selected' : ''}>🚫 Bloqueado</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <button onclick="window.deleteUser('${u.email}')" class="del-btn">Excluir</button>
+                                </div>
+                            </div>
+                        `}).join('')}
+                    `}
                 </div>
             </div>`,
 
         menu: () => `
-            <div class="overlay"></div>
-            <div style="position:fixed; top:0; width:100%; padding:1.2rem 2.5rem; display:flex; justify-content:space-between; background:rgba(0,0,0,0.85); backdrop-filter:blur(10px); z-index:100; border-bottom:1px solid #d4af37;">
-                <div style="font-weight:900; color:#d4af37; letter-spacing:1px; font-size:1.2rem;">SALES GUIA - SANTA GROUP</div>
-                <div style="display:flex; align-items:center; gap:20px;">
-                    ${App.state.currentUser.role === 'admin' ? `<span onclick="App.navigateToAdmin()" style="cursor:pointer; font-size:1.5rem; transition:0.3s;" title="Painel Admin">⚙️</span>` : ''}
-                    <span style="font-size:0.75rem; background:#d4af37; color:#000; padding:4px 12px; border-radius:6px; font-weight:900; text-transform:uppercase;">${App.state.currentUser.role}</span>
-                    <button onclick="App.logout()" style="background:none; border:1px solid #ef4444; color:#ef4444; padding:5px 15px; border-radius:6px; cursor:pointer; font-weight:900; font-size:0.8rem; transition:0.3s;">SAIR</button>
+            <style>
+                body { margin: 0; background: #000; font-family: 'Inter', sans-serif; overflow-y: auto; }
+                .menu-topbar { position: fixed; top: 0; left: 0; right: 0; height: 70px; background: rgba(5,5,5,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid #d4af37; display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; z-index: 100; }
+                .menu-brand { font-weight: 900; color: #d4af37; font-size: 1.2rem; letter-spacing: 1px; }
+                .menu-controls { display: flex; align-items: center; gap: 20px; }
+                .role-tag { background: #d4af37; color: #000; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 900; text-transform: uppercase; }
+                .btn-icon { background: none; border: none; cursor: pointer; font-size: 1.5rem; transition: transform 0.2s; }
+                .btn-icon:hover { transform: scale(1.1); }
+                .btn-logout { background: transparent; border: 1px solid #ef4444; color: #ef4444; padding: 6px 16px; border-radius: 6px; font-weight: 800; cursor: pointer; transition: 0.2s; font-size: 0.85rem; }
+                .btn-logout:hover { background: rgba(239,68,68,0.1); }
+                .funnel-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 100px 20px 50px; gap: 10px; }
+                .funnel-card { width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; background: linear-gradient(180deg, #151515 0%, #0a0a0a 100%); border: 1px solid #d4af37; min-height: 90px; padding: 1.5rem; cursor: pointer; transition: 0.3s; box-shadow: 0 10px 25px rgba(0,0,0,0.8); }
+                .funnel-card:hover { background: #d4af37; transform: scale(1.02); }
+                .funnel-card h3 { margin: 0; font-size: 1.2rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; color: #fff; }
+                .funnel-card p { margin: 0; font-size: 0.85rem; color: #888; text-align: center; }
+                .funnel-card:hover h3, .funnel-card:hover p { color: #000; }
+                .f-1 { max-width: 800px; } .f-2 { max-width: 700px; } .f-3 { max-width: 600px; } .f-4 { max-width: 500px; } .f-5 { max-width: 400px; } .f-6 { max-width: 300px; }
+            </style>
+            <div class="menu-topbar">
+                <div class="menu-brand">SALES GUIA - SANTA GROUP</div>
+                <div class="menu-controls">
+                    ${App.state.currentUser.role === 'admin' ? `<button onclick="App.navigateToAdmin()" class="btn-icon" title="Painel de Controle">⚙️</button>` : ''}
+                    <span class="role-tag">${App.state.currentUser.role}</span>
+                    <button onclick="App.logout()" class="btn-logout">SAIR</button>
                 </div>
             </div>
-            <div class="funnelContainer" style="padding-top: 100px;">
+            <div class="funnel-wrapper">
                 ${[
-                    {id: 'olheiro', title: '🕵️‍♂️ Olheiro', desc: 'Observe o player e entenda o melhor momento.'},
-                    {id: 'defesa', title: '🛡️ Defesa', desc: 'Ganhe a atenção do cliente e inicie a conversa.'},
-                    {id: 'meio', title: '⚽ Meio de Campo', desc: 'Entenda a necessidade através de perguntas-chave.'},
-                    {id: 'ataque', title: '⚔️ Ataque', desc: 'Transforme a dor em solução e crie urgência.'},
-                    {id: 'fechamento', title: '🤝 Fechamento', desc: 'Transforma interesse em decisão.'},
-                    {id: 'posvenda', title: '📦 Pós Venda', desc: 'Transforma cliente em recorrência.'}
+                    {id: 'olheiro', title: '🕵️‍♂️ Olheiro', desc: 'Observe o player e entenda o melhor momento.', cls: 'f-1'},
+                    {id: 'defesa', title: '🛡️ Defesa', desc: 'Ganhe a atenção do cliente e inicie a conversa.', cls: 'f-2'},
+                    {id: 'meio', title: '⚽ Meio de Campo', desc: 'Entenda a necessidade através de perguntas.', cls: 'f-3'},
+                    {id: 'ataque', title: '⚔️ Ataque', desc: 'Transforme a dor em solução e crie urgência.', cls: 'f-4'},
+                    {id: 'fechamento', title: '🤝 Fechamento', desc: 'Transforma interesse em decisão.', cls: 'f-5'},
+                    {id: 'posvenda', title: '📦 Pós Venda', desc: 'Fidelização e recorrência do cliente.', cls: 'f-6'}
                 ].map(cat => `
-                    <div class="funnelStep step${cat.id.charAt(0).toUpperCase() + cat.id.slice(1)}" onclick="App.navigateToCategory('${cat.id}')">
-                        <span class="funnelStepTitle">${cat.title}</span>
-                        <span class="funnelStepDesc">${cat.desc}</span>
+                    <div class="funnel-card ${cat.cls}" onclick="App.navigateToCategory('${cat.id}')">
+                        <h3>${cat.title}</h3>
+                        <p>${cat.desc}</p>
                     </div>
                 `).join('')}
             </div>`,
 
         category: (data) => {
-            if (!data) return '<div style="color:white; padding:100px; text-align:center;">Carregando conteúdo...</div>';
+            if (!data) return '<div style="color:#fff; padding:100px; text-align:center; font-family:Inter,sans-serif;">Carregando...</div>';
             
             const profiles = App.state.content.profiles;
             const sidebarCategories = [
@@ -171,133 +222,154 @@ const UI = {
             ];
 
             return `
-                <div class="overlay"></div>
                 <style>
-                    html, body { margin: 0; padding: 0; overflow: hidden; height: 100vh; }
-                    * { box-sizing: border-box; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.05) transparent; }
-                    ::-webkit-scrollbar { width: 6px; height: 6px; }
+                    body { margin: 0; padding: 0; background: #000; font-family: 'Inter', sans-serif; color: #fff; overflow-x: hidden; overflow-y: auto; }
+                    * { box-sizing: border-box; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.15) transparent; }
+                    ::-webkit-scrollbar { width: 8px; height: 8px; }
                     ::-webkit-scrollbar-track { background: transparent; }
-                    ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.03); border-radius: 10px; }
-                    ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.1); }
+                    ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 10px; }
+                    ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.3); }
 
-                    .layoutContainer { max-width: 100% !important; display: flex; height: 100vh; overflow: hidden; }
+                    /* SIDEBAR FIXA - Scroll do lado de fora arrumado */
+                    .sidebar { width: 340px; position: fixed; top: 0; left: 0; height: 100vh; background: #0a0a0a; border-right: 1px solid #1a1a1a; overflow-y: auto; display: flex; flex-direction: column; z-index: 50; }
+                    .sidebar::-webkit-scrollbar { display: none; }
                     
-                    /* Sidebar 340px e sem linha branca */
-                    .sidebarNavigation { width: 340px !important; flex-shrink: 0; display: flex; flex-direction: column; border-right: none; background: rgba(0,0,0,0.85); overflow-y: auto; }
-                    .sidebarNavigation::-webkit-scrollbar { display: none; }
-                    .mainWorkspace { padding: 2rem 5% !important; flex-grow: 1; max-width: calc(100vw - 340px); overflow-y: auto; text-align: left; }
-                    
-                    .headerContainer { display: flex; align-items: center; justify-content: space-between; gap: 2.5rem; margin-bottom: 3rem; }
-                    .pageTitle { font-size: 2.2rem !important; margin-bottom: 0.6rem; text-align: left; font-weight: 900; color: #fff; text-transform: uppercase;}
-                    .pageDescription { font-size: 1.05rem !important; line-height: 1.5; text-align: left; color: #ccc; }
-                    
-                    /* Caixas de imagens ajustadas e proporcionais */
-                    .headerImageContainer { width: 350px; height: 230px; border-radius: 12px; border: 2px solid #d4af37; overflow: hidden; display: flex; justify-content: center; align-items: center; background: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.8); flex-shrink: 0; }
-                    .headerImageContainer img { width: 100%; height: 100%; object-fit: cover; display: block; }
+                    /* MAIN WORKSPACE COM MARGIN */
+                    .workspace { margin-left: 340px; padding: 4rem 4rem 6rem; min-height: 100vh; }
 
-                    .contentGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8rem; width: 100%; align-items: stretch; }
-                    .cardSpanFull { grid-column: 1 / -1; }
+                    .back-btn-side { margin: 2rem 1.5rem; padding: 1rem; background: #111; border: 1px solid #333; color: #fff; font-weight: 800; font-size: 0.9rem; border-radius: 8px; cursor: pointer; transition: 0.2s; letter-spacing: 1px; }
+                    .back-btn-side:hover { border-color: #d4af37; background: #1a1a1a; }
+
+                    .nav-item { padding: 1.2rem 1.5rem; font-weight: 800; font-size: 1.05rem; color: #888; cursor: pointer; transition: 0.2s; border-bottom: 1px solid #111; display: flex; justify-content: space-between; }
+                    .nav-item:hover { background: #111; color: #fff; }
+                    .nav-item.active { background: rgba(212, 175, 55, 0.05); color: #d4af37; border-left: 4px solid #d4af37; }
                     
-                    .dataList { display: flex; flex-direction: column; gap: 14px; width: 100%; list-style: none; padding: 0; margin: 0; }
-                    .dataList div { font-size: 1rem !important; line-height: 1.6; text-align: left; color: #eee; }
+                    .sub-nav { background: #050505; border-bottom: 1px solid #111; }
+                    .sub-nav-item { padding: 1rem 1.5rem 1rem 3.5rem; font-size: 0.9rem; font-weight: 600; color: #666; cursor: pointer; transition: 0.2s; }
+                    .sub-nav-item:hover { color: #fff; background: #111; }
+                    .sub-nav-item.active { color: #fff; font-weight: 800; background: #111; }
 
-                    .aligned-list-item { display: flex; align-items: flex-start; gap: 12px; width: 100%; font-size: 1.05rem; margin: 0; padding: 0; }
-                    .aligned-list-item strong { flex-shrink: 0; color: #fff; }
-                    .aligned-list-item span { flex-grow: 1; text-align: left; }
+                    .content-header { display: flex; align-items: center; justify-content: space-between; gap: 3rem; margin-bottom: 4rem; }
+                    .header-texts h1 { font-size: 2.8rem; font-weight: 900; margin: 0 0 1rem 0; text-transform: uppercase; color: #fff; line-height: 1.1; }
+                    .header-texts p { font-size: 1.1rem; color: #aaa; margin: 0; line-height: 1.6; max-width: 800px; }
+                    
+                    /* IMAGENS MENORES NO CABEÇALHO */
+                    .header-img-box { width: 260px; height: 180px; flex-shrink: 0; background: #000; border: 2px solid #d4af37; border-radius: 12px; padding: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; }
+                    .header-img-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
 
-                    .navItem { font-size: 1.15rem !important; white-space: nowrap; padding: 1.2rem 1.6rem !important; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: all 0.3s; color: #888; }
-                    .navItem:hover { background: rgba(255,255,255,0.05); color: #fff; }
-                    .navItemActive { color: #d4af37 !important; background: rgba(212, 175, 55, 0.1) !important; border-left: 4px solid #d4af37; }
-                    .navSubItemActive { color: #fff !important; font-weight: 900 !important; }
+                    .grid-layout { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+                    .full-width { grid-column: 1 / -1; }
+
+                    .info-card { background: #111; border: 1px solid #222; border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+                    .info-card h2 { font-size: 1.3rem; color: #fff; font-weight: 900; margin: 0 0 1.5rem 0; border-bottom: 1px solid #222; padding-bottom: 1rem; }
+                    .info-card.error { border-color: #ef4444; }
+                    
+                    .item-row { display: flex; align-items: flex-start; gap: 12px; font-size: 1.05rem; color: #ddd; margin-bottom: 14px; line-height: 1.5; }
+                    .item-row:last-child { margin-bottom: 0; }
+                    .item-row strong { color: #fff; flex-shrink: 0; }
+                    .divider-line { height: 1px; background: #222; margin: 15px 0; width: 100%; }
+
+                    .hint-box { background: rgba(34, 197, 94, 0.1); border-left: 4px solid #22c55e; padding: 1rem 1.5rem; margin-top: auto; border-radius: 0 8px 8px 0; color: #fff; font-weight: 600; font-size: 0.95rem; }
+                    .warning-box { background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 1rem; margin-top: 1.5rem; border-radius: 8px; color: #ef4444; font-weight: 800; text-align: center; }
+
+                    .section-title-divider { grid-column: 1/-1; text-align: center; color: #fff; font-size: 1.6rem; font-weight: 900; margin: 2rem 0; text-transform: uppercase; letter-spacing: 2px; }
+                    
+                    .prep-card { grid-column: 1/-1; display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; background: #111; padding: 3rem; border-radius: 16px; border: 1px solid #222; align-items: center; box-shadow: 0 15px 40px rgba(0,0,0,0.5); }
+                    .prep-img { width: 100%; max-width: 400px; border: 3px solid #fde047; border-radius: 12px; box-shadow: 0 0 30px rgba(253, 224, 71, 0.3); display: block; margin: 0 auto; }
+                    
+                    .comic-frame { grid-column: 1/-1; border-radius: 16px; border: 1px solid #333; overflow: hidden; margin-top: 1rem; }
+                    .comic-frame img { width: 100%; display: block; }
                 </style>
-                <div class="layoutContainer">
-                    <aside class="sidebarNavigation">
-                        <button class="backButton" onclick="App.navigateToMenu()" style="margin: 1.5rem 1rem; padding: 1rem; background: rgba(0,0,0,0.5); border: 1px solid #d4af37; color: #fff; font-weight: 800; border-radius: 8px; cursor: pointer; transition: 0.3s;">⬅ MENU INICIAL</button>
-                        <nav class="navigationMenu">
-                            ${sidebarCategories.map(cat => {
-                                const isMeio = cat.id === 'meio';
-                                const isActive = App.state.currentCategoryId === cat.id;
-                                return `
-                                    <div class="navItem ${isActive && !App.state.currentProfileId ? 'navItemActive' : ''}" onclick="${isMeio ? 'App.toggleMeio(event)' : `App.navigateToCategory('${cat.id}')`}">
-                                        ${cat.label} ${isMeio ? (App.state.isMeioExpanded ? '▾' : '▸') : ''}
-                                    </div>
-                                    ${isMeio && App.state.isMeioExpanded ? `
-                                        <div style="background:rgba(0,0,0,0.3); padding: 5px 0;">
-                                            ${Object.values(profiles).map(p => `
-                                                <div class="navItem ${App.state.currentProfileId === p.id ? 'navSubItemActive' : ''}" style="font-size:0.85rem !important; border:none; padding-left:3.5rem !important; color:#aaa;" onclick="App.navigateToProfile('${p.id}')">
-                                                    ${p.shortTitle}
-                                                </div>
-                                            `).join('')}
-                                        </div>` : ''}
-                                `;
-                            }).join('')}
-                        </nav>
-                    </aside>
-                    <main class="mainWorkspace">
-                        <header class="headerContainer">
-                            <div class="headerTextContent">
-                                <h1 class="pageTitle">${data.title}</h1>
-                                <p class="pageDescription">${data.description}</p>
-                            </div>
-                            <div class="headerImageContainer"><img src="${data.image}"></div>
-                        </header>
-                        <div class="contentGrid">
-                            ${data.sections.map(s => UI.renderSection(s)).join('')}
-                        </div>
-                        ${data.videoCategories ? data.videoCategories.map(cat => `
-                            <section class="videoSection" style="margin-top: 4rem;">
-                                <h1 class="sectionTitle" style="font-size: 1.5rem; font-weight: 900; text-align: center; margin-bottom: 2rem; color: #fff; text-transform: uppercase;">${cat.title}</h1>
-                                <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
-                                    ${cat.videos.map(v => `
-                                        <div style="background:#111; padding:1rem; border-radius:12px; border:1px solid rgba(255,255,255,0.05);">
-                                            <h3 style="color:${v.color}; font-size:0.9rem; margin-bottom:10px; font-weight:800; text-align:center;">${v.label}</h3>
-                                            <div style="position:relative; padding-bottom:56.25%; height:0; border-radius:8px; overflow:hidden;">
-                                                <iframe src="${v.url}" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="autoplay"></iframe>
-                                            </div>
-                                        </div>`).join('')}
+
+                <aside class="sidebar">
+                    <button class="back-btn-side" onclick="App.navigateToMenu()">⬅ MENU INICIAL</button>
+                    <nav>
+                        ${sidebarCategories.map(cat => {
+                            const isMeio = cat.id === 'meio';
+                            const isActive = App.state.currentCategoryId === cat.id;
+                            return `
+                                <div class="nav-item ${isActive && !App.state.currentProfileId ? 'active' : ''}" onclick="${isMeio ? 'App.toggleMeio(event)' : `App.navigateToCategory('${cat.id}')`}">
+                                    <span>${cat.label}</span>
+                                    ${isMeio ? `<span>${App.state.isMeioExpanded ? '▾' : '▸'}</span>` : ''}
                                 </div>
-                            </section>`).join('') : ''}
-                    </main>
-                </div>`;
+                                ${isMeio && App.state.isMeioExpanded ? `
+                                    <div class="sub-nav">
+                                        ${Object.values(profiles).map(p => `
+                                            <div class="sub-nav-item ${App.state.currentProfileId === p.id ? 'active' : ''}" onclick="App.navigateToProfile('${p.id}')">
+                                                ${p.shortTitle}
+                                            </div>
+                                        `).join('')}
+                                    </div>` : ''}
+                            `;
+                        }).join('')}
+                    </nav>
+                </aside>
+
+                <main class="workspace">
+                    <header class="content-header">
+                        <div class="header-texts">
+                            <h1>${data.title}</h1>
+                            <p>${data.description}</p>
+                        </div>
+                        <div class="header-img-box"><img src="${data.image}"></div>
+                    </header>
+
+                    <div class="grid-layout">
+                        ${data.sections.map(s => UI.renderSection(s)).join('')}
+                    </div>
+
+                    ${data.videoCategories ? data.videoCategories.map(cat => `
+                        <div style="margin-top: 5rem; border-top: 1px solid #222; padding-top: 3rem;">
+                            <h2 style="text-align:center; font-size:1.8rem; font-weight:900; color:#fff; text-transform:uppercase; margin-bottom:3rem;">${cat.title}</h2>
+                            <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem;">
+                                ${cat.videos.map(v => `
+                                    <div style="background:#0a0a0a; border:1px solid #222; padding:1.5rem; border-radius:16px;">
+                                        <h3 style="color:${v.color}; font-size:1rem; font-weight:900; text-align:center; margin: 0 0 1rem 0; text-transform:uppercase;">${v.label}</h3>
+                                        <div style="position:relative; padding-bottom:56.25%; border-radius:8px; overflow:hidden; border:1px solid #333;">
+                                            <iframe src="${v.url}" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="autoplay"></iframe>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `).join('') : ''}
+                </main>
+            `;
         }
     },
 
     renderSection(s) {
-        if (s.isSectionTitle) return `<div class="topHeadingFree" style="grid-column:1/-1; text-align:center; color:#fff; font-size:1.5rem; font-weight:900; margin:2rem 0; text-transform:uppercase; letter-spacing:1px;">${s.title}</div>`;
-        if (s.isRecommendationHeader) return `<div class="cardSpanFull" style="margin-top: 1rem;"><h2 style="font-size: 1.4rem; color: #fff; text-align: left; width: 100%; font-weight: 800;">${s.title}</h2></div>`;
+        if (s.isSectionTitle) return `<div class="section-title-divider">${s.title}</div>`;
+        if (s.isRecommendationHeader) return `<div class="full-width"><h2 style="font-size:1.6rem; color:#fff; font-weight:900; margin-top:1rem;">${s.title}</h2></div>`;
         
         if (s.isPreparation) return `
-            <div class="preparationGrid" style="grid-column: 1 / -1; display:grid; grid-template-columns: 1.5fr 1fr; gap:2rem; background:#111; padding:2.5rem; border-radius:12px; border:2px solid rgba(255,255,255,0.1); align-items:center; box-shadow: 0 15px 35px rgba(0,0,0,0.7); margin-top: 1.5rem; margin-bottom: 2.5rem;">
+            <div class="prep-card">
                 <div>
-                    <h2 style="color:#fff; font-weight:800; margin-bottom:1rem; font-size:1.4rem;">${s.title}</h2>
-                    <p style="margin-bottom:1rem;"><strong style="color:#fff; display:block; margin-bottom:5px;">🎯 OBJETIVO:</strong> <span style="color:#eee;">${s.goal}</span></p>
-                    <div style="margin-bottom:1rem;">
-                        <strong style="color:#fff; display:block; margin-bottom:8px;">🚀 AÇÕES</strong>
-                        <div class="dataList">${s.actions.map(a => `<div class="aligned-list-item"><strong>•</strong> <span>${a}</span></div>`).join('')}</div>
+                    <h2 style="color:#d4af37; font-size:1.6rem; font-weight:900; margin:0 0 1.5rem 0;">${s.title}</h2>
+                    <p style="font-size:1.1rem; color:#eee; margin-bottom:1.5rem;"><strong style="color:#d4af37; display:block; font-size:0.9rem; margin-bottom:4px;">🎯 OBJETIVO:</strong> ${s.goal}</p>
+                    <div style="margin-bottom:1.5rem;">
+                        <strong style="color:#d4af37; display:block; font-size:0.9rem; margin-bottom:8px;">🚀 AÇÕES:</strong>
+                        ${s.actions.map(a => `<div class="item-row"><strong>•</strong> <span>${a}</span></div>`).join('')}
                     </div>
-                    <p><strong style="color:#fff; display:block; margin-bottom:5px;">🏆 RESULTADO ESPERADO:</strong> <span style="color:#eee;">${s.result}</span></p>
+                    <p style="font-size:1.1rem; color:#eee; margin:0;"><strong style="color:#d4af37; display:block; font-size:0.9rem; margin-bottom:4px;">🏆 RESULTADO ESPERADO:</strong> ${s.result}</p>
                 </div>
-                <div style="display:flex; justify-content:center; align-items:center;">
-                    <div style="width: 100%; max-width: 400px; border-radius: 12px; border: 3px solid #fde047; box-shadow: 0 0 25px rgba(253, 224, 71, 0.4); overflow: hidden;">
-                        <img src="${s.image}" style="width: 100%; height: auto; display: block;">
-                    </div>
-                </div>
+                <div><img src="${s.image}" class="prep-img"></div>
             </div>`;
 
-        if (s.isComic) return `<div class="cardSpanFull" style="margin-top:2rem; border-radius:12px; overflow:hidden; border:2px solid rgba(255,255,255,0.15);"><img src="${s.image}" style="width:100%; height:auto; display:block;"></div>`;
+        if (s.isComic) return `<div class="comic-frame"><img src="${s.image}"></div>`;
 
-        const extraClass = (s.isFull || s.isError) ? "grid-column: 1/-1;" : "";
-        const borderColor = s.isError ? "border-color: #ef4444;" : "border-color: rgba(255,255,255,0.05);";
+        const wrapperClass = s.isFull || s.isError ? "full-width info-card" : "info-card";
+        const errClass = s.isError ? "error" : "";
         
         return `
-            <section style="${extraClass} background:#111; border-radius:12px; border:1px solid; ${borderColor} padding:1.5rem; display:flex; flex-direction:column;">
-                <h2 style="font-size: 1.3rem; color: #fff; margin-bottom: 1rem; font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">${s.title}</h2>
-                <div class="dataList" style="display:flex; flex-direction:column; gap:14px; flex-grow:1;">
-                    ${s.items ? s.items.map(i => i === '---' ? '<div style="border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; margin: 0;"></div>' : (i.trim().startsWith('<') ? i : `<div class="aligned-list-item">${i}</div>`)).join('') : ''}
+            <div class="${wrapperClass} ${errClass}">
+                <h2>${s.title}</h2>
+                <div style="flex-grow:1;">
+                    ${s.items ? s.items.map(i => i === '---' ? '<div class="divider-line"></div>' : (i.trim().startsWith('<') ? i : `<div class="item-row"><strong>•</strong> <span>${i}</span></div>`)).join('') : ''}
                 </div>
-                ${s.footer ? `<div style="margin-top:1.5rem; padding:14px 18px; background:linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.05)); border-left:4px solid #22c55e; border-radius:0 8px 8px 0; color:#fff; font-weight:500;">${s.footer}</div>` : ''}
-                ${s.warning ? `<div style="margin-top:10px; color:#fff; font-size:0.9rem; background:rgba(239,68,68,0.1); border:1px solid #ef4444; padding:10px; border-radius:8px; font-weight:900;">⚠️ ${s.warning}</div>` : ''}
-            </section>`;
+                ${s.footer ? `<div style="margin-top:1.5rem;"><div class="hint-box">${s.footer}</div></div>` : ''}
+                ${s.warning ? `<div class="warning-box">⚠️ ${s.warning}</div>` : ''}
+            </div>`;
     }
 };
 
@@ -321,7 +393,7 @@ window.handleAuthSubmit = async function(e, action) {
     const msg = document.getElementById('authMessage');
     const btn = e.target.querySelector('button');
     const originalText = btn.innerText;
-    btn.innerText = "AGUARDE...";
+    btn.innerText = "PROCESSANDO...";
 
     try {
         if (action === 'login') {
@@ -340,24 +412,24 @@ window.handleAuthSubmit = async function(e, action) {
             const email = document.getElementById('regEmail').value;
             const password = document.getElementById('regPassword').value;
             const result = await App.register(name, email, password);
+            
+            msg.innerText = result.message;
+            msg.style.display = 'block';
+            
             if (result.success) {
-                msg.innerText = result.message;
                 msg.style.color = '#22c55e';
                 msg.style.background = 'rgba(34,197,94,0.1)';
                 msg.style.border = '1px solid rgba(34,197,94,0.3)';
-                msg.style.display = 'block';
                 e.target.reset();
-                setTimeout(() => window.toggleAuthView('login'), 3500);
+                setTimeout(() => window.toggleAuthView('login'), 3000);
             } else {
-                msg.innerText = result.message;
                 msg.style.color = '#ef4444';
                 msg.style.background = 'rgba(239,68,68,0.1)';
                 msg.style.border = '1px solid rgba(239,68,68,0.3)';
-                msg.style.display = 'block';
             }
         }
     } catch (err) {
-        msg.innerText = "Erro no servidor.";
+        msg.innerText = "Erro de conexão com o servidor.";
         msg.style.display = 'block';
     } finally {
         btn.innerText = originalText;
@@ -369,7 +441,7 @@ window.updateUserRole = function(email, role, status) {
 };
 
 window.deleteUser = function(email) {
-    if (confirm(`Excluir permanentemente o acesso de ${email}?`)) {
+    if (confirm(`ATENÇÃO: Deseja excluir permanentemente o usuário ${email}?`)) {
         App.deleteAdminUser(email);
     }
 };

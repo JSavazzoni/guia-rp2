@@ -605,7 +605,8 @@ const Controller = {
             return `
                 <div class="overlay"></div>
                 <style>
-                    * { scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.05) transparent; }
+                    html, body { margin: 0; padding: 0; overflow: hidden; height: 100vh; background: #000; }
+                    * { box-sizing: border-box; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.05) transparent; }
                     ::-webkit-scrollbar { width: 6px; height: 6px; }
                     ::-webkit-scrollbar-track { background: transparent; }
                     ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.03); border-radius: 10px; }
@@ -635,10 +636,10 @@ const Controller = {
                     
                     .topHeadingFree { grid-column: 1 / -1; text-align: center; font-size: 1.5rem; color: #fff; font-weight: 900; margin: 2rem 0; text-transform: uppercase; letter-spacing: 1px; }
                     
-                    .dataList { display: block; width: 100%; list-style: none; padding: 0; }
-                    .dataList div { font-size: 1rem !important; line-height: 1.6; text-align: left; color: #eee; margin-bottom: 6px; }
+                    .dataList { display: flex; flex-direction: column; gap: 14px; width: 100%; list-style: none; padding: 0; margin: 0; }
+                    .dataList div { font-size: 1rem !important; line-height: 1.6; text-align: left; color: #eee; }
 
-                    .aligned-list-item { display: flex; align-items: flex-start; gap: 12px; width: 100%; margin-bottom: 8px; font-size: 1.05rem; }
+                    .aligned-list-item { display: flex; align-items: flex-start; gap: 12px; width: 100%; font-size: 1.05rem; margin: 0; padding: 0; }
                     .aligned-list-item strong { flex-shrink: 0; color: #fff; }
                     .aligned-list-item span { flex-grow: 1; text-align: left; }
 
@@ -647,7 +648,7 @@ const Controller = {
                     .navItemActive { color: #fff !important; background: rgba(255,255,255,0.1) !important; border-left: 4px solid #fff; }
                     .navSubItemActive { color: #fff !important; background: rgba(255,255,255,0.1) !important; font-weight: 900 !important; border-left: 4px solid #fff; }
 
-                    .listDivider { margin: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; }
+                    .listDivider { border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; margin: 0; }
                     .comicContainer { margin-top: 2rem; border-radius: 12px; overflow: hidden; border: 2px solid rgba(255,255,255,0.15); }
                     .comicContainer img { width: 100%; height: auto; display: block; }
 

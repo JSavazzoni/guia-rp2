@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800;900&display=swap');
+
+:root {
+    --bg-main: #000000;
+    --bg-sidebar: rgba(5, 5, 5, 0.95);
+    --bg-card: rgba(15, 15, 15, 0.9);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --accent-red: #ef4444;
+    --accent-green: #22c55e;
+    --accent-gold: #d4af37;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+/* Scrollbar invisível no fundo, só aparece a barrinha */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+body {
+    background-image: url('AssetStore/image_1e6304.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: -1;
+}
+
+.funnelContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 3rem 2rem;
+    gap: 12px;
+}
+
+.funnelStep {
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: linear-gradient(180deg, rgba(30, 30, 30, 0.9) 0%, rgba(10, 10, 10, 0.9) 100%);
+    border: 2px solid var(--accent-gold);
+    min-height: 85px;
+    padding: 1rem 3rem;
+    clip-path: polygon(3% 0%, 97% 0%, 100% 100%, 0% 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.funnelStepTitle {
+    font-weight: 900;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-primary);
+}
+
+.funnelStepDesc {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: center;
+    max-width: 85%;
+    line-height: 1.3;
+}
+
+.funnelStep:hover {
+    background: var(--accent-gold);
+    transform: scale(1.05);
+    border-color: var(--text-primary);
+}
+
+.funnelStep:hover .funnelStepTitle,
+.funnelStep:hover .funnelStepDesc {
+    color: var(--bg-main);
+}
+
+.stepOlheiro { max-width: 850px; }
+.stepDefesa { max-width: 750px; }
+.stepMeio { max-width: 650px; }
+.stepAtaque { max-width: 550px; }
+.stepFechamento { max-width: 450px; }
+.stepPosvenda { max-width: 350px; clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%); }
+
+.layoutContainer {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebarNavigation {
+    width: 280px;
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--accent-gold);
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 0;
+    position: fixed;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.navigationMenu {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.navItem {
+    padding: 1rem;
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.navItem:hover {
+    background: var(--border-color);
+    color: var(--text-primary);
+}
+
+.navItem.navItemActive {
+    background: var(--accent-gold);
+    color: var(--bg-main);
+    font-weight: 900;
+}
+
+.backButton {
+    margin: 0 1rem 2rem 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--accent-gold);
+    color: var(--text-primary);
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.mainWorkspace {
+    flex: 1;
+    margin-left: 280px;
+    padding: 4rem 6rem; /* Ajustado para deixar a margem mais harmônica */
+    max-width: 1600px; /* Evita que o conteúdo se perca em monitores gigantes */
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 5rem;
+}
+
+.pageTitle {
+    font-size: 3.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.pageDescription {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.headerImageContainer {
+    width: 380px;
+    height: 250px;
+    background-color: var(--bg-main);
+    border: 2px solid var(--accent-gold);
+    border-radius: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.headerImageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.contentGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Força 2 colunas para acabar com os buracos em telas grandes */
+    gap: 2.5rem;
+}
+
+.infoCard {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    height: 100%;
+}
+
+.infoCard.errorCard {
+    border-color: var(--accent-red);
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.2);
+}
+
+.cardSpanFull { 
+    grid-column: 1 / -1; 
+}
+
+.infoCard h2 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: var(--accent-gold);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.infoCard.errorCard h2 {
+    color: var(--accent-red);
+    border-bottom-color: rgba(239, 68, 68, 0.2);
+}
+
+.quoteCard {
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(5, 5, 5, 0.95) 100%);
+    text-align: center;
+    border: 1px solid var(--accent-gold);
+}
+
+.quoteText {
+    font-size: 2.2rem;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--text-primary);
+}
+
+.dataList {
+    list-style: none;
+}
+
+.dataList li {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    display: flex;
+    gap: 12px;
+}
+
+.listDivider {
+    height: 1px;
+    background: var(--border-color);
+    margin: 1.5rem 0;
+    display: block;
+    width: 100%;
+}
+
+.warningBox {
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    padding: 1.5rem;
+    border-radius: 12px;
+    color: var(--accent-red);
+    font-weight: 800;
+    text-align: center;
+    margin-top: 2rem;
+    line-height: 1.4;
+}
+
+.hintBox {
+    padding: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid var(--accent-gold);
+    margin-top: 1.5rem;
+}
+
+.videoSection {
+    margin-top: 6rem;
+    padding-top: 4rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+.videosGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.videoWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.videoLabel {
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.videoContainer {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: var(--bg-main);
+    border-radius: 16px;
+    border: 2px solid var(--border-color);
+    overflow: hidden;
+}
+
+.videoContainer iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+@media (max-width: 1100px) {
+    .sidebarNavigation { display: none; }
+    .mainWorkspace { margin-left: 0; padding: 2rem; max-width: 100%; }
+    .contentGrid { grid-template-columns: 1fr; }
+    .videosGrid { grid-template-columns: 1fr; }
+    .headerContainer { flex-direction: column; text-align: center; }
+}

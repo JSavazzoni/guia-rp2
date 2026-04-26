@@ -5,7 +5,8 @@ const App = {
         currentCategoryId: null,
         currentProfileId: null,
         isMeioExpanded: false,
-        content: null
+        content: null,
+        adminUsers: []
     },
 
     async init() {
@@ -16,7 +17,7 @@ const App = {
     },
 
     async login(email, password) {
-        const response = await ApiClient.post('/api/auth', { email, password });
+        const response = await ApiClient.post('/api/auth', { action: 'login', email, password });
         if (response.success) {
             this.state.currentUser = response.user;
             localStorage.setItem('user', JSON.stringify(response.user));
@@ -24,7 +25,12 @@ const App = {
             this.navigateToMenu();
             return { success: true };
         }
-        return { success: false, message: response.message || "Erro no Login" };
+        return { success: false, message: response.message };
+    },
+
+    async register(name, email, password) {
+        const response = await ApiClient.post('/api/auth', { action: 'register', name, email, password });
+        return response;
     },
 
     logout() {
@@ -37,9 +43,25 @@ const App = {
         const response = await ApiClient.get('/api/content');
         if (response && response.success) {
             this.state.content = response.data;
-        } else {
-            console.error("Falha ao carregar conteúdo da API");
         }
+    },
+
+    async loadAdminUsers() {
+        const response = await ApiClient.get('/api/users');
+        if (response && response.success) {
+            this.state.adminUsers = response.data;
+            UI.render();
+        }
+    },
+
+    async updateAdminUser(email, role, status) {
+        await ApiClient.put('/api/users', { email, role, status });
+        await this.loadAdminUsers();
+    },
+
+    async deleteAdminUser(email) {
+        await ApiClient.delete('/api/users', { email });
+        await this.loadAdminUsers();
     },
 
     navigateToMenu() {
@@ -48,6 +70,11 @@ const App = {
         this.state.currentProfileId = null;
         this.state.currentCategoryId = null;
         UI.render();
+    },
+
+    navigateToAdmin() {
+        this.state.currentView = 'admin';
+        this.loadAdminUsers();
     },
 
     toggleMeio(e) {

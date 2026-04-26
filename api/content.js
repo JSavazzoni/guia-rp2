@@ -1,8 +1,5 @@
 module.exports = async (req, res) => {
-    // Se não for GET, rejeita
-    if (req.method !== 'GET') {
-        return res.status(405).json({ success: false, message: 'Método não permitido' });
-    }
+    if (req.method !== 'GET') return res.status(405).end();
 
     const data = {
         profiles: {
@@ -415,7 +412,7 @@ module.exports = async (req, res) => {
                         '---',
                         '<div class="aligned-list-item"><strong>👉</strong> <span>Forma de pagamento nunca foi o que travou ninguém. O que trava é ficar pensando enquanto outros já estão evoluindo. 🚀</span></div>',
                         '---',
-                        '<div class="aligned-list-item"><strong>👉</strong> <span>Se faz sentido para você crescer mais rápido, ter mais estrutura e já começar na frente, então isso aqui já está resolvido. ✅</span></div>',
+                        '<div class="aligned-list-item"><strong>👉</strong> <span>Se faz sentido para você crescer mais rápido, ter mais structure e já começar na frente, então isso aqui já está resolvido. ✅</span></div>',
                         '---',
                         '<div class="aligned-list-item"><strong>🔥</strong> <span>“Se fizer sentido para você, já posso te mandar o Pix ou o link do cartão agora e deixamos isso tudo ativo hoje mesmo.”</span></div>'
                     ]},
@@ -448,7 +445,7 @@ module.exports = async (req, res) => {
                         '---',
                         '<div class="aligned-list-item"><strong>✔️</strong> <span>“Qualquer dúvida me chama que te ajudo.”</span></div>',
                         '---',
-                        '<div class="aligned-list-item"><strong>➡️</strong> <span>Remove arrependimento | 🔒 Aumenta confiança</span></div>'
+                        '<div class="aligned-list-item"><strong>➡️</strong> <span>Remove arrependimento | 🔒 Aumenta confiança/span></div>'
                     ]},
                     { title: "💎 VALORIZAÇÃO (STATUS)", items: [
                         '<div class="aligned-list-item"><strong>📌</strong> <span>Faça ele sentir que subiu de nível. 📈</span></div>',

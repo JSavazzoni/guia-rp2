@@ -4,11 +4,9 @@ const ApiClient = {
             const response = await fetch(endpoint);
             return await response.json();
         } catch (error) {
-            console.error("Erro na comunicação GET:", error);
             return { success: false };
         }
     },
-
     async post(endpoint, data) {
         try {
             const response = await fetch(endpoint, {
@@ -18,8 +16,31 @@ const ApiClient = {
             });
             return await response.json();
         } catch (error) {
-            console.error("Erro na comunicação POST:", error);
-            return { success: false, message: "Erro de conexão com o servidor." };
+            return { success: false, message: "Connection failed." };
+        }
+    },
+    async put(endpoint, data) {
+        try {
+            const response = await fetch(endpoint, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            return await response.json();
+        } catch (error) {
+            return { success: false };
+        }
+    },
+    async delete(endpoint, data) {
+        try {
+            const response = await fetch(endpoint, {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            return await response.json();
+        } catch (error) {
+            return { success: false };
         }
     }
 };

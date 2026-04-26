@@ -1,4 +1,11 @@
+const { verifyAccess } = require('./_security');
+
 module.exports = async (req, res) => {
+    const user = verifyAccess(req);
+    if (!user || user.status !== 'approved') {
+        return res.status(401).json({ success: false, message: 'Unauthorized access' });
+    }
+
     if (req.method !== 'GET') return res.status(405).end();
 
     const data = {
@@ -360,7 +367,7 @@ module.exports = async (req, res) => {
                         '---',
                         '<div class="aligned-list-item"><strong>⚡ Urgência:</strong> <span>“Pegando agora, você aproveita essa condição antes que acabe.” ⏳</span></div>'
                     ], footer: '<strong>💡 Dica:</strong> “Sem dor, ele não liga. Sem desejo, ele não quer. Sem urgência, ele deixa para depois.” 🎯' },
-                    { title: "🔥 Dor (O Problema)", items: ["🤔 A dor não é inventar necessidade.", "---", "🔍 Identificar ou despertar algo que já faz sentido para o cliente.", "---", "🚫 Você não cria mentira. Você evidencia um incômodo, uma falta ou uma dificuldade.", "---", "🐢 Está evoluindo devagar.", "---", "👻 Está sem destaque na cidade.", "---", "🐌 Está ficando para trás.", "---", "💸 Está gastando mais do que deveria."] },
+                    { title: "🔥 Dor (O Problema)", items: ["🤔 A dor não é inventar necessidade.", "---", "🔍 Identificar ou despertar algo que já faz sentido para o cliente.", "---", "🚫 Você não cria mentira. Você evidencia um incômodo, uma falta ou uma dificuldade.", "---", "🐢 Está evoluindo devagar.", "---", "👻 Está sem destaque na cidade.", "---", "🔍 Está ficando para trás.", "---", "💸 Está gastando mais do que deveria."] },
                     { title: "✨ Desejo (O que ele quer conquistar)", items: ["🏆 Aqui é onde você ganha o cliente. Não basta mostrar o problema — você precisa mostrar o benefício.", "---", "💭 Você faz ele imaginar o nível que ele pode alcançar e a vantagem sobre outros players.", "---", "🚀 Evoluir mais rápido.", "---", "👑 Ter mais presença e respeito.", "---", "🥇 Ter vantagem sobre outros players.", "---", "🏰 Entrar já estruturado."] },
                     { title: "⚡ Urgência (O Gatilho)", items: [
                         "⏳ Sem urgência, não tem fechamento. O cliente até quer… mas deixa para depois.", 
@@ -369,7 +376,7 @@ module.exports = async (req, res) => {
                         "---", 
                         "🏃‍♂️ “Essa condição é só agora.”", 
                         "---",
-                        "📈 “Depois você vai pagar mais caro.”", 
+                        "🔍 “Depois você vai pagar mais caro.”", 
                         "---",
                         "🏁 “Quem pega agora sai na frente.”"
                     ], footer: "<strong>💡 Dica:</strong> Essas condições se aplicam apenas a produtos exclusivos ou promoções do dia. 🏷️" },
@@ -445,7 +452,7 @@ module.exports = async (req, res) => {
                         '---',
                         '<div class="aligned-list-item"><strong>✔️</strong> <span>“Qualquer dúvida me chama que te ajudo.”</span></div>',
                         '---',
-                        '<div class="aligned-list-item"><strong>➡️</strong> <span>Remove arrependimento | 🔒 Aumenta confiança/span></div>'
+                        '<div class="aligned-list-item"><strong>➡️</strong> <span>Remove arrependimento | 🔒 Aumenta confiança</span></div>'
                     ]},
                     { title: "💎 VALORIZAÇÃO (STATUS)", items: [
                         '<div class="aligned-list-item"><strong>📌</strong> <span>Faça ele sentir que subiu de nível. 📈</span></div>',

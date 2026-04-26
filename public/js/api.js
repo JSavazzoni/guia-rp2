@@ -8,14 +8,12 @@ const ApiClient = {
         };
         try {
             const response = await fetch(endpoint, { ...options, headers });
-            if (response.status === 401 || response.status === 403) {
-                if (!endpoint.includes('/auth')) {
-                    localStorage.removeItem('user');
-                    window.location.reload();
-                }
+            if ((response.status === 401 || response.status === 403) && !endpoint.includes('/auth')) {
+                localStorage.removeItem('user');
+                window.location.reload();
             }
             return await response.json();
-        } catch (error) { return { success: false }; }
+        } catch (e) { return { success: false }; }
     },
     async get(url) { return this.request(url, { method: 'GET' }); },
     async post(url, data) { return this.request(url, { method: 'POST', body: JSON.stringify(data) }); },

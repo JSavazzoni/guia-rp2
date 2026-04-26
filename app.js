@@ -117,6 +117,7 @@ const DataAccess = {
                     '<strong style="color: #22c55e; display: block; margin-top: 12px; margin-bottom: 4px;">✨ GERAR DESEJO:</strong>',
                     '<div class="aligned-list-item"><strong>⭐</strong> <span>“Mano, tendo VIP tu acaba ganhando muita moral... A galera sempre pede carro emprestado. 🏎️”</span></div>', 
                     '<div class="aligned-list-item"><strong>📈</strong> <span>“Suas ações te deixam conhecido como gente boa, útil 🛠️ — e isso pesa MUITO para subir de cargo.”</span></div>', 
+                    '<div class="aligned-list-item"><strong>🛡️</strong> <span>“Com esse blindado, você não vai mais precisar se preocupar em perder as ações. 🚔”</span></div>', 
                     '---', 
                     '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: #fff; font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>', 
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>🛠️ Utilidade (ferramentas, economia de tempo).</span></div>', 
@@ -195,9 +196,10 @@ const DataAccess = {
                     '<div class="aligned-list-item"><strong>⏳</strong> <span>“E aí mano, tu já tá há mó cota aqui na cidade né? 🕰️”</span></div>', 
                     '<div class="aligned-list-item"><strong>👥</strong> <span>“Já tem tua galera aí? Já tá estruturado? 🏗️”</span></div>', 
                     '<div class="aligned-list-item"><strong>👀</strong> <span>“Mas a galera te reconhece fácil? 🤔 Tipo, só de bater o olho já sabem que é você?”</span></div>',
-                    '<div class="aligned-list-item"><strong>👻</strong> <span>“ID muito alto acaba passando despercebido... Ninguém grava. 🧠”</span></div>', 
                     '<strong style="color: #22c55e; display: block; margin-top: 12px; margin-bottom: 4px;">✨ GERAR DESEJO:</strong>',
                     '<div class="aligned-list-item"><strong>📜</strong> <span>“Mano, tu já tem muita história na cidade... O certo era tu já ter uma identidade forte aqui dentro. 🎭”</span></div>', 
+                    '<div class="aligned-list-item"><strong>👕</strong> <span>“O bom seria você ter uma camisa tua, pra quando você chegar no local o pessoal já saber que é você. 👕”</span></div>', 
+                    '<div class="aligned-list-item"><strong>🆔</strong> <span>“Agora imagina você chegando nos lugares e a galera já saber quem é você só de olhar seu ID. 🤩”</span></div>', 
                     '---', 
                     '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: #fff; font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>', 
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>🎭 Identidade e presença.</span></div>', 
@@ -356,7 +358,7 @@ const DataAccess = {
                         '<div class="aligned-list-item"><strong>✨ Desejo:</strong> <span>“Com esse VIP, você entra em outro nível na cidade.” 🌟</span></div>', 
                         '---',
                         '<div class="aligned-list-item"><strong>⚡ Urgência:</strong> <span>“Pegando agora, você aproveita essa condição antes que acabe.” ⏳</span></div>'
-                    ]},
+                    ], footer: '<strong>💡 Dica:</strong> “Sem dor, ele não liga. Sem desejo, ele não quer. Sem urgência, ele deixa para depois.” 🎯' },
                     { title: "🔥 Dor (O Problema)", items: ["🤔 A dor não é inventar necessidade.", "---", "🔍 Identificar ou despertar algo que já faz sentido para o cliente.", "---", "🚫 Você não cria mentira. Você evidencia um incômodo, uma falta ou uma dificuldade.", "---", "🐢 Está evoluindo devagar.", "---", "👻 Está sem destaque na cidade.", "---", "🐌 Está ficando para trás.", "---", "💸 Está gastando mais do que deveria."] },
                     { title: "✨ Desejo (O que ele quer conquistar)", items: ["🏆 Aqui é onde você ganha o cliente. Não basta mostrar o problema — você precisa mostrar o benefício.", "---", "💭 Você faz ele imaginar o nível que ele pode alcançar e a vantagem sobre outros players.", "---", "🚀 Evoluir mais rápido.", "---", "👑 Ter mais presença e respeito.", "---", "🥇 Ter vantagem sobre outros players.", "---", "🏰 Entrar já estruturado."] },
                     { title: "⚡ Urgência (O Gatilho)", items: [
@@ -391,7 +393,7 @@ const DataAccess = {
                         '<div class="aligned-list-item"><strong>🎯</strong> <span>“No final, não é sobre gastar menos… 📉 é sobre gastar certo e não ter que pagar de novo depois. 🛡️”</span></div>',
                         '---',
                         '<div class="aligned-list-item"><strong>🐢</strong> <span>“Quem monta aos poucos sempre acaba pagando mais caro para chegar no mesmo lugar.”</span></div>'
-                    ]},
+                    ], footer: '<strong>💡 Dica:</strong> Não fale de preço primeiro, faça o cliente entender o custo de não escolher aquilo. 🧠' },
                     { title: '⏰ GATILHO DE URGÊNCIA', items: [
                         '<div class="aligned-list-item"><strong>⚡</strong> <span>“E sendo bem direto contigo, essa condição que eu te passei é só agora.”</span></div>',
                         '---',
@@ -404,12 +406,7 @@ const DataAccess = {
                         '<div class="aligned-list-item"><strong>•</strong> <span>Promoção real. 📉</span></div>',
                         '<div class="aligned-list-item"><strong>•</strong> <span>Tem vantagem temporária clara. ⏳</span></div>'
                     ]},
-                    { title: '💳 PAGAMENTO & OBJEÇÃO', items: [
-                        '<div class="aligned-list-item"><strong>💸</strong> <span>“Você pode fazer via Pix ou no cartão de crédito, da forma que for mais confortável para você.”</span></div>',
-                        '---',
-                        '<div class="aligned-list-item"><strong>🌍</strong> <span>“Se estiver fora, também trabalhamos com Revolut, então isso não é um problema.”</span></div>'
-                    ]},
-                    { title: '🎯 FECHAMENTO DIRETO (MATADOR)', items: [
+                    { isFull: true, title: '🎯 FECHAMENTO DIRETO (MATADOR)', items: [
                         '<div class="aligned-list-item"><strong>👉</strong> <span>O ponto aqui não é como você paga — é o nível que você decide entrar na cidade. 🏙️</span></div>',
                         '---',
                         '<div class="aligned-list-item"><strong>👉</strong> <span>Forma de pagamento nunca foi o que travou ninguém. O que trava é ficar pensando enquanto outros já estão evoluindo. 🚀</span></div>',

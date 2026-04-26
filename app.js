@@ -261,43 +261,44 @@ const DataAccess = {
                         title: '🧥 PREPARAÇÃO DO PERSONAGEM', 
                         items: [
                             { type: 'subtitle', content: '🎯 Objetivo' },
-                            { type: 'quote', content: 'Posicionar-se visualmente como um jogador veterano e de alto valor. A percepção de autoridade é imediata — todos prestam atenção na opinião de quem tem presença!' },
+                            { type: 'quote', content: 'Fazer você se destacar entre os players ao redor e parecer ser um jogador experiente e de alto valor. A percepção de autoridade é imediata — todos se importam com a opinião de quem é foda na cidade!' },
                             { type: 'divider' },
                             { type: 'subtitle', content: '⚔️ AÇÕES' },
-                            { type: 'bullet', icon: '👔', content: 'Vestuário impecável e estilo marcante.' },
-                            { type: 'bullet', icon: '🐅', content: 'Utilização de itens de alto impacto visual (carros exclusivos, armamento com skin diferenciada, pets raros como tigres).' },
-                            { type: 'bullet', icon: '🦾', content: 'Demonstrar através da postura que você é um jogador relevante e consolidado na cidade.' },
+                            { type: 'bullet', icon: '👔', content: 'Mantenha o seu personagem sempre bem vestido e muito estiloso.' },
+                            { type: 'bullet', icon: '🐅', content: 'Use itens visuais que chamem a atenção de longe: carros exclusivos, armamentos com skins diferenciadas e pets raros (ex.: tigre).' },
+                            { type: 'bullet', icon: '🦾', content: 'Mostre de forma clara através da sua presença que você é um jogador relevante na cidade.' },
                             { type: 'divider' },
                             { type: 'subtitle', content: '🏆 RESULTADO ESPERADO' },
-                            { type: 'quote', content: 'Quebra imediata de objeções. O cliente percebe instantaneamente que não está lidando com um jogador comum, o que eleva o nível de respeito e interesse na sua abordagem.' }
+                            { type: 'quote', content: 'O cliente percebe instantaneamente que você não é um jogador comum, aumentando automaticamente o interesse e o respeito pelo que você tem a dizer.' }
                         ]
                     },
                     { title: "🛡️ O Fundamento da Defesa", warning: "Sem Conexão ➔ Sem Atenção ➔ Sem Venda.", items: [
-                        { type: 'quote', content: "Defesa é a arte de camuflar a venda através de genuíno interesse. É desarmar o cliente criando familiaridade imediata." }
+                        { type: 'quote', content: "Defesa é a arte de criar conexão com o cliente para ganhar atenção e iniciar a conversa." }
                     ]},
-                    { title: "🎯 Objetivos da Defesa", footer: "💡 O funil de vendas começa oficialmente neste ponto.", items: [
-                        { type: 'bullet', icon: '🛑', content: 'Interromper o trajeto físico ou mental do cliente.' },
-                        { type: 'bullet', icon: '⏳', content: 'Garantir 30 segundos iniciais de atenção plena.' },
-                        { type: 'bullet', icon: '🤝', content: 'Fazer a transição para um diálogo orgânico.' }
+                    { title: "🎯 Objetivo da Defesa", footer: "💡 Aqui começa a venda de verdade.", items: [
+                        { type: 'bullet', icon: '🛑', content: 'Fazer o cliente parar.' },
+                        { type: 'bullet', icon: '⏳', content: 'Ganhar alguns segundos de atenção plena.' },
+                        { type: 'bullet', icon: '🤝', content: 'Iniciar uma conversa o mais natural possível.' }
                     ]},
-                    { title: "✅ Protocolos de Ação", footer: "💡 Conexão precede a transação.", items: [
-                        { type: 'bullet', icon: '🎭', content: 'Desumanize o cargo: Fale como um parceiro de jogo, não como Suporte/Vendas.' },
-                        { type: 'bullet', icon: '🧩', content: 'Engenharia de perguntas: Faça com que ele entregue o próprio perfil.' },
-                        { type: 'bullet', icon: '🪞', content: 'Espelhamento: Adapte sua comunicação à realidade que ele vive no momento.' },
-                        { type: 'bullet', icon: '🍃', content: 'Naturalidade: Mantenha o tom de voz calmo, direto e despretensioso.' },
-                        { type: 'bullet', icon: '🤫', content: 'Gatilho da Curiosidade: Deixe subentendido que você tem uma informação de alto valor.' }
+                    { title: "✅ O Que FAZER", footer: "💡 Primeiro conecta, depois vende.", items: [
+                        { type: 'bullet', icon: '🎭', content: 'Falar como uma pessoa normal, não como um vendedor.' },
+                        { type: 'bullet', icon: '🧩', content: 'Usar perguntas chave para entender a mente do cliente.' },
+                        { type: 'bullet', icon: '🪞', content: 'Entrar na realidade que ele vive (faculdade, farm, dinheiro, evolução).' },
+                        { type: 'bullet', icon: '🍃', content: 'Ser uma pessoa leve, direta e natural.' },
+                        { type: 'bullet', icon: '🤫', content: 'Criar forte curiosidade antes de oferecer qualquer coisa.' }
                     ]},
-                    { title: "💬 Roteiros de Abertura", footer: "💡 Quem faz as perguntas detém o controle da negociação.", items: [
-                        { type: 'quote', content: '💬 "Como está o fluxo na faculdade? O farm está rendendo ou ainda está meio travado?"' },
-                        { type: 'quote', content: '💬 "Conseguindo bater as metas financeiras hoje ou a economia está pesando?"' },
-                        { type: 'quote', content: '💬 "Como está a evolução do char? Já está dominando a rua ou ainda na fase de estruturação?"' }
+                    { title: "💬 Como Entrar (Exemplos)", footer: "💡 Pergunta certa = Cliente fala.", items: [
+                        { type: 'quote', content: '💬 "Tu já tá desenrolando bem na fac ou ainda tá travado?"' },
+                        { type: 'quote', content: '💬 "Tá conseguindo farmar bem aí ou tá lento ainda?"' },
+                        { type: 'quote', content: '💬 "Já tá forte na cidade ou ainda tá começando a crescer?"' }
                     ]},
-                    { isError: true, title: "🚫 ERROS FATAIS (DEFESA)", warning: "Ativar qualquer um destes erros destrói a receptividade do cliente.", items: [
-                        { type: 'error', highlight: '🏃', content: 'Ansiedade comercial: Disparar a oferta do VIP nos primeiros segundos de contato.' },
-                        { type: 'error', highlight: '🤖', content: 'Tom robótico: Ler scripts como um atendente de telemarketing.' },
-                        { type: 'error', highlight: '🔇', content: 'Falta de escuta tática: Falar 80% do tempo; na defesa, o cliente deve falar mais.' },
-                        { type: 'error', highlight: '🗑️', content: 'Ignorar as respostas: Fazer perguntas vazias e não usar a resposta do cliente a seu favor.' },
-                        { type: 'error', highlight: '🔨', content: 'Pressão prematura: Tentar empurrar a solução antes mesmo de mapear a real dor do usuário.' }
+                    { isError: true, title: "❌ ERROS DO VENDEDOR (DEFESA)", warning: "Isso quebra a atenção na hora e te faz perder a venda.", items: [
+                        { type: 'error', highlight: '🏃', content: 'Chegar vendendo de forma direta (Ex: "Quer VIP?").' },
+                        { type: 'error', highlight: '🤖', content: 'Parecer um robô ou alguém lendo um script decorado.' },
+                        { type: 'error', highlight: '🔇', content: 'Interromper o cliente em um momento em que ele não quer papo.' },
+                        { type: 'error', highlight: '🗑️', content: 'Falar demais e esquecer de ouvir as dores dele.' },
+                        { type: 'error', highlight: '🙈', content: 'Ignorar o que o cliente acabou de responder.' },
+                        { type: 'error', highlight: '🔨', content: 'Forçar a venda goela abaixo sem entender a necessidade real.' }
                     ]}
                 ],
                 videoCategories: [
@@ -316,42 +317,48 @@ const DataAccess = {
                 sections: [
                     { isSectionTitle: true, title: "EXECUÇÃO TÁTICA (MEIO DE CAMPO)" },
                     { title: "🎯 Objetivos do Meio de Campo", items: [
-                        { type: 'bullet', icon: '🎛️', content: 'Manter a cadência da conversa sob seu controle através de perguntas guiadas.' },
-                        { type: 'bullet', icon: '🧬', content: 'Diagnosticar o perfil exato do cliente para customizar a oferta.' },
-                        { type: 'bullet', icon: '⚓', content: 'Estabelecer autoridade e conexão de confiança.' },
-                        { type: 'bullet', icon: '♟️', content: 'Armar o cenário ideal para o ataque.' }
+                        { type: 'bullet', icon: '🎛️', content: 'Conduzir o cliente através de perguntas-chave cirúrgicas.' },
+                        { type: 'bullet', icon: '🧬', content: 'Entender perfeitamente o que oferecer para esse perfil específico.' },
+                        { type: 'bullet', icon: '⚓', content: 'Conectar emocionalmente com a realidade dele no servidor.' },
+                        { type: 'bullet', icon: '♟️', content: 'Preparar todo o terreno para realizar a oferta.' }
                     ]},
-                    { title: "🔍 Termômetro de Engajamento", items: [
-                        { type: 'bullet', icon: '⚡', content: 'Tempo de resposta rápido (indica foco total).' },
-                        { type: 'bullet', icon: '📖', content: 'Expansão de respostas (cliente explica os detalhes do problema).' },
-                        { type: 'bullet', icon: '🪃', content: 'Curiosidade reversa (ele começa a perguntar a sua opinião).' },
-                        { type: 'bullet', icon: '🔗', content: 'Sincronia de ideias (concordância ativa com seus pontos).' }
+                    { title: "🔍 Indícios de Interesse", items: [
+                        { type: 'bullet', icon: '⚡', content: 'O cliente te responde rápido.' },
+                        { type: 'bullet', icon: '📖', content: 'Ele fala muito mais do que você.' },
+                        { type: 'bullet', icon: '🪃', content: 'Ele começa a te fazer perguntas também.' },
+                        { type: 'bullet', icon: '🔗', content: 'Demonstra forte engajamento na conversa.' }
                     ]},
-                    { title: "🧭 Foco Direcional", warning: "A dispersão é o inimigo silencioso. Se a conversa virar um bate-papo sem propósito, a venda morre.", items: [
-                        { type: 'bullet', icon: '💉', content: 'Injete valor a cada interação para manter o interesse elevado.' },
-                        { type: 'bullet', icon: '🧙', content: 'Projete uma imagem de conselheiro experiente, não de vendedor desesperado.' },
+                    { title: "🧭 Foco da Conversa", warning: "Se o cliente dispersar ou você perder o foco, a venda esfria e morre.", items: [
+                        { type: 'bullet', icon: '🔥', content: 'Sua meta é gerar interesse.' },
+                        { type: 'bullet', icon: '🛡️', content: 'Passar extrema confiança e autoridade.' },
+                        { type: 'bullet', icon: '🧭', content: 'Dar a direção certa para onde o cliente deve ir.' },
                         { type: 'divider' },
-                        { type: 'bullet', icon: '🧲', content: 'Técnica de Redirecionamento: Caso o cliente fuja do tema principal, puxe-o de volta sutilmente.' },
-                        { type: 'bullet', icon: '⏱️', content: 'Não gaste tempo infinito em "RP puro" se não houver um gancho comercial planejado.' },
-                        { type: 'bullet', icon: '🌉', content: 'A ponte entre a resenha e o produto deve ser lógica e invisível.' }
+                        { type: 'bullet', icon: '🚧', content: 'Jamais deixe o cliente mudar totalmente o assunto.' },
+                        { type: 'bullet', icon: '⏱️', content: 'Não fique "batendo papo" à toa sem intenção clara de venda.' },
+                        { type: 'bullet', icon: '🌉', content: 'Conecte cada pedaço da conversa com o produto que resolve a dor dele.' }
                     ]},
-                    { title: "📢 Gatilhos de Abertura (O Sinal Verde)", footer: "🔥 Estes são convites explícitos para o Ataque. Não hesite.", items: [
-                        { type: 'bullet', icon: '💰', content: '"Quanto custa isso aí?"' },
-                        { type: 'bullet', icon: '📦', content: '"E o que vem nesse pacote que você falou?"' },
-                        { type: 'bullet', icon: '📍', content: '"Mas onde eu arrumo isso?"' },
-                        { type: 'bullet', icon: '🤔', content: '"Você vende essas coisas por aqui?"' }
+                    { title: "📢 Sinais de Abertura (O Sinal Verde)", footer: "🔥 Identificou isso? Pare de enrolar e inicie o ATAQUE imediatamente.", items: [
+                        { type: 'bullet', icon: '💰', content: 'Ele pergunta o preço de algo.' },
+                        { type: 'bullet', icon: '📦', content: 'Pede detalhes mais técnicos sobre algum produto.' },
+                        { type: 'bullet', icon: '🛒', content: 'Pergunta diretamente o que você vende.' },
+                        { type: 'bullet', icon: '🤔', content: 'Pergunta se você é um vendedor da cidade.' }
                     ]},
-                    { title: "⚠️ A Chave Mestra", warning: "O amador vende o produto. O profissional vende a resolução da dor mapeada.", items: [
-                        { type: 'bullet', icon: '🦅', content: 'Agudeza tática: Perceber a fração de segundo em que o cliente baixa a guarda.' },
-                        { type: 'bullet', icon: '🔪', content: 'Extração cirúrgica: Isolar a principal frustração do jogador.' },
-                        { type: 'bullet', icon: '🌱', content: 'Visão de Futuro: Plantar a semente de como a vida dele será mais fácil com a solução.' }
+                    { title: "⚠️ O Ponto Mais Importante", warning: "O maior erro de um vendedor é não perceber o momento em que a venda já está ganha (o *timing* certo).", items: [
+                        { type: 'bullet', icon: '🦅', content: 'Identificar rápido a abertura.' },
+                        { type: 'bullet', icon: '🔪', content: 'Encontrar com precisão a dor do cliente.' },
+                        { type: 'bullet', icon: '🌱', content: 'Mostrar a luz no fim do túnel falando da solução.' }
                     ]},
-                    { isError: true, title: "🚫 ERROS FATAIS (MEIO DE CAMPO)", footer: "💡 A dor é o combustível; o seu produto é o veículo.", items: [
-                        { type: 'error', highlight: '💺', content: 'Síndrome do passageiro: Deixar o cliente conduzir 100% da conversa.' },
-                        { type: 'error', highlight: '🥀', content: 'Abandono de objetivo: Esquecer que o propósito final do bate-papo é o fechamento comercial.' },
-                        { type: 'error', highlight: '🧊', content: 'Respostas passivas: Apenas concordar e não inserir perguntas de qualificação.' },
-                        { type: 'error', highlight: '🤡', content: 'Friendzone comercial: Tornar-se "parceiro" demais a ponto de ficar sem graça de cobrar depois.' },
-                        { type: 'error', highlight: '🔌', content: 'Desconexão lógica: Apresentar uma solução que não resolve o problema que ele acabou de relatar.' }
+                    { title: "🧠 Perguntas que Quebram Padrões", items: [
+                        { type: 'quote', content: '💬 "Tu já tá desenrolando bem na faculdade ou ainda se sente travado?"' },
+                        { type: 'quote', content: '💬 "Já tá conseguindo farmar forte aí ou tá muito difícil de evoluir?"' },
+                        { type: 'quote', content: '💬 "Já tá fazendo bastante grana ou a economia ainda tá muito lenta pra você?"' }
+                    ]},
+                    { isError: true, title: "❌ ERROS DO VENDEDOR (MEIO DE CAMPO)", footer: "💡 Dor = O real motivo emocional ou prático que faz ele abrir a carteira.", items: [
+                        { type: 'error', highlight: '💺', content: 'Perder totalmente o foco do objetivo da conversa.' },
+                        { type: 'error', highlight: '🥀', content: 'Deixar o cliente puxar assuntos nada a ver com o jogo ou a venda.' },
+                        { type: 'error', highlight: '🧊', content: 'Ficar apenas respondendo sem puxar um gancho de volta para a venda.' },
+                        { type: 'error', highlight: '🤡', content: 'Virar o "melhor amigo" e esquecer que você está ali para vender.' },
+                        { type: 'error', highlight: '🔌', content: 'Não conseguir conectar a frustração dele com os produtos da loja.' }
                     ]}
                 ],
                 videoCategories: [{ title: "Laboratório Prático", videos: [
@@ -363,104 +370,105 @@ const DataAccess = {
                 id: 'ataque', title: "Fase 4: Ataque", description: "O clímax estratégico. A arquitetura de persuasão que funde a dor do cliente à sua solução exclusiva, finalizando com um forte senso de escassez.", image: "AssetStore/ataque.jpg",
                 sections: [
                     { isSectionTitle: true, title: "EXECUÇÃO TÁTICA (ATAQUE)" },
-                    { title: "🧠 A Tríade da Persuasão", items: [
+                    { title: "🧠 Conceito: Dor, Desejo e Urgência", items: [
                         { type: 'quote', content: "A engenharia de uma venda irrecusável se baseia na equação perfeita:" },
-                        { type: 'subtitle', content: "DOR LATENTE + DESEJO INFLAMADO + URGÊNCIA REAL" },
+                        { type: 'subtitle', content: "DOR + DESEJO + URGÊNCIA" },
                         { type: 'divider' },
-                        { type: 'bullet', icon: '🧊', content: 'Falta de Dor = Sem Conexão Emocional.' },
-                        { type: 'bullet', icon: '💤', content: 'Falta de Desejo = Sem Engajamento de Valor.' },
-                        { type: 'bullet', icon: '🐢', content: 'Falta de Urgência = Procrastinação da Decisão.' }
+                        { type: 'bullet', icon: '🧊', content: 'Sem dor ➔ A conversa não conecta.' },
+                        { type: 'bullet', icon: '💤', content: 'Sem desejo ➔ O cliente não se engaja.' },
+                        { type: 'bullet', icon: '🐢', content: 'Sem urgência ➔ O cliente diz "depois eu compro" e você não fecha.' }
                     ]},
-                    { title: "⚙️ Mecânica Operacional", items: [
-                        { type: 'quote', content: 'A fluidez do ataque obedece a uma sequência cronológica estrita:' },
-                        { type: 'bullet', icon: '1️⃣', content: 'Escancare a ferida (Faça-o visualizar o peso do problema atual).' },
-                        { type: 'bullet', icon: '2️⃣', content: 'Apresente o oásis (Mostre de forma vívida a transformação que o produto causa).' },
-                        { type: 'bullet', icon: '3️⃣', content: 'Feche a janela de oportunidade (Entregue um motivo inegável para ele passar o cartão hoje).' }
+                    { title: "⚙️ Como Funciona na Prática", items: [
+                        { type: 'quote', content: 'A mágica da venda só acontece quando você une os três pilares:' },
+                        { type: 'bullet', icon: '1️⃣', content: 'Dor: Faz ele sentir o peso do problema que ele tem hoje.' },
+                        { type: 'bullet', icon: '2️⃣', content: 'Desejo: Mostra as vantagens brilhantes do que ele pode conquistar.' },
+                        { type: 'bullet', icon: '3️⃣', content: 'Urgência: Dá a ele um motivo de força maior para agir AGORA.' }
                     ]},
-                    { title: "🚀 Framework de Aplicação", items: [
-                        { type: 'error', highlight: '🔥 Impacto (Dor):', content: '"Sendo muito franco, continuar nesse ritmo vai te custar muito tempo que você não tem."' },
-                        { type: 'error', highlight: '✨ Visão (Desejo):', content: '"Adicionando esse pacote na sua conta, você queima etapas e muda o seu patamar de respeito aqui dentro."' },
-                        { type: 'error', highlight: '⚡ Gatilho (Urgência):', content: '"Se a gente oficializar isso agora, eu consigo te encaixar nessa condição promocional que o sistema vai derrubar em breve."' }
+                    { title: "🚀 Exemplo de Aplicação Forte", items: [
+                        { type: 'error', highlight: '🔥 Dor:', content: '"Do jeito que as coisas estão hoje, você vai evoluir bem mais devagar que os outros."' },
+                        { type: 'error', highlight: '✨ Desejo:', content: '"Porém, entrando com esse VIP, você sobe o seu nível na cidade pra outra prateleira."' },
+                        { type: 'error', highlight: '⚡ Urgência:', content: '"Se você pegar agora, ainda consegue aproveitar essa condição especial antes que a grade mude."' }
                     ]},
-                    { title: "🔥 Engenharia da Dor", items: [
-                        { type: 'quote', content: "A dor legítima não precisa ser inventada, ela apenas precisa ser iluminada." },
-                        { type: 'quote', content: "O papel do vendedor de alta performance é agir como um espelho de desconforto." },
+                    { title: "🔥 Dor (O Problema do Cliente)", items: [
+                        { type: 'quote', content: "A dor nunca é inventada. Você apenas evidencia uma frustração que ele já tem." },
+                        { type: 'quote', content: "Você não cria mentiras, você ilumina uma dificuldade real da rotina dele." },
                         { type: 'divider' },
-                        { type: 'bullet', icon: '📉', content: 'Frustração com o ganho de capital ínfimo.' },
-                        { type: 'bullet', icon: '👻', content: 'Sensação de invisibilidade e falta de respeito.' },
-                        { type: 'bullet', icon: '☠️', content: 'Desvantagem clara e esmagadora no PVP contra players VIPS.' },
-                        { type: 'bullet', icon: '⚙️', content: 'Desgaste mecânico (muito esforço para pouca recompensa).' }
+                        { type: 'bullet', icon: '📉', content: 'Evolução extremamente demorada.' },
+                        { type: 'bullet', icon: '👻', content: 'Falta de destaque, status e moral na cidade.' },
+                        { type: 'bullet', icon: '☠️', content: 'Ser amassado e ficar para trás em ações de tiro.' },
+                        { type: 'bullet', icon: '⚙️', content: 'Gastar horas do dia farmando sem ver o saldo do banco crescer.' }
                     ]},
-                    { title: "✨ Construção do Desejo", items: [
-                        { type: 'quote', content: "Recursos técnicos informam; a visualização do futuro vende." },
-                        { type: 'quote', content: "Projete cenários mentais onde o cliente já está desfrutando da superioridade que o produto traz." },
+                    { title: "✨ Desejo (O Que Ele Quer Conquistar)", items: [
+                        { type: 'quote', content: "É aqui que você fisga o coração dele. Não venda o item, venda a solução." },
+                        { type: 'quote', content: "Faça ele imaginar como vai ser superior e ter mais moral que os rivais." },
                         { type: 'divider' },
-                        { type: 'bullet', icon: '🏎️', content: 'Aceleração brutal na progressão de carreira/patrimônio.' },
-                        { type: 'bullet', icon: '👑', content: 'Imposição de autoridade e status de VIP intocável.' },
-                        { type: 'bullet', icon: '🦍', content: 'Vantagem assimétrica (ser mais forte, mais rápido e mais rico que a média).' }
+                        { type: 'bullet', icon: '🏎️', content: 'Evolução brutal e economia de tempo.' },
+                        { type: 'bullet', icon: '👑', content: 'Ter muita presença, moral e respeito por onde passa.' },
+                        { type: 'bullet', icon: '🦍', content: 'Superioridade total em ações contra os outros players.' },
+                        { type: 'bullet', icon: '🏰', content: 'Entrar na cidade já com base e estrutura montada.' }
                     ]},
-                    { title: "⚡ A Arquitetura da Urgência", items: [
-                        { type: 'quote', content: "A mente humana sempre buscará adiar um pagamento. A urgência quebra essa barreira cognitiva." },
-                        { type: 'quote', content: "Crie parâmetros de escassez lógicos: tempo, quantidade ou exclusividade." },
+                    { title: "⚡ Urgência (O Gatilho da Decisão)", items: [
+                        { type: 'quote', content: "Se você não colocar urgência, ele vai enrolar. Todo cliente adora dizer 'vou ver e te aviso'." },
+                        { type: 'quote', content: "Você precisa criar a necessidade dele passar o cartão naquele momento exato." },
                         { type: 'divider' },
-                        { type: 'bullet', icon: '⌛', content: 'Condicionamento Temporal: "Esse valor promocional fecha nessa virada de ciclo."' },
-                        { type: 'bullet', icon: '💸', content: 'Perda de Oportunidade: "Cada dia sem isso, é um dia que você está pagando mais caro pelo atraso."' },
-                        { type: 'bullet', icon: '🎫', content: 'Escassez de Posição: "Os melhores setups estão esgotando rápido, quem chega primeiro consolida a base."' }
+                        { type: 'bullet', icon: '⌛', content: 'Escassez de tempo: "Essa condição que montei pra ti é só agora." ' },
+                        { type: 'bullet', icon: '💸', content: 'Aumento de preço: "Depois que virar, a grade atualiza e fica mais caro." ' },
+                        { type: 'bullet', icon: '🎫', content: 'Escassez de oportunidade: "Quem é inteligente pega isso logo e sai na frente geral." ' }
                     ]},
-                    { isError: true, title: "🚫 ERROS FATAIS (ATAQUE)", items: [
-                        { type: 'error', highlight: '👹', content: 'Terrorismo Emocional: Pressionar agressivamente o cliente na dor, gerando antipatia e repulsa.' },
-                        { type: 'error', highlight: '📋', content: 'Venda Baseada em Catálogo: Despejar uma lista de features técnicas sem traduzi-las em emoções de ganho.' },
-                        { type: 'error', highlight: '🤡', content: 'Falsa Urgência Amadora: Criar limites de tempo ridículos ou irreais ("compra em 5 minutos ou perco o emprego"), quebrando a credibilidade.' },
-                        { type: 'error', highlight: '🥱', content: 'Pitch Monótono: Recitar o script sem colocar inflexão de voz ou energia nas palavras.' },
-                        { type: 'error', highlight: '⚖️', content: 'Ausência de Calibragem: Aplicar a intensidade de venda de um pacote VIP Black para vender um item cosmético básico.' }
+                    { isError: true, title: "❌ ERROS DO VENDEDOR (ATAQUE)", items: [
+                        { type: 'error', highlight: '👹', content: 'Focar excessivamente na dor: O cliente acha que você tá colocando pressão demais.' },
+                        { type: 'error', highlight: '📋', content: 'Desejo superficial: Falar "tem essa vantagem" sem explicar no RP como isso ajuda.' },
+                        { type: 'error', highlight: '🤡', content: 'Urgência muito forçada: Mentir que a loja vai fechar em 10 minutos (quebra de confiança).' },
+                        { type: 'error', highlight: '🥱', content: 'Apresentação robótica: Falar igual um robô gravado, não dar pausas e não ouvir o cara.' },
+                        { type: 'error', highlight: '⚖️', content: 'Falta de adaptação: Usar o exato mesmo texto para todo mundo vai destruir sua taxa de conversão.' }
                     ]}
                 ]
             },
             fechamento: {
                 id: 'fechamento', title: "Fase 5: Fechamento", description: "A arte do xeque-mate. Protocolos precisos de ancoragem de preço, neutralização de objeções e comandos finais de ação.", image: "AssetStore/fechamento.jpg",
                 sections: [
-                    { isSectionTitle: true, title: "💰 PROTOCOLO DE FECHAMENTO — PADRÃO SG" },
+                    { isSectionTitle: true, title: "💰 ESTRATÉGIA DE FECHAMENTO — PADRÃO SG" },
                     { title: "🧠 ARQUITETURA DE DECISÃO", items: [
-                        { type: 'bullet', icon: '💎', content: 'Pilar 1: Reafirmação sumária do alto valor percebido.' },
-                        { type: 'bullet', icon: '⚓', content: 'Pilar 2: Ancoragem estratégica (contraste de preços).' },
-                        { type: 'bullet', icon: '🛣️', content: 'Pilar 3: Facilitação logística e neutralização de fricção no pagamento.' },
-                        { type: 'bullet', icon: '🎯', content: 'Pilar 4: Call-to-Action (CTA) direto e imperativo.' },
+                        { type: 'bullet', icon: '💎', content: 'Primeiro você sempre reforça o imenso valor do produto.' },
+                        { type: 'bullet', icon: '⚓', content: 'Depois usa a Ancoragem antes de dar o preço real.' },
+                        { type: 'bullet', icon: '🛣️', content: 'Apresenta os meios de pagamento fáceis para quebrar objeções.' },
+                        { type: 'bullet', icon: '🎯', content: 'Finaliza a frase gerando uma urgência forte de tempo.' },
                         { type: 'divider' },
-                        { type: 'subtitle', content: '💡 Insight: Ancoragem é a distorção da percepção de preço. Faça R$100 parecer pouco perto do valor absurdo que ele vai receber.' }
+                        { type: 'subtitle', content: '💡 Dica de Ouro: Ancoragem é fazer o cliente visualizar que aquilo custaria os "olhos da cara" antes dele ver que na verdade tá barato!' }
                     ]},
-                    { title: '💸 ESTRATÉGIAS DE ANCORAGEM', items: [
-                        { type: 'quote', content: '💬 "Se formos calcular cada item e benefício avulso aqui, a tabela ultrapassaria tranquilamente a margem de R$XXX..."' },
-                        { type: 'quote', content: '💬 "Porém, estruturando isso num combo fechado para você agora, além de cortar o tempo de espera, o custo afunda drasticamente."' },
+                    { title: '💸 ANCORAGEM DE VALOR (O SEGREDO)', items: [
+                        { type: 'quote', content: '💬 "Se tu fosse pegar cada um desses benefícios da lista separado, iria passar tranquilamente de R$XXX..."' },
+                        { type: 'quote', content: '💬 "Mas montando nesse formato focado pra ti, tu resolve tudo numa tacada só e economiza muita grana."' },
                         { type: 'divider' },
-                        { type: 'subtitle', content: '📉 Objetivo: Construir o alívio psicológico do desconto invisível.' }
+                        { type: 'subtitle', content: '📉 Objetivo: Fazer o cérebro dele processar que ele está tirando uma enorme vantagem financeira.' }
                     ]},
-                    { title: '💳 ENGENHARIA DO PAGAMENTO', items: [
-                        { type: 'quote', content: '💬 "E a logística é a parte mais simples. Não tem burocracia..."' },
-                        { type: 'quote', content: '💬 "Conseguimos liquidar isso via Pix com aprovação na hora, ou podemos pulverizar o valor parcelando no cartão de crédito."' },
-                        { type: 'quote', content: '💬 "Caso sua conta seja internacional, processamos de forma lisa via Revolut."' }
+                    { title: '💳 PAGAMENTO E QUEBRA DE ATRITOS', items: [
+                        { type: 'quote', content: '💬 "E o mais tranquilo é que tu não precisa esquentar a cabeça com isso hoje..."' },
+                        { type: 'quote', content: '💬 "Pode agilizar no Pix pra cair na hora, ou se preferir a gente divide no cartão de crédito pra ficar leve."' },
+                        { type: 'quote', content: '💬 "Se tua conta for gringa, aceito Revolut e Wise também, bem de boa."' }
                     ]},
-                    { title: '⏰ OVERDRIVE DE URGÊNCIA', items: [
-                        { type: 'quote', content: '💬 "Jogando aberto com você, essa cotação específica que montei está amarrada a esta janela atual."' },
-                        { type: 'quote', content: '💬 "Deixando a decisão para um ciclo posterior, a grade de valores é atualizada e você perde essa vantagem tática inicial."' }
+                    { title: '⏰ OVERDRIVE DE URGÊNCIA (A HORA DA VERDADE)', items: [
+                        { type: 'quote', content: '💬 "Sendo bem transparente contigo, essa condição com esses itens extras eu só consigo segurar agora."' },
+                        { type: 'quote', content: '💬 "Se a gente deixar pra depois, vai acabar atualizando e muito provavelmente tu vai pagar mais caro."' }
                     ]},
-                    { isFull: true, title: '🎯 O COMANDO DIRETO (MATADOR)', items: [
-                        { type: 'quote', content: '💬 "Estando alinhado para você, eu já disparo o QR Code do Pix ou o link blindado do cartão, e a gente já starta a ativação no sistema ainda hoje."' }
+                    { isFull: true, title: '🎯 O FECHAMENTO DIRETO (Padrão)', items: [
+                        { type: 'quote', content: '💬 "Se fez sentido pra ti, já posso mandar minha chave Pix ou o link seguro do cartão e a gente já deixa isso tudo voando na tua conta hoje mesmo."' }
                     ]},
-                    { isFull: true, title: '⚔️ COMANDO AGRESSIVO (ALTA PRESSÃO)', items: [
-                        { type: 'hint', content: '(Utilizar apenas quando o radar de intenção de compra estiver no máximo e o cliente precisar de um "empurrão")' },
-                        { type: 'quote', content: '💬 "Falando de forma bem analítica: investir isso não é um passivo, é uma trava contra desperdício de tempo futuro."' },
-                        { type: 'quote', content: '💬 "Aqueles que se posicionam agora dominam. Quem opta por esperar, sempre acaba pagando a taxa do atraso."' },
-                        { type: 'quote', content: '💬 "Fechamos essa estrutura agora no Pix ou você prefere garantir isso fatiando no cartão?"' },
+                    { isFull: true, title: '⚔️ VERSÃO AGRESSIVA (Para os difíceis)', items: [
+                        { type: 'hint', content: '(Utilizar apenas quando o cliente demonstrou muito interesse, mas tá travado querendo dar "desculpas" de tempo)' },
+                        { type: 'quote', content: '💬 "Mano, sendo bem sincero — esse investimento aqui não é um gasto, é literalmente tu evitar gastar mais dinheiro e paciência depois."' },
+                        { type: 'quote', content: '💬 "A regra é clara: quem estrutura a conta agora, larga na frente de geral. Quem deixa pra depois, joga sempre na desvantagem."' },
+                        { type: 'quote', content: '💬 "Bora fazer no Pix rápido ou prefere fatiar isso no cartão de crédito?"' },
                         { type: 'divider' },
-                        { type: 'subtitle', content: '🏆 Regra de Ouro: Jamais termine uma conversão dizendo "Obrigado". O cliente deve ser parabenizado pela excelente decisão de negócio. Diga "Parabéns".' }
+                        { type: 'subtitle', content: '🏆 Regra Vital: Vendedor amador diz "Obrigado" depois da venda. Profissional diz "Parabéns pela excelente escolha". O cliente tem que sentir orgulho.' }
                     ]},
                     { isError: true, title: '🚫 ERROS FATAIS (FECHAMENTO)', items: [
-                        { type: 'error', highlight: '🔁', content: 'Loopings técnicos: Voltar a explicar características do produto após já ter dado o preço.' },
-                        { type: 'error', highlight: '🤐', content: 'Timidez financeira: Hesitar ou abaixar o tom de voz na hora de cobrar o pagamento.' },
-                        { type: 'error', highlight: '🧊', content: 'Inércia de urgência: Não criar uma justificativa palpável de por que o negócio precisa ser selado hoje.' },
-                        { type: 'error', highlight: '❓', content: 'Perguntas passivas abertas: Jamais diga "O que você acha?", assuma a venda.' },
+                        { type: 'error', highlight: '🔁', content: 'Voltar a explicar detalhes e features técnicas depois que já deu o preço.' },
+                        { type: 'error', highlight: '🤐', content: 'Ter "vergonha" ou timidez de ser direto na hora de pedir o Pix ou Cartão.' },
+                        { type: 'error', highlight: '🧊', content: 'Mandar o preço puro, solto, sem colocar um limite de urgência para a oferta.' },
+                        { type: 'error', highlight: '❓', content: 'Esperar que o cliente tome a decisão sozinho (Ex: "E aí, o que achou?"). Assuma o controle!' },
                         { type: 'divider' },
-                        { type: 'subtitle', content: '🛤️ Conduza o final com a dicotomia ilusória (Ex: "Pix ou Cartão?"). Ambas as opções resultam no "Sim".' }
+                        { type: 'subtitle', content: '🛤️ Nunca deixe perguntas abertas. Feche sempre guiando: "Fica melhor Pix ou Cartão para você?".' }
                     ]}
                 ]
             },
@@ -468,60 +476,60 @@ const DataAccess = {
                 id: 'posvenda', title: "Fase 6: Pós-Venda", description: "O ciclo infinito de monetização. Técnicas para transformar compradores de primeira viagem em evangelizadores da marca e clientes recorrentes.", image: "AssetStore/pos_venda.jpg",
                 sections: [
                     { isSectionTitle: true, title: "🧠 OPERAÇÃO DE PÓS-VENDA — PADRÃO SG" },
-                    { title: "🛡️ 1. PROTOCOLO DE BLINDAGEM", items: [
-                        { type: 'quote', content: '📌 Fundamento: Eliminar a dissonância cognitiva (o arrependimento silencioso pós-compra).' },
-                        { type: 'quote', content: '💬 "Tudo operante no sistema. O pacote já está liberado na sua conta."' },
-                        { type: 'quote', content: '💬 "Pode usufruir tranquilamente, o processo foi perfeito."' },
-                        { type: 'quote', content: '💬 "Qualquer entrave técnico, meu direct está aberto para te dar suporte prioritário."' },
+                    { title: "🛡️ CONFIRMAÇÃO E SEGURANÇA", items: [
+                        { type: 'quote', content: '📌 Fundamento: Fazer o cliente ter certeza de que tomou a decisão certa.' },
+                        { type: 'quote', content: '💬 "Tudo certo no sistema, mano. Teu pacote já tá todo liberado e ativo."' },
+                        { type: 'quote', content: '💬 "Pode usar e abusar aí agora, bem tranquilo."' },
+                        { type: 'quote', content: '💬 "Qualquer parada ou dificuldade, só me gritar aqui que eu te dou um suporte VIP."' },
                         { type: 'divider' },
-                        { type: 'quote', content: '🛡️ Resultado: Zera a chance de chargebacks (estornos) | 🔒 Consolida autoridade' }
+                        { type: 'quote', content: '🛡️ Elimina o arrependimento pós-compra | 🔒 Evita dores de cabeça com estornos' }
                     ]},
-                    { title: "💎 2. ENGENHARIA DE STATUS", items: [
-                        { type: 'quote', content: '📌 Fundamento: Validar o ego do cliente confirmando a superioridade da escolha.' },
-                        { type: 'quote', content: '💬 "Com essa ativação, você acabou de saltar para o Top 5% da cidade."' },
-                        { type: 'quote', content: '💬 "São raras as pessoas com visão estratégica de entrar tão estruturadas assim."' },
-                        { type: 'quote', content: '💬 "Movimento extremamente inteligente, parabéns pela aquisição."' },
+                    { title: "💎 VALORIZAÇÃO E STATUS", items: [
+                        { type: 'quote', content: '📌 Fundamento: Inflar o ego dele e confirmar que ele tá acima da média agora.' },
+                        { type: 'quote', content: '💬 "Só com essa ativação aí, tu já deixou 90% da cidade comendo poeira."' },
+                        { type: 'quote', content: '💬 "É muito pouca gente que tem a inteligência de entrar já se estruturando desse jeito."' },
+                        { type: 'quote', content: '💬 "Movimento brabo demais, parabéns de verdade."' },
                         { type: 'divider' },
-                        { type: 'quote', content: '👑 Resultado: Ancoragem de auto-estima alta associada à sua marca | 🏅 Orgulho de pertencimento' }
+                        { type: 'quote', content: '👑 Gera um orgulho gigante dele fazer parte da sua base de clientes' }
                     ]},
-                    { title: "🚀 3. SUCESSO DO CLIENTE (ATIVAÇÃO)", items: [
-                        { type: 'quote', content: '📌 Fundamento: Garantir que ele saiba extrair o máximo de valor da ferramenta comprada.' },
-                        { type: 'quote', content: '💬 "Já conseguiu testar o desempenho do [Item Principal]?"' },
-                        { type: 'quote', content: '💬 "Um macete avançado: se você combar essa funcionalidade com X, a eficiência dobra."' },
-                        { type: 'quote', content: '💬 "Quer que eu dê uma calibrada rápida com você para te mostrar atalhos?"' },
+                    { title: "🚀 SUCESSO DE ATIVAÇÃO", items: [
+                        { type: 'quote', content: '📌 Fundamento: Garantir que ele não seja "burro" com o produto e saiba usar.' },
+                        { type: 'quote', content: '💬 "E aí, já puxou aquele [Carro/Item] pra dar um teste? Tá rendendo bem?"' },
+                        { type: 'quote', content: '💬 "Dica de ouro: se tu usar aquilo junto com [Outra Coisa], o teu farm vai bugar de tanto render."' },
+                        { type: 'quote', content: '💬 "Quer que eu cole contigo rapidão pra te mostrar uns macetes?"' },
                         { type: 'divider' },
-                        { type: 'quote', content: '📈 Resultado: Percepção de ROI altíssimo | ✨ Deslumbramento com o produto' }
+                        { type: 'quote', content: '📈 Faz o cliente sentir que o produto valeu cada centavo investido' }
                     ]},
-                    { title: "🤝 4. MANUTENÇÃO DE NETWORKING", items: [
-                        { type: 'quote', content: '📌 Fundamento: Não ser rotulado como o vendedor "vampiro" que some após o depósito.' },
-                        { type: 'quote', content: '💬 "Deixei seu contato salvo aqui nos parceiros VIPs."' },
-                        { type: 'quote', content: '💬 "O fluxo da cidade muda muito, quando sentir que chegou num teto, me dá um toque."' },
-                        { type: 'quote', content: '💬 "Eu sempre separo uns lançamentos por baixo dos panos, te mantenho no radar."' },
+                    { title: "🤝 MANTER PORTA ABERTA", items: [
+                        { type: 'quote', content: '📌 Fundamento: Não ser aquele vendedor sem caráter que some no segundo que o Pix cai.' },
+                        { type: 'quote', content: '💬 "Já salvei teu contato aqui na minha base de clientes preferenciais."' },
+                        { type: 'quote', content: '💬 "Quando tu sentir que estagnou e precisar de uma ajuda pra subir de novo, me chama."' },
+                        { type: 'quote', content: '💬 "Eu sempre libero umas paradas exclusivas na calada, vou te manter avisado, fechou?"' },
                         { type: 'divider' },
-                        { type: 'quote', content: '🌉 Resultado: Quebra a barreira do corporativo | 📞 Estrutura um relacionamento de longo prazo' }
+                        { type: 'quote', content: '🌉 Cria uma conexão monstra de fidelidade para compras futuras' }
                     ]},
-                    { title: "💸 5. PREPARAÇÃO DO UPSELL (RECOMPRA)", items: [
-                        { type: 'quote', content: '📌 Fundamento: Semear o próximo desejo enquanto o entusiasmo pela compra atual está alto.' },
-                        { type: 'quote', content: '💬 "Mais para frente, o próximo degrau natural para você seria acoplar a melhoria [X]..."' },
-                        { type: 'quote', content: '💬 "Tem um módulo avançado que encaixa perfeitamente nesse seu setup atual."' },
-                        { type: 'quote', content: '💬 "Bate suas metas com isso agora e depois a gente desenha um upgrade para dominar de vez."' },
+                    { title: "💸 PREPARAR A RECOMPRA", items: [
+                        { type: 'quote', content: '📌 Fundamento: Plantar a ideia do próximo passo para ele já ir desejando.' },
+                        { type: 'quote', content: '💬 "Mais pra frente, o caminho natural pra tua conta seria colocar um [Produto X]..."' },
+                        { type: 'quote', content: '💬 "Lançou um item novo que comba perfeitamente com esse setup que tu tem."' },
+                        { type: 'quote', content: '💬 "Foca em fazer tuas correrias com isso agora, depois a gente dá um upgrade pra fechar o caixão."' },
                         { type: 'divider' },
-                        { type: 'quote', content: '🔄 Resultado: Previsibilidade de faturamento | 🛒 Venda orgânica, zero pressão' }
+                        { type: 'quote', content: '🛒 Venda orgânica e natural, sem precisar empurrar nada' }
                     ]},
-                    { title: "📢 6. MÁQUINA DE REFERÊNCIAS", items: [
-                        { type: 'quote', content: '📌 Fundamento: Usar a influência do cliente feliz para atrair novos leads de graça.' },
-                        { type: 'quote', content: '💬 "Mano, se alguém da sua tropa quiser colar na mesma pegada, manda o meu perfil."' },
-                        { type: 'quote', content: '💬 "Você já viu como a diferença é absurda, indica a galera que eu agilizo o processo deles."' },
-                        { type: 'quote', content: '💬 "Quem você trouxer chancelado com seu nome, recebe um tratamento diferenciado aqui na firma."' },
+                    { title: "📢 MÁQUINA DE INDICAÇÕES", items: [
+                        { type: 'quote', content: '📌 Fundamento: Transformar o cliente satisfeito em um vendedor gratuito pra você.' },
+                        { type: 'quote', content: '💬 "Mano, se tiver algum parceiro teu querendo crescer rápido que nem você, passa meu perfil."' },
+                        { type: 'quote', content: '💬 "Tu viu na prática a diferença, né? Indica teus amigos que eu agilizo o lado deles também."' },
+                        { type: 'quote', content: '💬 "Qualquer player que vier fechado no teu nome, eu já dou um tratamento diferenciado aqui."' },
                         { type: 'divider' },
-                        { type: 'quote', content: '👥 Resultado: Custo de Aquisição de Clientes (CAC) nulo | 🎟️ Indicações já vêm pré-vendidas' }
+                        { type: 'quote', content: '👥 Você ganha leads novos sem fazer esforço e já super confiantes' }
                     ]},
-                    { isError: true, title: "🚫 ERROS FATAIS NO PÓS-VENDA", items: [
-                        { type: 'error', highlight: '👻', content: 'Síndrome do Fantasma: Cortar completamente a comunicação ou ignorar mensagens após o dinheiro cair.' },
-                        { type: 'error', highlight: '🥱', content: 'Desprezo Técnico: Ter preguiça de auxiliar um cliente com dificuldade de configuração do VIP/Veículo.' },
-                        { type: 'error', highlight: '🔇', content: 'Silêncio Comportamental: Esquecer de enaltecer verbalmente a boa decisão tomada (não validar o ego).' },
-                        { type: 'error', highlight: '🚪', content: 'Visão de Curto Prazo: Finalizar o atendimento como uma porta fechada, não deixando brecha orgânica para oferecer mais produtos futuros.' },
-                        { type: 'error', highlight: '✂️', content: 'Perda de Networking: Esquecer de solicitar recomendações para a rede de contatos que o jogador possui.' }
+                    { isError: true, title: "❌ ERROS FATAIS NO PÓS-VENDA", items: [
+                        { type: 'error', highlight: '👻', content: 'Sumir: Parar de responder rápido ou cortar assunto depois que o dinheiro entra.' },
+                        { type: 'error', highlight: '🥱', content: 'Falta de Suporte: Não querer ajudar o cliente que comprou a configurar o VIP ou resgatar as coisas.' },
+                        { type: 'error', highlight: '🔇', content: 'Zero Elogio: Esquecer de parabenizar e reforçar que ele fez a melhor escolha possível.' },
+                        { type: 'error', highlight: '🚪', content: 'Esquecer o Futuro: Finalizar a conversa sem dar um gancho de "quando quiser subir de nível me chama".' },
+                        { type: 'error', highlight: '✂️', content: 'Deixar Dinheiro na Mesa: Não pedir pra ele te indicar pros amigos da facção dele.' }
                     ]}
                 ]
             }

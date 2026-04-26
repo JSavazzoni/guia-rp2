@@ -25,29 +25,21 @@ const UI = {
     templates: {
         auth: () => `
             <style>
-                /* Removemos o fundo preto do body para o seu styles.css funcionar! */
                 .authWrapper { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; z-index: 10; padding: 20px; }
-                
-                .authBox { background: rgba(15, 15, 15, 0.75); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(212, 175, 55, 0.2); border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 3.5rem; border-radius: 24px; width: 100%; max-width: 440px; text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.8); }
+                .authBox { background: rgba(15, 15, 15, 0.85); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(212, 175, 55, 0.3); border-top: 1px solid rgba(255, 255, 255, 0.15); padding: 3.5rem; border-radius: 24px; width: 100%; max-width: 440px; text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.9); }
                 .authHeader h1 { color: #d4af37; margin: 0 0 5px 0; font-weight: 900; font-size: 2.2rem; letter-spacing: 3px; text-transform: uppercase; text-shadow: 0 0 15px rgba(212,175,55,0.3); }
-                .authHeader p { color: #ccc; margin: 0 0 2.5rem 0; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 5px; }
-                
+                .authHeader p { color: #ccc; margin: 0 0 2.5rem 0; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; }
                 .authInputGroup { text-align: left; margin-bottom: 1.2rem; }
                 .authLabel { display: block; color: #888; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; padding-left: 5px; }
-                .authInput { width: 100%; padding: 16px; background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 12px; font-size: 0.95rem; outline: none; font-weight: 600; transition: 0.3s; }
+                .authInput { width: 100%; padding: 16px; background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.15); color: #fff; border-radius: 12px; font-size: 0.95rem; outline: none; font-weight: 600; transition: 0.3s; }
                 .authInput:focus { border-color: #d4af37; background: rgba(0,0,0,0.8); box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15); }
-                
                 .authBtn { width: 100%; padding: 18px; background: linear-gradient(135deg, #d4af37 0%, #b5952f 100%); border: none; color: #000; font-weight: 900; border-radius: 12px; cursor: pointer; font-size: 1.05rem; letter-spacing: 1px; text-transform: uppercase; transition: 0.3s; margin-top: 1rem; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
                 .authBtn:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(212, 175, 55, 0.4); }
-                .authBtn:active { transform: translateY(0); }
-                
                 .authBtnRegister { background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); color: #000; box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3); }
                 .authBtnRegister:hover { box-shadow: 0 15px 25px rgba(34, 197, 94, 0.4); }
-                
                 .authLink { margin-top: 2rem; font-size: 0.95rem; color: #aaa; cursor: pointer; transition: 0.3s; display: inline-block; font-weight: 600; }
                 .authLink:hover { color: #fff; }
                 .authLink strong { color: #d4af37; font-weight: 800; }
-                
                 .authAlert { display: none; padding: 14px; border-radius: 12px; font-size: 0.9rem; font-weight: 800; margin-bottom: 1.5rem; text-align: center; }
             </style>
             
@@ -95,24 +87,24 @@ const UI = {
 
         admin: () => `
             <style>
-                .adminTopbar { position: fixed; top: 0; left: 0; right: 0; height: 80px; background: rgba(10,10,10,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; z-index: 100; box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+                .adminTopbar { position: fixed; top: 0; left: 0; right: 0; height: 80px; background: rgba(10,10,10,0.9); border-bottom: 1px solid rgba(212,175,55,0.3); display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; z-index: 100; box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
                 .adminBrand { font-weight: 900; color: #d4af37; font-size: 1.4rem; letter-spacing: 2px; }
-                .adminBackBtn { background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.15); padding: 10px 20px; border-radius: 8px; font-weight: 800; cursor: pointer; transition: 0.3s; font-size: 0.85rem; letter-spacing: 1px; }
+                .adminBackBtn { background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 8px; font-weight: 800; cursor: pointer; transition: 0.3s; font-size: 0.85rem; letter-spacing: 1px; }
                 .adminBackBtn:hover { background: rgba(212,175,55,0.1); border-color: #d4af37; color: #d4af37; }
                 
                 .adminLayout { padding: 140px 4rem 4rem; max-width: 1400px; margin: 0 auto; position: relative; z-index: 10; }
                 .adminHeader { margin-bottom: 3rem; }
-                .adminHeader h1 { margin: 0 0 10px 0; font-size: 2.8rem; font-weight: 900; letter-spacing: -1px; color: #fff; }
-                .adminHeader p { margin: 0; color: #aaa; font-size: 1.1rem; }
+                .adminHeader h1 { margin: 0 0 10px 0; font-size: 2.8rem; font-weight: 900; letter-spacing: -1px; color: #fff; text-transform: uppercase; }
+                .adminHeader p { margin: 0; color: #ccc; font-size: 1.1rem; }
                 
-                .userCard { background: rgba(15,15,15,0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-left: 4px solid #333; padding: 25px 30px; border-radius: 16px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; transition: 0.3s; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
-                .userCard:hover { transform: translateY(-3px); border-left-color: #d4af37; background: rgba(25,25,25,0.95); box-shadow: 0 15px 35px rgba(0,0,0,0.7); border-color: rgba(212,175,55,0.3); }
+                .userCard { background: rgba(15,15,15,0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-left: 4px solid #333; padding: 25px 30px; border-radius: 16px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; transition: 0.3s; box-shadow: 0 10px 25px rgba(0,0,0,0.6); }
+                .userCard:hover { transform: translateY(-3px); border-left-color: #d4af37; background: rgba(25,25,25,0.95); box-shadow: 0 15px 35px rgba(0,0,0,0.8); border-color: rgba(212,175,55,0.3); }
                 
                 .userInfoCol h3 { color: #fff; font-size: 1.3rem; font-weight: 900; margin: 0 0 8px 0; text-transform: uppercase; }
                 .userInfoCol span { color: #aaa; font-size: 0.95rem; font-weight: 600; }
                 
                 .adminControls { display: flex; gap: 15px; align-items: center; }
-                .selectPill { appearance: none; background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.15); color: #fff; padding: 12px 18px; border-radius: 10px; font-size: 0.9rem; font-weight: 700; cursor: pointer; outline: none; transition: 0.3s; min-width: 150px; }
+                .selectPill { appearance: none; background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 12px 18px; border-radius: 10px; font-size: 0.9rem; font-weight: 700; cursor: pointer; outline: none; transition: 0.3s; min-width: 150px; }
                 .selectPill:hover, .selectPill:focus { border-color: #d4af37; background: rgba(0,0,0,0.9); }
                 
                 .statusPending { color: #eab308; border-color: rgba(234, 179, 8, 0.4); background: rgba(234, 179, 8, 0.1); }
@@ -167,13 +159,13 @@ const UI = {
 
         menu: () => `
             <style>
-                .menuTopbar { position: fixed; top: 0; left: 0; right: 0; height: 80px; background: rgba(5,5,5,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(212,175,55,0.3); display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; z-index: 100; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+                .menuTopbar { position: fixed; top: 0; left: 0; right: 0; height: 80px; background: rgba(5,5,5,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(212,175,55,0.4); display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; z-index: 100; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
                 .menuBrand { font-weight: 900; color: #d4af37; font-size: 1.4rem; letter-spacing: 2px; text-shadow: 0 0 10px rgba(212,175,55,0.2); }
                 .menuControls { display: flex; align-items: center; gap: 25px; }
                 
                 .roleTag { background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.4); color: #d4af37; padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
-                .btnIcon { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color:#fff; border-radius: 8px; cursor: pointer; font-size: 1.2rem; padding: 8px 12px; transition: 0.3s; display: flex; align-items: center; justify-content: center; }
-                .btnIcon:hover { background: rgba(212,175,55,0.15); border-color: #d4af37; }
+                .btnIcon { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); color:#fff; border-radius: 8px; cursor: pointer; font-size: 1.2rem; padding: 8px 12px; transition: 0.3s; display: flex; align-items: center; justify-content: center; }
+                .btnIcon:hover { background: rgba(212,175,55,0.2); border-color: #d4af37; }
                 .btnLogout { background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.4); color: #ef4444; padding: 8px 20px; border-radius: 8px; font-weight: 900; cursor: pointer; transition: 0.3s; font-size: 0.85rem; letter-spacing: 1px;}
                 .btnLogout:hover { background: #ef4444; color: #fff; box-shadow: 0 5px 15px rgba(239,68,68,0.4); }
                 
@@ -181,7 +173,7 @@ const UI = {
                 .funnelCard { width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: rgba(15,15,15,0.85); backdrop-filter: blur(10px); border: 1px solid rgba(212,175,55,0.4); border-radius: 12px; min-height: 100px; padding: 1.5rem; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 15px 35px rgba(0,0,0,0.6); }
                 .funnelCard:hover { background: #d4af37; transform: scale(1.03); border-color: #fff; box-shadow: 0 20px 40px rgba(212,175,55,0.5); }
                 .funnelCard h3 { margin: 0; font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #fff; transition: 0.3s; }
-                .funnelCard p { margin: 0; font-size: 0.95rem; color: #aaa; text-align: center; font-weight: 600; transition: 0.3s; }
+                .funnelCard p { margin: 0; font-size: 0.95rem; color: #ccc; text-align: center; font-weight: 600; transition: 0.3s; }
                 .funnelCard:hover h3 { color: #000; text-shadow: none; }
                 .funnelCard:hover p { color: #222; }
                 
@@ -229,11 +221,11 @@ const UI = {
 
             return `
                 <style>
-                    /* SIDEBAR FIXA - Scroll do lado de fora */
+                    /* SIDEBAR FIXA */
                     .sidebar { width: 340px; position: fixed; top: 0; left: 0; height: 100vh; background: rgba(10,10,10,0.95); border-right: none; overflow-y: auto; display: flex; flex-direction: column; z-index: 50; box-shadow: 5px 0 25px rgba(0,0,0,0.6); }
                     .sidebar::-webkit-scrollbar { display: none; }
                     
-                    /* MAIN WORKSPACE COM MARGIN */
+                    /* MAIN WORKSPACE */
                     .workspace { margin-left: 340px; padding: 4rem 5rem 6rem; min-height: 100vh; max-width: 1500px; position: relative; z-index: 10; }
                     
                     .backBtnSide { margin: 2rem 1.5rem; padding: 1.2rem; background: rgba(212, 175, 55, 0.15); border: 1px solid rgba(212, 175, 55, 0.4); color: #d4af37; font-weight: 900; font-size: 0.9rem; border-radius: 12px; cursor: pointer; transition: 0.3s; letter-spacing: 1px; }
@@ -252,8 +244,8 @@ const UI = {
                     .headerTexts h1 { font-size: 3.2rem; font-weight: 900; margin: 0 0 1rem 0; text-transform: uppercase; color: #fff; line-height: 1.1; letter-spacing: -1px; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
                     .headerTexts p { font-size: 1.1rem; color: #ccc; margin: 0; line-height: 1.6; max-width: 800px; }
                     
-                    /* IMAGENS DAS CATEGORIAS MENORES E ELEGANTES (240x160) */
-                    .headerImgBox { width: 240px; height: 160px; flex-shrink: 0; border: 2px solid rgba(212, 175, 55, 0.5); border-radius: 12px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.8); background: #000; padding: 0; }
+                    /* IMAGENS DAS CATEGORIAS MENORES E ELEGANTES (220x140) */
+                    .headerImgBox { width: 220px; height: 140px; flex-shrink: 0; border: 2px solid rgba(212, 175, 55, 0.4); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.6); background: #000; padding: 0; }
                     .headerImgBox img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
                     .gridLayout { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
@@ -278,7 +270,7 @@ const UI = {
 
                     .sectionTitleDivider { grid-column: 1/-1; text-align: center; color: #fff; font-size: 1.8rem; font-weight: 900; margin: 3rem 0 1rem; text-transform: uppercase; letter-spacing: 3px; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 1.5rem; }
                     
-                    /* IMAGEM DA PREPARAÇÃO DE DEFESA: Continua GIGANTE e em destaque */
+                    /* IMAGEM DA PREPARAÇÃO DE DEFESA: Intocada, continua grande e ajustada */
                     .prepCard { grid-column: 1/-1; display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; background: rgba(15,15,15,0.85); backdrop-filter: blur(10px); padding: 4rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); border-left: 4px solid #d4af37; align-items: center; box-shadow: 0 20px 50px rgba(0,0,0,0.7); margin-bottom: 2rem;}
                     .prepImg { width: 100%; max-width: 480px; border: 4px solid #d4af37; border-radius: 16px; box-shadow: 0 0 40px rgba(212, 175, 55, 0.3); display: block; margin: 0 auto; object-fit: contain; }
                     

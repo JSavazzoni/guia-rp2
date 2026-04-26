@@ -2,8 +2,8 @@ const DataAccess = {
     getProfiles: () => ({
         'lider': {
             id: 'lider',
-            shortTitle: 'Líder (Facção) 👑',
-            title: 'Cliente Líder (Facção) 👑',
+            shortTitle: 'Líder (Facção)',
+            title: 'Cliente Líder (Facção)',
             description: 'Essa etapa ensina como abordar um líder de facção e fazer ele desejar crescer, dominar e construir uma facção grande e respeitada.',
             image: 'AssetStore/dono de faccao.jpg',
             sections: [
@@ -63,8 +63,8 @@ const DataAccess = {
         },
         'novato': {
             id: 'novato',
-            shortTitle: 'Novato (Iniciante) 🔰',
-            title: 'Cliente Novato (Iniciante) 🔰',
+            shortTitle: 'Novato (Iniciante)',
+            title: 'Cliente Novato (Iniciante)',
             description: 'Essa etapa ensina como abordar um novato e fazer ele desejar ser reconhecido, crescer, dominar e construir uma reputação respeitada na cidade.',
             image: 'AssetStore/novato.jpg',
             sections: [
@@ -104,8 +104,8 @@ const DataAccess = {
         },
         'policial': {
             id: 'policial',
-            shortTitle: 'Policial (PVP / RP) 🚓',
-            title: 'Cliente Policial (PVP / RP) 🚓',
+            shortTitle: 'Policial (PVP / RP)',
+            title: 'Cliente Policial (PVP / RP)',
             description: 'Essa etapa ensina como abordar um policial e fazer ele desejar crescer de patente na corporação, construir uma reputação e ser respeitado na cidade.',
             image: 'AssetStore/policial.jpg',
             sections: [
@@ -149,8 +149,8 @@ const DataAccess = {
         },
         'medico': {
             id: 'medico',
-            shortTitle: 'Médico (RP) 👨‍⚕️',
-            title: 'Cliente Médico (RP) 👨‍⚕️',
+            shortTitle: 'Médico (RP)',
+            title: 'Cliente Médico (RP)',
             description: 'Essa etapa ensina como abordar um médico e fazer ele desejar crescer na hierarquia do hospital, ter status social e respeito na cidade.',
             image: 'AssetStore/medico.jpg',
             sections: [
@@ -186,8 +186,8 @@ const DataAccess = {
         },
         'staff': {
             id: 'staff',
-            shortTitle: 'STAFF (400H+) 🛡️',
-            title: 'Cliente STAFF ou (400H+) 🛡️',
+            shortTitle: 'STAFF (400H+)',
+            title: 'Cliente STAFF ou (400H+)',
             description: 'Essa etapa ensina como abordar um staff e fazer ele querer subir na hierarquia, ter voz dentro da equipe e ser reconhecido como referência na cidade.',
             image: 'AssetStore/staff.jpg',
             sections: [
@@ -272,7 +272,7 @@ const DataAccess = {
                     { isSectionTitle: true, title: "PREPARAÇÃO DA DEFESA" },
                     { isPreparation: true, title: '👤 PREPARAÇÃO DO PERSONAGEM', image: 'AssetStore/foto_2.jpg',
                       goal: 'É fazer você se destacar entre os players ao redor e parecer ser um cara experiente na cidade. Todos se importam com a opinião de quem é foda! ⭐',
-                      actions: ['Personagem bem vestido / estiloso. 👔', 'Usar itens que chamem atenção: 💎', '• Carros exclusivos. 🏎️', '• Armas diferenciadas. 🔫', '• Pets raros (ex.: tigre). 🐅', 'Mostrar que é um jogador relevante na cidade. 👑'],
+                      actions: ['Personagem bem vestido. 👔', 'Usar itens que chamem atenção: 💎', '• Carros exclusivos. 🏎️', '• Armas diferenciadas. 🔫', '• Pets raros (ex.: tigre). 🐅', 'Mostrar que é um jogador relevante na cidade. 👑'],
                       result: 'O cliente percebe que você não é um jogador comum, aumentando interesse e respeito. 🤝'
                     },
                     { isSectionTitle: true, title: "COMO ABORDAR (DEFESA)" },
@@ -284,7 +284,7 @@ const DataAccess = {
                         '<div class="aligned-list-item"><strong>👉</strong> <span>É onde você conquista o direito de continuar falando.</span></div>'
                     ], warning: "Sem conexão ➔ Sem atenção ➔ Sem venda. 🛑" },
                     { title: "🎯 Objetivo da Defesa", items: [
-                        '<div class="aligned-list-item"><strong>🛑</strong> <span>Fazer o cliente parar através de alguma ação ou fala.</span></div>', 
+                        '<div class="aligned-list-item"><strong>🛑</strong> <span>Fazer o cliente notar a presença do vendedor.</span></div>', 
                         '---',
                         '<div class="aligned-list-item"><strong>⏳</strong> <span>Ganhar alguns segundos de atenção.</span></div>', 
                         '---',
@@ -387,7 +387,7 @@ const DataAccess = {
             'fechamento': {
                 id: 'fechamento', title: "Fechamento", description: "Fechamento conduz valor, quebra dúvida e transforma interesse em decisão.", image: "AssetStore/fechamento.jpg",
                 sections: [
-                    { isSectionTitle: true, title: "💰 ESTRATÉGIA DE FECHAMENTO — PADRÃO SG" },
+                    { isSectionTitle: true, title: "💰 ESTRATÉGIA DE FECHAMENTO" },
                     { isFull: true, title: "🧠 ESTRUTURA MENTAL DO FECHAMENTO", items: [
                         '<div class="aligned-list-item"><strong>💎</strong> <span>Primeiro você <strong>reforça valor</strong>.</span></div>',
                         '<div class="aligned-list-item"><strong>💸</strong> <span>Depois <strong>ancora preço</strong>.</span></div>',
@@ -443,7 +443,7 @@ const DataAccess = {
             'posvenda': {
                 id: 'posvenda', title: "Pós Venda", description: "Pós-venda bem feito transforma cliente em recorrência e indicação.", image: "AssetStore/pos_venda.jpg",
                 sections: [
-                    { isSectionTitle: true, title: "🧠 ESTRATÉGIA DE PÓS-VENDA — PADRÃO SG" },
+                    { isSectionTitle: true, title: "🧠 ESTRATÉGIA DE PÓS-VENDA" },
                     { title: "🛡️ CONFIRMAÇÃO (SEGURANÇA)", items: [
                         '<div class="aligned-list-item"><strong>📌</strong> <span>Garanta que ele sinta que fez uma boa decisão. 😌</span></div>',
                         '---',
@@ -453,7 +453,7 @@ const DataAccess = {
                         '---',
                         '<div class="aligned-list-item"><strong>✔️</strong> <span>“Qualquer dúvida me chama que te ajudo.”</span></div>',
                         '---',
-                        '<div class="aligned-list-item"><strong>➡️</strong> <span>Remove arrependimento | 🔒 Aumenta confiança | 🛡️ Evita chargeback</span></div>'
+                        '<div class="aligned-list-item"><strong>➡️</strong> <span>Remove arrependimento | 🔒 Aumenta confiança/span></div>'
                     ]},
                     { title: "💎 VALORIZAÇÃO (STATUS)", items: [
                         '<div class="aligned-list-item"><strong>📌</strong> <span>Faça ele sentir que subiu de nível. 📈</span></div>',
@@ -478,7 +478,7 @@ const DataAccess = {
                         '<div class="aligned-list-item"><strong>📈</strong> <span>Valor percebido sobe | ⚙️ Diminui desistência | 🚀 Aumenta satisfação</span></div>'
                     ]},
                     { title: "🤝 ABERTURA (CONEXÃO)", items: [
-                        '<div class="aligned-list-item"><strong>📌</strong> <span>Deixe a porta aberta para continuidade. Door 🚪</span></div>',
+                        '<div class="aligned-list-item"><strong>📌</strong> <span>Deixe a porta aberta para continuidade. 🚪</span></div>',
                         '---',
                         '<div class="aligned-list-item"><strong>✔️</strong> <span>“Qualquer dúvida real, me chama.”</span></div>',
                         '---',

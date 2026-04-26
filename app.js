@@ -9,16 +9,14 @@ const DataAccess = {
             sections: [
                 { isSectionTitle: true, title: 'COMO ABORDAR (LÍDER DE FACÇÃO)' },
                 { isFull: true, title: '🎯 Abordagem Estratégica & Foco', items: [
+                    '<strong style="color: #ef4444; display: block; margin-bottom: 4px;">🔥 GERAR DOR:</strong>',
                     '“E aí mano, como que tá tua fac hoje?”', 
-                    '---',
                     '“Quantos membros estão pegando ativos aí à noite? Tu quer crescer mais ainda ou tá suave como tá?”', 
-                    '---',
                     '“O que mais tá pegando hoje? Fac tá com muito farm aí? Tem bastante grana? Tá ganhando os eventos?”',
                     '---',
+                    '<strong style="color: #22c55e; display: block; margin-bottom: 4px;">✨ GERAR DESEJO:</strong>',
                     '“Mano, facção grande não cresce só na bala... Tem que ter estrutura aqui para as pessoas quererem ficar.”', 
-                    '---',
                     '“Quanto mais tu fortalece tua fac, mais gente cola, mais resultado vem.”', 
-                    '---',
                     '“Fac forte é fac organizada e com incentivo para os membros.”', 
                     '---', 
                     '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: #fff; font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>', 
@@ -305,12 +303,12 @@ const DataAccess = {
                         '<div class="aligned-list-item"><strong>🤔</strong> <span>Criar curiosidade antes de vender.</span></div>'
                     ], footer: "<strong>💡 Dica:</strong> O efeito camaleão é a capacidade de você se adaptar ao ambiente e ao perfil do cliente, falando a mesma “língua” que ele fala." },
                     { title: "💬 Como Entrar (Exemplos)", items: [
-                        '<div class="aligned-list-item"><strong>🎓</strong> <span>“Tu já tá desenrolando bem na fac ou ainda tá travado?”</span></div>', 
+                        '<div class="aligned-list-item"><strong>👋</strong> <span>“Fala irmão, tranquilo? Sou o ...”</span></div>', 
                         '---',
-                        '<div class="aligned-list-item"><strong>💰</strong> <span>“Tá farmando bem aí ou tá lento ainda?”</span></div>', 
+                        '<div class="aligned-list-item"><strong>❓</strong> <span>“Qual teu nome?”</span></div>', 
                         '---',
-                        '<div class="aligned-list-item"><strong>💪</strong> <span>“Já tá forte ou ainda tá começando a crescer?”</span></div>'
-                    ], footer: "<strong>💡 Dica:</strong> Pergunta certa = Cliente fala." },
+                        '<div class="aligned-list-item"><strong>👀</strong> <span>“Vi você agora… curti teu estilo.”</span></div>'
+                    ] },
                     { isError: true, title: "❌ ERROS DO VENDEDOR (CLIENTE DEFESA)", items: ['<div class="aligned-list-item"><strong>🏃‍♂️</strong> <span>Chegar vendendo direto (“Quer VIP?”).</span></div>', '<div class="aligned-list-item"><strong>🤖</strong> <span>Parecer robô ou script decorado.</span></div>', '<div class="aligned-list-item"><strong>🛑</strong> <span>Interromper o cliente em um momento errado.</span></div>', '<div class="aligned-list-item"><strong>🤐</strong> <span>Falar demais e não ouvir.</span></div>', '<div class="aligned-list-item"><strong>🙈</strong> <span>Ignorar o que o cliente respondeu.</span></div>', '<div class="aligned-list-item"><strong>🔨</strong> <span>Forçar a venda sem entender a necessidade.</span></div>'], warning: "Isso quebra a atenção na hora." }
                 ],
                 videoCategories: [

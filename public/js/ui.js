@@ -1,16 +1,36 @@
 const UI = {
     render() {
         const root = document.getElementById('applicationRoot');
+        
         if (!App.state.currentUser) {
             root.innerHTML = this.templates.auth();
             return;
         }
+
+        // TELA DE BLOQUEIO PERSONALIZADA (Impedindo acesso de quem só registrou)
+        if (App.state.currentUser.status !== 'approved') {
+            root.innerHTML = `
+                <div style="height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#000; color:#fff; text-align:center; font-family:Inter,sans-serif; background-image: url('AssetStore/image_1e6304.jpg'); background-size:cover; background-position:center;">
+                    <div style="background:rgba(0,0,0,0.85); padding:3rem; border-radius:24px; border:1px solid #d4af37; backdrop-filter: blur(10px);">
+                        <h1 style="color:#d4af37; margin-bottom:1rem; font-size:2rem; font-weight:900;">ACESSO PENDENTE ⏳</h1>
+                        <p style="color:#ccc; max-width:400px; line-height:1.6; font-weight:600;">Olá <strong>${App.state.currentUser.name}</strong>, sua conta está em análise. <br> O administrador precisa aprovar seu perfil antes de você acessar as estratégias.</p>
+                        <button onclick="App.logout()" style="margin-top:2rem; background:#d4af37; border:none; color:#000; padding:14px 30px; border-radius:12px; cursor:pointer; font-weight:900; text-transform:uppercase;">SAIR DO SISTEMA</button>
+                    </div>
+                </div>`;
+            return;
+        }
+
         if (App.state.currentView === 'admin' && App.state.currentUser.role === 'admin') {
             root.innerHTML = this.templates.admin();
         } else if (App.state.currentView === 'menu') {
             root.innerHTML = this.templates.menu();
         } else {
             const data = this.getActiveData();
+            // Se os dados ainda não carregaram, mostra um spinner mais bonito
+            if (!data) {
+                root.innerHTML = '<div style="color:#d4af37; padding:100px; text-align:center; font-size:1.5rem; font-weight:900;">CARREGANDO ESTRATÉGIAS...</div>';
+                return;
+            }
             root.innerHTML = this.templates.category(data);
         }
     },

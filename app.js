@@ -10,11 +10,15 @@ const DataAccess = {
                 { isSectionTitle: true, title: 'COMO ABORDAR (LÍDER DE FACÇÃO)' },
                 { isFull: true, title: '🎯 Abordagem Estratégica & Foco', items: [
                     '“E aí mano, como que tá tua fac hoje?”', 
+                    '---',
                     '“Quantos membros estão pegando ativos aí à noite? Tu quer crescer mais ainda ou tá suave como tá?”', 
+                    '---',
                     '“O que mais tá pegando hoje? Fac tá com muito farm aí? Tem bastante grana? Tá ganhando os eventos?”',
                     '---',
                     '“Mano, facção grande não cresce só na bala... Tem que ter estrutura aqui para as pessoas quererem ficar.”', 
+                    '---',
                     '“Quanto mais tu fortalece tua fac, mais gente cola, mais resultado vem.”', 
+                    '---',
                     '“Fac forte é fac organizada e com incentivo para os membros.”', 
                     '---', 
                     '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: #fff; font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>', 
@@ -23,7 +27,7 @@ const DataAccess = {
                     '<div class="aligned-list-item"><strong class="bulletIcon">•</strong> <span>🔥 Motivação e retenção dos membros.</span></div>',
                     '---',
                     '<div style="text-align: left; color: #fff; font-weight: 800;">🏆 Ele não quer item — ele quer uma facção dominante.</div>'
-                ]},
+                ], footer: '<strong>💡 Dica:</strong> Qual está sendo a dificuldade da fac hoje? A fac já está com os farms? Tem bastante grana no painel? Tá ganhando os eventos?' },
                 { isFull: true, isRecommendationHeader: true, title: '🛒 Recomendações de Produtos', items: [] },
                 { title: '🏰 VIP Facção Premium', items: [
                     '<div class="aligned-list-item"><strong class="checkIcon">✔</strong> <span>Mais carros, baú extra e log de baú.</span></div>', 
@@ -70,11 +74,15 @@ const DataAccess = {
                 { isSectionTitle: true, title: 'COMO ABORDAR (NOVATO)' },
                 { isFull: true, title: '🎯 Abordagem Estratégica & Foco', items: [
                     '“Qual teu nome mano?”, “Como é que tu conheceu a cidade?”', 
+                    '---',
                     '“Já jogava RP antes ou é tua primeira vez?”', 
+                    '---',
                     '“Tu prefere ir evoluindo na raça ou curte já dar uma acelerada?”', 
+                    '---',
                     '“O que tu quer virar aqui na cidade?”',
                     '---',
                     '“Mano, no começo da cidade quem começa já com vantagem cresce MUITO mais rápido...”', 
+                    '---',
                     '“Se tu já entra estruturado, tu sai na frente de geral.”', 
                     '---', 
                     '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: #fff; font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>', 
@@ -109,10 +117,13 @@ const DataAccess = {
                 { isSectionTitle: true, title: 'COMO ABORDAR (POLICIAL)' },
                 { isFull: true, title: '🎯 Abordagem Estratégica & Foco', items: [
                     '“Tá há quanto tempo na polícia? Tá curtindo a experiência aqui?”', 
+                    '---',
                     '“Você participa bastante de ação? Trocação com bandido?”', 
+                    '---',
                     '“Ou você é mais de RP? Fica mais na DP, treinamento?”',
                     '---',
                     '“Mano, tendo VIP tu acaba ganhando muita moral... A galera sempre pede carro emprestado.”', 
+                    '---',
                     '“Suas ações te deixam conhecido como gente boa, útil — e isso pesa MUITO para subir de cargo.”', 
                     '---', 
                     '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: #fff; font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>', 
@@ -152,10 +163,13 @@ const DataAccess = {
                 { isSectionTitle: true, title: 'COMO ABORDAR (MÉDICO)' },
                 { isFull: true, title: '🎯 Abordagem Estratégica & Foco', items: [
                     '“Hoje tua equipe tá mais organizada ou ainda tá meio na correria?”', 
+                    '---',
                     '“Tu quer crescer mais agora ou tá mais focado em manter?”', 
+                    '---',
                     '“O que mais tá te dando dor de cabeça hoje aí na clínica?”',
                     '---',
                     '“Resultados extraordinários vêm de estrutura, pessoas e processos.”', 
+                    '---',
                     '“Aqui dentro tu não precisa ser só mais um médico... Tu pode ser referência na cidade.”', 
                     '---', 
                     '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: #fff; font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>',
@@ -188,10 +202,13 @@ const DataAccess = {
                 { isSectionTitle: true, title: 'COMO ABORDAR (STAFF)' },
                 { isFull: true, title: '🎯 Abordagem Estratégica & Foco', items: [
                     '“E aí mano, tu já tá há mó cota aqui na cidade né?”', 
+                    '---',
                     '“Já tem tua galera aí? Já tá estruturado?”', 
+                    '---',
                     '“Mas a galera te reconhece fácil? Tipo, só de bater o olho já sabem que é você?”',
                     '---',
                     '“Mano, tu já tem muita história na cidade... O certo era tu já ter uma identidade forte aqui dentro.”', 
+                    '---',
                     '“ID muito alto acaba passando despercebido... Ninguém grava.”', 
                     '---', 
                     '<span style="font-size: 1.35rem; display: block; margin: 12px 0; color: #fff; font-weight: 800; text-align: left;">🛍️ O QUE VOCÊ ESTÁ VENDENDO DE VERDADE:</span>', 
@@ -265,10 +282,35 @@ const DataAccess = {
                       result: 'O cliente percebe que você não é um jogador comum, aumentando interesse e respeito.'
                     },
                     { isSectionTitle: true, title: "COMO ABORDAR (DEFESA)" },
-                    { title: "🛡️ O Que é Defesa?", items: ["🤝 Defesa é criar conexão com o cliente para ganhar atenção e iniciar a conversa."], warning: "Sem conexão ➔ Sem atenção ➔ Sem venda." },
-                    { title: "🎯 Objetivo da Defesa", items: ["🛑 Fazer o cliente parar.", "⏳ Ganhar alguns segundos de atenção.", "🗣️ Iniciar uma conversa natural."], footer: "<strong>💡 Dica:</strong> Aqui começa a venda de verdade." },
-                    { title: "✅ O Que FAZER", items: ['<div class="aligned-list-item"><strong>👤</strong> <span>Falar como pessoa, não como vendedor.</span></div>', '<div class="aligned-list-item"><strong>❓</strong> <span>Usar perguntas para entender o cliente.</span></div>', '<div class="aligned-list-item"><strong>🌍</strong> <span>Entrar na realidade dele (faculdade, dinheiro, evolução).</span></div>', '<div class="aligned-list-item"><strong>🍃</strong> <span>Ser leve, direto e natural.</span></div>', '<div class="aligned-list-item"><strong>🤔</strong> <span>Criar curiosidade antes de vender.</span></div>'], footer: "<strong>💡 Dica:</strong> Primeiro conecta, depois vende." },
-                    { title: "💬 Como Entrar (Exemplos)", items: ['<div class="aligned-list-item"><strong>🎓</strong> <span>“Tu já tá desenrolando bem na fac ou ainda tá travado?”</span></div>', '<div class="aligned-list-item"><strong>💰</strong> <span>“Tá farmando bem aí ou tá lento ainda?”</span></div>', '<div class="aligned-list-item"><strong>💪</strong> <span>“Já tá forte ou ainda tá começando a crescer?”</span></div>'], footer: "<strong>💡 Dica:</strong> Pergunta certa = Cliente fala." },
+                    { title: "🛡️ O Que é Defesa?", items: [
+                        "🤝 Defesa é criar conexão com o cliente para ganhar atenção e iniciar a conversa.",
+                        "---"
+                    ], warning: "Sem conexão ➔ Sem atenção ➔ Sem venda." },
+                    { title: "🎯 Objetivo da Defesa", items: [
+                        "🛑 Fazer o cliente parar através de alguma ação ou fala.", 
+                        "---",
+                        "⏳ Ganhar alguns segundos de atenção.", 
+                        "---",
+                        "🗣️ Iniciar uma conversa natural."
+                    ], footer: "<strong>💡 Dica:</strong> Aqui começa a venda de verdade." },
+                    { title: "✅ O Que FAZER", items: [
+                        '<div class="aligned-list-item"><strong>👤</strong> <span>Falar como pessoa, não como vendedor.</span></div>', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>❓</strong> <span>Usar perguntas para entender o cliente.</span></div>', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>🦎</strong> <span>Usar efeito camaleão (polícia, médico, facção).</span></div>', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>🍃</strong> <span>Ser leve, direto e natural.</span></div>', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>🤔</strong> <span>Criar curiosidade antes de vender.</span></div>'
+                    ], footer: "<strong>💡 Dica:</strong> O efeito camaleão é a capacidade de você se adaptar ao ambiente e ao perfil do cliente, falando a mesma “língua” que ele fala." },
+                    { title: "💬 Como Entrar (Exemplos)", items: [
+                        '<div class="aligned-list-item"><strong>🎓</strong> <span>“Tu já tá desenrolando bem na fac ou ainda tá travado?”</span></div>', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>💰</strong> <span>“Tá farmando bem aí ou tá lento ainda?”</span></div>', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>💪</strong> <span>“Já tá forte ou ainda tá começando a crescer?”</span></div>'
+                    ], footer: "<strong>💡 Dica:</strong> Pergunta certa = Cliente fala." },
                     { isError: true, title: "❌ ERROS DO VENDEDOR (CLIENTE DEFESA)", items: ['<div class="aligned-list-item"><strong>🏃‍♂️</strong> <span>Chegar vendendo direto (“Quer VIP?”).</span></div>', '<div class="aligned-list-item"><strong>🤖</strong> <span>Parecer robô ou script decorado.</span></div>', '<div class="aligned-list-item"><strong>🛑</strong> <span>Interromper o cliente em um momento errado.</span></div>', '<div class="aligned-list-item"><strong>🤐</strong> <span>Falar demais e não ouvir.</span></div>', '<div class="aligned-list-item"><strong>🙈</strong> <span>Ignorar o que o cliente respondeu.</span></div>', '<div class="aligned-list-item"><strong>🔨</strong> <span>Forçar a venda sem entender a necessidade.</span></div>'], warning: "Isso quebra a atenção na hora." }
                 ],
                 videoCategories: [
@@ -283,9 +325,23 @@ const DataAccess = {
                     { title: "🎯 Objetivo Meio de Campo", items: ['<div class="aligned-list-item"><strong>🗣️</strong> <span>Conduzir o cliente fazendo perguntas-chave.</span></div>', '<div class="aligned-list-item"><strong>🧠</strong> <span>Entender o que oferecer para o cliente.</span></div>', '<div class="aligned-list-item"><strong>🤝</strong> <span>Conectar com a realidade dele.</span></div>', '<div class="aligned-list-item"><strong>📦</strong> <span>Preparar para oferecer.</span></div>'] },
                     { title: "🔍 Indícios de Interesse", items: ['<div class="aligned-list-item"><strong>✅</strong> <span>Responde rápido.</span></div>', '<div class="aligned-list-item"><strong>🗣️</strong> <span>Fala mais que você.</span></div>', '<div class="aligned-list-item"><strong>❓</strong> <span>Faz perguntas.</span></div>', '<div class="aligned-list-item"><strong>📈</strong> <span>Engaja na conversa.</span></div>'] },
                     { title: "🎯 Foco da Conversa", items: ['<div class="aligned-list-item"><strong>🔥</strong> <span>Gerar interesse.</span></div>', '<div class="aligned-list-item"><strong>🛡️</strong> <span>Passar confiança.</span></div>', '<div class="aligned-list-item"><strong>🧭</strong> <span>Dar direção ao cliente.</span></div>', '---', '<div class="aligned-list-item"><strong>🚫</strong> <span>Não deixar o cliente desviar do assunto principal.</span></div>', '<div class="aligned-list-item"><strong>⏳</strong> <span>Não ficar apenas conversando sem intenção de venda.</span></div>', '<div class="aligned-list-item"><strong>🔗</strong> <span>Sempre conecte a conversa com a solução da venda.</span></div>'], warning: "Se o cliente dispersar ou você perder o foco, a venda esfria." },
-                    { title: "📢 Sinais de Abertura (Ataque!)", items: ['<div class="aligned-list-item"><strong>💲</strong> <span>Pergunta o preço.</span></div>', '<div class="aligned-list-item"><strong>📦</strong> <span>Pede detalhes sobre o produto.</span></div>', '<div class="aligned-list-item"><strong>🛒</strong> <span>Pergunta o que você vende.</span></div>', '<div class="aligned-list-item"><strong>👤</strong> <span>Pergunta se você é vendedor.</span></div>'], footer: "<strong>💡 Dica:</strong> 🔥 Identificou isso? Pare de enrolar e comece o ATAQUE." },
+                    { title: "📢 Sinais de Abertura (Ataque!)", items: [
+                        '<div class="aligned-list-item"><strong>💲</strong> <span>Pergunta o preço.</span></div>', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>📦</strong> <span>Pede detalhes sobre o produto.</span></div>', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>🛒</strong> <span>Pergunta o que você vende.</span></div>', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>👤</strong> <span>Pergunta se você é vendedor.</span></div>'
+                    ], footer: "<strong>💡 Dica:</strong> 🔥 Identificou isso? Pare de enrolar e comece o ATAQUE." },
                     { title: "⚠️ Ponto Mais Importante", items: ['<div class="aligned-list-item"><strong>👀</strong> <span>Identificar a abertura.</span></div>', '<div class="aligned-list-item"><strong>🎣</strong> <span>Encontrar a dor do cliente.</span></div>', '<div class="aligned-list-item"><strong>🗺️</strong> <span>Mostrar o caminho, falando de algum produto.</span></div>'], warning: "O maior erro do vendedor é não perceber quando já pode vender (o tempo certo)." },
-                    { title: "🧠 Perguntas que Quebram o Padrão", items: ['<div class="aligned-list-item"><strong>🎓</strong> <span>“Tu já tá desenrolando bem na fac ou ainda tá travado?”</span></div>', '<div class="aligned-list-item"><strong>⛏️</strong> <span>“Já tá conseguindo farmar bem aí ou tá difícil evoluir?”</span></div>', '<div class="aligned-list-item"><strong>💸</strong> <span>“Já tá conseguindo fazer dinheiro ou tá lento ainda?”</span></div>'] },
+                    { title: "🧠 Perguntas que Quebram o Padrão", items: [
+                        '<div class="aligned-list-item"><strong>🎓</strong> <span>“Tu já tá desenrolando bem na fac ou ainda tá travado?”</span></div>', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>⛏️</strong> <span>“Já tá conseguindo farmar bem aí ou tá difícil evoluir?”</span></div>', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>💸</strong> <span>“Já tá conseguindo fazer dinheiro ou tá lento ainda?”</span></div>'
+                    ] },
                     { isError: true, title: "❌ ERROS DO VENDEDOR (CLIENTE MEIO)", items: ['<div class="aligned-list-item"><strong>🌪️</strong> <span>Perder o foco da conversa.</span></div>', '<div class="aligned-list-item"><strong>🔀</strong> <span>Deixar o cliente mudar totalmente o assunto.</span></div>', '<div class="aligned-list-item"><strong>🗣️</strong> <span>Responder tudo sem puxar de volta para o objetivo.</span></div>', '<div class="aligned-list-item"><strong>☕</strong> <span>Ficar só “batendo papo” sem avançar.</span></div>', '<div class="aligned-list-item"><strong>🔌</strong> <span>Não conectar a dor com a solução.</span></div>'], footer: "<strong>💡 Dica:</strong> Dor = O motivo emocional ou prático que faz o cliente querer comprar." }
                 ],
                 videoCategories: [{ title: "Exemplos na Prática", videos: [{ label: "EXEMPLO CERTO", url: "https://drive.google.com/file/d/1nmAOR_S0mm8jWb5VchfBfp2Fo33kiRaq/preview", color: "#22c55e" }, { label: "EXEMPLO ERRADO", url: "https://drive.google.com/file/d/1eW3zORlLH6M20KGBbKCQ1BSR1QWh5a10/preview", color: "#ef4444" }]}]
@@ -295,16 +351,33 @@ const DataAccess = {
                 sections: [
                     { isSectionTitle: true, title: "COMO ABORDAR (ATAQUE)" },
                     { title: "🧠 Conceito: Dor, Desejo e Urgência", items: ["⚖️ Venda forte é o equilíbrio entre:", "<div style='text-align: left; font-weight: 800; color: #fff; margin: 5px 0;'>🎯 Dor + Desejo + Urgência</div>", "---", '<div class="aligned-list-item"><strong>🧊</strong> <span>Sem dor ➔ Não conecta.</span></div>', '<div class="aligned-list-item"><strong>😴</strong> <span>Sem desejo ➔ Não engaja.</span></div>', '<div class="aligned-list-item"><strong>🛑</strong> <span>Sem urgência ➔ Não fecha.</span></div>'] },
-                    { title: "⚙️ Como Funciona na Prática", items: ['🔗 A venda acontece quando você conecta os três pilares:', '<div class="aligned-list-item"><strong>1️⃣</strong> <span>Faz ele sentir o problema (Dor).</span></div>', '<div class="aligned-list-item"><strong>2️⃣</strong> <span>Mostra o que ele pode ganhar (Desejo).</span></div>', '<div class="aligned-list-item"><strong>3️⃣</strong> <span>Dá um motivo para agir agora (Urgência).</span></div>']},
-                    { title: "🚀 Exemplo Forte", items: ['<div class="aligned-list-item"><strong>🔥 Dor:</strong> <span>“Do jeito que você está, vai evoluir bem mais devagar.”</span></div>', '<div class="aligned-list-item"><strong>✨ Desejo:</strong> <span>“Com esse VIP, você entra em outro nível na cidade.”</span></div>', '<div class="aligned-list-item"><strong>⚡ Urgência:</strong> <span>“Pegando agora, você aproveita essa condição antes que acabe.”</span></div>']},
-                    { title: "🔥 Dor (O Problema)", items: ["🤔 A dor não é inventar necessidade.", "🔍 Identificar ou despertar algo que já faz sentido para o cliente.", "🚫 Você não cria mentira. Você evidencia um incômodo, uma falta ou uma dificuldade.", "---", "🐢 Está evoluindo devagar.", "👻 Está sem destaque na cidade.", "🐌 Está ficando para trás.", "💸 Está gastando mais do que deveria."] },
-                    { title: "✨ Desejo (O que ele quer conquistar)", items: ["🏆 Aqui é onde você ganha o cliente. Não basta mostrar o problema — você precisa mostrar o benefício.", "💭 Você faz ele imaginar o nível que ele pode alcançar e a vantagem sobre outros players.", "---", "🚀 Evoluir mais rápido.", "👑 Ter mais presença e respeito.", "🥇 Ter vantagem sobre outros players.", "🏰 Entrar já estruturado."] },
+                    { title: "⚙️ Como Funciona na Prática", items: [
+                        '🔗 A venda acontece quando você conecta os três pilares:', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>1️⃣</strong> <span>Faz ele sentir o problema (Dor).</span></div>', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>2️⃣</strong> <span>Mostra o que ele pode ganhar (Desejo).</span></div>', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>3️⃣</strong> <span>Dá um motivo para agir agora (Urgência).</span></div>'
+                    ]},
+                    { title: "🚀 Exemplo Forte", items: [
+                        '<div class="aligned-list-item"><strong>🔥 Dor:</strong> <span>“Do jeito que você está, vai evoluir bem mais devagar.”</span></div>', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>✨ Desejo:</strong> <span>“Com esse VIP, você entra em outro nível na cidade.”</span></div>', 
+                        '---',
+                        '<div class="aligned-list-item"><strong>⚡ Urgência:</strong> <span>“Pegando agora, você aproveita essa condição antes que acabe.”</span></div>'
+                    ]},
+                    { title: "🔥 Dor (O Problema)", items: ["🤔 A dor não é inventar necessidade.", "---", "🔍 Identificar ou despertar algo que já faz sentido para o cliente.", "---", "🚫 Você não cria mentira. Você evidencia um incômodo, uma falta ou uma dificuldade.", "---", "🐢 Está evoluindo devagar.", "---", "👻 Está sem destaque na cidade.", "---", "🐌 Está ficando para trás.", "---", "💸 Está gastando mais do que deveria."] },
+                    { title: "✨ Desejo (O que ele quer conquistar)", items: ["🏆 Aqui é onde você ganha o cliente. Não basta mostrar o problema — você precisa mostrar o benefício.", "---", "💭 Você faz ele imaginar o nível que ele pode alcançar e a vantagem sobre outros players.", "---", "🚀 Evoluir mais rápido.", "---", "👑 Ter mais presença e respeito.", "---", "🥇 Ter vantagem sobre outros players.", "---", "🏰 Entrar já estruturado."] },
                     { title: "⚡ Urgência (O Gatilho)", items: [
                         "⏳ Sem urgência, não tem fechamento. O cliente até quer… mas deixa para depois.", 
+                        "---",
                         "⏰ Você cria um motivo para agir agora (condição limitada ou oportunidade).", 
                         "---", 
                         "🏃‍♂️ “Essa condição é só agora.”", 
+                        "---",
                         "📈 “Depois você vai pagar mais caro.”", 
+                        "---",
                         "🏁 “Quem pega agora sai na frente.”"
                     ], footer: "<strong>💡 Dica:</strong> Essas condições se aplicam apenas a produtos exclusivos ou promoções do dia." },
                     { isError: true, title: "❌ ERROS DO VENDEDOR (CLIENTE ATAQUE)", items: ['<div class="aligned-list-item"><strong>🎯 Focar demais na dor:</strong> <span>Pode parecer pressão exagerada.</span></div>', '<div class="aligned-list-item"><strong>🧩 Desejo genérico:</strong> <span>“Vantagem” sem contexto real.</span></div>', '<div class="aligned-list-item"><strong>⏱️ Urgência forçada:</strong> <span>Mentir sobre prazo quebra a confiança.</span></div>', '<div class="aligned-list-item"><strong>🤖 Sequência robótica:</strong> <span>Ficar só no script sem ouvir o cliente.</span></div>', '<div class="aligned-list-item"><strong>👥 Não adaptar ao cliente:</strong> <span>Usar o mesmo discurso para todo mundo diminui a sua conversão.</span></div>'] }
@@ -322,15 +395,20 @@ const DataAccess = {
                     ], footer: "<strong>💡 Dica:</strong> Ancoragem = fazer o cliente sentir que o produto vale muito, antes de ver o preço!" },
                     { title: '💸 ANCORAGEM DE VALOR', items: [
                         '“Se você fosse montar isso separado, passaria tranquilo de R$XXX… e ainda ia gastar mais tempo para chegar no mesmo nível.”',
+                        '---',
                         '“Aqui já vem tudo junto, mais barato e pronto para usar — você economiza dinheiro e já sai na frente.”',
+                        '---',
                         '“No final, não é sobre gastar menos… é sobre gastar certo e não ter que pagar de novo depois.”',
+                        '---',
                         '“Quem monta aos poucos sempre acaba pagando mais caro para chegar no mesmo lugar.”'
                     ]},
                     { title: '⏰ GATILHO DE URGÊNCIA', items: [
                         '“E sendo bem direto contigo, essa condição que eu te passei é só agora.”',
+                        '---',
                         '“Se deixar para depois, você provavelmente vai pagar mais caro ou perder esse pacote.”',
                         '---',
                         '⚠️ <strong>REGRAS DE USO:</strong>',
+                        '---',
                         '“Essa condição é válida para um produto exclusivo / promoção do dia.”',
                         '---',
                         '<strong>Use urgência apenas quando:</strong>',
@@ -340,6 +418,7 @@ const DataAccess = {
                     ]},
                     { title: '💳 PAGAMENTO & OBJEÇÃO', items: [
                         '“Você pode fazer via Pix ou no cartão de crédito, da forma que for mais confortável para você.”',
+                        '---',
                         '“Se estiver fora, também trabalhamos com Revolut, então isso não é um problema.”'
                     ]},
                     { title: '🎯 FECHAMENTO DIRETO (MATADOR)', items: [
@@ -352,7 +431,9 @@ const DataAccess = {
                     { isFull: true, title: '⚔️ VERSÃO MAIS AGRESSIVA', items: [
                         '<div style="color:#ccc; font-size:0.95rem; margin-bottom: 12px;">(Usar quando o cliente já demonstrou interesse real)</div>',
                         '“Vou ser direto contigo — isso aqui não é gasto, é investimento.”',
+                        '---',
                         '“Quem pega isso agora sai na frente. Quem deixa para depois sempre se arrepende.”',
+                        '---',
                         '“Prefere fazer no Pix ou no cartão à vista?”'
                     ], footer: '<strong>💡 Dica:</strong> Nunca fale obrigado após uma venda, fale parabéns!' },
                     { isFull: true, isError: true, title: '❌ ERROS DO VENDEDOR (CLIENTE FECHAMENTO)', items: [
@@ -369,57 +450,79 @@ const DataAccess = {
                     { isSectionTitle: true, title: "🧠 ESTRATÉGIA DE PÓS-VENDA — PADRÃO SG" },
                     { title: "🛡️ CONFIRMAÇÃO (SEGURANÇA)", items: [
                         '📌 Garanta que ele sinta que fez uma boa decisão.',
+                        '---',
                         '✔️ “Já deixei tudo certo para você.”',
+                        '---',
                         '✔️ “Você já pode usar agora tranquilo.”',
+                        '---',
                         '✔️ “Qualquer dúvida me chama que te ajudo.”',
                         '---',
                         '➡️ Remove arrependimento | 🔒 Aumenta confiança | 🛡️ Evita chargeback'
                     ]},
                     { title: "💎 VALORIZAÇÃO (STATUS)", items: [
                         '📌 Faça ele sentir que subiu de nível.',
+                        '---',
                         '✔️ “Agora você já está na frente de muita gente.”',
+                        '---',
                         '✔️ “Pouca gente entra já estruturado assim.”',
+                        '---',
                         '✔️ “Você fez uma escolha inteligente, parabéns.”',
                         '---',
                         '🥇 Reforça decisão | 👑 Cria orgulho | 💎 Aumenta apego'
                     ]},
                     { title: "🚀 ATIVAÇÃO (USO REAL)", items: [
                         '📌 Ensine ele a usar o que comprou.',
+                        '---',
                         '✔️ “Já testou o benefício X?”',
+                        '---',
                         '✔️ “Se fizer isso aqui, você aproveita melhor ainda.”',
+                        '---',
                         '✔️ “Posso te mostrar como tirar mais vantagem disso.”',
                         '---',
                         '📈 Valor percebido sobe | ⚙️ Diminui desistência | 🚀 Aumenta satisfação'
                     ]},
                     { title: "🤝 ABERTURA (CONEXÃO)", items: [
                         '📌 Deixe a porta aberta para continuidade.',
+                        '---',
                         '✔️ “Qualquer dúvida real, me chama.”',
+                        '---',
                         '✔️ “Se quiser evoluir mais depois, te mostro as opções.”',
+                        '---',
                         '✔️ “Sempre que sair novidade exclusiva, te aviso em primeira mão.”',
                         '---',
                         '💬 Cria vínculo | 🤝 Mantém contato ativo | 📞 Prepara próxima venda'
                     ]},
                     { title: "💸 RECOMPRA / UPSELL", items: [
                         '📌 Plante a próxima venda sem pressão.',
+                        '---',
                         '✔️ “Depois você pode evoluir ainda mais com o pacote Y.”',
+                        '---',
                         '✔️ “Tem um upgrade que encaixa perfeitamente com o que você pegou.”',
+                        '---',
                         '✔️ “Quando quiser subir mais um degrau, já sei o que te indicar.”',
                         '---',
                         '🔄 Naturalidade | 💸 Sem pressão | 📈 Direcionamento'
                     ]},
                     { title: "📢 INDICAÇÃO (ESCALA)", items: [
                         '📌 Transforme cliente em vendedor.',
+                        '---',
                         '✔️ “Se tiver algum amigo que quer começar bem, me indica.”',
+                        '---',
                         '✔️ “Quem entra estruturado já sai na frente, igual você.”',
+                        '---',
                         '✔️ “Se indicar alguém, depois te dou uma moral de fidelidade.”',
                         '---',
                         '✨ Novos clientes | 👥 Baixo custo de venda | 📢 Alta conversão'
                     ]},
                     { isError: true, title: "❌ ERROS NO PÓS-VENDA", items: [
                         '❌ Sumir logo após receber o pagamento.',
+                        '---',
                         '❌ Não ensinar o cliente a extrair valor do produto.',
+                        '---',
                         '❌ Não reforçar a decisão dele.',
+                        '---',
                         '❌ Não abrir espaço para vendas futuras (upsell).',
+                        '---',
                         '❌ Esquecer de pedir indicação de amigos.'
                     ]}
                 ]

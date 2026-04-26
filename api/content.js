@@ -3,7 +3,7 @@ const { verifyAccess } = require('./_security');
 module.exports = async (req, res) => {
     const user = verifyAccess(req);
     if (!user || user.status !== 'approved') {
-        return res.status(401).json({ success: false, message: 'Unauthorized access' });
+        return res.status(401).json({ success: false });
     }
 
     if (req.method !== 'GET') return res.status(405).end();
@@ -372,7 +372,7 @@ module.exports = async (req, res) => {
                     { title: "⚡ Urgência (O Gatilho)", items: [
                         "⏳ Sem urgência, não tem fechamento. O cliente até quer… mas deixa para depois.", 
                         "---",
-                        "⏰ Você cria um motivo para agir agora (condição limitada ou oportunidade).", 
+                        "⏰ Você cria um motivo para agir agora (condição limitada ou opportunity).", 
                         "---", 
                         "🏃‍♂️ “Essa condição é só agora.”", 
                         "---",

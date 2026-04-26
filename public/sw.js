@@ -1,13 +1,5 @@
-const CACHE_NAME = 'sg-v6';
-const ASSETS = [
-    '/', 
-    '/index.html', 
-    '/styles.css', 
-    '/js/api.js', 
-    '/js/app.js', 
-    '/js/ui.js', 
-    '/AssetStore/image_1e6304.jpg'
-];
+const CACHE_NAME = 'sg-v7';
+const ASSETS = ['/', '/index.html', '/styles.css', '/js/api.js', '/js/app.js', '/js/ui.js'];
 
 self.addEventListener('install', (e) => {
     self.skipWaiting();
@@ -20,11 +12,5 @@ self.addEventListener('activate', (e) => {
 
 self.addEventListener('fetch', (e) => {
     if (e.request.url.includes('/api/')) return;
-    e.respondWith(
-        fetch(e.request).then(res => {
-            const clone = res.clone();
-            caches.open(CACHE_NAME).then(c => c.put(e.request, clone));
-            return res;
-        }).catch(() => caches.match(e.request))
-    );
+    e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
 });

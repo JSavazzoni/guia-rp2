@@ -40,7 +40,7 @@
 }
 
 body {
-    background-image: url('/public/AssetStore/image_1e6304.jpg');
+    background-image: url('AssetStore/image_1e6304.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

@@ -56,36 +56,86 @@ const UI = {
                 </div>
             </div>
             <div class="funnelContainer" style="padding-top: 100px;">
-                ${['olheiro', 'defesa', 'meio', 'ataque', 'fechamento', 'posvenda'].map(id => {
-                    const titles = {olheiro: '🕵️‍♂️ Olheiro', defesa: '🛡️ Defesa', meio: '⚽ Meio de Campo', ataque: '⚔️ Ataque', fechamento: '🤝 Fechamento', posvenda: '📦 Pós Venda'};
-                    const descs = {olheiro: 'Observe o player e entenda o melhor momento.', defesa: 'Ganhe a atenção do cliente e inicie a conversa.', meio: 'Entenda a necessidade através de perguntas-chave.', ataque: 'Transforme a dor em solução e crie urgência.', fechamento: 'Transforma interesse em decisão.', posvenda: 'Transforma cliente em recorrência.'};
-                    return `<div class="funnelStep step${id.charAt(0).toUpperCase() + id.slice(1)}" onclick="App.navigateToCategory('${id}')"><span class="funnelStepTitle">${titles[id]}</span><span class="funnelStepDesc">${descs[id]}</span></div>`;
-                }).join('')}
+                ${[
+                    {id: 'olheiro', title: '🕵️‍♂️ Olheiro', desc: 'Observe o player e entenda o melhor momento.'},
+                    {id: 'defesa', title: '🛡️ Defesa', desc: 'Ganhe a atenção do cliente e inicie a conversa.'},
+                    {id: 'meio', title: '⚽ Meio de Campo', desc: 'Entenda a necessidade através de perguntas-chave.'},
+                    {id: 'ataque', title: '⚔️ Ataque', desc: 'Transforme a dor em solução e crie urgência.'},
+                    {id: 'fechamento', title: '🤝 Fechamento', desc: 'Transforma interesse em decisão.'},
+                    {id: 'posvenda', title: '📦 Pós Venda', desc: 'Transforma cliente em recorrência.'}
+                ].map(cat => `
+                    <div class="funnelStep step${cat.id.charAt(0).toUpperCase() + cat.id.slice(1)}" onclick="App.navigateToCategory('${cat.id}')">
+                        <span class="funnelStepTitle">${cat.title}</span>
+                        <span class="funnelStepDesc">${cat.desc}</span>
+                    </div>
+                `).join('')}
             </div>`,
 
         category: (data) => {
-            if (!data) return '<div style="color:white; padding:100px; text-align:center;">Carregando conteúdo... Verifique a aba Console no F12 se demorar.</div>';
+            if (!data) return '<div style="color:white; padding:100px; text-align:center;">Carregando conteúdo...</div>';
             
             const profiles = App.state.content.profiles;
-            const catIds = ['olheiro', 'defesa', 'meio', 'ataque', 'fechamento', 'posvenda'];
+            const sidebarCategories = [
+                { id: 'olheiro', label: '🕵️‍♂️ OLHEIRO' },
+                { id: 'defesa', label: '🛡️ DEFESA' },
+                { id: 'meio', label: '⚽ MEIO DE CAMPO' },
+                { id: 'ataque', label: '⚔️ ATAQUE' },
+                { id: 'fechamento', label: '🤝 FECHAMENTO' },
+                { id: 'posvenda', label: '📦 PÓS VENDA' }
+            ];
 
             return `
                 <div class="overlay"></div>
+                <style>
+                    html, body { margin: 0; padding: 0; overflow: hidden; height: 100vh; }
+                    * { box-sizing: border-box; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.05) transparent; }
+                    ::-webkit-scrollbar { width: 6px; height: 6px; }
+                    ::-webkit-scrollbar-track { background: transparent; }
+                    ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.03); border-radius: 10px; }
+                    ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.1); }
+
+                    .layoutContainer { max-width: 100% !important; display: flex; height: 100vh; overflow: hidden; }
+                    .sidebarNavigation { width: 340px !important; flex-shrink: 0; display: flex; flex-direction: column; border-right: none; background: rgba(0,0,0,0.85); overflow-y: auto; }
+                    .sidebarNavigation::-webkit-scrollbar { display: none; }
+                    .mainWorkspace { padding: 2rem 5% !important; flex-grow: 1; max-width: calc(100vw - 340px); overflow-y: auto; text-align: left; }
+                    
+                    .headerContainer { display: flex; align-items: center; justify-content: space-between; gap: 2.5rem; margin-bottom: 3rem; }
+                    .pageTitle { font-size: 2rem !important; margin-bottom: 0.6rem; text-align: left; font-weight: 800; color: #fff; }
+                    .pageDescription { font-size: 1.05rem !important; line-height: 1.5; text-align: left; color: #ccc; }
+                    
+                    .headerImageContainer { flex-shrink: 0; border: 1px solid rgba(255,255,255,0.2); padding: 6px; border-radius: 12px; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; }
+                    .headerImageContainer img { max-width: 320px; height: auto; border-radius: 8px; border: 2px solid rgba(255, 255, 255, 0.15); display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+
+                    .contentGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8rem; width: 100%; align-items: stretch; }
+                    .cardSpanFull { grid-column: 1 / -1; }
+                    
+                    .dataList { display: flex; flex-direction: column; gap: 14px; width: 100%; list-style: none; padding: 0; margin: 0; }
+                    .dataList div { font-size: 1rem !important; line-height: 1.6; text-align: left; color: #eee; }
+
+                    .aligned-list-item { display: flex; align-items: flex-start; gap: 12px; width: 100%; font-size: 1.05rem; margin: 0; padding: 0; }
+                    .aligned-list-item strong { flex-shrink: 0; color: #fff; }
+                    .aligned-list-item span { flex-grow: 1; text-align: left; }
+
+                    .navItem { font-size: 1.15rem !important; white-space: nowrap; padding: 1.2rem 1.6rem !important; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: all 0.3s; color: #888; }
+                    .navItem:hover { background: rgba(255,255,255,0.05); color: #fff; }
+                    .navItemActive { color: #fff !important; background: rgba(255,255,255,0.1) !important; border-left: 4px solid #fff; }
+                    .navSubItemActive { color: #fff !important; background: rgba(255,255,255,0.1) !important; font-weight: 900 !important; border-left: 4px solid #fff; }
+                </style>
                 <div class="layoutContainer">
                     <aside class="sidebarNavigation">
-                        <button class="backButton" onclick="App.navigateToMenu()">⬅ Menu Inicial</button>
+                        <button class="backButton" onclick="App.navigateToMenu()" style="margin: 1.5rem 1rem; padding: 1rem; background: rgba(0,0,0,0.5); border: 1px solid #d4af37; color: #fff; font-weight: 800; border-radius: 8px; cursor: pointer;">⬅ MENU INICIAL</button>
                         <nav class="navigationMenu">
-                            ${catIds.map(id => {
-                                const isMeio = id === 'meio';
-                                const isActive = App.state.currentCategoryId === id;
+                            ${sidebarCategories.map(cat => {
+                                const isMeio = cat.id === 'meio';
+                                const isActive = App.state.currentCategoryId === cat.id;
                                 return `
-                                    <div class="navItem ${isActive ? 'navItemActive' : ''}" onclick="${isMeio ? 'App.toggleMeio(event)' : `App.navigateToCategory('${id}')`}">
-                                        ${id.toUpperCase()} ${isMeio ? (App.state.isMeioExpanded ? '▾' : '▸') : ''}
+                                    <div class="navItem ${isActive && !App.state.currentProfileId ? 'navItemActive' : ''}" onclick="${isMeio ? 'App.toggleMeio(event)' : `App.navigateToCategory('${cat.id}')`}">
+                                        ${cat.label} ${isMeio ? (App.state.isMeioExpanded ? '▾' : '▸') : ''}
                                     </div>
                                     ${isMeio && App.state.isMeioExpanded ? `
-                                        <div style="background:rgba(0,0,0,0.3); margin-bottom:10px; border-radius:8px; padding: 5px 0;">
+                                        <div style="background:rgba(0,0,0,0.3); padding: 5px 0;">
                                             ${Object.values(profiles).map(p => `
-                                                <div class="navItem" style="font-size:0.75rem; border:none; padding-left:2.5rem; color:#aaa;" onclick="App.navigateToProfile('${p.id}')">
+                                                <div class="navItem ${App.state.currentProfileId === p.id ? 'navSubItemActive' : ''}" style="font-size:0.85rem !important; border:none; padding-left:3.5rem !important; color:#aaa;" onclick="App.navigateToProfile('${p.id}')">
                                                     ${p.shortTitle}
                                                 </div>
                                             `).join('')}
@@ -138,12 +188,12 @@ const UI = {
                     </div>
                     <p><strong style="color:#fff; display:block; margin-bottom:5px;">🏆 RESULTADO ESPERADO:</strong> <span style="color:#eee;">${s.result}</span></p>
                 </div>
-                <div class="prepPhoto" style="display:flex; justify-content:center; align-items:center; position:relative; padding:0;">
+                <div style="display:flex; justify-content:center; align-items:center; position:relative; padding:0;">
                     <img src="${s.image}" style="max-width:480px; width:100%; border-radius:8px; border: 3px solid #fde047; box-shadow: 0 0 25px rgba(253, 224, 71, 0.6); position:relative; z-index:1;">
                 </div>
             </div>`;
 
-        if (s.isComic) return `<div class="cardSpanFull comicContainer" style="margin-top:2rem; border-radius:12px; overflow:hidden; border:2px solid rgba(255,255,255,0.15);"><img src="${s.image}" style="width:100%; height:auto; display:block;"></div>`;
+        if (s.isComic) return `<div class="cardSpanFull" style="margin-top:2rem; border-radius:12px; overflow:hidden; border:2px solid rgba(255,255,255,0.15);"><img src="${s.image}" style="width:100%; height:auto; display:block;"></div>`;
 
         const extraClass = (s.isFull || s.isError) ? "cardSpanFull" : "";
         
@@ -151,10 +201,10 @@ const UI = {
             <section class="infoCard ${extraClass} ${s.isError ? 'errorCard' : ''}" style="background:#111; border-radius:12px; border:1px solid rgba(255,255,255,0.05); padding:1.5rem;">
                 <h2 style="font-size: 1.3rem; color: #fff; margin-bottom: 1rem; font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">${s.title}</h2>
                 <div class="dataList" style="display:flex; flex-direction:column; gap:14px;">
-                    ${s.items ? s.items.map(i => i === '---' ? '<div class="listDivider" style="border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; margin: 0;"></div>' : (i.trim().startsWith('<') ? i : `<div class="aligned-list-item">${i}</div>`)).join('') : ''}
+                    ${s.items ? s.items.map(i => i === '---' ? '<div style="border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; margin: 0;"></div>' : (i.trim().startsWith('<') ? i : `<div class="aligned-list-item">${i}</div>`)).join('') : ''}
                 </div>
-                ${s.footer ? `<div class="hintBox" style="margin-top:1.5rem; padding:14px 18px; background:linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.05)); border-left:4px solid #22c55e; border-radius:0 8px 8px 0; color:#fff; font-weight:500;">${s.footer}</div>` : ''}
-                ${s.warning ? `<div class="warningBox" style="margin-top:10px; color:#fff; font-size:0.9rem;">⚠️ ${s.warning}</div>` : ''}
+                ${s.footer ? `<div style="margin-top:1.5rem; padding:14px 18px; background:linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.05)); border-left:4px solid #22c55e; border-radius:0 8px 8px 0; color:#fff; font-weight:500;">${s.footer}</div>` : ''}
+                ${s.warning ? `<div style="margin-top:10px; color:#fff; font-size:0.9rem;">⚠️ ${s.warning}</div>` : ''}
             </section>`;
     }
 };

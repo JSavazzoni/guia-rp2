@@ -1,8 +1,12 @@
 const jwt = require('jsonwebtoken');
 
-const SECRET = process.env.JWT_SECRET || 'chave-secreta-padrao-santa-group-2026';
+const SECRET = process.env.JWT_SECRET;
 
-function verificarAcesso(req) {
+if (!SECRET) {
+    throw new Error('JWT_SECRET is not defined');
+}
+
+function verifyAccess(req) {
     const authHeader = req.headers.authorization;
     
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
@@ -12,19 +16,18 @@ function verificarAcesso(req) {
     const token = authHeader.split(' ')[1];
 
     try {
-        const usuarioDecodificado = jwt.verify(token, SECRET);
-        return usuarioDecodificado;
+        return jwt.verify(token, SECRET);
     } catch (err) {
         return null;
     }
 }
 
-function gerarToken(usuario) {
+function generateToken(user) {
     return jwt.sign(
-        { email: usuario.email, role: usuario.role, name: usuario.name }, 
+        { email: user.email, role: user.role, name: user.name, status: user.status }, 
         SECRET, 
         { expiresIn: '12h' }
     );
 }
 
-module.exports = { verificarAcesso, gerarToken };
+module.exports = { verifyAccess, generateToken };

@@ -1,36 +1,32 @@
 const ApiClient = {
-    async get(endpoint) {
+    async request(endpoint, options = {}) {
+        const userStorage = JSON.parse(localStorage.getItem('user'));
+        const token = userStorage?.token;
+
+        const headers = {
+            'Content-Type': 'application/json',
+            ...(token && { 'Authorization': `Bearer ${token}` }),
+            ...options.headers
+        };
+
         try {
-            const response = await fetch(endpoint, { cache: 'no-store' });
+            const response = await fetch(endpoint, { ...options, headers });
+            
+            if (response.status === 401 || response.status === 403) {
+                if (!endpoint.includes('/auth')) {
+                    localStorage.removeItem('user');
+                    window.location.reload();
+                }
+            }
+            
             return await response.json();
         } catch (error) {
-            return { success: false };
+            return { success: false, message: 'Connection Error' };
         }
     },
-    async post(endpoint, data) {
-        try {
-            const response = await fetch(endpoint, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            return await response.json();
-        } catch (error) {
-            return { success: false };
-        }
-    },
-    async put(endpoint, data) {
-        return await fetch(endpoint, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        }).then(r => r.json());
-    },
-    async delete(endpoint, data) {
-        return await fetch(endpoint, {
-            method: 'DELETE',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        }).then(r => r.json());
-    }
+
+    async get(endpoint) { return this.request(endpoint, { method: 'GET', cache: 'no-store' }); },
+    async post(endpoint, data) { return this.request(endpoint, { method: 'POST', body: JSON.stringify(data) }); },
+    async put(endpoint, data) { return this.request(endpoint, { method: 'PUT', body: JSON.stringify(data) }); },
+    async delete(endpoint, data) { return this.request(endpoint, { method: 'DELETE', body: JSON.stringify(data) }); }
 };

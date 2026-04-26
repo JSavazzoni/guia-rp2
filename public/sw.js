@@ -1,5 +1,13 @@
-const CACHE_NAME = 'sg-v5';
-const ASSETS = ['/', '/index.html', '/styles.css', '/js/api.js', '/js/app.js', '/js/ui.js', '/AssetStore/image_1e6304.jpg'];
+const CACHE_NAME = 'sg-v6';
+const ASSETS = [
+    '/', 
+    '/index.html', 
+    '/styles.css', 
+    '/js/api.js', 
+    '/js/app.js', 
+    '/js/ui.js', 
+    '/AssetStore/image_1e6304.jpg'
+];
 
 self.addEventListener('install', (e) => {
     self.skipWaiting();

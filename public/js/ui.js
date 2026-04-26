@@ -25,7 +25,7 @@ const UI = {
     templates: {
         auth: () => `
             <style>
-                body { margin: 0; font-family: 'Inter', sans-serif; overflow: hidden; }
+                body { margin: 0; font-family: 'Inter', sans-serif; overflow: hidden; background: #000; }
                 .overlayContainer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: radial-gradient(circle at center, rgba(10,10,10,0.7) 0%, rgba(0,0,0,0.95) 100%); backdrop-filter: blur(8px); z-index: -1; }
                 .authWrapper { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
                 .authBox { background: rgba(15, 15, 15, 0.7); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(212, 175, 55, 0.2); border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 3.5rem; border-radius: 24px; width: 100%; max-width: 460px; text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.05); }
@@ -90,7 +90,7 @@ const UI = {
 
         admin: () => `
             <style>
-                body { margin: 0; color: #fff; font-family: 'Inter', sans-serif; overflow-y: auto; }
+                body { margin: 0; background: #050505; color: #fff; font-family: 'Inter', sans-serif; overflow-y: auto; }
                 .overlayContainer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); backdrop-filter: blur(15px); z-index: -1; }
                 .adminTopbar { position: fixed; top: 0; left: 0; right: 0; height: 80px; background: rgba(10,10,10,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; z-index: 100; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
                 .adminBrand { font-weight: 900; color: #d4af37; font-size: 1.4rem; letter-spacing: 2px; }
@@ -158,8 +158,8 @@ const UI = {
 
         menu: () => `
             <style>
-                body { margin: 0; font-family: 'Inter', sans-serif; overflow-y: auto; }
-                .overlayContainer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); z-index: -1; }
+                body { margin: 0; background: #000; font-family: 'Inter', sans-serif; overflow-y: auto; }
+                .overlayContainer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); z-index: -1; }
                 .menuTopbar { position: fixed; top: 0; left: 0; right: 0; height: 80px; background: rgba(5,5,5,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(212,175,55,0.3); display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; z-index: 100; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
                 .menuBrand { font-weight: 900; color: #d4af37; font-size: 1.4rem; letter-spacing: 2px; text-shadow: 0 0 10px rgba(212,175,55,0.2); }
                 .menuControls { display: flex; align-items: center; gap: 25px; }
@@ -219,14 +219,14 @@ const UI = {
 
             return `
                 <style>
-                    body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; color: #fff; overflow-x: hidden; overflow-y: auto; }
+                    body { margin: 0; padding: 0; background: #000; font-family: 'Inter', sans-serif; color: #fff; overflow-x: hidden; overflow-y: auto; }
                     * { box-sizing: border-box; scrollbar-width: thin; scrollbar-color: rgba(212, 175, 55, 0.3) transparent; }
                     ::-webkit-scrollbar { width: 8px; height: 8px; }
                     ::-webkit-scrollbar-track { background: transparent; }
                     ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 10px; }
                     ::-webkit-scrollbar-thumb:hover { background: rgba(212, 175, 55, 0.5); }
                     
-                    .overlayContainer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); backdrop-filter: blur(12px); z-index: -1; }
+                    .overlayContainer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: -1; }
                     
                     .sidebar { width: 340px; position: fixed; top: 0; left: 0; height: 100vh; background: rgba(10,10,10,0.9); border-right: none; overflow-y: auto; display: flex; flex-direction: column; z-index: 50; box-shadow: 5px 0 25px rgba(0,0,0,0.6); }
                     .sidebar::-webkit-scrollbar { display: none; }
@@ -249,8 +249,9 @@ const UI = {
                     .headerTexts h1 { font-size: 3.2rem; font-weight: 900; margin: 0 0 1rem 0; text-transform: uppercase; color: #fff; line-height: 1.1; letter-spacing: -1px; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
                     .headerTexts p { font-size: 1.1rem; color: #ccc; margin: 0; line-height: 1.6; max-width: 800px; }
                     
-                    .headerImgBox { width: 380px; height: 240px; flex-shrink: 0; border: 2px solid rgba(212, 175, 55, 0.5); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 20px rgba(212, 175, 55, 0.2); background: #000; padding: 0; }
-                    .headerImgBox img { width: 100%; height: 100%; object-fit: contain; display: block; }
+                    /* FOTOS CABEÇALHO AMPLIADAS E COBERTAS PERFEITAMENTE */
+                    .headerImgBox { width: 450px; height: 280px; flex-shrink: 0; border: 2px solid rgba(212, 175, 55, 0.5); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 20px rgba(212, 175, 55, 0.2); background: #000; padding: 0; }
+                    .headerImgBox img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
                     .gridLayout { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
                     .fullWidth { grid-column: 1 / -1; }
@@ -270,15 +271,16 @@ const UI = {
                     .dividerLine { height: 1px; background: rgba(255,255,255,0.08); margin: 20px 0; width: 100%; }
 
                     .hintBox { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2); padding: 1.2rem 1.5rem; margin-top: auto; border-radius: 12px; color: #fff; font-weight: 600; font-size: 0.95rem; box-shadow: inset 4px 0 0 #22c55e; }
-                    .warningBox { background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 1.2rem; margin-top: 1.5rem; border-radius: 12px; color: #ef4444; font-weight: 800; text-align: center; }
+                    .warningBox { background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.3); padding: 1.2rem; margin-top: 1.5rem; border-radius: 12px; color: #ef4444; font-weight: 800; text-align: center; }
 
                     .sectionTitleDivider { grid-column: 1/-1; text-align: center; color: #fff; font-size: 1.8rem; font-weight: 900; margin: 3rem 0 1rem; text-transform: uppercase; letter-spacing: 3px; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 1.5rem; }
                     
-                    .prepCard { grid-column: 1/-1; display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; background: rgba(15,15,15,0.8); backdrop-filter: blur(10px); padding: 4rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); border-left: 4px solid #d4af37; align-items: center; box-shadow: 0 20px 50px rgba(0,0,0,0.7); margin-bottom: 2rem;}
-                    .prepImg { width: 100%; max-width: 360px; border: 4px solid #d4af37; border-radius: 16px; box-shadow: 0 0 40px rgba(212, 175, 55, 0.3); display: block; margin: 0 auto; object-fit: contain; }
+                    /* IMAGEM PREP MAIOR E MELHOR DISTRIBUIDA (Principalmente Defesa) */
+                    .prepCard { grid-column: 1/-1; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; background: rgba(15,15,15,0.8); backdrop-filter: blur(10px); padding: 4rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); border-left: 4px solid #d4af37; align-items: center; box-shadow: 0 20px 50px rgba(0,0,0,0.7); margin-bottom: 2rem;}
+                    .prepImg { width: 100%; max-width: 550px; border: 4px solid #d4af37; border-radius: 16px; box-shadow: 0 0 40px rgba(212, 175, 55, 0.3); display: block; margin: 0 auto; object-fit: cover; }
                     
                     .comicFrame { grid-column: 1/-1; border-radius: 20px; border: 2px solid rgba(212,175,55,0.4); overflow: hidden; margin-top: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.7); }
-                    .comicFrame img { width: 100%; display: block; }
+                    .comicFrame img { width: 100%; display: block; object-fit: contain; }
                 </style>
 
                 <div class="overlayContainer"></div>
